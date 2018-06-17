@@ -5,6 +5,7 @@ git:
 language: node_js
 node_js:
 - &release_node v8
+cache: yarn
 script: $(npm bin)/gulp pack
 #before_deploy: ./.travis/predeploy.sh
 #deploy:
