@@ -3,6 +3,7 @@
 git config --local user.name "OpenDevise Ops"
 git config --local user.email ops@opendevise.com
 git remote set-url origin https://${GITHUB_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git
+git checkout -B $TRAVIS_BRANCH
 git fetch --tags
 CURRENT_VERSION=$(git tag -l v* --sort -v:refname | head -1 | sed s/^v//)
 if [ -z $CURRENT_VERSION ]; then
