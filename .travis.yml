@@ -1,0 +1,18 @@
+sudo: false
+dist: trusty
+git:
+  depth: 2
+language: node_js
+node_js:
+- &release_node v8
+script: $(npm bin)/gulp pack
+#before_deploy: ./.travis/predeploy.sh
+#deploy:
+#  provider: releases
+#  api_key: $GITHUB_TOKEN
+#  file: build/ui-bundle.zip
+#  skip_cleanup: true
+#  on:
+#    repo: cb-docs-review-space/cb-docs-ui
+#    branch: master
+#    node: *release_node
