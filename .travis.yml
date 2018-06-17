@@ -8,15 +8,13 @@ node_js:
 cache: yarn
 script:
 - $(npm bin)/gulp pack
-- git checkout -B $TRAVIS_BRANCH
-- git branch
-#before_deploy: ./.travis/predeploy.sh
-#deploy:
-#  provider: releases
-#  api_key: $GITHUB_TOKEN
-#  file: build/ui-bundle.zip
-#  skip_cleanup: true
-#  on:
-#    repo: cb-docs-review-space/cb-docs-ui
-#    branch: master
-#    node: *release_node
+before_deploy: ./.travis/predeploy.sh
+deploy:
+  provider: releases
+  api_key: $GITHUB_TOKEN
+  file: build/ui-bundle.zip
+  skip_cleanup: true
+  on:
+    repo: cb-docs-review-space/cb-docs-ui
+    branch: master
+    node: *release_node
