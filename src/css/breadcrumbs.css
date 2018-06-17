@@ -1,0 +1,47 @@
+.crumbs {
+  display: none;
+  hyphens: none;
+  font-size: 0.8125rem;
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 2;
+}
+
+@media screen and (min-width: 1024px) {
+  .crumbs {
+    display: block;
+  }
+}
+
+.crumbs a {
+  color: #3c3d3f;
+}
+
+.crumbs a:focus,
+.crumbs a:hover {
+  color: var(--color-link-focus);
+  text-decoration: none;
+}
+
+.crumbs ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.crumbs li {
+  line-height: 1.5;
+  display: inline-block;
+  margin: 0;
+}
+
+.crumbs li::after {
+  content: "/";
+  padding: 0 0.25rem;
+  color: #57585b;
+}
+
+.crumbs li:last-of-type::after {
+  content: none;
+}

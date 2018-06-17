@@ -1,0 +1,94 @@
+antoraVersion: '1.0.0'
+site:
+  url: http://localhost:5252
+  title: Couchbase Developer
+  components:
+  - name: abc
+    title: Project ABC
+    url: '#'
+    versions:
+    - &latest_version_abc
+      url: '#' 
+      version: '1.1'
+    - url: '#' 
+      version: '1.0'
+    latestVersion: *latest_version_abc
+  - &component
+    name: server
+    title: Couchbase Server
+    url: /server/5.5/index.html
+    versions:
+    - &latest_version_server
+      url: /server/5.5/index.html
+      version: '5.5'
+    - &component_version
+      url: '#' 
+      version: '5.1'
+    - url: '#' 
+      version: '5.0'
+    - url: '#' 
+      version: '4.6'
+    latestVersion: *latest_version_server
+  - name: 123
+    title: Project 123
+    url: '#'
+    versions:
+    - &latest_version_123
+      url: '#' 
+      version: '2.2'
+    - url: '#' 
+      version: '2.1'
+    - url: '#' 
+      version: '2.0'
+    latestVersion: *latest_version_123
+page:
+  title: Why Couchbase?
+  url: /server/5.5/introduction/intro.html
+  component: *component
+  componentVersion: *component_version
+  version: '5.5'
+  module: ROOT
+  home: false
+  editUrl: https://github.com/cb-docs-review-space/couchbase-server-docs/blob/v5.5/modules/introduction/pages/intro.adoc
+  breadcrumbs:
+  - content: Introduction
+    url: '#'
+    urlType: fragment
+  - content: Why Couchbase?
+    url: /server/5.5/introduction/intro.html
+    urlType: internal
+  versions:
+  - version: '5.5'
+    url: '#'
+  - version: '5.1'
+    url: '#'
+  - version: '5.0'
+    url: '#'
+  - version: '4.6'
+    missing: true
+    url: '#'
+  navigation:
+  - content: Introduction
+    items:
+    - content: Why Couchbase?
+      url: /server/5.5/introduction/intro.html
+      urlType: internal
+    - content: What's New?
+      url: '#'
+      urlType: fragment
+  - content: Getting Started
+    items:
+    - content: Start Here!
+      url: '#'
+      urlType: fragment
+    - content: Do a Quick Install
+      url: '#'
+      urlType: fragment
+  - content: Developers
+    items:
+    - content: Hello World!
+      url: '#'
+      urlType: fragment
+    - content: Users and Security
+      url: '#'
+      urlType: fragment

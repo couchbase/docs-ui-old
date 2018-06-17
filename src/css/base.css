@@ -1,0 +1,73 @@
+:root {
+  --color-text: #252525;
+  --color-link: #ec1e2c;
+  --color-link-focus: #cc2a2e;
+  --color-code: #555;
+  --color-border: #eaeaea;
+  --color-navbar-bg: #000;
+  --color-navbar-text: #fff;
+  --color-navbar-text-focus: #fff;
+  --weight-bold: 700;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Kievit OT", sans-serif;
+  font-size: 0.9em;
+  text-size-adjust: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 1em;
+  }
+}
+
+body {
+  color: var(--color-text);
+  line-height: 1.5;
+  margin: 0;
+}
+
+b,
+strong {
+  font-weight: var(--weight-bold);
+}
+
+select {
+  font-family: "Kievit OT", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 68rem;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+  outline: none;
+}
+
+code,
+kbd,
+pre {
+  font-family: "Roboto Mono", monospace;
+  color: var(--color-code);
+}

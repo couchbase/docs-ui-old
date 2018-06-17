@@ -1,0 +1,52 @@
+{
+  "name": "couchbase-docs-ui",
+  "description": "The project that produces the UI for the Couchbase documentation site",
+  "homepage": "https://developer.couchbase.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cb-docs-review-space/cb-docs-ui.git"
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.6.2",
+    "browserify": "^16.2.2",
+    "chokidar": "^2.0.3",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-eslint": "^4.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-stylelint": "^7.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-vinyl-zip": "^2.1.0",
+    "handlebars": "^4.0.10",
+    "highlight.js": "^9.12.0",
+    "js-yaml": "^3.12.0",
+    "map-stream": "^0.0.7",
+    "merge-stream": "^1.0.1",
+    "postcss": "^6.0.22",
+    "postcss-calc": "^6.0.1",
+    "postcss-custom-properties": "^7.0.0",
+    "postcss-import": "^11.1.0",
+    "postcss-syntax": "^0.10.0",
+    "postcss-url": "^7.3.2",
+    "prettier-eslint": "^8.8.1",
+    "require-from-string": "^2.0.2",
+    "stylelint": "^9.2.1",
+    "stylelint-config-standard": "^18.2.0",
+    "typeface-roboto-condensed": "^0.0.54",
+    "typeface-roboto-mono": "^0.0.54",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-fs": "^2.4.4"
+  }
+}

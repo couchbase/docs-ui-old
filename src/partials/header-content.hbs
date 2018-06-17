@@ -1,0 +1,29 @@
+<header class="header" role="banner">
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}"><img src="{{uiRootPath}}/img/logo.svg" alt="{{site.title}}"></a>
+        <a class="navbar-item" href="#">Developer</a>
+        <a class="navbar-item" href="#">Server</a>
+        <button class="navbar-burger" data-target="topbar-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div id="topbar-nav" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="https://developer.couchbase.com/">Docs</a>
+          <a class="navbar-item" href="http://training.couchbase.com/">Training</a>
+          <a class="navbar-item" href="https://forums.couchbase.com/">Forums</a>
+          <a class="navbar-item" href="https://developer.couchbase.com/guides-and-references">Site Map</a>
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="button" href="https://developer.couchbase.com/downloads#couchbase-server">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

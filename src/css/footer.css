@@ -1,0 +1,100 @@
+.footer {
+  background-color: #282725;
+  padding: 3rem 1rem;
+  text-transform: uppercase;
+}
+
+.footer .container {
+  display: flex;
+}
+
+.footer,
+.footer a {
+  color: #848380;
+  text-decoration: none;
+}
+
+.footer a:focus,
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer .contact {
+  width: 16rem;
+  margin-right: 4rem;
+}
+
+.footer .button {
+  background-color: var(--color-link);
+  border-radius: 0.1875rem;
+  font-size: 0.9rem;
+  line-height: 1;
+  color: #fff;
+  padding: 0.75rem 0;
+  white-space: nowrap;
+  display: block;
+  text-align: center;
+}
+
+.footer .button:focus,
+.footer .button:hover {
+  background-color: var(--color-link-focus);
+  text-decoration: none;
+}
+
+.footer .social {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.footer .social li {
+  display: block;
+  flex-grow: 1;
+}
+
+.footer .social a {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  font-size: 0;
+  text-indent: 100%;
+  overflow: hidden;
+  background: no-repeat 0 0;
+  margin: 0 auto;
+}
+
+.footer .social a.linkedin {
+  background-image: url(https://developer.couchbase.com/webfiles/1527214497775/images/icons/social-linkedin.png);
+}
+
+.footer .social a.twitter {
+  background-image: url(https://developer.couchbase.com/webfiles/1527214497775/images/icons/social-twitter.png);
+}
+
+.footer .social a.facebook {
+  background-image: url(https://developer.couchbase.com/webfiles/1527214497775/images/icons/social-facebook.png);
+}
+
+.footer .social a.googleplus {
+  background-image: url(https://developer.couchbase.com/webfiles/1527214497775/images/icons/social-googleplus.png);
+}
+
+.footer .nav {
+  flex: 1 1 0;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding-left: 1.5rem;
+}
+
+.footer .nav h3 {
+  color: var(--color-link);
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0 0 1.25rem;
+}
+
+.footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
