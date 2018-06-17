@@ -90,3 +90,7 @@
 .toc li {
   margin-top: 0.125rem;
 }
+
+.toc a {
+  text-decoration: none;
+}

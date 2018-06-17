@@ -83,6 +83,16 @@
   visibility: visible;
 }
 
+.doc a {
+  text-decoration: underline;
+}
+
+.doc a:focus,
+.doc a:hover {
+  color: var(--color-link-focus);
+  text-decoration: none;
+}
+
 .doc i.fa {
   font-style: normal;
 }
