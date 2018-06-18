@@ -1,16 +1,16 @@
 {{#if page.navigation}}
 <div class="navigation-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    {{#if page.versions}}
     <select class="page-versions">
+      {{#if page.versions}}
       {{#each page.versions}}
       <option value="{{relativize @root.page.url ./url}}"
-        {{~#if (eq ./version @root.page.version)}} selected{{/if}}>{{@root.page.component.title}} {{./version}}</option>
+        {{~#if (eq ./version @root.page.version)}} selected{{/if}}>{{{@root.page.component.title}}} {{./version}}</option>
       {{/each}}
+      {{else}}
+      <option>{{{page.component.title}}} {{page.version}}</option>
+      {{/if}}
     </select>
-    {{else}}
-    {{page.version}}
-    {{/if}}
 {{> navigation-tree navigation=page.navigation}}
   </nav>
 </div>
