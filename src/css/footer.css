@@ -6,6 +6,7 @@
 
 .footer .container {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .footer,
@@ -20,8 +21,14 @@
 }
 
 .footer .contact {
-  width: 16rem;
-  margin-right: 4rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer .contact {
+    width: 16rem;
+    margin-right: 4rem;
+  }
 }
 
 .footer .button {
@@ -45,6 +52,13 @@
 .footer .social {
   display: flex;
   margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer .social {
+    margin-bottom: 0;
+  }
 }
 
 .footer .social li {
