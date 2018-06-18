@@ -4,6 +4,7 @@
       <div class="navbar-brand">
         <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}"><img src="{{uiRootPath}}/img/logo.svg" alt="{{site.title}}"></a>
         <a class="navbar-item" href="https://developer.couchbase.com">Developer</a>
+        {{#if page.component}}
         {{#if (many site.components)}}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link" href="{{page.component.url}}">{{{drop-prefix page.component.title 'Couchbase '}}}</a>
@@ -15,6 +16,7 @@
         </div>
         {{else}}
         <a class="navbar-item" href="{{relativize page.url page.component.url}}">{{{drop-prefix page.component.title 'Couchbase '}}}</a>
+        {{/if}}
         {{/if}}
         <button class="navbar-burger" data-target="topbar-nav">
           <span></span>
