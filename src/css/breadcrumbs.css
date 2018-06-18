@@ -23,17 +23,19 @@
   text-decoration: none;
 }
 
-.crumbs ul {
-  display: inline-block;
+.crumbs ul,
+.crumbs li {
+  display: inline-flex;
   margin: 0;
   padding: 0;
+}
+
+.crumbs ul {
   list-style: none;
 }
 
 .crumbs li {
   line-height: 1.5;
-  display: inline-block;
-  margin: 0;
 }
 
 .crumbs li::after {
