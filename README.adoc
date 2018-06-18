@@ -3,7 +3,7 @@
 :experimental:
 :hide-uri-scheme:
 // Variables:
-:revnumber: 7
+:revnumber: 8
 // Project URIs:
 :uri-project: https://github.com/cb-docs-review-space/cb-docs-ui
 // External URIs:
