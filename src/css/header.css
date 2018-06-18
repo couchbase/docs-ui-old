@@ -31,30 +31,22 @@ html.is-clipped--navbar {
   text-decoration: none;
 }
 
-@media screen and (min-width: 1024px) {
-  /*
-  .navbar-item.has-dropdown:hover .navbar-link {
-    color: var(--color-navbar-text-focus);
-  }
-  */
-}
-
 .navbar-brand {
   align-items: center;
   display: flex;
 }
 
-.navbar-brand .navbar-item {
+.navbar-brand > .navbar-item {
   padding: 0;
 }
 
-.navbar-brand .navbar-item:first-child {
+.navbar-brand > .navbar-item:first-child {
   display: block;
   width: 2.5rem;
   height: 2.5rem;
 }
 
-.navbar-brand .navbar-item:not(:first-child)::before {
+.navbar-brand > .navbar-item:not(:first-child)::before {
   content: "/";
   color: #ccced0;
   padding: 0 0.5rem;
@@ -143,15 +135,9 @@ html.is-clipped--navbar {
   display: block;
 }
 
-.navbar-link {
-  padding-right: 2.5em;
-}
-
 .navbar-dropdown .navbar-item {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  text-transform: none;
-  letter-spacing: 0.5px;
 }
 
 .navbar-divider {
@@ -177,11 +163,6 @@ html.is-clipped--navbar {
     box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
     max-height: calc(100vh - var(--navbar-height));
     overflow-y: auto;
-  }
-
-  .navbar-menu a.navbar-item:hover,
-  .navbar-menu .navbar-link:hover {
-    background-color: #fafafa;
   }
 }
 
@@ -217,19 +198,28 @@ html.is-clipped--navbar {
     display: block;
   }
 
-  .navbar-link::after {
+  .navbar-item.is-hoverable > .navbar-link::after {
+    border: 0 solid #ee2528;
     border-width: 0 0 1px 1px;
-    border-style: solid;
-    content: " ";
-    display: block;
-    height: 0.5em;
-    pointer-events: none;
+    content: "";
+    display: none;
+    width: 0.375em;
+    height: 0.375em;
     position: absolute;
-    transform: rotate(-45deg);
-    width: 0.5em;
-    margin-top: -0.375em;
-    right: 1.125em;
     top: 50%;
+    right: -1em;
+    margin-top: -0.375em;
+    pointer-events: none;
+    transform: rotate(-45deg);
+  }
+
+  .navbar-brand .navbar-item.is-hoverable > .navbar-link {
+    /* QUESTION should this apply to all? */
+    padding: 0;
+  }
+
+  .navbar-item.is-hoverable:hover > .navbar-link::after {
+    display: block;
   }
 
   .navbar-brand {
@@ -247,24 +237,27 @@ html.is-clipped--navbar {
   }
 
   .navbar-dropdown {
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: #1b1a19;
+    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 0.1875rem;
+    /*
+    border-radius: 0 0.1875rem 0.1875rem 0.1875rem;
+    */
     display: none;
     top: 100%;
     left: 0;
-    min-width: 100%;
+    padding: 1rem;
+    min-width: 14rem;
     position: absolute;
-    border-radius: 0.25rem;
-    box-shadow: 0 2px 5px #ddd;
+  }
+
+  .navbar-brand .navbar-dropdown {
+    left: 1rem;
   }
 
   .navbar-dropdown .navbar-item {
-    padding: 0.5rem 1rem;
+    padding: 0.25rem;
     white-space: nowrap;
-  }
-
-  .navbar-dropdown a.navbar-item {
-    padding-right: 3rem;
   }
 
   .navbar-dropdown.is-right {
@@ -272,8 +265,15 @@ html.is-clipped--navbar {
     right: 0;
   }
 
+  /*
+  .navbar-item.has-dropdown:hover,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: #1b1a19;
+  }
+  */
+
   .navbar-dropdown a.navbar-item:hover {
-    background-color: #fafafa;
+    color: var(--color-link);
   }
 }
 
