@@ -13,10 +13,13 @@ html.is-clipped--navbar {
   height: var(--navbar-height);
   word-wrap: break-word;
   font-size: 0.95rem;
+  padding: 0 0.9rem;
 }
 
 .navbar .container {
-  width: 68rem;
+  /* extend up to max-width */
+  width: 100%;
+  padding: 0;
 }
 
 .navbar a {
@@ -39,7 +42,6 @@ html.is-clipped--navbar {
 .navbar-brand {
   align-items: center;
   display: flex;
-  margin-right: 5rem;
 }
 
 .navbar-brand .navbar-item {
@@ -228,6 +230,10 @@ html.is-clipped--navbar {
     margin-top: -0.375em;
     right: 1.125em;
     top: 50%;
+  }
+
+  .navbar-brand {
+    margin-right: 5rem;
   }
 
   .navbar-start {

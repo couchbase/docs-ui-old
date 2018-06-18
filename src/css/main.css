@@ -1,4 +1,8 @@
-@media screen and (min-width: 1024px) {
+.main {
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
   .main-wrapper {
     display: flex;
   }

@@ -1,16 +1,9 @@
 .crumbs {
-  display: none;
   hyphens: none;
   font-size: 0.8125rem;
   font-family: sans-serif;
   font-weight: 300;
   line-height: 2;
-}
-
-@media screen and (min-width: 1024px) {
-  .crumbs {
-    display: block;
-  }
 }
 
 .crumbs a {

@@ -24,14 +24,8 @@ body {
 html {
   box-sizing: border-box;
   font-family: "Kievit OT", sans-serif;
-  font-size: 0.9em;
+  font-size: 1em;
   text-size-adjust: 100%;
-}
-
-@media screen and (min-width: 1024px) {
-  html {
-    font-size: 1em;
-  }
 }
 
 body {
@@ -52,6 +46,13 @@ select {
 .container {
   margin: 0 auto;
   max-width: 68rem;
+  padding: 0 0.9rem;
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    padding: 0;
+  }
 }
 
 a {

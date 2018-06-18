@@ -1,6 +1,9 @@
 <div class="navigation-container"{{#if page.component}} data-component="{{page.component.name}}" data-version="{{page.version}}"{{/if}}>
   <aside class="navigation" role="navigation">
     <div class="panels">
+      <div class="current-article">
+        <a href="#">{{{page.title}}}</a>
+      </div>
 {{> navigation-menu}}
     </div>
   </aside>

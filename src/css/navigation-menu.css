@@ -2,8 +2,12 @@ html.is-clipped--nav {
   overflow-y: hidden;
 }
 
-.navigation-menu {
-  margin-top: 1.75rem;
+@media screen and (max-width: 768px) {
+  .navigation-menu {
+    margin: 0 4%;
+    padding: 4%;
+    border: 1px solid #a1a1a1;
+  }
 }
 
 select.page-versions {
