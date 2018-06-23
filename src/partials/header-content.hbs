@@ -30,6 +30,12 @@
           <a class="navbar-item" href="http://training.couchbase.com/">Training</a>
           <a class="navbar-item" href="https://forums.couchbase.com/">Forums</a>
           <a class="navbar-item" href="https://developer.couchbase.com/guides-and-references">Site Map</a>
+          {{#if env.ALGOLIA_API_KEY}}
+          <form class="navbar-item search">
+            <input type="text" placeholder="Search" class="query" id="search-query">
+            <button class="search"><span>Search</span></button>
+          </form>
+          {{/if}}
         </div>
         <div class="navbar-end">
           <div class="navbar-item">

@@ -1,1 +1,9 @@
+    {{#if (or antoraVersion site.antoraVersion)}}
+    <meta name="generator" content="Antora {{or antoraVersion site.antoraVersion}}">
+    {{/if}}
+    {{#if env.ALGOLIA_API_KEY}}
+    <!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css -->
+    <link rel="stylesheet" href="{{uiRootPath}}/css/vendor/docsearch.min.css">
+    {{/if}}
+    <link rel="stylesheet" href="{{uiRootPath}}/css/site.css">
     <link rel="icon" href="{{uiRootPath}}/img/favicon.ico" type="image/x-icon">
