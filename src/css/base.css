@@ -39,7 +39,9 @@ strong {
   font-weight: var(--weight-bold);
 }
 
-button, input, select {
+button,
+input,
+select {
   font-family: "Kievit OT", sans-serif;
 }
 

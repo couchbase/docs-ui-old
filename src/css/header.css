@@ -328,7 +328,7 @@ html.is-clipped--navbar {
   display: block;
   white-space: nowrap;
   overflow: hidden;
-  text-indent: 100%
+  text-indent: 100%;
 }
 
 .navbar-start.reveal-search-input a.navbar-item {
