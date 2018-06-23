@@ -19,9 +19,16 @@ const previewSiteDestDir = 'public'
 const srcDir = 'src'
 const destDir = path.join(previewSiteDestDir, '_')
 
-const jsFiles = ['gulpfile.js', 'tasks/**/*.js', path.join(srcDir, '{helpers,js}/**/*.js')]
+const cssFiles = [path.join(srcDir, 'css/**/*.css'), `!${path.join(srcDir, 'css/**/*.min.css')}`]
 
-gulp.task('lint:css', () => lintCss(`${srcDir}/css/**/*.css`))
+const jsFiles = [
+  'gulpfile.js',
+  'tasks/**/*.js',
+  path.join(srcDir, '{helpers,js}/**/*.js'),
+  `!${path.join(srcDir, '{helpers,js}/**/*.min.js')}`,
+]
+
+gulp.task('lint:css', () => lintCss(cssFiles))
 gulp.task('lint:js', () => lintJs(jsFiles))
 gulp.task('lint', ['lint:css', 'lint:js'])
 
