@@ -229,6 +229,7 @@ html.is-clipped--navbar {
   .navbar-start {
     justify-content: flex-start;
     margin-right: auto;
+    flex-grow: 1;
   }
 
   .navbar-end {
@@ -275,6 +276,68 @@ html.is-clipped--navbar {
   .navbar-dropdown a.navbar-item:hover {
     color: var(--color-link);
   }
+}
+
+.navbar-start .navbar-item.search {
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.navbar-start input.query {
+  height: 2.4rem;
+  flex-grow: 1;
+  background-color: #f2f2f2;
+  padding: 1px 1em;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.navbar-start input.query:focus {
+  border: 0 solid var(--color-link);
+  border-width: 1px 0 1px 1px;
+  padding: 0 1em;
+  outline-style: none;
+}
+
+.navbar-start:not(.reveal-search-input) input.query {
+  display: none;
+}
+
+.algolia-autocomplete {
+  flex-grow: 1;
+  display: flex !important;
+}
+
+.algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
+  width: 100%;
+  max-width: none;
+  left: 0 !important;
+  margin-top: 0.5rem;
+}
+
+.navbar-start button.search {
+  background: #e6e6e6 url(../img/search.svg) 50% 50% no-repeat;
+  background-size: 50%;
+  border: none;
+  height: 2.4rem;
+  width: 2.4rem;
+  cursor: pointer;
+}
+
+.navbar-start button.search span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-indent: 100%
+}
+
+.navbar-start.reveal-search-input a.navbar-item {
+  display: none;
+}
+
+.navbar-start.reveal-search-input button.search {
+  background-color: #666;
+  background-image: url(../img/close.svg);
 }
 
 .navbar .button {
