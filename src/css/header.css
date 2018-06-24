@@ -331,6 +331,10 @@ html.is-clipped--navbar {
   text-indent: 100%;
 }
 
+.navbar-start.reveal-search-input {
+  margin-left: -3rem;
+}
+
 .navbar-start.reveal-search-input a.navbar-item {
   display: none;
 }
