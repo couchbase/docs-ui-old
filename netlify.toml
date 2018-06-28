@@ -1,0 +1,13 @@
+[build]
+  publish = "public/"
+  command = "node_modules/.bin/gulp build:preview"
+
+[build.environment]
+  NODE_VERSION = "8"
+  ALGOLIA_API_KEY = "ea9d60816cf2bd04472648bfb287fde1"
+  ALGOLIA_INDEX_NAME = "couchbase"
+
+[[headers]]
+  for = "/_/font/*"
+  [headers.values]
+    Cache-Control = "public,max-age=604800"
