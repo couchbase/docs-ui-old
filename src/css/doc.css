@@ -414,7 +414,6 @@
 .doc pre:not(.highlight),
 .doc pre.highlight code {
   background-color: #f0f0f0;
-  border-left: 3px solid var(--color-link);
   display: block;
   overflow-x: auto;
   padding: 0.5rem 0 0.5rem 1.125rem;
