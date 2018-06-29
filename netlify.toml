@@ -7,6 +7,9 @@
   ALGOLIA_API_KEY = "ea9d60816cf2bd04472648bfb287fde1"
   ALGOLIA_INDEX_NAME = "couchbase"
 
+[context.deploy-preview]
+  command = "node_modules/.bin/gulp build:preview pack"
+
 [[headers]]
   for = "/_/font/*"
   [headers.values]
