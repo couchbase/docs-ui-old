@@ -13,7 +13,7 @@ const pack = require('./tasks/pack')
 const preview = require('./tasks/preview')
 
 const bundleName = 'ui'
-const buildDir = 'build'
+const buildDir = process.env.CONTEXT === 'deploy-preview' ? 'public/dist' : 'build'
 const previewSiteSrcDir = 'preview-site-src'
 const previewSiteDestDir = 'public'
 const srcDir = 'src'
