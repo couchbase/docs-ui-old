@@ -4,7 +4,7 @@
   "homepage": "https://developer.couchbase.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cb-docs-review-space/cb-docs-ui.git"
+    "url": "https://github.com/couchbase/docs-ui.git"
   },
   "engines": {
     "node": ">= 8.0.0"

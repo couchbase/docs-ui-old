@@ -3,9 +3,9 @@
 :experimental:
 :hide-uri-scheme:
 // Variables:
-:revnumber: 1
+:current-release: v0
 // Project URIs:
-:uri-project: https://github.com/cb-docs-review-space/cb-docs-ui
+:uri-project: https://github.com/couchbase/docs-ui
 // External URIs:
 :uri-antora: https://antora.org
 :uri-git: https://git-scm.com
@@ -27,7 +27,7 @@ To use this UI in an Antora-generated site, add the following configuration to y
 ----
 ui:
   bundle:
-    url: {uri-project}/releases/download/v{revnumber}/ui-bundle.zip
+    url: {uri-project}/releases/download/{current-release}/ui-bundle.zip
 ----
 
 Read on to learn how to build the UI from source.
