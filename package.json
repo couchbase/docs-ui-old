@@ -34,6 +34,7 @@
     "js-yaml": "^3.12.0",
     "map-stream": "^0.0.7",
     "merge-stream": "^1.0.1",
+    "@octokit/rest": "^15.9.3",
     "postcss": "^6.0.22",
     "postcss-calc": "^6.0.1",
     "postcss-custom-properties": "^7.0.0",
