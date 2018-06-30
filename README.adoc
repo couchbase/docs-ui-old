@@ -15,7 +15,7 @@
 :uri-nvm: https://github.com/creationix/nvm
 :uri-nvm-install: {uri-nvm}#installation
 :uri-yarn: https://yarnpkg.com
-:uri-opendevise: https://opendevise.com
+:uri-couchbase: https://couchbase.com
 
 This project contains the UI for the Couchbase documentation review site.
 
@@ -157,5 +157,5 @@ You can then point Antora at this bundle using the `--ui-bundle` command-line op
 
 == Copyright and License
 
-Copyright (C) {uri-opendevise}[OpenDevise] 2018.
+Copyright (C) {uri-couchbase}[Couchbase] 2018.
 All rights reserved.
