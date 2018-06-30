@@ -6,7 +6,7 @@ const path = require('path')
 
 module.exports = async (dest, bundleName, owner, repo, tagName, token) => {
   const ref = 'heads/master'
-  const message = `Release ${tagName}`
+  const message = `Release ${tagName} [skip release]`
   const bundleFile = `${bundleName}-bundle.zip`
   const bundleContent = fs.readFileSync(path.join(dest, bundleFile), 'utf-8')
   const readmeContent = fs.readFileSync('README.adoc', 'utf-8').replace(/^(:current-release: ).+$/m, `$1${tagName}`)
