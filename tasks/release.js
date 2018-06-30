@@ -27,7 +27,12 @@ module.exports = async (dest, bundleName, owner, repo, tagName, token) => {
   const newCommit = await octokit.gitdata.createCommit({ owner, repo, message, tree: newTree, parents: [commit] })
     .then((result) => result.data.sha)
   await octokit.gitdata.updateReference({ owner, repo, ref, sha: newCommit })
-  const uploadUrl = await octokit.repos.createRelease({ owner, repo, tag_name: tagName, target_commitish: newCommit })
+  const uploadUrl = await octokit.repos.createRelease({
+    owner, repo,
+    tag_name: tagName,
+    target_commitish: newCommit,
+    name: tagName,
+  })
     .then((result) => result.data.upload_url)
   await octokit.repos.uploadAsset({
     url: uploadUrl,
