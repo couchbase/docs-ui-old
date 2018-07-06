@@ -6,13 +6,12 @@ const path = require('path')
 
 module.exports = async (dest, bundleName, owner, repo, token) => {
   octokit.authenticate({ type: 'token', token })
-  const lastTagName = await octokit.repos
-    .getLatestRelease({ owner, repo })
-    .catch(() => 'v0')
-    .then((result) => (result.data ? result.data.tag_name : 'v0'))
+  const {
+    data: { tag_name: lastTagName },
+  } = await octokit.repos.getLatestRelease({ owner, repo }).catch(() => ({ data: { tag_name: 'v0' } }))
   const tagName = `v${Number(lastTagName.substr(1)) + 1}`
   const ref = 'heads/master'
-  const message = `Release ${tagName} [skip release]`
+  const message = `Release ${tagName}`
   const bundleFile = `${bundleName}-bundle.zip`
   const bundleContent = fs.readFileSync(path.join(dest, bundleFile), 'utf-8')
   const readmeContent = fs.readFileSync('README.adoc', 'utf-8').replace(/^(:current-release: ).+$/m, `$1${tagName}`)
