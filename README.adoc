@@ -1,4 +1,4 @@
-= Couchbase Documentation Site UI
+= Couchbase Documentation Site UI Prototype
 // Settings:
 :experimental:
 :hide-uri-scheme:
@@ -6,6 +6,7 @@
 :current-release: v0
 // Project URIs:
 :uri-project: https://github.com/couchbase/docs-ui
+:uri-preview: https://cb-docs-ui.netlify.com
 // External URIs:
 :uri-antora: https://antora.org
 :uri-git: https://git-scm.com
@@ -17,11 +18,12 @@
 :uri-yarn: https://yarnpkg.com
 :uri-couchbase: https://couchbase.com
 
-This project contains the UI for the Couchbase documentation review site.
+Currently in prototype, this project will be used to generate the UI for the next version of the Couchbase documentation site.
+You can find a preview of this UI online at {uri-preview}.
 
 == Use the UI
 
-To use this UI in an Antora-generated site, add the following configuration to your playbook:
+To use this UI with Antora, add the following configuration to your playbook file:
 
 [source,yaml,subs=attributes+]
 ----
@@ -32,7 +34,7 @@ ui:
 
 Read on to learn how to build the UI from source.
 
-== Quickstart
+== Development Quickstart
 
 This section offers a basic tutorial for learning how to preview the UI and bundle it for use with Antora.
 
