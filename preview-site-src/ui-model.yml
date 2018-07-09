@@ -1,4 +1,4 @@
-antoraVersion: '1.0.0'
+antoraVersion: '1.0.1'
 site:
   url: http://localhost:5252
   title: Couchbase Developer
