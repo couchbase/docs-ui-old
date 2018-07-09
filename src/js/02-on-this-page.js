@@ -3,7 +3,7 @@
 
   var headings = find('.doc h2[id]', document)
 
-  if (headings.length) {
+  if (headings.length > 1) {
     var list = document.createElement('ol')
     headings.forEach(function (heading) {
       var listItem = document.createElement('li')
