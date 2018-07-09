@@ -259,14 +259,13 @@
 }
 
 .doc .imageblock .title {
-  /* color: #4a4a4a; */
   color: #191919;
   font-style: italic;
   margin-top: 0.5rem;
 }
 
 .doc .imageblock img,
-.doc .paragraph .image img {
+.doc span.image img {
   height: auto;
   max-width: 100%;
 }
