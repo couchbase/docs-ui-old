@@ -284,13 +284,18 @@
 }
 */
 
-#preamble .abstract blockquote {
-  background-color: #f0f0f0;
-  border-left: 5px solid #ddd;
-  color: #4a4a4a;
-  font-size: 0.9em;
-  margin: 0;
-  padding: 0.75em 1em;
+.quoteblock.abstract blockquote {
+  display: table;
+  color: #555;
+  font-size: 0.95em;
+  margin: 1rem 0 1.5625rem 0;
+  text-align: justify;
+}
+
+.quoteblock.abstract blockquote::before {
+  content: "Abstract: ";
+  color: #707070;
+  font-weight: var(--weight-bold);
 }
 
 .doc table.tableblock .paragraph {
