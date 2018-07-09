@@ -422,11 +422,11 @@
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  background-color: #f0f0f0;
-  border-left: 3px solid var(--color-link);
+  background-color: #f5f2f0;
+  outline: 1px solid #ccc;
   display: block;
   overflow-x: auto;
-  padding: 0.5rem 0 0.5rem 1.125rem;
+  padding: 0.625rem 0.5rem;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
