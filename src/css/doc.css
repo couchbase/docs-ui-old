@@ -231,13 +231,13 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   padding: 0 0.5rem;
-  height: 1.25rem;
-  line-height: 1;
+  height: 1.5rem;
+  line-height: 1.85;
   font-weight: var(--weight-bold);
   text-transform: uppercase;
-  border-radius: 0.45rem;
+  border-radius: 0.5em;
   color: #fff;
   transform: translate(-0.5rem, -50%);
 }
@@ -518,7 +518,7 @@
 }
 
 .doc .colist {
-  font-size: 0.95rem;
+  font-size: 0.97rem;
 }
 
 .doc .colist > table tr > td:first-of-type {
