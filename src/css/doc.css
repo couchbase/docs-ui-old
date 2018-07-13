@@ -170,6 +170,15 @@
   border-bottom: 1px solid #ddd;
 }
 
+p.tableblock + p.tableblock {
+  margin-top: 1rem;
+}
+
+.doc th.tableblock > div > .paragraph:first-child,
+.doc td.tableblock > div > .paragraph:first-child {
+  margin-top: 0;
+}
+
 .doc .halign-left {
   text-align: left;
 }
@@ -192,10 +201,6 @@
 
 .doc .valign-middle {
   vertical-align: middle;
-}
-
-.doc .tableblock p {
-  font-size: inherit;
 }
 
 .doc .admonitionblock {
@@ -318,10 +323,6 @@
   content: "Abstract: ";
   color: #707070;
   font-weight: var(--weight-bold);
-}
-
-.doc table.tableblock .paragraph:first-child {
-  margin-top: 0;
 }
 
 .doc ul {
