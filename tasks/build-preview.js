@@ -1,5 +1,6 @@
 'use strict'
 
+const asciidoctor = require('asciidoctor.js')()
 const fs = require('fs')
 const handlebars = require('handlebars')
 const map = require('map-stream')
@@ -8,6 +9,12 @@ const { promisify } = require('util')
 const requireFromString = require('require-from-string')
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
+const ASCIIDOC_ATTRIBUTES = {
+  'experimental': '',
+  'icons': 'font',
+  'sectanchors': '',
+  'source-highlighter': 'highlight.js',
+}
 
 module.exports = async (src, dest, siteSrc, siteDest, sink) => {
   const [uiModel, layouts] = await Promise.all([
@@ -18,7 +25,7 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
   ])
 
   const stream = vfs
-    .src('**/*.html', { base: siteSrc, cwd: siteSrc })
+    .src('**/*.adoc', { base: siteSrc, cwd: siteSrc })
     .pipe(
       map((file, next) => {
         const compiledLayout = layouts[file.stem === '404' ? '404.hbs' : 'default.hbs']
@@ -27,7 +34,10 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
         uiModel.siteRootPath = siteRootPath
         uiModel.siteRootUrl = path.join(siteRootPath, 'index.html')
         uiModel.uiRootPath = path.join(siteRootPath, '_')
-        uiModel.page.contents = file.contents.toString().trim()
+        const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+        uiModel.page.title = file.stem === '404' ? 'Page Not Found' : doc.getDocumentTitle()
+        uiModel.page.contents = doc.convert()
+        file.extname = '.html'
         file.contents = Buffer.from(compiledLayout(uiModel))
         next(null, file)
       })
