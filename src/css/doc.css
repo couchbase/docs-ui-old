@@ -98,6 +98,7 @@
 }
 
 .doc code {
+  font-size: 0.875em;
   color: #555;
 }
 
@@ -105,6 +106,10 @@
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
+}
+
+.doc pre code {
+  font-size: inherit;
 }
 
 .doc .paragraph,
