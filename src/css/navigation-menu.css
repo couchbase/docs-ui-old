@@ -46,6 +46,7 @@ select.page-versions {
   display: block;
 }
 
+.nav-item[data-depth="0"] > .nav-line > .nav-link,
 .nav-item[data-depth="0"] > .nav-line > .nav-text {
   text-transform: uppercase;
   font-weight: var(--weight-bold);
