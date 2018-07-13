@@ -433,7 +433,7 @@ p.tableblock + p.tableblock {
   background-color: #f5f2f0;
   outline: 1px solid #ccc;
   display: block;
-  overflow-x: auto;
+  white-space: pre-wrap;
   padding: 0.625rem 0.5rem;
 }
 
