@@ -305,14 +305,6 @@
   hyphens: auto;
 }
 
-/*
-.doc .ulist .paragraph,
-.doc .olist .paragraph {
-  margin: 0;
-  padding: 0;
-}
-*/
-
 .quoteblock.abstract blockquote {
   display: table;
   color: #555;
@@ -327,15 +319,8 @@
   font-weight: var(--weight-bold);
 }
 
-.doc table.tableblock .paragraph {
-  margin: 0;
-  padding: 0;
-}
-
-.doc table.tableblock .admonitionblock,
-.doc .ulist .admonitionblock,
-.doc .olist .admonitionblock {
-  padding: 0;
+.doc table.tableblock .paragraph:first-child {
+  margin-top: 0;
 }
 
 .doc ul {
