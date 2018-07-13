@@ -42,20 +42,23 @@ site:
       version: '2.0'
     latestVersion: *latest_version_123
 page:
-  title: Why Couchbase?
-  url: /server/5.5/introduction/intro.html
+  title: &page_title Monitoring Statistics
+  url: &page_url /server/5.5/index.html
   component: *component
   componentVersion: *component_version
   version: '5.5'
   module: ROOT
   home: false
-  editUrl: https://github.com/cb-docs-review-space/couchbase-server-docs/blob/v5.5/modules/introduction/pages/intro.adoc
+  editUrl: https://github.com/opendevise/couchbase-docs-ui/blob/new-ui/preview-site-src/index.adoc
   breadcrumbs:
-  - content: Introduction
-    url: '#'
-    urlType: fragment
-  - content: Why Couchbase?
-    url: /server/5.5/introduction/intro.html
+  - content: Couchbase Server
+    url: *page_url
+    urlType: internal
+  - content: Monitoring
+    url: *page_url
+    urlType: internal
+  - content: *page_title
+    url: *page_url
     urlType: internal
   versions:
   - version: '5.5'
@@ -71,8 +74,8 @@ page:
   - content: Introduction
     items:
     - content: Why Couchbase?
-      url: /server/5.5/introduction/intro.html
-      urlType: internal
+      url: '#'
+      urlType: fragment
     - content: What's New?
       url: '#'
       urlType: fragment
@@ -92,3 +95,8 @@ page:
     - content: Users and Security
       url: '#'
       urlType: fragment
+  - content: Managing Clusters
+    items:
+    - content: *page_title
+      url: *page_url
+      urlType: internal
