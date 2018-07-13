@@ -113,6 +113,7 @@
 }
 
 .doc pre code {
+  color: inherit;
   font-size: inherit;
 }
 
@@ -424,10 +425,6 @@
 .doc .tableblock pre,
 .doc .listingblock.wrap pre {
   white-space: pre-wrap;
-}
-
-.doc pre code {
-  color: inherit;
 }
 
 .doc pre:not(.highlight),
