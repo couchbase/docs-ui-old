@@ -97,6 +97,10 @@
   font-style: normal;
 }
 
+.doc .underline {
+  text-decoration: underline;
+}
+
 .doc code {
   font-size: 0.875em;
   color: #555;
