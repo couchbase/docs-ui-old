@@ -204,7 +204,7 @@
 
 .doc .admonitionblock p,
 .doc .admonitionblock td.content {
-  font-size: 0.95rem;
+  font-size: 0.97rem;
 }
 
 .doc .admonitionblock td.content > :first-child {
@@ -212,7 +212,7 @@
 }
 
 .doc .admonitionblock pre {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
 }
 
 .doc .admonitionblock > table {
@@ -309,7 +309,7 @@
 .quoteblock.abstract blockquote {
   display: table;
   color: #555;
-  font-size: 0.95em;
+  font-size: 0.95rem;
   margin: 1rem 0 1.5625rem 0;
   text-align: justify;
 }
@@ -500,7 +500,7 @@
 }
 
 .doc .colist {
-  font-size: 0.97rem;
+  font-size: 0.95rem;
 }
 
 .doc .colist > table tr > td:first-of-type {
