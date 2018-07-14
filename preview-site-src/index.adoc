@@ -1,53 +1,34 @@
 = Monitoring Statistics
 
 [abstract]
-From the [.ui]*Data Bucket* menu, information and statistics about buckets and nodes is displayed for the entire Couchbase Server cluster.
+From the *Data Bucket* menu, information and statistics about buckets and nodes is displayed for the entire Couchbase Server cluster.
 The information is aggregated from all the server nodes within the configured cluster for the selected bucket.
 
-From the [.ui]*Couchbase Web Console > Buckets* menu, click the [.ui]*Statistics* link for each bucket.
-Each bucket page shows different graphs and statistics as explained below:
+From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] link for each bucket.
 
-* *Bucket Selection* - The [.ui]*Buckets* selection list lets you select which of the buckets configured on your cluster is to be used as the basis for the graph display.
+Bucket Selection::
+The [.ui]*Buckets* selection list lets you select which of the buckets configured on your cluster is to be used as the basis for the graph display.
 The statistics shown are aggregated over the whole cluster for the selected bucket.
 
-* *Server Selection* - The [.ui]*All Server Nodes* selection option enables you to limit the display to an individual server or entire cluster.
-The individual node selection displays information for the node.
-The all server nodes selection displays information for the entire cluster.
-
-* *Interval Selection* - The [.ui]*Interval* selection at the top of the main graph changes interval display for all graphs displayed on the page.
-For example, selecting [.ui]*Minute* shows information for the last minute, continuously updating.
+Interval Selection::
+The [.ui]*Interval* selection at the top of the main graph changes interval display for all graphs displayed on the page.
 +
 As the selected interval increases, the amount of statistical data displayed will depend on how long your cluster has been running.
-
-* *Statistic Selection* - All of the graphs within the display update simultaneously.
-Clicking on any of the smaller graphs will promote that graph to be displayed as the main graph for the page.
 
 == Individual Bucket Monitoring
 
 Bucket monitoring within the Couchbase Web Console has been updated to show additional detailed information.
-The following statistic groups are available for Couchbase bucket types.
 
-* <<summary_stats,Summary>> - The summary section provides a quick overview of the cluster activity.
-* <<server_stats,Server Resources>> - This section provides information on the server resources across the cluster.
-* <<vbucket_stats,vBucket Resources>> - This section provides detailed information on the vBucket resources across the cluster, including the active, replica and pending operations.
-* <<disk_stats,Disk Queues>> - Disk queues show the activity on the backend disk storage used for persistence within a data bucket.
-The information displayed shows the active, replica and pending activity.
-* <<dcp_stats,DCP Queues>> - This section provides show information about the DCP connections activity for the bucket.
-* <<view_stats,View Stats>> - This section lets you monitor the statistics for each production view configured within the bucket or system.
-* <<index_stats,Index Statistics>> - This section provides statistics about the GSI Indexes.
-Statistics are provided per each individual index.
-* <<query_stats,Query Statistics>> - This section provides statistics about the N1QL query service.
-These statistics are aggregated numbers at the query service level across the cluster, and are not per bucket or per node.
-* <<incoming_xdcr_stats,XDCR Destination>> - The XDCR Destination section show you statistical information about the Cross Datacenter Replication (XDCR), if XDCR has been configured.
-* *Top Keys* - This section shows a list of the top 10 most actively used keys within the selected data bucket.
+<<summary_stats,Summary>>::
+The summary section provides a quick overview of the cluster activity.
 
-For Memcached bucket types, the Memcached statistic summary is provided.
+<<server_stats,Server Resources>>::
+This section provides information on the server resources across the cluster.
 
 [#summary_stats]
 == Bucket Monitoring — Summary Statistics
 
 The summary section is designed to provide a quick overview of the cluster activity.
-Each graph (or selected graph) shows information based on the currently selected bucket.
 
 image::web-console-server-stats-summary.png[]
 
@@ -63,219 +44,26 @@ The following statistics are available:
 | cache miss ratio
 | Ratio of reads per second to this bucket which required a read from disk rather than RAM.
 
-| gets per sec.
-| Number of get operations per second from this bucket.
-
-| sets per sec.
-| Number of set operations per second to this bucket.
-
-| deletes per sec.
-| Number of delete operations per second for this bucket.
-
-| CAS ops per sec.
-| Number of operations with a CAS identification per second for this bucket.
-
-| active docs resident %
-| The percentage of active items cached in RAM in this bucket.
-
-| items
-| Number of unique items (documents) stored in the bucket.
-
-| temp OOM per sec.
-| Number of temporary out of memory conditions per second.
-
-| low water mark
-| Low water mark for this bucket (based on the configured bucket RAM quota).
-
-| high water mark
-| High water mark for this bucket (based on the configured bucket RAM quota).
-
-| memory used
-| The memory used as measured from mem_used.
-
-| disk creates per sec.
-| Number of new items created on disk per second for this bucket.
-
-| disk updates per sec.
-| Number of items updated on disk per second for this bucket.
-
-| disk reads per sec.
-| Number of reads per second from disk for this bucket.
-
-| disk write queue
-| Number of items waiting to be written on disk in this bucket.
-
-| docs data size
-| Size of the stored document data.
-
-| docs total disk size
-| Size of the persisted stored document data on disk.
-
-| doc fragmentation %
-| Document fragmentation of persisted data as stored on disk.
-
-| total disk size
-| Total size of the information for this bucket as stored on disk, including persisted and view index data.
-
-| view data size
-| Size of the view data information.
-
-| views total disk size
-| Size of the view index information as stored on disk.
-
-| views fragmentation %
-| Percentage of fragmentation for a given view index.
-
-| view reads per sec.
-| Number of view reads per second.
-
-| disk update time
-| The time required to update data on disk.
-
-| disk commit time
-| The time required to commit data on disk.
-
-| bg wait time
-| The average background fetch time in microseconds.
-
-| Incoming XDCR ops/sec.
-| The incoming XDCR operations per second for this bucket.
-
-| Intra-replication queue
-| Number of items remaining to be sent to consumer in this bucket.
-
-| N1QL queries/sec
-| Number of N1QL requests processed per second.
-
-| index data size
-| The data size consumed by the index.
-
-| index disk size
-| The total disk sized consumed by the index.
-
-| index fragmentation %
-| The percentage fragmentation of the index.
-
-| index scanned/sec
-| Number of index items scanned by the indexer per second.
-
-| fts bytes indexed/sec
-| Number of full text search bytes indexed per second.
-
-| fts queries/sec
-| Number of full text search queries per second.
-
-| fts disk size
-| The total full text search disk size for this bucket.
-
-| avg active drift/mutation
-| Average drift (in seconds) per mutation on active vBuckets.
-
-| avg replica drift/mutation
-| Average drift (in seconds) per mutation on replica vBuckets.
-
-| active ahead exceptions/sec
-| Total number of ahead exceptions all active vBuckets.
-
-| replica ahead exceptions/sec
-| Total number of ahead exceptions all replica vBuckets.
-
-| creates per second
-| Number of new items created in this bucket per second.
-
-| updates per second
-| Number of existing items updated in this bucket per second.
-
-| XDCR ops per sec
-| Number of XDCR related operations per second for this bucket.
-
-| disk reads per sec
-| Number of reads per second from disk for this bucket.
-
-| disk write queue
-| Size of the disk write queue.
-
-| XDC replication queue
-| Size of the XDCR replication queue.
-
-| memory used
-| Amount of memory used for storing the information in this bucket.
 |===
+
+The `stale=false` view query argument has been enhanced.
+When an application sends a query that has the `stale` parameter set to false, the application receives all recent changes to the documents, including changes that haven't yet been persisted to disk.
+
+[caption="Best practice"]
+TIP: For better scalability and throughput, we recommend that you set the value of the `stale` parameter to `ok`.
+With the stream-based views, data returned when `stale` is set to `ok` is closer to the key-value data, even though it might not include all of it.
 
 [#server_stats]
 == Monitoring Server Resources
 
-The *Server Resources* statistics section displays the resource information on this server including swap usage, free RAM, CPU utilization percentage, connections, port requests, streaming requests, index RAM used, remaining index RAM, and FTS RAM used.
-
-image::web-console-server-stats-serverresource.png[,720]
-
-The displayed statistics are:
-
-[cols="1,3"]
-|===
-| Statistic | Description
-
-| swap usage
-| The amount of swap space in use on this server.
-
-| free RAM
-| The amount of RAM available on this server.
-
-| Max CPU utilization %
-| The percentage of CPU in use across all available cores on this server.
-
-| connections
-| The number connections on this server.
-
-| port requests/sec
-| The rate of HTTP requests on this port.
-
-| streaming requests
-| The number of streaming requests.
-
-| streaming wakeups/sec
-| The number of streaming request wakeups.
-
-| Max index RAM used %
-| The percentage of index RAM in use across all indexes on this server.
-
-| remaining index RAM
-| The amount of index RAM available on this server.
-
-| FTS RAM used
-| The amount of RAM used by FTS on this server.
-|===
+The *Server Resources* statistics section displays the resource information on this server including swap usage, free RAM, CPU utilization percentage,and FTS RAM used.
 
 [#vbucket_stats]
 == Monitoring vBucket Resources
 
-The vBucket statistics provide information for all vBucket types within the cluster across three different states.
-Within the statistic display the table of statistics is organized in four columns, showing the Active, Replica and Pending states for each individual statistic.
-The last column provides the total value for each statistic.
-
-image::web-console-server-stats-vbucket.png[,720]
-
-The *Active* column displays the information for vBuckets within the Active state.
-The *Replica* column displays the statistics for vBuckets within the Replica state (that is currently being replicated).
-The *Pending* columns shows statistics for vBuckets in the Pending state, that is while data is being exchanged during rebalancing.
-
-These states are shared across all the following statistics.
-For example, the graph *new items per sec* within the *Active* state column displays the number of new items per second created within the vBuckets that are in the active state.
-
-The individual statistics, one for each state, shown are:
-
 [cols="1,3"]
 |===
 | Statistic | Description
-
-| vBuckets
-| The number of vBuckets within the specified state.
-
-| items
-| Number of items within the vBucket of the specified state.
-
-| resident %
-| Percentage of items within the vBuckets of the specified state that are resident (in RAM).
 
 | new items per sec.
 a|
@@ -285,58 +73,15 @@ NOTE: The new items per second is not valid for the Pending state.
 
 | ejections per sec.
 | Number of items ejected per second within the vBuckets of the specified state.
-
-| user data in RAM
-| Size of user data within vBuckets of the specified state that are resident in RAM.
-
-| metadata in RAM
-| Size of item metadata within the vBuckets of the specified state that are resident in RAM.
 |===
 
 [#disk_stats]
 == Monitoring Disk Queues
 
 The *Disk Queues* statistics section displays the information for data being placed into the disk queue.
-Disk queues are used within Couchbase Server to store the information written to RAM on disk for persistence.
-Information is displayed for each of the disk queue states, Active, Replica, and Pending.
-
-image::web-console-server-stats-diskqueues.png[,720]
-
-The *Active* column displays the information for the Disk Queues within the Active state.
-The *Replica* column displays the statistics for the Disk Queues within the Replica state (that is currently being replicated).
-The *Pending* columns shows statistics for the disk Queues in the Pending state, that is while data is being exchanged during rebalancing.
-
-These states are shared across all the following statistics.
-For example, the graph *fill rate* within the *Replica* state column displays the number of items being put into the replica disk queue for the selected bucket.
-
-The displayed statistics are:
-
-[cols="1,3"]
-|===
-| Statistic | Description
-
-| items
-| The number of items waiting to be written to disk for this bucket for this state.
-
-| fill rate
-| The number of items per second being added to the disk queue for the corresponding state.
-
-| drain rate
-| The number of items actually written to disk from the disk queue for the corresponding state.
-
-| average age
-| The average age of items (in seconds) within the disk queue for the specified state.
-|===
 
 [#dcp_stats]
 == Monitoring DCP Queues
-
-The DCP queues statistics are designed to show information about the DCP connections activity for the bucket.
-The statistics information is therefore organized as a table with columns showing the statistics for DCP queues used for replication, XDCR, views/indexes, and other.
-
-image::dcp-queue-stats.png[]
-
-The statistics are detailed below:
 
 [#dcp_queues,cols="1,3"]
 |===
@@ -347,43 +92,12 @@ The statistics are detailed below:
 
 | DCP senders
 | Number of replication senders for this bucket.
-
-| items remaining
-| Number of items remaining to be sent to consumer in this bucket.
-
-| drain rate items/sec
-| Number of items per second being sent for a producer for this bucket.
-
-| drain rate bytes/sec
-| Number of bytes per second being sent for replication DCP connections for this bucket.
-
-| backoffs/sec
-| Number of backoffs for replication DCP connections.
 |===
 
 [#view_stats]
 == Monitoring View Statistics
 
 The *View Stats* show information about individual design documents within the selected bucket.
-One block of stats will be shown for each production-level design document.
-
-image::web-console-server-stats-views.png[,520]
-
-The statistics shown are:
-
-[cols="1,3"]
-|===
-| Statistics | Description
-
-| data size
-| Size of the data required for this design document.
-
-| disk size
-| Size of the stored index as stored on disk.
-
-| view reads per sec.
-| Number of read operations per second for this view.
-|===
 
 [#index_stats]
 == Monitoring Index Statistics
@@ -391,119 +105,118 @@ The statistics shown are:
 The INDEX STATS section provides statistics about the GSI Indexes.
 Statistics are provided per each individual index.
 
-image::index-queue-stats.png[]
-
-The statistics in this section are detailed below:
-
-[#index,cols="1,3"]
-|===
-| Statistic | Description
-
-| items scanned/sec
-| Number of index items scanned by the indexer per second.
-
-| disk size
-| Total disk file size consumed by the index.
-
-| data size
-| Actual data size consumed by the index.
-
-| total items remaining
-| Number of documents pending to be indexed.
-
-| drain rate items/sec
-| Number of documents indexed by the indexer per second.
-
-| total indexed items
-| The total number of documents indexed.
-
-| average item size
-| The average size of each index item.
-
-| % fragmentation
-| Percentage fragmentation of the index.
-This indicates the % of disk space consumed by the index, but not utilized for items stored in the index.
-
-| requests/sec
-| Number of requests served by the indexer per second.
-
-| bytes returned/sec
-| Number of bytes per second read by a scan.
-
-| avg scan latency(ns)
-| The average time to serve a scan request in nanoseconds.
-|===
-
 [#memcached_stats]
 == Memcached Buckets
 
 For Memcached buckets, Web Console displays a separate group of statistics:
 
-image::web-console-server-stats-memcached.png[,720]
+* Situation 1
+.. Client 1 queries view with `stale=false`
+.. Client 1 waits until server updates the index
+.. Client 2 queries view with `stale=false` while re-indexing from Client 1 still in progress
+.. Client 2 will wait until existing index process triggered by Client 1 completes.
+Client 2 gets updated index.
+* Situation 2
+.. Client 1 queries view with `stale=false`
+.. Client 1 waits until server updates the index
+.. Client 2 queries view with `stale=ok` while re-indexing from Client 1 in progress
+.. Client 2 will get the existing index
+* Situation 3
+.. Client 1 queries view with `stale=false`
+.. Client 1 waits until server updates the index
+.. Client 2 queries view with `stale=update_after`
+.. If re-indexing from Client 1 not done, Client 2 gets the existing index.
+If re-indexing from Client 1 is done, Client 2 gets this updated index and triggers re-indexing.
 
-The Memcached statistics are:
+Index updates may be stacked if multiple clients request the view be updated before the information is returned ( `stale=false` ).
+For `stale=update_after` queries, there is no stacking, since all updates occur after the query has been accessed.
 
-[cols="1,3"]
-|===
-| Statistic | Description
+=== Sequential accesses
 
-| ops per sec.
-| Total operations per second serviced by this bucket.
+. Client 1 queries view with stale=ok
+. Client 2 queries view with stale=false
+. View gets updated
+. Client 1 queries a second time view with stale=ok
+. Client 1 gets the updated view version
 
-| hit ratio
-| Percentage of get requests served with data from this bucket.
+==== View operations
 
-| RAM used
-| Total amount of RAM used by this bucket.
+All views within Couchbase operate as follows:
 
-| items count
-| Number of items stored in this bucket.
+* Views are updated as the document data is updated in memory.
+** Documents that are stored with an expiry are not automatically removed until the background expiry process removes them from the database.
+This means that expired documents may still exist within the index.
+*** Views are scoped within a design document, with each design document part of a single bucket.
+**** View names must be specified using one or more UTF-8 characters.
+You cannot have a blank view name.
+***** Document IDs that are not UTF-8 encodable are automatically filtered and not included in any view.
+The filtered documents are logged so that they can be identified.
+***** If you have a long view request, use POST instead of GET.
+** Views can only access documents defined within their corresponding bucket.
+You cannot access or aggregate data from multiple buckets within a given view.
+*** Views are created as part of a design document, and each design document exists within the corresponding named bucket.
 
-| evictions per sec.
-| Number of items per second evicted from this bucket.
+=== Automated index updates
 
-| sets per sec.
-| Number of set operations serviced by this bucket.
+If `replicaUpdateMinChanges` is set to 0 (zero), then automatic updates are disabled for replica indexes.
+The trigger level can be configured both globally and for individual design documents for all indexes using the REST API.
 
-| gets per sec.
-| Number of get operations serviced by this bucket.
+NOTE: The `ddocs` allow you to set `updateMinChanges` or `replicaUpdateMinChanges` only via options.
+The `updateInterval` can only be set for the whole cluster.
 
-| bytes TX per sec
-| Number of bytes per second sent from this bucket.
+To obtain the current view update daemon settings, access a node within the cluster on the administration port using the URL `+http://nodename:8091/settings/viewUpdateDaemon+` :
 
-| bytes RX per sec.
-| Number of bytes per second sent into this bucket.
+----
+GET http://Administrator:Password@nodename:8091/settings/viewUpdateDaemon
+----
 
-| get hits per sec.
-| Number of get operations per second for data that this bucket contains.
+----
+POST http://nodename:8091/settings/viewUpdateDaemon
+updateInterval=10000&updateMinChanges=7000
+----
 
-| delete hits per sec.
-| Number of delete operations per second for data that this bucket contains
+----
+{
+   "_id": "_design/myddoc",
+   "views": {
+      "view1": {
+          "map": "function(doc, meta) { if (doc.value) { emit(doc.value, meta.id);} }"
+      }
+   },
+   "options": {
+       "updateMinChanges": 1000,
+       "replicaUpdateMinChanges": 20000
+   }
+}
+----
 
-| incr hits per sec.
-| Number of increment operations per second for data that this bucket contains.
+You can set this information when creating and updating design documents through the design document REST API.
+To perform this operation using the `curl` tool:
 
-| decr hits per sec.
-| Number of decrement operations per second for data that this bucket contains.
+----
+> curl -X POST -v -d 'updateInterval=7000&updateMinChanges=7000' \
+    'http://Administrator:Password@192.168.0.72:8091/settings/viewUpdateDaemon'
+----
 
-| delete misses per sec.
-| Number of delete operations per second for data that this bucket does not contain.
+Partial-set development views are not automatically rebuilt.
 
-| decr misses per sec.
-| Number of decrement operations per second for data that this bucket does not contain.
+=== Couchbase Kafka Connector 3.2.3 GA (2018-02-20)
 
-| get misses per sec.
-| Number of get operations per second for data that this bucket does not contain.
+Options are "DISABLED", "ENABLED", and "FORCED".
 
-| incr misses per sec.
-| Number of increment operations per second for data that this bucket does not contain.
+Issues resolved in this release:
 
-| CAS hits per sec.
-| Number of CAS operations per second for data that this bucket contains.
+* https://issues.couchbase.com/browse/KAFKAC-89[KAFKAC-89]: [ENHANCEMENT] Enable NOOP for dead connection detection (Patrik Nordebo)
+* https://issues.couchbase.com/browse/KAFKAC-82[KAFKAC-82]: [FEATURE] Implement log redaction for Kafka Connector
+* https://issues.couchbase.com/browse/KAFKAC-90[KAFKAC-90]: [FEATURE] Source: Add config settings to enable compression
 
-| CAS badval per sec.
-| Number of CAS operations per second using an incorrect CAS ID for data that this bucket contains.
+[source,xml]
+----
+<dependency>
+    <groupId>com.couchbase.client</groupId>
+    <artifactId>kafka-connect-couchbase</artifactId>
+    <version>3.2.3</version>
+</dependency>
+----
 
-| CAS misses per sec.
-| Number of CAS operations per second for data that this bucket does not contain.
-|===
+http://packages.couchbase.com/clients/kafka/3.2.3/kafka-connect-couchbase-3.2.3.zip[kafka-connect-couchbase-3.2.3.zip]
