@@ -56,7 +56,7 @@
 }
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
 }
 
 .nav-menu .nav-toggle {
