@@ -17,9 +17,14 @@
   width: inherit;
 }
 
-.nav-menu a.nav-link,
-.nav-menu .nav-text {
+.nav-menu a.nav-link {
   color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-menu a.nav-link:focus,
+.nav-menu a.nav-link:hover {
+  color: var(--color-link);
 }
 
 .nav-menu .nav-list {
@@ -56,6 +61,7 @@
 }
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
+  color: var(--color-text);
   font-weight: var(--weight-medium);
 }
 
