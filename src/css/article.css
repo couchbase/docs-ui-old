@@ -47,13 +47,15 @@
 .doc h4 > a.anchor,
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
-  color: var(--color-text);
+  color: var(--color-brand);
+  font-weight: var(--weight-light);
   position: absolute;
   text-decoration: none;
-  width: 1.5ex;
-  margin-left: -1.25ex;
+  width: 2ex;
+  margin-left: -1.75ex;
   visibility: hidden;
-  font-weight: var(--weight-normal);
+  transform: scale(0.9);
+  text-align: center;
 }
 
 .doc h1 > a.anchor::before,
