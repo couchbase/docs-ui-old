@@ -91,7 +91,7 @@
   function scrollItemIntoView (scrollPosition, parent, el) {
     if (!el) return (parent.scrollTop = scrollPosition)
 
-    var margin = 16
+    var margin = 8
     var overTheTop = el.offsetTop - scrollPosition < 0
     var belowTheBottom = el.offsetTop - scrollPosition + el.offsetHeight > parent.offsetHeight
 
