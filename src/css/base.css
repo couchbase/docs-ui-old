@@ -1,12 +1,20 @@
 :root {
-  --color-text: #252525;
-  --color-link: #ec1e2c;
-  --color-link-focus: #cc2a2e;
+  --color-brand: #ea2328;
+  --color-muted: #666;
+  --color-text: #333;
+  --color-link: #00ace0;
   --color-code: #555;
   --color-border: #eaeaea;
   --color-navbar-bg: #000;
   --color-navbar-text: #fff;
-  --color-navbar-text-focus: #fff;
+  --color-footer-bg: #000;
+  --color-footer-text: #fff;
+  /* --height-navbar: 4rem; */
+  --height-navbar: 4.875rem;
+  --height-navbar-with-gap: calc(1.5rem + var(--height-navbar));
+  --weight-light: 300;
+  --weight-normal: 400;
+  --weight-medium: 500;
   --weight-bold: 700;
 }
 
@@ -23,9 +31,14 @@ body {
 
 html {
   box-sizing: border-box;
-  font-family: "Kievit OT", sans-serif;
-  font-size: 1em;
   text-size-adjust: 100%;
+}
+
+html,
+button,
+input,
+select {
+  font-family: "Gotham", sans-serif;
 }
 
 body {
@@ -39,22 +52,10 @@ strong {
   font-weight: var(--weight-bold);
 }
 
-button,
-input,
-select {
-  font-family: "Kievit OT", sans-serif;
-}
-
 .container {
   margin: 0 auto;
-  max-width: 68rem;
-  padding: 0 0.9rem;
-}
-
-@media screen and (min-width: 769px) {
-  .container {
-    padding: 0;
-  }
+  max-width: 80rem;
+  padding: 0 1.25rem;
 }
 
 a {
@@ -73,4 +74,8 @@ kbd,
 pre {
   font-family: "Roboto Mono", monospace;
   color: var(--color-code);
+}
+
+img {
+  border: 0;
 }

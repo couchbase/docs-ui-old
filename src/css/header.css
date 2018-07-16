@@ -1,27 +1,22 @@
-:root {
-  --navbar-height: 3.425rem;
-}
-
-html.is-clipped--navbar {
-  overflow-y: hidden;
-}
-
 .navbar {
   background-color: var(--color-navbar-bg);
-  border-bottom: 1px solid #919191;
-  color: var(--color-navbar-text);
-  height: var(--navbar-height);
-  word-wrap: break-word;
-  font-size: 0.95rem;
-  padding: 0 0.9rem;
+  height: var(--height-navbar);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  box-shadow: 0 0.5px 0 #fff; /* NOTE adds visual separator from footer */
+  line-height: 1;
 }
 
 .navbar .container {
-  /* extend up to max-width */
-  width: 100%;
-  padding: 0;
+  display: flex;
+  align-items: center;
+  height: inherit;
 }
 
+.navbar,
 .navbar a {
   color: var(--color-navbar-text);
 }
@@ -32,71 +27,51 @@ html.is-clipped--navbar {
 }
 
 .navbar-brand {
-  align-items: center;
   display: flex;
+  align-items: center;
+  flex: 1; /* FIXME this works without this property in antora-ui-default */
 }
 
-.navbar-brand > .navbar-item {
-  padding: 0;
-}
-
-.navbar-brand > .navbar-item:first-child {
+.navbar-brand .navbar-item {
   display: block;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 165px;
+  height: 47px;
 }
 
-.navbar-brand > .navbar-item:not(:first-child)::before {
-  content: "/";
-  color: #ccced0;
-  padding: 0 0.5rem;
+.navbar-brand img {
+  height: 100%;
+  width: 100%;
 }
 
 .navbar-burger {
-  color: var(--color-navbar-text);
+  width: 30px;
+  height: 19px;
+  cursor: pointer;
   background: none;
   border: none;
   outline: none;
-  cursor: pointer;
-  display: block;
-  height: var(--navbar-height);
   position: relative;
-  width: 2.75rem;
   margin-left: auto;
   padding: 0;
 }
 
-.navbar-burger::-moz-focus-inner {
-  border: none;
-}
-
 .navbar-burger span {
-  background-color: var(--color-navbar-text);
   display: block;
-  height: 1px;
-  left: 50%;
-  margin-left: -7px;
+  width: inherit;
+  height: 4px;
+  background: var(--color-navbar-text);
+  margin-bottom: 3px;
+  transition: all 0.3s ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+
+.navbar-burger.is-active span {
   position: absolute;
-  top: 50%;
-  width: 15px;
-}
-
-.navbar-burger span:nth-child(1) {
-  margin-top: -6px;
-}
-
-.navbar-burger span:nth-child(2) {
-  margin-top: -1px;
-}
-
-.navbar-burger span:nth-child(3) {
-  margin-top: 4px;
 }
 
 .navbar-burger.is-active span:nth-child(1) {
-  margin-left: -5px;
-  transform: rotate(45deg);
-  transform-origin: left top;
+  top: 8px;
+  transform: rotate(135deg);
 }
 
 .navbar-burger.is-active span:nth-child(2) {
@@ -104,76 +79,270 @@ html.is-clipped--navbar {
 }
 
 .navbar-burger.is-active span:nth-child(3) {
-  margin-left: -5px;
-  transform: rotate(-45deg);
-  transform-origin: left bottom;
+  top: 8px;
+  transform: rotate(-135deg);
 }
 
 .navbar-menu {
   display: none;
+  flex-grow: 1;
 }
 
-.navbar-item,
-.navbar-link {
-  color: var(--color-text);
+.navbar-start {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  font-size: 1.0625rem;
+}
+
+.navbar-start > a.navbar-item,
+.navbar-start > .navbar-item > .navbar-link {
   display: block;
-  padding: 0 0.625rem;
+  padding: 0.75rem 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: -0.425px;
   position: relative;
 }
 
-.navbar-item {
-  flex: none;
+.navbar-start > a.navbar-item:hover,
+.navbar-start > .navbar-item:hover > .navbar-link {
+  color: var(--color-brand);
 }
 
-.navbar-item.has-dropdown {
-  padding: 0;
+a.navbar-item.has-dropdown::after,
+.navbar-item.has-dropdown > .navbar-link::after {
+  position: absolute;
+  background: url(../img/caret-down.svg) no-repeat 50% 50%;
+  width: 0.875rem;
+  height: 0.625rem;
+  height: 1rem;
+  margin-left: 0.25rem;
 }
 
-.navbar-item .icon {
-  width: 1.1rem;
-  height: 1.1rem;
+.navbar-dropdown {
+  visibility: hidden;
+  position: absolute;
+  margin-left: 1.25rem; /* FIXME can we get rid of this? */
+  box-shadow: -5px 6px 10px rgba(25, 24, 24, 0.6);
+  opacity: 0;
+}
+
+.navbar-dropdown a {
+  position: relative;
+}
+
+.navbar-dropdown a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--color-navbar-text);
+  transform: scale3d(0, 0.9999, 0.9999);
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.navbar-dropdown a:focus::after,
+.navbar-dropdown a:hover::after {
+  transform: scale3d(1, 0.9999, 0.9999);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.navbar-dropdown.explore .title {
+  font-weight: var(--weight-bold);
+  padding: 1rem 1.25rem 0.75rem;
+  background-color: #151514;
+}
+
+.navbar-dropdown.explore .links {
+  display: flex;
+}
+
+.navbar-dropdown ul {
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  background: #333 linear-gradient(to bottom, #333 0%, #201a19 100%);
+}
+
+.navbar-dropdown ul + ul {
+  border-left: 3px solid #151514;
+}
+
+.navbar-dropdown li {
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+}
+
+.navbar-dropdown.versions li {
+  padding-right: 1.25rem;
+}
+
+.navbar-link .version {
+  text-transform: none;
+}
+
+.navbar-link .version::before {
+  content: "(";
+}
+
+.navbar-link .version::after {
+  content: ")";
+}
+
+.navbar-dropdown li:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.navbar-dropdown li.heading {
+  font-weight: var(--weight-bold);
+}
+
+.navbar-start .navbar-item.search {
+  flex-grow: 1;
+  justify-content: flex-end;
+  display: flex;
+  padding-right: 1.25rem;
+}
+
+.navbar-menu:not(.is-active) .reveal-search-input > .navbar-item:not(.search) {
+  display: none;
+}
+
+.navbar-start input.query {
+  flex-grow: 1;
+  background-color: var(--color-navbar-bg);
+  color: inherit;
+  padding: 0.5rem 0.25rem;
+  font-size: 1rem;
+  font-weight: var(--weight-light);
+  border: none;
+}
+
+.navbar-start input.query::placeholder {
+  color: inherit;
+  padding-left: 0.125rem;
+}
+
+.navbar-start input.query:focus {
+  outline-style: none;
+}
+
+.reveal-search-input .algolia-autocomplete {
+  flex-grow: 1;
+  display: flex !important;
+  align-items: center;
+  border-bottom: 1px solid var(--color-navbar-text);
+}
+
+.reveal-search-input .algolia-autocomplete::before {
+  content: '';
+  background: url(../img/search.svg) 50% 50% no-repeat;
+  background-size: 100%;
+  border: none;
+  height: 1rem;
+  width: 1rem;
+}
+
+.algolia-autocomplete .ds-dropdown-menu {
+  margin-top: 0.75rem !important;
+}
+
+.navbar-start:not(.reveal-search-input) input.query {
+  display: none;
+}
+
+.navbar-start button.search {
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navbar-start button.search:focus {
+  outline-style: none;
+}
+
+.navbar-start button.search::before {
+  content: '';
+  background: url(../img/search.svg) 50% 50% no-repeat;
+  background-size: 100%;
+  border: none;
+  height: 1.25rem;
+  width: 1.25rem;
+}
+
+.navbar-start button.search span {
+  color: var(--color-navbar-text);
+  padding-left: 0.5rem;
+}
+
+.reveal-search-input button.search::before {
+  background: url(../img/search-close.svg) 50% 50% no-repeat;
+}
+
+.navbar .red-btn {
+  border: 2px solid var(--color-brand);
+  background-color: var(--color-brand);
+  color: inherit;
+  font-weight: var(--weight-bold);
+  font-size: 1.125rem;
+  cursor: pointer;
+  padding: 0 1.75rem;
+  height: 3.25rem;
+  display: inline-flex;
+  align-items: center;
+  letter-spacing: -0.025em;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.navbar .red-btn:focus,
+.navbar .red-btn:hover {
+  background-color: var(--color-navbar-bg);
+  color: var(--color-navbar-text);
+}
+
+/* mobile menu */
+
+html.is-clipped--navbar {
+  overflow-y: hidden;
+}
+
+.navbar-menu.is-active {
+  display: block;
+  background-color: var(--color-navbar-bg);
+  position: absolute;
+  top: var(--height-navbar);
+  left: 0;
+  right: 0;
+  padding: 1.25rem 0;
+  min-height: 100vh;
+}
+
+.navbar-menu.is-active .navbar-start {
   display: block;
 }
 
-.navbar-dropdown .navbar-item {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+.navbar-menu.is-active .navbar-item.search { /* FIXME quick hacks to get something working */
+  justify-content: center;
+  padding-left: 1.25rem;
+  height: 2.5rem;
 }
 
-.navbar-divider {
-  background-color: #e1e1e1;
-  border: none;
-  height: 1px;
-  margin: 0.25rem 0;
-}
-
-@media screen and (max-width: 1023px) {
-  .navbar-brand .navbar-item {
-    align-items: center;
-    display: flex;
-  }
-
-  .navbar-menu {
-    background-color: #fff;
-    padding: 0.5rem 0;
-  }
-
-  .navbar-menu.is-active {
-    display: block;
-    box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-    max-height: calc(100vh - var(--navbar-height));
-    overflow-y: auto;
-  }
+.navbar-menu.is-active .navbar-end {
+  text-align: center;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 1024px) {
-  .navbar,
-  .navbar .container,
-  .navbar-menu,
-  .navbar-start,
-  .navbar-end {
-    align-items: stretch;
-    display: flex;
+  .navbar-brand {
+    flex: none;
+    margin-right: 1.25rem;
   }
 
   .navbar-burger {
@@ -181,185 +350,17 @@ html.is-clipped--navbar {
   }
 
   .navbar-menu {
-    flex-grow: 1;
-  }
-
-  .navbar-item,
-  .navbar-link {
-    align-items: center;
     display: flex;
   }
 
-  .navbar-item.has-dropdown {
-    align-items: stretch;
-  }
-
-  .navbar-item.is-hoverable:hover .navbar-dropdown {
-    display: block;
-  }
-
-  .navbar-item.is-hoverable > .navbar-link::after {
-    border: 0 solid #ee2528;
-    border-width: 0 0 1px 1px;
+  a.navbar-item.has-dropdown::after,
+  .navbar-item.has-dropdown > .navbar-link::after {
     content: "";
-    display: none;
-    width: 0.375em;
-    height: 0.375em;
-    position: absolute;
-    top: 50%;
-    right: -1em;
-    margin-top: -0.375em;
-    pointer-events: none;
-    transform: rotate(-45deg);
   }
 
-  .navbar-brand .navbar-item.is-hoverable > .navbar-link {
-    /* QUESTION should this apply to all? */
-    padding: 0;
+  .navbar-item.has-dropdown:hover .navbar-dropdown {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.35s 0.2s;
   }
-
-  .navbar-item.is-hoverable:hover > .navbar-link::after {
-    display: block;
-  }
-
-  .navbar-brand {
-    margin-right: 5rem;
-  }
-
-  .navbar-start {
-    justify-content: flex-start;
-    margin-right: auto;
-    flex-grow: 1;
-  }
-
-  .navbar-end {
-    justify-content: flex-end;
-    margin-left: auto;
-  }
-
-  .navbar-dropdown {
-    background-color: #1b1a19;
-    box-shadow: 3px 5px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 0.1875rem;
-    /*
-    border-radius: 0 0.1875rem 0.1875rem 0.1875rem;
-    */
-    display: none;
-    top: 100%;
-    left: 0;
-    padding: 1rem;
-    min-width: 14rem;
-    position: absolute;
-  }
-
-  .navbar-brand .navbar-dropdown {
-    left: 1rem;
-  }
-
-  .navbar-dropdown .navbar-item {
-    padding: 0.25rem;
-    white-space: nowrap;
-  }
-
-  .navbar-dropdown.is-right {
-    left: auto;
-    right: 0;
-  }
-
-  /*
-  .navbar-item.has-dropdown:hover,
-  .navbar-item.has-dropdown:hover .navbar-link {
-    background-color: #1b1a19;
-  }
-  */
-
-  .navbar-dropdown a.navbar-item:hover {
-    color: var(--color-link);
-  }
-}
-
-.navbar-start .navbar-item.search {
-  flex-grow: 1;
-  justify-content: flex-end;
-}
-
-.navbar-start input.query {
-  height: 2.4rem;
-  flex-grow: 1;
-  background-color: #f2f2f2;
-  padding: 1px 1em;
-  border: none;
-  font-size: 0.9rem;
-}
-
-.navbar-start input.query:focus {
-  border: 0 solid var(--color-link);
-  border-width: 1px 0 1px 1px;
-  padding: 0 1em;
-  outline-style: none;
-}
-
-.navbar-start:not(.reveal-search-input) input.query {
-  display: none;
-}
-
-.algolia-autocomplete {
-  flex-grow: 1;
-  display: flex !important;
-}
-
-.algolia-autocomplete.algolia-autocomplete-right .ds-dropdown-menu {
-  width: 100%;
-  max-width: none;
-  left: 0 !important;
-  margin-top: 0.5rem;
-}
-
-.navbar-start button.search {
-  background: #e6e6e6 url(../img/search.svg) 50% 50% no-repeat;
-  background-size: 50%;
-  border: none;
-  height: 2.4rem;
-  width: 2.4rem;
-  cursor: pointer;
-}
-
-.navbar-start button.search span {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-indent: 100%;
-}
-
-.navbar-start.reveal-search-input {
-  margin-left: -3rem;
-}
-
-.navbar-start.reveal-search-input a.navbar-item {
-  display: none;
-}
-
-.navbar-start.reveal-search-input button.search {
-  background-color: #666;
-  background-image: url(../img/close.svg);
-}
-
-.navbar .button {
-  display: inline-flex;
-  align-items: center;
-  background-color: var(--color-link);
-  border-radius: 0.1875rem;
-  font-size: 0.9rem;
-  line-height: 1;
-  color: var(--color-navbar-text);
-  /* padding: 0.75rem 0.9rem; */
-  padding: 0.75rem 1.375rem;
-  white-space: nowrap;
-  text-transform: uppercase;
-  font-weight: var(--weight-bold);
-}
-
-.navbar .button:focus,
-.navbar .button:hover {
-  background-color: var(--color-link-focus);
 }

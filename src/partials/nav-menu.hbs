@@ -1,0 +1,5 @@
+<div class="nav-menu fit"{{#if page.component}} data-component="{{page.component.name}}" data-version="{{page.version}}"{{/if}}>
+{{#if page.navigation}}
+{{> nav-tree navigation=page.navigation}}
+{{/if}}
+</div>

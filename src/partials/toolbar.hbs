@@ -1,3 +1,8 @@
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
+  {{#if page.editUrl}}
+  <div class="edit-this-page">
+    <a href="{{page.editUrl}}">Edit on GitHub</a>
+  </div>
+  {{/if}}
 </div>

@@ -1,17 +1,6 @@
-.main {
-  margin-top: 2rem;
-}
-
-@media screen and (min-width: 768px) {
-  .main-wrapper {
-    display: flex;
-  }
-
-  .main {
-    flex: auto;
-    margin-top: 2.75rem;
-    padding: 0 0.9rem;
-    /* min-width: 0 required for flexbox to constrain overflowing elements */
-    min-width: 0;
+@media screen and (min-width: 769px) {
+  main.article {
+    /* padding: 0 1.5rem; */
+    padding: 0 2.5rem;
   }
 }

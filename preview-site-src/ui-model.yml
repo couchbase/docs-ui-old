@@ -97,24 +97,28 @@ page:
       urlType: fragment
   - content: Managing Clusters
     items:
-    - content: Monitor Using the REST API
+    - content: Monitoring
       url: '#'
       urlType: fragment
-    - content: Monitor Using the cbstats Utility
-      url: '#'
-      urlType: fragment
-    - content: *page_title
-      url: *page_url
-      urlType: internal
-    - content: Monitoring XDCR Timestamp-based Conflict Resolution
-      url: '#'
-      urlType: fragment
-    - content: Monitoring Management
-      url: '#'
-      urlType: fragment
-    - content: Monitoring N1QL Queries
-      url: '#'
-      urlType: fragment
+      items:
+      - content: Monitor Using the REST API
+        url: '#'
+        urlType: fragment
+      - content: Monitor Using the cbstats Utility
+        url: '#'
+        urlType: fragment
+      - content: *page_title
+        url: *page_url
+        urlType: internal
+      - content: Monitoring XDCR Timestamp-based Conflict Resolution
+        url: '#'
+        urlType: fragment
+      - content: Monitoring Management
+        url: '#'
+        urlType: fragment
+      - content: Monitoring N1QL Queries
+        url: '#'
+        urlType: fragment
     - content: Troubleshooting
       url: '#'
       urlType: fragment

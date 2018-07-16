@@ -6,7 +6,9 @@
   searchButton.addEventListener('click', function (e) {
     var navbarStart = document.querySelector('.navbar-start')
     navbarStart.classList.toggle('reveal-search-input')
-    navbarStart.querySelector('input.query').focus()
+    var searchQuery = navbarStart.querySelector('.query')
+    searchQuery.value = ''
+    searchQuery.focus()
     e.preventDefault()
   })
 })()
