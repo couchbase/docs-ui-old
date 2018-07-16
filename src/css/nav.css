@@ -1,0 +1,90 @@
+.nav-menu {
+  background-color: #f5f5f5;
+  position: sticky;
+  top: var(--height-navbar-with-gap);
+  /* height: calc(100vh - var(--height-navbar-with-gap)); */
+  height: calc(100vh - 1.5rem - var(--height-navbar-with-gap));
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 0.875rem;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.nav-menu.fit,
+.nav-menu.fixed {
+  position: fixed;
+  width: inherit;
+}
+
+.nav-menu a.nav-link,
+.nav-menu .nav-text {
+  color: var(--color-text);
+}
+
+.nav-menu .nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu > .nav-list {
+  padding: 1rem 0.75rem;
+}
+
+.nav-menu .nav-item:not(.is-active) > .nav-list {
+  display: none;
+}
+
+.nav-menu .nav-item[data-depth="0"] {
+  margin-left: 0.75em;
+}
+
+.nav-menu .nav-item[data-depth="0"] + .nav-item {
+  margin-top: 1.25em;
+}
+
+.nav-menu .nav-item[data-depth="0"] .nav-item {
+  /* margin-top: 0.375rem; */
+  /* margin-top: 0.5rem; */
+  margin-top: 0.5em;
+  margin-left: 0.75em;
+}
+
+.nav-item[data-depth="0"] > .nav-line {
+  text-transform: uppercase;
+}
+
+.nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
+  font-weight: var(--weight-bold);
+}
+
+.nav-menu .nav-toggle {
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+  position: absolute;
+  margin-left: -0.75em;
+  outline: none;
+  width: 1ex;
+  text-align: center;
+}
+
+.nav-menu .nav-toggle::before {
+  content: "+";
+}
+
+.nav-menu .nav-item.is-active > .nav-line > .nav-toggle::before {
+  content: "-";
+}
+
+.nav-menu::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: #c0c0c0;
+}

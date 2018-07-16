@@ -22,6 +22,7 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
     compileLayouts(src),
     registerPartials(src),
     registerHelpers(src),
+    copyImages(siteSrc, siteDest),
   ])
 
   const stream = vfs
@@ -96,5 +97,15 @@ function compileLayouts (src) {
       )
       .on('error', reject)
       .on('end', () => resolve(layouts))
+  })
+}
+
+function copyImages (src, dest) {
+  return new Promise((resolve, reject) => {
+    vfs
+      .src('**/*.png', { base: src, cwd: src })
+      .pipe(vfs.dest(dest))
+      .on('error', reject)
+      .on('end', resolve)
   })
 }

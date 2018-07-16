@@ -1,0 +1,58 @@
+.toc-menu {
+  border-left: 0.25rem solid var(--color-brand);
+  margin-bottom: 1.5rem;
+}
+
+.toc.sidebar .toc-menu {
+  position: sticky;
+  top: var(--height-navbar-with-gap);
+}
+
+.toc.embedded .toc-menu {
+  margin-top: 1.5rem;
+}
+
+.toc {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.toc .toc-menu h3 {
+  font-size: inherit;
+  font-weight: var(--weight-medium);
+  margin: 0;
+  line-height: inherit;
+}
+
+.toc .toc-menu ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc .toc-menu h3,
+.toc .toc-menu ol {
+  margin-left: 0.75rem;
+}
+
+.toc .toc-menu li {
+  margin: 0.5rem 0 0;
+}
+
+.toc a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--color-link);
+}
+
+.toc a.is-active {
+  font-weight: var(--weight-medium);
+}
+
+.toc a.is-active:focus,
+.toc a.is-active:hover {
+  color: inherit;
+}

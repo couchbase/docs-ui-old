@@ -1,13 +1,5 @@
 .doc {
   padding-bottom: 4rem;
-  color: var(--color-text);
-  font-size: 1.0625rem;
-}
-
-@media screen and (max-width: 1024px) {
-  .doc {
-    margin: 0 auto;
-  }
 }
 
 .doc h1,
@@ -16,7 +8,7 @@
 .doc h4,
 .doc h5,
 .doc h6 {
-  font-weight: 400;
+  font-weight: var(--weight-normal);
   line-height: 1.5;
   margin: 1.0625rem 0 calc(0.625rem - 1rem) 0;
 }
@@ -47,7 +39,6 @@
 
 .doc h4 {
   font-size: 1.25rem;
-  font-weight: var(--weight-bold);
 }
 
 .doc h1 > a.anchor,
@@ -62,7 +53,7 @@
   width: 1.5ex;
   margin-left: -1.25ex;
   visibility: hidden;
-  font-weight: 400;
+  font-weight: var(--weight-normal);
 }
 
 .doc h1 > a.anchor::before,
@@ -83,22 +74,17 @@
   visibility: visible;
 }
 
-.doc a {
-  text-decoration: underline;
-}
-
-.doc a:focus,
-.doc a:hover {
-  color: var(--color-link-focus);
-  text-decoration: none;
-}
-
 .doc i.fa {
   font-style: normal;
 }
 
 .doc .underline {
   text-decoration: underline;
+}
+
+.doc strong,
+.doc b {
+  font-weight: var(--weight-medium);
 }
 
 .doc code {
@@ -163,6 +149,7 @@
 
 .doc table.tableblock th {
   border-bottom: 2.5px solid #ddd;
+  font-weight: var(--weight-medium);
 }
 
 .doc table.tableblock td {
@@ -312,17 +299,21 @@ p.tableblock + p.tableblock {
 }
 
 .quoteblock.abstract blockquote {
-  display: table;
-  color: #555;
-  font-size: 0.95rem;
+  /* color: var(--color-muted); */
+  font-size: 0.9375rem;
   margin: 1rem 0 1.5625rem 0;
-  text-align: justify;
+  font-weight: var(--weight-light);
+}
+
+.quoteblock.abstract blockquote * {
+  font-weight: inherit;
 }
 
 .quoteblock.abstract blockquote::before {
   content: "Abstract: ";
-  color: #707070;
-  font-weight: var(--weight-bold);
+  /* color: #757575; */
+  color: var(--color-muted);
+  font-weight: var(--weight-medium);
 }
 
 .doc ul {
@@ -422,19 +413,16 @@ p.tableblock + p.tableblock {
   margin-top: 0;
 }
 
-/* NEEDS REVIEW prevent pre in table from causing article to exceed bounds */
-.doc .tableblock pre,
-.doc .listingblock.wrap pre {
-  white-space: pre-wrap;
-}
-
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  background-color: #f5f2f0;
-  outline: 1px solid #ccc;
+  /* background-color: #333; */
+  background-color: #28282f;
+  color: #f8f8f2;
   display: block;
   white-space: pre-wrap;
-  padding: 0.625rem 0.5rem;
+  /* NOTE without word-break=break-word, listingblock causes article to overflow bounds */
+  word-break: break-word;
+  padding: 0.625rem;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
@@ -444,10 +432,10 @@ p.tableblock + p.tableblock {
 
 .doc .listingblock code[data-lang]::before {
   content: attr(data-lang);
-  color: #909090;
+  color: #f8f8f2;
   display: none;
   font-size: 0.75em;
-  font-weight: 400;
+  font-weight: var(--weight-light);
   letter-spacing: 1px;
   line-height: 1;
   text-transform: uppercase;
@@ -461,7 +449,7 @@ p.tableblock + p.tableblock {
 }
 
 .doc .dlist dt {
-  font-weight: 700;
+  font-weight: var(--weight-medium);
   margin-top: 1.5rem;
 }
 
@@ -559,5 +547,5 @@ p.tableblock + p.tableblock {
 
 .doc .menuseq i.caret::before {
   content: ">";
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
 }

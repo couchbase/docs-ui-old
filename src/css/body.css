@@ -1,0 +1,36 @@
+div.body {
+  display: flex;
+  margin-top: var(--height-navbar-with-gap);
+}
+
+main.article {
+  flex: 1;
+}
+
+nav.nav {
+  display: none;
+  flex: 0 0 16rem;
+  width: 16rem; /* width has to be set for fixed position child */
+  order: -1;
+}
+
+@media screen and (min-width: 769px) {
+  nav.nav {
+    display: block;
+  }
+}
+
+aside.toc.sidebar {
+  display: none;
+  flex: 0 0 12rem;
+}
+
+@media screen and (min-width: 1200px) {
+  aside.toc.embedded {
+    display: none;
+  }
+
+  aside.toc.sidebar {
+    display: block;
+  }
+}

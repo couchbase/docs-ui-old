@@ -74,7 +74,9 @@ module.exports = (src, dest) => {
 
     vfs.src('font/*.woff*(2)', opts),
 
-    vfs.src('img/**/*.{jpg,ico,png,svg}', opts).pipe(imagemin()),
+    vfs.src('img/**/*.{jpg,ico,png,svg}', opts).pipe(imagemin([
+      imagemin.svgo({ plugins: [{ removeViewBox: false }] }),
+    ])),
 
     vfs.src('*.{html,yml}', opts),
 

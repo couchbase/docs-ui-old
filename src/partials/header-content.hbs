@@ -1,45 +1,77 @@
 <header class="header" role="banner">
-  <nav class="navbar">
+  <nav class="navbar" id="topbar">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="{{or site.url (or siteRootUrl siteRootPath)}}"><img src="{{uiRootPath}}/img/logo.svg" alt="{{site.title}}"></a>
-        <a class="navbar-item" href="https://developer.couchbase.com">Developer</a>
-        {{#if page.component}}
-        {{#if (many site.components)}}
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link" href="{{page.component.url}}">{{{drop-prefix page.component.title 'Couchbase '}}}</a>
-          <div class="navbar-dropdown">
-            {{#each site.components}}
-            <a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{{./title}}}</a>
-            {{/each}}
-          </div>
-        </div>
-        {{else}}
-        <a class="navbar-item" href="{{relativize page.url page.component.url}}">{{{drop-prefix page.component.title 'Couchbase '}}}</a>
-        {{/if}}
-        {{/if}}
-        <button class="navbar-burger" data-target="topbar-nav">
+        <a class="navbar-item" href="https://www.couchbase.com"><img src="{{uiRootPath}}/img/logo.svg" alt="Couchbase"></a>
+        <button class="navbar-burger" data-target="topbar-menu">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
-      <div id="topbar-nav" class="navbar-menu">
+      <div id="topbar-menu" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="https://developer.couchbase.com/">Docs</a>
-          <a class="navbar-item" href="http://training.couchbase.com/">Training</a>
-          <a class="navbar-item" href="https://forums.couchbase.com/">Forums</a>
-          <a class="navbar-item" href="https://developer.couchbase.com/guides-and-references">Site Map</a>
+          <div class="navbar-item has-dropdown">
+            <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Docs</a>
+            <div class="navbar-dropdown explore">
+              <div class="title">Couchbase Documentation Overview</div>
+              <div class="links">
+                <ul class="links-server">
+                  <li class="heading"><a href="{{siteRootPath}}/server/5.5/introduction/intro.html">Couchbase Server</a></li>
+                  <li><a href="{{siteRootPath}}/server/5.5/n1ql/n1ql-language-reference/index.html">N1QL</a></li>
+                  <li><a href="{{siteRootPath}}/server/5.5/fts/full-text-intro.html">Full Text Search</a></li>
+                  <li><a href="{{siteRootPath}}/server/5.5/eventing/eventing-overview.html">Eventing</a></li>
+                  <li><a href="{{siteRootPath}}/operator/0.9/overview.html">Autonomous Operator</a></li>
+                </ul>
+                <ul class="links-mobile">
+                  <li class="heading">Couchbase Mobile</li>
+                  <li><a href="#">Lite</a></li>
+                  <li><a href="#">Sync Gateway</a></li>
+                </ul>
+                <ul class="links-sdks">
+                  <li class="heading">SDKs</li>
+                  <li><a href="{{siteRootPath}}/c-sdk/2.8/common/development-intro.html">C</a></li>
+                  <li><a href="{{siteRootPath}}/dotnet-sdk/2.5/common/development-intro.html">.NET</a></li>
+                  <li><a href="{{siteRootPath}}/go-sdk/1.2/common/development-intro.html">Go</a></li>
+                  <li><a href="{{siteRootPath}}/java-sdk/2.5/common/development-intro.html">Java</a></li>
+                  <li><a href="{{siteRootPath}}/nodejs-sdk/2.4/common/development-intro.html">Node.js</a></li>
+                  <li><a href="{{siteRootPath}}/python-sdk/2.2/common/development-intro.html">Python</a></li>
+                  <li><a href="{{siteRootPath}}/php-sdk/2.4/common/development-intro.html">PHP</a></li>
+                </ul>
+                <ul class="links-connectors">
+                  <li class="heading">Connectors</li>
+                  <li><a href="#">Elasticsearch</a></li>
+                  <li><a href="#">Kafka</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {{#if page.component}}
+          {{#if page.versions}}
+          <div class="navbar-item has-dropdown">
+            <a class="navbar-link" href="{{page.component.url}}">{{{page.component.title}}} <span class="version">{{page.version}}</span></a>
+            <div class="navbar-dropdown versions">
+              <ul>
+                {{#each page.versions}}
+                <li><a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{{@root.page.component.title}}} {{./version}}</a></li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          {{else}}
+          <a class="navbar-item" href="{{relativize page.url page.component.url}}">{{{page.component.title}}} <span class="version">{{page.version}}</span></a>
+          {{/if}}
+          {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
           <form class="navbar-item search">
-            <input type="text" placeholder="Search" class="query" id="search-query">
+            <input type="text" placeholder="Search Couchbase Docs" class="query" id="search-query">
             <button class="search"><span>Search</span></button>
           </form>
           {{/if}}
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
-            <a class="button" href="https://developer.couchbase.com/downloads#couchbase-server">Download</a>
+            <a class="red-btn" href="https://www.couchbase.com/downloads">Downloads</a>
           </div>
         </div>
       </div>
