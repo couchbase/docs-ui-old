@@ -415,8 +415,7 @@ p.tableblock + p.tableblock {
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  /* background-color: #333; */
-  background-color: #28282f;
+  background-color: #151514;
   color: #f8f8f2;
   display: block;
   white-space: pre-wrap;
