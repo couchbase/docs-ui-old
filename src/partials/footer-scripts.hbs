@@ -1,4 +1,6 @@
 <script src="{{uiRootPath}}/js/site.js"></script>
+<script src="{{uiRootPath}}/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
 {{#if env.ALGOLIA_API_KEY}}
 <!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js -->
 <script src="{{uiRootPath}}/js/vendor/docsearch.min.js"></script>
@@ -9,5 +11,3 @@
   debug: false,
 })</script>
 {{/if}}
-<script src="{{uiRootPath}}/js/vendor/highlight.js"></script>
-<script>hljs.initHighlighting()</script>
