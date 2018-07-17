@@ -3,3 +3,13 @@
     padding: 0 var(--width-main-gutter);
   }
 }
+
+.article-header {
+  display: flex;
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+.article-header .crumbs {
+  flex: 1;
+}
