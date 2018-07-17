@@ -421,6 +421,7 @@ p.tableblock + p.tableblock {
   display: block;
   white-space: pre-wrap;
   /* NOTE without word-break=break-word, listingblock causes article to overflow bounds */
+  /* NOTE can use width: calc(100vw - var(--width-nav) - var(--width-toc) - var(--width-container-gutter)); on main */
   word-break: break-word;
   padding: 0.625rem;
 }
