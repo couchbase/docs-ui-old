@@ -1,13 +1,12 @@
 .crumbs {
-  font-size: 0.8125rem;
-  font-weight: var(--weight-light);
   color: var(--color-muted);
+  font-weight: var(--weight-light);
+  line-height: 1.15;
 }
 
 .crumbs ul {
   display: inline-flex;
   flex-wrap: wrap;
-  line-height: 1.15;
   list-style: none;
   margin: 0;
   padding: 0;
