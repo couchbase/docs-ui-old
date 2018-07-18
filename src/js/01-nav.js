@@ -14,11 +14,7 @@
     })
   })
 
-  if (navMenu.element.classList.contains('fit')) {
-    window.addEventListener('load', fitNavMenuInit)
-  } else if (currentPageItem) {
-    scrollItemIntoView(currentPageItem.querySelector('.nav-link'), navMenu.element)
-  }
+  window.addEventListener('load', fitNavMenuInit)
 
   function expandCurrentPath (navItem) {
     navItem.classList.add('is-active')

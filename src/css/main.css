@@ -1,6 +1,5 @@
 @media screen and (min-width: 769px) {
   main.article {
-    /* padding: 0 1.5rem; */
-    padding: 0 2.5rem;
+    padding: 0 var(--width-main-gutter);
   }
 }

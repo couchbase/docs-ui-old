@@ -5,7 +5,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 2;
+  z-index: var(--z-index-navbar);
   box-shadow: 0 0.5px 0 #fff; /* NOTE adds visual separator from footer */
   line-height: 1;
 }
@@ -240,7 +240,7 @@ a.navbar-item.has-dropdown::after,
 }
 
 .reveal-search-input .algolia-autocomplete::before {
-  content: '';
+  content: "";
   background: url(../img/search.svg) 50% 50% no-repeat;
   background-size: 100%;
   border: none;
@@ -270,7 +270,7 @@ a.navbar-item.has-dropdown::after,
 }
 
 .navbar-start button.search::before {
-  content: '';
+  content: "";
   background: url(../img/search.svg) 50% 50% no-repeat;
   background-size: 100%;
   border: none;

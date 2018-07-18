@@ -3,7 +3,7 @@
   color: var(--color-footer-text);
   overflow: hidden; /* TEMPORARY */
   position: relative;
-  z-index: 1;
+  z-index: var(--z-index-footer);
   padding: 3.75rem 0 3.125rem;
 }
 

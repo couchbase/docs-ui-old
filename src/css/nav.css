@@ -1,20 +1,14 @@
 .nav-menu {
   background-color: #f5f5f5;
-  position: sticky;
-  top: var(--height-navbar-with-gap);
-  /* height: calc(100vh - var(--height-navbar-with-gap)); */
-  height: calc(100vh - 1.5rem - var(--height-navbar-with-gap));
+  position: fixed;
+  top: var(--height-to-body);
+  height: var(--height-nav);
+  width: inherit;
   overflow-x: hidden;
   overflow-y: scroll;
   font-size: 0.875rem;
   line-height: 1.15;
   margin-bottom: 1.5rem;
-}
-
-.nav-menu.fit,
-.nav-menu.fixed {
-  position: fixed;
-  width: inherit;
 }
 
 .nav-menu a.nav-link {
@@ -92,5 +86,5 @@
 }
 
 .nav-menu::-webkit-scrollbar-thumb {
-  background-color: #c0c0c0;
+  background-color: var(--color-border);
 }

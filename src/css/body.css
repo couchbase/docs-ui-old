@@ -1,6 +1,6 @@
 div.body {
   display: flex;
-  margin-top: var(--height-navbar-with-gap);
+  margin-top: var(--height-to-body);
 }
 
 main.article {
@@ -9,20 +9,27 @@ main.article {
 
 nav.nav {
   display: none;
-  flex: 0 0 16rem;
-  width: 16rem; /* width has to be set for fixed position child */
+  flex: 0;
+  width: var(--width-nav);
   order: -1;
-}
-
-@media screen and (min-width: 769px) {
-  nav.nav {
-    display: block;
-  }
 }
 
 aside.toc.sidebar {
   display: none;
-  flex: 0 0 12rem;
+  flex: 0 0 var(--width-toc);
+}
+
+@media screen and (min-width: 769px) {
+  /*
+  div.body {
+    min-height: var(--height-body);
+  }
+  */
+
+  nav.nav {
+    display: block;
+    flex-basis: var(--width-nav);
+  }
 }
 
 @media screen and (min-width: 1200px) {

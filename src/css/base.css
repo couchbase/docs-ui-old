@@ -3,24 +3,31 @@
   --color-muted: #666;
   --color-text: #333;
   --color-link: #00ace0;
-  --color-code: #555;
-  --color-border: #eaeaea;
+  /* --color-code: #000; */
+  --color-code: #eb4971;
+  --color-border: #c1c1c1;
   --color-navbar-bg: #000;
   --color-navbar-text: #fff;
   --color-footer-bg: #000;
   --color-footer-text: #fff;
+  --height-spacer: 1.5rem;
   /* --height-navbar: 4rem; */
   --height-navbar: 4.875rem;
-  --height-navbar-with-gap: calc(1.5rem + var(--height-navbar));
+  --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
+  --height-nav: calc(100vh - var(--height-to-body) - var(--height-spacer));
+  /* --height-body: calc(100vh - var(--height-to-body)); */
+  /* --width-main-gutter: 1.5rem; */
+  --width-main-gutter: 2.5rem;
+  --width-container: 80rem;
+  --width-container-gutter: 1.25rem;
+  --width-nav: 16rem;
+  --width-toc: 12rem;
   --weight-light: 300;
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-bold: 700;
-}
-
-html,
-body {
-  height: 100%;
+  --z-index-navbar: 2;
+  --z-index-footer: 1;
 }
 
 *,
@@ -35,10 +42,8 @@ html {
 }
 
 html,
-button,
-input,
-select {
-  font-family: "Gotham", sans-serif;
+body {
+  height: 100%;
 }
 
 body {
@@ -47,15 +52,22 @@ body {
   margin: 0;
 }
 
+body,
+button,
+input,
+select {
+  font-family: "Gotham", sans-serif;
+}
+
+code,
+kbd,
+pre {
+  font-family: "Roboto Mono", monospace;
+}
+
 b,
 strong {
   font-weight: var(--weight-bold);
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 80rem;
-  padding: 0 1.25rem;
 }
 
 a {
@@ -69,13 +81,8 @@ a:hover {
   outline: none;
 }
 
-code,
-kbd,
-pre {
-  font-family: "Roboto Mono", monospace;
-  color: var(--color-code);
-}
-
-img {
-  border: 0;
+.container {
+  margin: 0 auto;
+  max-width: var(--width-container);
+  padding: 0 var(--width-container-gutter);
 }

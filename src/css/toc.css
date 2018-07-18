@@ -5,7 +5,7 @@
 
 .toc.sidebar .toc-menu {
   position: sticky;
-  top: var(--height-navbar-with-gap);
+  top: var(--height-to-body);
 }
 
 .toc.embedded .toc-menu {

@@ -89,8 +89,7 @@
 
 .doc code {
   font-size: 0.875em;
-  color: #eb4971;
-  /* color: #000; */
+  color: var(--color-code);
 }
 
 .doc pre {
