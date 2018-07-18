@@ -7,7 +7,7 @@
   overflow-x: hidden;
   overflow-y: scroll;
   font-size: 0.875rem;
-  line-height: 1.15;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .nav-menu > .nav-list {
-  padding: 1rem 0.75rem;
+  padding: 1rem 0.5rem 1rem 0.75rem;
 }
 
 .nav-menu .nav-item:not(.is-active) > .nav-list {
@@ -60,16 +60,17 @@
 }
 
 .nav-menu .nav-toggle {
-  color: inherit;
   cursor: pointer;
   border: 0;
   background: none;
   padding: 0;
   position: absolute;
-  margin-left: -0.75em;
+  margin-left: -1.25em;
   outline: none;
-  width: 1ex;
+  width: 1.25em;
   text-align: center;
+  color: var(--color-border);
+  transform: scale(1.2);
 }
 
 .nav-menu .nav-toggle::before {
