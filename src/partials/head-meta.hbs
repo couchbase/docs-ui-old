@@ -1,6 +1,7 @@
     {{#if page.component}}
-    <meta name="product" content="{{page.component.name}}">
-    <meta name="version" content="{{page.version}}">
+    <link rel="schema.dcterms" href="http://purl.org/dc/terms/">
+    <meta name="dcterms.subject" content="{{page.component.name}}">
+    <meta name="dcterms.identifier" content="{{page.version}}">
     {{/if}}
     {{#if (or antoraVersion site.antoraVersion)}}
     <meta name="generator" content="Antora {{or antoraVersion site.antoraVersion}}">
