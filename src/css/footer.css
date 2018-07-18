@@ -201,7 +201,7 @@
   .footer-links .col:nth-child(1) {
     flex-basis: 34%;
   }
-  
+
   .footer-links .col:nth-child(5) {
     flex-basis: 100%;
   }
@@ -233,16 +233,16 @@
   .footer-links .col {
     flex-basis: 17%;
   }
-  
+
   .footer-links .col:nth-child(1) {
     flex-basis: 27%;
     padding: 0 1.25rem;
   }
-  
+
   .footer-links .col:nth-child(2) {
     flex-basis: 16%;
   }
-  
+
   .footer-links .col:nth-child(5) {
     flex-basis: 23%;
   }
