@@ -7,11 +7,18 @@
   var currentPageItem = navMenu.element.querySelector('.is-current-page')
   if (currentPageItem) expandCurrentPath(currentPageItem)
 
-  find('.nav-toggle', navMenu.element).forEach(function (toggleButton) {
-    var navItem = findAncestorWithClass('nav-item', toggleButton, navMenu.element)
-    toggleButton.addEventListener('click', function () {
+  find('.nav-toggle', navMenu.element).forEach(function (toggleBtn) {
+    var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
+    toggleBtn.addEventListener('click', function () {
       navItem.classList.toggle('is-active')
     })
+    var navItemSpan = findNextElement(toggleBtn)
+    if (navItemSpan.classList.contains('nav-text')) {
+      navItemSpan.style.cursor = 'pointer'
+      navItemSpan.addEventListener('click', function () {
+        navItem.classList.toggle('is-active')
+      })
+    }
   })
 
   window.addEventListener('load', fitNavMenuInit)
@@ -72,5 +79,13 @@
         return findAncestorWithClass(className, from, scope)
       }
     }
+  }
+
+  function findNextElement (from) {
+    var el
+    if ((el = from.nextElementSibling)) return el
+    el = from
+    while ((el = el.nextSibling) && el.nodeType !== 1);
+    return el
   }
 })()
