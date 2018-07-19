@@ -17,7 +17,7 @@ const ASCIIDOC_ATTRIBUTES = {
 }
 
 module.exports = async (src, dest, siteSrc, siteDest, sink) => {
-  const [uiModel, layouts] = await Promise.all([
+  const [baseUiModel, layouts] = await Promise.all([
     loadSampleUiModel(siteSrc),
     compileLayouts(src),
     registerPartials(src),
@@ -25,21 +25,30 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
     copyImages(siteSrc, siteDest),
   ])
 
+  baseUiModel.env = process.env
   const stream = vfs
     .src('**/*.adoc', { base: siteSrc, cwd: siteSrc })
     .pipe(
       map((file, next) => {
         const siteRootPath = path.relative(path.dirname(file.path), path.resolve(siteSrc))
-        uiModel.env = process.env
+        const uiModel = Object.assign({}, baseUiModel)
+        uiModel.page = Object.assign({}, uiModel.page)
         uiModel.siteRootPath = siteRootPath
         uiModel.siteRootUrl = path.join(siteRootPath, 'index.html')
         uiModel.uiRootPath = path.join(siteRootPath, '_')
-        const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
-        const layout = file.stem === '404' ? '404' : doc.getAttribute('page-layout', 'default')
-        uiModel.page.title = file.stem === '404' ? 'Page Not Found' : doc.getDocumentTitle()
-        uiModel.page.contents = doc.convert()
+        if (file.stem === '404') {
+          uiModel.page = { layout: '404' }
+        } else {
+          const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+          uiModel.page.layout = doc.getAttribute('page-layout', 'default')
+          uiModel.page.title = doc.getDocumentTitle()
+          uiModel.page.contents = doc.convert()
+          if (file.stem === 'home') {
+            uiModel.page.component = Object.assign({}, uiModel.page.component, { name: 'home' })
+          }
+        }
         file.extname = '.html'
-        file.contents = Buffer.from(layouts[layout](uiModel))
+        file.contents = Buffer.from(layouts[uiModel.page.layout](uiModel))
         next(null, file)
       })
     )
