@@ -1,0 +1,164 @@
+body.home .body {
+  padding: 0 2.5rem;
+}
+
+main.home {
+  padding-bottom: 4rem;
+}
+
+.home p {
+  margin: 0;
+}
+
+.blade ul,
+.tile ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.blade a,
+.tile a {
+  text-decoration: none;
+  position: relative;
+}
+
+.blade a::before,
+.tile a::before {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: currentColor;
+  transform: scale3d(0, 0.9999, 0.9999);
+  transition-property: transform;
+  transition-duration: 0.3s;
+}
+
+.blade a:focus::before,
+.blade a:hover::before,
+.tile a:focus::before,
+.tile a:hover::before {
+  transform: scale3d(1, 0.9999, 0.9999);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
+}
+
+.conceal-title > h2 {
+  display: none;
+}
+
+.blades > .sectionbody {
+  display: flex;
+}
+
+.blade {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+}
+
+.blade + .blade {
+  margin-left: 0.75rem;
+}
+
+.home .blade {
+  color: #fff;
+}
+
+.home .blade:nth-of-type(1) {
+  background-color: #eb4971;
+}
+
+.home .blade:nth-of-type(2) {
+  background-color: #00b9be;
+}
+
+.home .blade:nth-of-type(3) {
+  /* background-color: #b36cdb; */
+  background-color: #00abdf;
+}
+
+.blade h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  padding: 0 33.33% 1rem 0;
+  position: relative;
+}
+
+.blade h3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 2px;
+  bottom: 0;
+  background-color: currentColor;
+}
+
+.blade .paragraph {
+  font-weight: var(--weight-light);
+  margin-top: 1rem;
+  flex: 1;
+}
+
+.blade .ulist {
+  line-height: 1.7;
+  justify-self: flex-end;
+  font-weight: var(--weight-bold);
+  margin: 1.5rem 0 1rem;
+}
+
+.blade a {
+  color: inherit;
+}
+
+.blade a::after {
+  content: "\00a0>";
+  width: 0;
+  display: inline-block;
+}
+
+.home .tiles {
+  padding: 0 10%;
+  font-size: 1.125rem;
+  margin-top: 2.5rem;
+}
+
+.tiles > h2 {
+  text-align: center;
+  font-size: 2rem;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.tiles > h2::after {
+  content: "";
+  background-color: currentColor;
+  width: 25%;
+  height: 1px;
+  display: inline-block;
+  margin: 1rem 0;
+  line-height: 0;
+}
+
+.tiles > .sectionbody {
+  display: flex;
+}
+
+.tile {
+  flex: 1;
+}
+
+.tile + .tile {
+  margin-left: 0.75rem;
+  word-break: break-word;
+}
+
+.tile .title {
+  font-weight: var(--weight-bold);
+}
