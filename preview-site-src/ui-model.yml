@@ -1,6 +1,6 @@
 antoraVersion: '1.0.1'
 site:
-  url: http://localhost:5252
+  url: /home.html
   title: Couchbase Developer
   components:
   - name: abc

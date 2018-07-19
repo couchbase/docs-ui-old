@@ -51,7 +51,7 @@
               </div>
             </div>
           </div>
-          {{#if page.component}}
+          {{#if (and page.component (ne page.component.name 'home'))}}
           {{#if page.versions}}
           <div class="navbar-item has-dropdown">
             <a class="navbar-link" href="{{page.component.url}}">{{{page.component.title}}} <span class="version">{{page.version}}</span></a>
