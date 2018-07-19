@@ -374,6 +374,21 @@ html.is-clipped--navbar {
   .navbar-item.has-dropdown:hover .navbar-dropdown {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.35s 0.2s;
+    transition: opacity 0.3s 0.25s;
+  }
+
+  .navbar-item.has-dropdown:hover .navbar-dropdown::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    left: 0;
+    height: 2.5rem;
+    z-index: var(--z-index-navbar-dropdown);
+  }
+
+  .navbar-item.has-dropdown:hover > .navbar-link {
+    z-index: var(--z-index-navbar-dropdown-link);
   }
 }

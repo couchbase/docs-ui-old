@@ -26,7 +26,9 @@
   --weight-normal: 400;
   --weight-medium: 500;
   --weight-bold: 700;
-  --z-index-feedback: 4;
+  --z-index-feedback: 6;
+  --z-index-navbar-dropdown-link: 5;
+  --z-index-navbar-dropdown: 4;
   --z-index-nav: 3;
   --z-index-navbar: 2;
   --z-index-footer: 1;
