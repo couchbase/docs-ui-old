@@ -52,6 +52,7 @@ main.home {
 
 .blades > .sectionbody {
   display: flex;
+  flex-direction: column;
 }
 
 .blade {
@@ -62,7 +63,7 @@ main.home {
 }
 
 .blade + .blade {
-  margin-left: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 .home .blade {
@@ -86,7 +87,7 @@ main.home {
   margin: 0;
   font-size: 1.5rem;
   line-height: 1.35;
-  padding: 0 33.33% 1rem 0;
+  padding: 0 0 1rem;
   position: relative;
 }
 
@@ -123,8 +124,22 @@ main.home {
   display: inline-block;
 }
 
+@media screen and (min-width: 769px) {
+  .blades > .sectionbody {
+    flex-direction: row;
+  }
+
+  .blade h3 {
+    padding-right: 33%;
+  }
+
+  .blade + .blade {
+    margin-top: 0;
+    margin-left: 0.75rem;
+  }
+}
+
 .home .tiles {
-  padding: 0 10%;
   font-size: 1.125rem;
   margin-top: 2.5rem;
 }
@@ -148,17 +163,41 @@ main.home {
 
 .tiles > .sectionbody {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .tile {
   flex: 1;
+  margin-bottom: 0.75rem;
+}
+
+.home .tile {
+  flex-basis: 50%;
 }
 
 .tile + .tile {
-  margin-left: 0.75rem;
   word-break: break-word;
 }
 
 .tile .title {
   font-weight: var(--weight-bold);
+}
+
+@media screen and (min-width: 769px) {
+  .home .tiles {
+    padding: 0 10%;
+  }
+
+  .tiles > .sectionbody {
+    margin: 0 -0.5rem;
+  }
+
+  .home .tile {
+    flex-basis: 0;
+  }
+
+  .tile {
+    margin-bottom: 0;
+    padding: 0 0.5rem;
+  }
 }
