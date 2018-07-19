@@ -1,11 +1,11 @@
 ;(function () {
   'use strict'
 
-  var doc = document.querySelector('.doc')
-  var ceiling = document.getElementById(doc.dataset.ceiling)
+  var main = document.querySelector('main')
+  var ceiling = document.getElementById(main.dataset.ceiling)
 
   function computePosition (el, sum) {
-    if (doc.contains(el)) {
+    if (main.contains(el)) {
       return computePosition(el.offsetParent, el.offsetTop + sum)
     } else {
       return sum
