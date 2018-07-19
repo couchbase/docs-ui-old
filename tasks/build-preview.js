@@ -29,17 +29,17 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
     .src('**/*.adoc', { base: siteSrc, cwd: siteSrc })
     .pipe(
       map((file, next) => {
-        const compiledLayout = layouts[file.stem === '404' ? '404.hbs' : 'default.hbs']
         const siteRootPath = path.relative(path.dirname(file.path), path.resolve(siteSrc))
         uiModel.env = process.env
         uiModel.siteRootPath = siteRootPath
         uiModel.siteRootUrl = path.join(siteRootPath, 'index.html')
         uiModel.uiRootPath = path.join(siteRootPath, '_')
         const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+        const layout = file.stem === '404' ? '404' : doc.getAttribute('page-layout', 'default')
         uiModel.page.title = file.stem === '404' ? 'Page Not Found' : doc.getDocumentTitle()
         uiModel.page.contents = doc.convert()
         file.extname = '.html'
-        file.contents = Buffer.from(compiledLayout(uiModel))
+        file.contents = Buffer.from(layouts[layout](uiModel))
         next(null, file)
       })
     )
@@ -91,7 +91,7 @@ function compileLayouts (src) {
       .src('layouts/*.hbs', { base: src, cwd: src })
       .pipe(
         map((file, next) => {
-          layouts[file.basename] = handlebars.compile(file.contents.toString(), { preventIndent: true })
+          layouts[file.stem] = handlebars.compile(file.contents.toString(), { preventIndent: true })
           next(null, file)
         })
       )
