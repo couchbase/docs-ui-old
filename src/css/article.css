@@ -1,5 +1,5 @@
 .doc {
-  padding-bottom: 4rem;
+  padding-bottom: 4rem; /* QUESTION should we move this to main? */
 }
 
 .doc h1,
