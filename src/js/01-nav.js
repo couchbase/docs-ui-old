@@ -21,7 +21,9 @@
     }
   })
 
+  fitNavMenuInit({})
   window.addEventListener('load', fitNavMenuInit)
+  window.addEventListener('resize', fitNavMenuInit)
 
   function expandCurrentPath (navItem) {
     navItem.classList.add('is-active')
@@ -45,16 +47,13 @@
     if ((navMenu.preferredHeight = navMenu.element.getBoundingClientRect().height) > 0) {
       if (!navMenu.encroachingElement) navMenu.encroachingElement = document.querySelector('footer.footer')
       fitNavMenu(navMenu.preferredHeight, (navMenu.viewHeight = window.innerHeight), navMenu.encroachingElement)
-      if (e.type === 'load' && currentPageItem) {
-        scrollItemIntoView(currentPageItem.querySelector('.nav-link'), navMenu.element)
-      }
       window.addEventListener('scroll', fitNavMenuOnScroll)
-    } else {
-      window.removeEventListener('scroll', fitNavMenuOnScroll)
-    }
-    if (e.type === 'load') {
+      if (e.type !== 'resize') {
+        if (currentPageItem) scrollItemIntoView(currentPageItem.querySelector('.nav-link'), navMenu.element)
+        window.removeEventListener(e.type, fitNavMenuInit)
+      }
+    } else if (e.type === 'load') {
       window.removeEventListener('load', fitNavMenuInit)
-      window.addEventListener('resize', fitNavMenuInit)
     }
   }
 
