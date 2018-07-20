@@ -10,13 +10,16 @@ main.article {
 nav.nav {
   visibility: hidden;
   flex: 0;
+  /* NOTE width must be set in order for fixed child to inherit */
   width: var(--width-nav);
   order: -1;
 }
 
 aside.toc.sidebar {
   display: none;
-  flex: 0 0 var(--width-toc);
+  flex: 0;
+  /* NOTE width must be set to activate overflow-wrap: break-word (not required for word-break: break-word) */
+  width: var(--width-toc);
 }
 
 @media screen and (min-width: 769px) {
@@ -28,6 +31,7 @@ aside.toc.sidebar {
 
   nav.nav {
     visibility: visible;
+    /* NOTE reserve space for nav in flex layout */
     flex-basis: var(--width-nav);
   }
 }
