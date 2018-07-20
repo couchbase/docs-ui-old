@@ -40,6 +40,10 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
           uiModel.page = { layout: '404' }
         } else {
           const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
+          const pageAttributes = {}
+          const pageRole = doc.getAttribute('page-role')
+          if (pageRole) pageAttributes.role = pageRole
+          uiModel.page.attributes = pageAttributes
           uiModel.page.layout = doc.getAttribute('page-layout', 'default')
           uiModel.page.title = doc.getDocumentTitle()
           uiModel.page.contents = doc.convert()

@@ -546,3 +546,38 @@ p.tableblock + p.tableblock {
   content: ">";
   font-weight: var(--weight-medium);
 }
+
+.doc-tiles .doc {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1.25rem;
+}
+
+.doc-tiles .doc > h1 {
+  flex-basis: 100%;
+}
+
+.doc-tiles .doc .sect1 {
+  flex-basis: 50%;
+  padding-right: 1.25rem;
+  margin-top: 0;
+}
+
+.doc-tiles .doc .sect1 > h2 {
+  font-size: 1.25rem;
+  font-weight: var(--weight-medium);
+  /* padding-right: 33.33%; */
+}
+
+.doc-tiles .doc .sect1 > h2::after {
+  content: "";
+  display: block;
+  background-color: var(--color-border);
+  height: 1px;
+  width: 25%;
+  margin-top: 0.5em;
+}
+
+.doc-tiles .toc {
+  display: none !important;
+}
