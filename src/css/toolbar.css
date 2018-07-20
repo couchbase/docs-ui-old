@@ -6,8 +6,8 @@
 }
 
 .tool.edit {
-  width: 1.15em;
-  height: 1.15em;
+  width: 1.5em;
+  height: 1.5em;
 }
 
 .tool.edit a {
@@ -17,8 +17,8 @@
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
-  background: url(../img/edit.svg) no-repeat;
-  background-size: cover;
+  background: url(../img/edit.svg) no-repeat center;
+  background-size: 80%;
   vertical-align: top;
   color: rgba(0, 0, 0, 0);
 }

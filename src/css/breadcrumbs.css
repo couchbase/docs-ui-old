@@ -1,7 +1,9 @@
 .crumbs {
   color: var(--color-muted);
   font-weight: var(--weight-light);
-  line-height: 1.15;
+  /* effectively a single-line height of 1.5 */
+  line-height: 1.35;
+  padding: 0.075em 0;
 }
 
 .crumbs ul {

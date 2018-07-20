@@ -1,8 +1,10 @@
 ;(function () {
   'use strict'
 
+  var nav = document.querySelector('nav.nav')
   var navMenu = {}
-  if (!(navMenu.element = document.querySelector('.nav-menu'))) return
+  if (!(navMenu.element = nav.querySelector('.nav-menu'))) return
+  var navControl
 
   var currentPageItem = navMenu.element.querySelector('.is-current-page')
   if (currentPageItem) expandCurrentPath(currentPageItem)
@@ -25,6 +27,10 @@
   window.addEventListener('load', fitNavMenuInit)
   window.addEventListener('resize', fitNavMenuInit)
 
+  if ((navControl = document.querySelector('main .nav-control'))) {
+    navControl.addEventListener('click', expandNav)
+  }
+
   function expandCurrentPath (navItem) {
     navItem.classList.add('is-active')
     var ancestorClasses
@@ -42,18 +48,22 @@
   }
 
   function fitNavMenuInit (e) {
+    var eventType = e.type
     window.removeEventListener('scroll', fitNavMenuOnScroll)
     navMenu.element.style.height = ''
     if ((navMenu.preferredHeight = navMenu.element.getBoundingClientRect().height) > 0) {
-      if (!navMenu.encroachingElement) navMenu.encroachingElement = document.querySelector('footer.footer')
-      fitNavMenu(navMenu.preferredHeight, (navMenu.viewHeight = window.innerHeight), navMenu.encroachingElement)
-      window.addEventListener('scroll', fitNavMenuOnScroll)
-      if (e.type !== 'resize') {
-        if (currentPageItem) scrollItemIntoView(currentPageItem.querySelector('.nav-link'), navMenu.element)
-        window.removeEventListener(e.type, fitNavMenuInit)
+      // QUESTION should we check if x value > 0 instead?
+      if (window.getComputedStyle(nav).visibility === 'visible') {
+        if (!navMenu.encroachingElement) navMenu.encroachingElement = document.querySelector('footer.footer')
+        fitNavMenu(navMenu.preferredHeight, (navMenu.viewHeight = window.innerHeight), navMenu.encroachingElement)
+        window.addEventListener('scroll', fitNavMenuOnScroll)
       }
-    } else if (e.type === 'load') {
-      window.removeEventListener('load', fitNavMenuInit)
+      if (eventType !== 'resize') {
+        if (currentPageItem) scrollItemIntoView(currentPageItem.querySelector('.nav-link'), navMenu.element)
+        if (eventType) window.removeEventListener(eventType, fitNavMenuInit)
+      }
+    } else if (eventType === 'load') {
+      window.removeEventListener(eventType, fitNavMenuInit)
     }
   }
 
@@ -64,6 +74,26 @@
   function fitNavMenu (preferredHeight, availableHeight, encroachingElement) {
     var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
     navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, (preferredHeight - reclaimedHeight)) + 'px' : ''
+  }
+
+  function expandNav (e) {
+    if (nav.classList.contains('is-active')) return closeNav(e)
+    document.documentElement.classList.add('is-clipped--nav')
+    nav.classList.add('is-active')
+    nav.addEventListener('click', concealEvent)
+    window.addEventListener('click', closeNav)
+    // NOTE don't let event get picked up by window click listener
+    concealEvent(e)
+  }
+
+  function closeNav (e) {
+    if (e.which === 3 || e.button === 2) return
+    document.documentElement.classList.remove('is-clipped--nav')
+    nav.classList.remove('is-active')
+    nav.removeEventListener('click', concealEvent)
+    window.removeEventListener('click', closeNav)
+    // NOTE don't let event get picked up by window click listener
+    concealEvent(e)
   }
 
   function find (selector, from) {
@@ -86,5 +116,9 @@
     el = from
     while ((el = el.nextSibling) && el.nodeType !== 1);
     return el
+  }
+
+  function concealEvent (e) {
+    e.stopPropagation()
   }
 })()

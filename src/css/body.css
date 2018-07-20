@@ -8,7 +8,7 @@ main.article {
 }
 
 nav.nav {
-  display: none;
+  visibility: hidden;
   flex: 0;
   width: var(--width-nav);
   order: -1;
@@ -27,7 +27,7 @@ aside.toc.sidebar {
   */
 
   nav.nav {
-    display: block;
+    visibility: visible;
     flex-basis: var(--width-nav);
   }
 }

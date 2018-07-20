@@ -257,7 +257,7 @@ a.navbar-item.has-dropdown::after,
 .reveal-search-input .algolia-autocomplete::before {
   content: "";
   background: url(../img/search.svg) 50% 50% no-repeat;
-  background-size: 100%;
+  background-size: cover;
   border: none;
   height: 1rem;
   width: 1rem;
@@ -287,7 +287,7 @@ a.navbar-item.has-dropdown::after,
 .navbar-start button.search::before {
   content: "";
   background: url(../img/search.svg) 50% 50% no-repeat;
-  background-size: 100%;
+  background-size: cover;
   border: none;
   height: 1.25rem;
   width: 1.25rem;
