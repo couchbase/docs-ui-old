@@ -113,6 +113,7 @@
 .doc .dlist,
 .doc .olist,
 .doc .ulist,
+.doc .admonitionblock,
 .doc .exampleblock,
 .doc .imageblock,
 .doc .listingblock,
@@ -195,81 +196,99 @@ p.tableblock + p.tableblock {
   vertical-align: middle;
 }
 
-.doc .admonitionblock {
-  margin: 1.4rem 0 0;
-}
-
-.doc .admonitionblock p,
-.doc .admonitionblock td.content {
-  font-size: 0.97rem;
-}
-
-.doc .admonitionblock td.content > :first-child {
-  margin: 0;
-}
-
-.doc .admonitionblock pre {
-  font-size: 0.875rem;
-}
-
 .doc .admonitionblock > table {
-  border-collapse: collapse;
-  table-layout: fixed;
-  position: relative;
-  width: 100%;
+  display: flex;
 }
 
-.doc .admonitionblock td.content {
-  padding: 1rem 1rem 0.75rem;
-  background-color: #fafafa;
-  width: 100%;
+.doc .admonitionblock > table > tbody {
+  flex: 1;
+  display: block;
+}
+
+.doc .admonitionblock > table > tbody > tr {
+  display: flex;
 }
 
 .doc .admonitionblock .icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 0.85rem;
-  padding: 0 0.5rem;
-  height: 1.5rem;
-  line-height: 1.85;
-  font-weight: var(--weight-bold);
-  text-transform: uppercase;
-  border-radius: 0.5em;
-  color: #fff;
-  transform: translate(-0.5rem, -50%);
+  display: none;
 }
 
-.doc .admonitionblock.caution .icon {
-  background-color: #a0439c;
+.doc .admonitionblock td.content {
+  display: block;
+  flex: 1;
+  padding: 1rem;
 }
 
-.doc .admonitionblock.important .icon {
-  background-color: #d32f2f;
+.doc .admonitionblock td.content > .title {
+  display: inline;
 }
 
-.doc .admonitionblock.note .icon {
-  background-color: #217ee7;
+/*
+.doc .admonitionblock td.content > .title + .paragraph {
+  margin-top: 0;
+}
+*/
+
+.doc .admonitionblock td.content::before {
+  font-weight: var(--weight-medium);
 }
 
-.doc .admonitionblock.tip .icon {
-  background-color: #41af46;
+.doc .admonitionblock.caution td.content {
+  background-color: rgba(252, 156, 12, 0.15);
 }
 
-.doc .admonitionblock.warning .icon {
-  background-color: #e18114;
+.doc .admonitionblock.caution td.content::before {
+  content: "Caution: ";
+  color: rgb(252, 156, 12);
 }
 
-.doc .admonitionblock .icon i {
-  display: inline-flex;
-  align-items: center;
-  height: 100%;
+.doc .admonitionblock.important td.content {
+  background-color: rgba(0, 116, 224, 0.15);
 }
 
-.doc .admonitionblock .icon i::after {
-  content: attr(title);
-  hyphens: none;
+.doc .admonitionblock.important td.content::before {
+  content: "Important: ";
+  color: rgb(0, 116, 224);
 }
+
+.doc .admonitionblock.note td.content {
+  background-color: rgba(0, 172, 224, 0.15);
+}
+
+.doc .admonitionblock.note td.content::before {
+  content: "Note: ";
+  color: rgb(0, 172, 224);
+}
+
+.doc .admonitionblock.tip td.content {
+  background-color: rgba(179, 108, 219, 0.15);
+}
+
+.doc .admonitionblock.tip td.content::before {
+  content: "Tip: ";
+  color: rgb(179, 108, 219);
+}
+
+.doc .admonitionblock.warning td.content {
+  background-color: rgba(234, 35, 40, 0.15);
+}
+
+.doc .admonitionblock.warning td.content::before {
+  content: "Warning: ";
+  color: rgb(234, 35, 40);
+}
+
+.doc .admonitionblock td.content > :first-child {
+  margin-top: 0;
+}
+
+/*
+.doc .admonitionblock > table {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+}
+*/
 
 .doc .imageblock {
   display: flex;
@@ -364,9 +383,9 @@ p.tableblock + p.tableblock {
   margin-top: 0.5rem;
 }
 
-.doc .olist li,
-.doc .ulist li {
-  margin-bottom: 0.5rem;
+.doc .olist li + li,
+.doc .ulist li + li {
+  margin-top: 0.5rem;
 }
 
 .doc .ulist .listingblock,
@@ -384,10 +403,6 @@ p.tableblock + p.tableblock {
   font-style: italic;
   letter-spacing: -0.005em;
   padding-bottom: 0.075rem;
-}
-
-.doc .admonitionblock .title + .paragraph {
-  margin-top: 0;
 }
 
 /* Other possible colors #248232 (dark green) #2ba84a (brighter green), #f7ef99 (soft yellow), #f78e69 (orangey-grayish) */
