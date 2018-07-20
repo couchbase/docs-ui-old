@@ -424,6 +424,7 @@ p.tableblock + p.tableblock {
   color: #f8f8f2;
   white-space: pre-wrap;
   /* NOTE without word-break=break-word, listingblock causes article to overflow bounds */
+  /* NOTE word-break=break-word only works in Chrome, but emulates the behavior of pre-wrap in Firefox */
   /* NOTE can use width: calc(100vw - var(--width-nav) - var(--width-toc) - var(--width-container-gutter)); on main */
   word-break: break-word;
   padding: 0.625rem;

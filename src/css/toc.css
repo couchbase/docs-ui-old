@@ -1,3 +1,13 @@
+.toc {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.toc.sidebar {
+  /* NOTE similar to word-break: break-word in Chrome and word-wrap: break-word in Firefox */
+  overflow-wrap: break-word;
+}
+
 .toc-menu {
   border-left: 0.25rem solid var(--color-brand);
   margin-bottom: 1.5rem;
@@ -6,15 +16,11 @@
 .toc.sidebar .toc-menu {
   position: sticky;
   top: var(--height-to-body);
+  width: inherit;
 }
 
 .toc.embedded .toc-menu {
   margin-top: 1.5rem;
-}
-
-.toc {
-  font-size: 0.875rem;
-  line-height: 1;
 }
 
 .toc .toc-menu h3 {

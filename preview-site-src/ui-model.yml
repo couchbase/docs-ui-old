@@ -168,3 +168,6 @@ page:
     - content: Services and Indexes
       url: '#'
       urlType: fragment
+    - content: content.that.does.not.want.to.wrap.on.its.own
+      url: '#'
+      urlType: fragment
