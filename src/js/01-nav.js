@@ -3,7 +3,7 @@
 
   var nav = document.querySelector('nav.nav')
   var navMenu = {}
-  if (!(navMenu.element = nav.querySelector('.nav-menu'))) return
+  if (!(navMenu.element = nav ? nav.querySelector('.nav-menu') : undefined)) return
   var navControl
 
   var currentPageItem = navMenu.element.querySelector('.is-current-page')
