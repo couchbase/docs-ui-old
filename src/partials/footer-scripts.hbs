@@ -8,6 +8,9 @@
 <!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js -->
 <script src="{{uiRootPath}}/js/vendor/docsearch.min.js"></script>
 <script>docsearch({
+  {{#if env.ALGOLIA_APP_ID}}
+  appId: '{{env.ALGOLIA_APP_ID}}',
+  {{/if}}
   apiKey: '{{env.ALGOLIA_API_KEY}}',
   indexName: '{{env.ALGOLIA_INDEX_NAME}}',
   inputSelector: '#search-query',
