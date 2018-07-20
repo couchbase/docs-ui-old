@@ -85,9 +85,7 @@
   border: 2px solid var(--color-footer-text);
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
-  cursor: pointer;
   letter-spacing: -0.025em;
-  outline: none;
   position: relative;
   transition: all 0.3s;
   float: left;
@@ -99,7 +97,7 @@
   color: var(--color-footer-text);
 }
 
-.footer-links a.online ~ a {
+.footer-links a.btn ~ a {
   display: inline-block;
   font-weight: var(--weight-bold);
   float: left;

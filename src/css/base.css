@@ -52,15 +52,26 @@ body {
 
 body {
   color: var(--color-text);
+  font-family: "Gotham", sans-serif;
   line-height: 1.5;
   margin: 0;
 }
 
-body,
 button,
 input,
 select {
-  font-family: "Gotham", sans-serif;
+  font-family: inherit;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button::-moz-focus-inner {
+  border: none;
 }
 
 code,
@@ -76,13 +87,13 @@ strong {
 
 a {
   color: var(--color-link);
+  outline: none;
   text-decoration: none;
 }
 
 a:focus,
 a:hover {
   text-decoration: underline;
-  outline: none;
 }
 
 .container {

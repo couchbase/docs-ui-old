@@ -46,10 +46,8 @@
 .navbar-burger {
   width: 30px;
   height: 19px;
-  cursor: pointer;
   background: none;
   border: none;
-  outline: none;
   position: relative;
   margin-left: auto;
   padding: 0;
@@ -243,10 +241,6 @@ a.navbar-item.has-dropdown::after,
   padding-left: 0.125rem;
 }
 
-.navbar-start input.query:focus {
-  outline-style: none;
-}
-
 .reveal-search-input .algolia-autocomplete {
   flex-grow: 1;
   display: flex !important;
@@ -277,11 +271,6 @@ a.navbar-item.has-dropdown::after,
   font-size: 1.125rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
-}
-
-.navbar-start button.search:focus {
-  outline-style: none;
 }
 
 .navbar-start button.search::before {
@@ -308,13 +297,11 @@ a.navbar-item.has-dropdown::after,
   color: inherit;
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
-  cursor: pointer;
   padding: 0 1.75rem;
   height: 3.25rem;
   display: inline-flex;
   align-items: center;
   letter-spacing: -0.025em;
-  outline: none;
   transition: background-color 0.3s;
 }
 
