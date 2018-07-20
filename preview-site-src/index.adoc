@@ -119,6 +119,8 @@ The *View Stats* show information about individual design documents within the s
 The INDEX STATS section provides statistics about the GSI Indexes.
 Statistics are provided per each individual index.
 
+Select `United States of America` from the menu.
+
 [#memcached_stats]
 == Memcached Buckets
 
@@ -142,7 +144,7 @@ Client 2 gets updated index.
 .. If re-indexing from Client 1 not done, Client 2 gets the existing index.
 If re-indexing from Client 1 is done, Client 2 gets this updated index and triggers re-indexing.
 
-Index updates may be stacked if multiple clients request the view be updated before the information is returned ( `stale=false` ).
+Index updates may be stacked if multiple clients request the view be updated before the information is returned (`stale=false`).
 For `stale=update_after` queries, there is no stacking, since all updates occur after the query has been accessed.
 
 === Sequential accesses
@@ -178,7 +180,7 @@ The trigger level can be configured both globally and for individual design docu
 NOTE: The `ddocs` allow you to set `updateMinChanges` or `replicaUpdateMinChanges` only via options.
 The `updateInterval` can only be set for the whole cluster.
 
-To obtain the current view update daemon settings, access a node within the cluster on the administration port using the URL `+http://nodename:8091/settings/viewUpdateDaemon+` :
+To obtain the current view update daemon settings, access a node within the cluster on the administration port using the URL `\http://nodename:8091/settings/viewUpdateDaemon`:
 
 ----
 GET http://Administrator:Password@nodename:8091/settings/viewUpdateDaemon

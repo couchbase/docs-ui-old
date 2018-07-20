@@ -87,20 +87,25 @@
   font-weight: var(--weight-medium);
 }
 
-.doc code {
+.doc code,
+.doc pre {
   font-size: 0.875em;
+}
+
+.doc code {
   color: var(--color-code);
+  word-spacing: -0.125em;
 }
 
 .doc pre {
-  font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
 }
 
 .doc pre code {
+  display: block;
   color: inherit;
-  font-size: inherit;
+  word-spacing: inherit;
 }
 
 .doc .paragraph,
@@ -417,7 +422,6 @@ p.tableblock + p.tableblock {
 .doc pre.highlight code {
   background-color: #151514;
   color: #f8f8f2;
-  display: block;
   white-space: pre-wrap;
   /* NOTE without word-break=break-word, listingblock causes article to overflow bounds */
   /* NOTE can use width: calc(100vw - var(--width-nav) - var(--width-toc) - var(--width-container-gutter)); on main */
@@ -452,13 +456,6 @@ p.tableblock + p.tableblock {
   font-weight: var(--weight-medium);
   margin-top: 1.5rem;
 }
-
-/*
-.doc .dlist dd {
-  margin: 0;
-  padding-top: 0.15rem;
-}
-*/
 
 .doc .dlist dd > .openblock {
   margin-top: -1rem;
