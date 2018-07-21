@@ -10,6 +10,8 @@
 
 .toc-menu {
   border-left: 0.25rem solid var(--color-brand);
+  /* border-image: linear-gradient(to bottom, #b36cdc, var(--color-brand)) 1 100%; */
+  border-image: linear-gradient(to bottom, #b36cdc, #eb4971) 1 100%;
   margin-bottom: 1.5rem;
 }
 
@@ -20,7 +22,8 @@
 }
 
 .toc.embedded .toc-menu {
-  margin-top: 1.5rem;
+  /* margin-top: 1.5rem; */
+  margin-top: 1rem;
 }
 
 .toc .toc-menu h3 {
