@@ -2,6 +2,24 @@
   padding-bottom: 4rem; /* QUESTION should we move this to main? */
 }
 
+.doc p {
+  margin: 0;
+}
+
+.doc h1,
+.doc h2,
+.doc h3,
+.doc h4,
+.doc h5,
+.doc h6,
+.doc p,
+.doc th.tableblock,
+/* FIXME td.content might get overzealous */
+.doc td.content {
+  hyphens: auto; /* NOTE: forces long words to break if necessary */
+  word-break: break-word; /* NOTE: Chrome only supports hyphens on macOS and Android */
+}
+
 .doc h1,
 .doc h2,
 .doc h3,
@@ -312,16 +330,6 @@ p.tableblock + p.tableblock {
 .doc span.image img {
   height: auto;
   max-width: 100%;
-}
-
-.doc p {
-  margin: 0;
-}
-
-.doc p,
-.doc .tableblock,
-.doc .content {
-  hyphens: auto;
 }
 
 .quoteblock.abstract blockquote {
