@@ -143,7 +143,7 @@ body.home .body {
   text-align: center;
   font-size: 2rem;
   margin: 0 auto;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.125rem;
 }
 
 .tiles > h2::after {
@@ -155,7 +155,7 @@ body.home .body {
   margin: 0 auto;
   margin-bottom: -1px;
   position: relative;
-  top: 0.75rem;
+  top: 1.375rem;
 }
 
 .tiles > .sectionbody {
