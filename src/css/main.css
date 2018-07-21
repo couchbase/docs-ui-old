@@ -1,3 +1,14 @@
+.article-header {
+  display: flex;
+  font-size: 0.875rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.article-header .crumbs {
+  flex: 1;
+}
+
 @media screen and (min-width: 769px) {
   main.article {
     padding: 0 var(--width-main-gutter) 4rem;
@@ -6,14 +17,8 @@
   main.home {
     padding: 0 var(--width-container-gutter) 4rem;
   }
-}
 
-.article-header {
-  display: flex;
-  font-size: 0.875rem;
-  line-height: 1;
-}
-
-.article-header .crumbs {
-  flex: 1;
+  .article-header {
+    margin-bottom: 0;
+  }
 }
