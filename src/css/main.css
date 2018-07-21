@@ -2,6 +2,10 @@
   main.article {
     padding: 0 var(--width-main-gutter);
   }
+
+  main.home {
+    padding: 0 var(--width-container-gutter);
+  }
 }
 
 .article-header {

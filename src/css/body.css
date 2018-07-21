@@ -3,7 +3,7 @@ div.body {
   margin-top: var(--height-to-body);
 }
 
-main.article {
+main {
   flex: 1;
 }
 

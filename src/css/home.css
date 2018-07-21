@@ -1,8 +1,4 @@
 body.home .body {
-  padding: 0 2.5rem;
-}
-
-main.home {
   padding-bottom: 4rem;
 }
 
@@ -104,12 +100,11 @@ main.home {
 .blade .paragraph {
   font-weight: var(--weight-light);
   margin-top: 1rem;
-  flex: 1;
+  flex: 1 0 auto; /* NOTE must specify flex-basis for IE 11 */
 }
 
 .blade .ulist {
   line-height: 1.7;
-  justify-self: flex-end;
   font-weight: var(--weight-bold);
   margin: 1.5rem 0 1rem;
 }
@@ -147,18 +142,20 @@ main.home {
 .tiles > h2 {
   text-align: center;
   font-size: 2rem;
-  width: fit-content;
   margin: 0 auto;
+  padding-bottom: 2.5rem;
 }
 
 .tiles > h2::after {
   content: "";
-  background-color: currentColor;
-  width: 25%;
+  display: block;
+  background-color: #5c5c5c;
+  width: 5.875rem;
   height: 1px;
-  display: inline-block;
-  margin: 1rem 0;
-  line-height: 0;
+  margin: 0 auto;
+  margin-bottom: -1px;
+  position: relative;
+  top: 0.75rem;
 }
 
 .tiles > .sectionbody {
@@ -173,10 +170,8 @@ main.home {
 
 .home .tile {
   flex-basis: 50%;
-}
-
-.tile + .tile {
-  word-break: break-word;
+  max-width: 50%;
+  overflow-wrap: break-word;
 }
 
 .tile .title {
