@@ -1,7 +1,3 @@
-body.home .body {
-  padding-bottom: 4rem;
-}
-
 .home p {
   margin: 0;
 }
@@ -125,7 +121,11 @@ body.home .body {
   }
 
   .blade h3 {
-    padding-right: 33%;
+    width: 66.66%;
+  }
+
+  .blade h3::after {
+    width: 37.5%; /* NOTE equates to 25% of container */
   }
 
   .blade + .blade {
