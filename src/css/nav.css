@@ -125,7 +125,7 @@ html.is-clipped--nav {
   height: 1.5em;
   margin-right: 0.5rem;
   background: url(../img/menu.svg) no-repeat center;
-  background-size: 80%;
+  background-size: 75%;
 }
 
 @media screen and (min-width: 769px) {
