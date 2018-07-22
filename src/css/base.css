@@ -32,8 +32,8 @@
   /* --height-navbar: 4rem; */
   --height-navbar: 4.875rem;
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
-  --height-nav: calc(100vh - var(--height-to-body) - var(--height-spacer));
-  /* --height-body: calc(100vh - var(--height-to-body)); */
+  --height-min-body: calc(100vh - var(--height-to-body));
+  --height-nav: calc(var(--height-min-body) - var(--height-spacer));
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
   --width-container: 80rem;
