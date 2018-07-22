@@ -1,3 +1,7 @@
+main {
+  padding-bottom: 4rem;
+}
+
 .article-header {
   display: flex;
   font-size: 0.875rem;
