@@ -42,9 +42,9 @@
     }
   }
 
-  function scrollItemIntoView (el, parentEl) {
-    var belowBottom = (el.offsetTop + el.offsetHeight + 8) - parentEl.offsetHeight
-    if (belowBottom > 0) parentEl.scrollTop = belowBottom
+  function scrollItemToMiddle (el, parentEl) {
+    var adjustment = el.offsetTop + el.offsetHeight + 5 - (parentEl.offsetHeight / 2.0)
+    if (adjustment > 0) parentEl.scrollTop = adjustment
   }
 
   function fitNavMenuInit (e) {
@@ -59,7 +59,7 @@
         window.addEventListener('scroll', fitNavMenuOnScroll)
       }
       if (eventType !== 'resize') {
-        if (currentPageItem) scrollItemIntoView(currentPageItem.querySelector('.nav-link'), navMenu.element)
+        if (currentPageItem) scrollItemToMiddle(currentPageItem.querySelector('.nav-link'), navMenu.element)
         if (eventType) window.removeEventListener(eventType, fitNavMenuInit)
       }
     } else if (eventType === 'load') {
