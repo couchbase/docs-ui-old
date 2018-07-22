@@ -59,7 +59,7 @@
 .doc h4 > a.anchor,
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
-  color: var(--color-brand);
+  color: var(--color-brand-red);
   font-weight: var(--weight-light);
   position: absolute;
   text-decoration: none;
@@ -245,48 +245,48 @@ p.tableblock + p.tableblock {
 }
 
 .doc .admonitionblock.caution td.content {
-  background-color: rgba(252, 156, 12, 0.15);
+  background-color: var(--color-brand-orange-tint);
 }
 
 .doc .admonitionblock.caution td.content::before {
   content: "Caution: ";
-  color: rgb(252, 156, 12);
+  color: var(--color-brand-orange);
 }
 
 .doc .admonitionblock.important td.content {
-  background-color: rgba(0, 116, 224, 0.15);
+  background-color: var(--color-brand-blue-tint);
 }
 
 .doc .admonitionblock.important td.content::before {
   content: "Important: ";
-  color: rgb(0, 116, 224);
+  color: var(--color-brand-blue);
 }
 
 .doc .admonitionblock.note td.content {
-  background-color: rgba(0, 172, 224, 0.15);
+  background-color: var(--color-brand-light-blue-tint);
 }
 
 .doc .admonitionblock.note td.content::before {
   content: "Note: ";
-  color: rgb(0, 172, 224);
+  color: var(--color-brand-light-blue);
 }
 
 .doc .admonitionblock.tip td.content {
-  background-color: rgba(179, 108, 219, 0.15);
+  background-color: var(--color-brand-purple-tint);
 }
 
 .doc .admonitionblock.tip td.content::before {
   content: "Tip: ";
-  color: rgb(179, 108, 219);
+  color: var(--color-brand-purple);
 }
 
 .doc .admonitionblock.warning td.content {
-  background-color: rgba(234, 35, 40, 0.15);
+  background-color: var(--color-brand-red-tint);
 }
 
 .doc .admonitionblock.warning td.content::before {
   content: "Warning: ";
-  color: rgb(234, 35, 40);
+  color: var(--color-brand-red);
 }
 
 .doc .admonitionblock td.content > :first-child {
@@ -324,7 +324,6 @@ p.tableblock + p.tableblock {
 }
 
 .quoteblock.abstract blockquote {
-  /* color: var(--color-muted); */
   font-size: 0.9375rem;
   margin: 1rem 0 1.5625rem 0;
   font-weight: var(--weight-light);
@@ -336,7 +335,6 @@ p.tableblock + p.tableblock {
 
 .quoteblock.abstract blockquote::before {
   content: "Abstract: ";
-  /* color: #757575; */
   color: var(--color-muted);
   font-weight: var(--weight-medium);
 }
@@ -406,7 +404,6 @@ p.tableblock + p.tableblock {
   padding-bottom: 0.075rem;
 }
 
-/* Other possible colors #248232 (dark green) #2ba84a (brighter green), #f7ef99 (soft yellow), #f78e69 (orangey-grayish) */
 .doc .exampleblock > .content {
   background-color: #fff;
   box-shadow: inset 0 0 1.75px #248232;
@@ -529,9 +526,9 @@ p.tableblock + p.tableblock {
   display: inline-block;
   font-size: 0.7rem;
   background-color: #fafafa;
-  border: 1px solid #c1c1c1;
+  border: 1px solid var(--color-border);
   border-radius: 0.25em;
-  box-shadow: 0 1px 0 #c1c1c1, 0 0 0 0.1em #fff inset;
+  box-shadow: 0 1px 0 var(--color-border), 0 0 0 0.1em #fff inset;
   padding: 0.25em 0.5em;
   vertical-align: text-bottom;
   white-space: nowrap;

@@ -63,16 +63,15 @@
 }
 
 .home .blade:nth-of-type(1) {
-  background-color: #eb4971;
+  background-color: var(--color-brand-pink);
 }
 
 .home .blade:nth-of-type(2) {
-  background-color: #00b9be;
+  background-color: var(--color-brand-green);
 }
 
 .home .blade:nth-of-type(3) {
-  /* background-color: #b36cdb; */
-  background-color: #00abdf;
+  background-color: var(--color-brand-light-blue);
 }
 
 .blade h3 {
@@ -149,7 +148,7 @@
 .tiles > h2::after {
   content: "";
   display: block;
-  background-color: #5c5c5c;
+  background-color: currentColor;
   width: 5.625rem;
   height: 1px;
   margin: 0 auto;
