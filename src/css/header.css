@@ -181,7 +181,7 @@ a.navbar-item.has-dropdown::after,
 @media screen and (min-width: 1024px) {
   .navbar-start > a.navbar-item:hover,
   .navbar-start > .navbar-item:hover > .navbar-link {
-    color: var(--color-brand);
+    color: var(--color-brand-red);
   }
 
   .navbar-dropdown {
@@ -293,8 +293,8 @@ a.navbar-item.has-dropdown::after,
 }
 
 .navbar .red-btn {
-  border: 2px solid var(--color-brand);
-  background-color: var(--color-brand);
+  border: 2px solid var(--color-brand-red);
+  background-color: var(--color-brand-red);
   color: inherit;
   font-weight: var(--weight-bold);
   font-size: 1.125rem;

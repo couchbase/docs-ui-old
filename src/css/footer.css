@@ -118,7 +118,7 @@
 }
 
 .footer-links li .heading {
-  color: var(--color-brand);
+  color: var(--color-brand-red);
   font-weight: var(--weight-bold);
 }
 

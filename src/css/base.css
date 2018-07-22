@@ -1,15 +1,33 @@
 :root {
-  --color-brand: #ea2328;
-  --color-muted: #666;
+  /* primary */
+  --color-brand-black: #000;
+  --color-brand-red: #ea2328;
+  --color-brand-red-tint: rgba(234, 35, 40, 0.15);
+  --color-brand-white: #fff;
+  /* secondary */
+  --color-brand-light-blue: #00ace0;
+  --color-brand-light-blue-tint: rgba(0, 172, 224, 0.15);
+  --color-brand-pink: #eb4971;
+  --color-brand-green: #00b9be;
+  --color-brand-purple: #b36cdb;
+  --color-brand-purple-tint: rgba(179, 108, 219, 0.15);
+  /* tertiary */
+  --color-brand-gray: #666;
+  /* --color-brand-silver: #ccc; */
+  --color-brand-silver: #c1c1c1;
+  --color-brand-blue: #0074e0;
+  --color-brand-blue-tint: rgba(0, 116, 224, 0.15);
+  --color-brand-orange: #fc9c0c;
+  --color-brand-orange-tint: rgba(252, 156, 12, 0.15);
+  --color-muted: var(--color-brand-gray);
   --color-text: #333;
-  --color-link: #00ace0;
-  /* --color-code: #000; */
-  --color-code: #eb4971;
-  --color-border: #c1c1c1;
-  --color-navbar-bg: #000;
-  --color-navbar-text: #fff;
-  --color-footer-bg: #000;
-  --color-footer-text: #fff;
+  --color-link: var(--color-brand-light-blue);
+  --color-code: var(--color-brand-pink);
+  --color-border: var(--color-brand-silver);
+  --color-navbar-bg: var(--color-brand-black);
+  --color-navbar-text: var(--color-brand-white);
+  --color-footer-bg: var(--color-brand-black);
+  --color-footer-text: var(--color-brand-white);
   --height-spacer: 1.5rem;
   /* --height-navbar: 4rem; */
   --height-navbar: 4.875rem;
