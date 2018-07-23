@@ -7,6 +7,7 @@ main {
   font-size: 0.875rem;
   line-height: 1;
   margin-bottom: 0.5rem;
+  align-items: center;
 }
 
 .article-header .crumbs {
@@ -24,5 +25,6 @@ main {
 
   .article-header {
     margin-bottom: 0;
+    align-items: flex-start;
   }
 }
