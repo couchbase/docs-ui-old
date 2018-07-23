@@ -34,9 +34,8 @@
 
 .navbar-brand .navbar-item {
   display: block;
-  width: 165px;
   height: 42px;
-  transition: height 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 .navbar-brand img {
@@ -353,6 +352,7 @@ html.is-clipped--navbar {
 
   .navbar-brand .navbar-item {
     height: 47px;
+    width: 165px;
   }
 
   .navbar-burger {
