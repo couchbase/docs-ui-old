@@ -49,6 +49,11 @@
   margin: 0.5rem 0 0;
 }
 
+.toc strong,
+.toc b {
+  font-weight: var(--weight-medium);
+}
+
 .toc a {
   color: inherit;
   text-decoration: none;
