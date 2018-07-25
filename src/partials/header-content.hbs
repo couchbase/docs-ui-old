@@ -64,7 +64,7 @@
             </div>
           </div>
           {{else}}
-          <a class="navbar-item" href="{{relativize page.url page.component.url}}">{{{page.component.title}}} <span class="version">{{page.version}}</span></a>
+          <a class="navbar-item" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}</span></a>
           {{/if}}
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
