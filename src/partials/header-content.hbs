@@ -59,7 +59,9 @@
               <div class="cols">
                 <ul>
                   {{#each page.versions}}
+                  {{#unless (eq ./version @root.page.version)}}
                   <li><a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{{@root.page.component.title}}} {{./version}}</a></li>
+                  {{/unless}}
                   {{/each}}
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
