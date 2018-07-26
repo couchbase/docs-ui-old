@@ -2,11 +2,49 @@
   margin: 0;
 }
 
+.home .paragraph {
+  margin-top: 1.25rem;
+}
+
+.home .paragraph.hint {
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+}
+
+.home h1,
+.home h2,
+.home h3 {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.home > h1 {
+  font-size: 2.375rem;
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.home .button::before {
+  content: "[";
+  padding-right: 0.25em;
+}
+
+.home .button::after {
+  content: "]";
+  padding-left: 0.25em;
+}
+
 .blade ul,
 .tile ul {
+  line-height: 1.25;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.blade li,
+.tile li {
+  padding: 0.25em 0;
 }
 
 .blade a,
@@ -16,8 +54,8 @@
 }
 
 .home #preamble {
-  margin: 2rem 0 3rem;
-  font-size: 1.25rem;
+  margin: 2rem 0.5rem 3rem;
+  font-size: 1.125rem;
   text-align: center;
 }
 
@@ -81,9 +119,7 @@
 }
 
 .blade h3 {
-  margin: 0;
   font-size: 1.5rem;
-  line-height: 1.35;
   padding: 0 0 1rem;
   position: relative;
 }
@@ -145,10 +181,9 @@
 }
 
 .tiles > h2 {
-  text-align: center;
   font-size: 2rem;
-  margin: 0 auto;
   padding-bottom: 3.125rem;
+  text-align: center;
 }
 
 .tiles > h2::after {

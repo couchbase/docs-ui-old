@@ -96,11 +96,6 @@
   text-decoration: underline;
 }
 
-.doc strong,
-.doc b {
-  font-weight: var(--weight-medium);
-}
-
 .doc code,
 .doc pre {
   font-size: 0.875rem;
