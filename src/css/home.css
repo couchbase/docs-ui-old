@@ -15,7 +15,7 @@
 .home h2,
 .home h3 {
   margin: 0;
-  line-height: 1.35;
+  line-height: 1.2;
 }
 
 .home > h1 {
@@ -54,7 +54,7 @@
 }
 
 .home #preamble {
-  margin: 2rem 0.5rem 3rem;
+  margin: 2rem 0 3rem;
   font-size: 1.125rem;
   text-align: center;
 }
@@ -120,6 +120,7 @@
 
 .blade h3 {
   font-size: 1.5rem;
+  line-height: 2rem;
   padding: 0 0 1rem;
   position: relative;
 }
@@ -141,7 +142,6 @@
 }
 
 .blade .ulist {
-  line-height: 1.7;
   font-weight: var(--weight-bold);
   margin: 1.5rem 0 1rem;
 }
@@ -154,25 +154,6 @@
   content: "\00a0>";
   width: 0;
   display: inline-block;
-}
-
-@media screen and (min-width: 769px) {
-  .blades > .sectionbody {
-    flex-direction: row;
-  }
-
-  .blade h3 {
-    width: 66.66%;
-  }
-
-  .blade h3::after {
-    width: 37.5%; /* NOTE equates to 25% of container */
-  }
-
-  .blade + .blade {
-    margin-top: 0;
-    margin-left: 0.75rem;
-  }
 }
 
 .home .tiles {
@@ -219,6 +200,29 @@
 }
 
 @media screen and (min-width: 769px) {
+  .home > h1,
+  .home #preamble {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  .blades > .sectionbody {
+    flex-direction: row;
+  }
+
+  .blade h3 {
+    width: 66.66%;
+  }
+
+  .blade h3::after {
+    width: 37.5%; /* NOTE equates to 25% of container */
+  }
+
+  .blade + .blade {
+    margin-top: 0;
+    margin-left: 0.75rem;
+  }
+
   .home .tiles {
     padding: 0 10%;
   }
