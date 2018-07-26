@@ -1,38 +1,54 @@
 ;(function () {
   'use strict'
 
-  var doc = document.querySelector('.doc')
-  var headings = find('h2[id]', doc)
-  if (headings.length === 0) return
+  var doc = document.querySelector('article.doc')
+  if (!doc) return
+  var menu = document.querySelector('aside.toc.sidebar .toc-menu')
+  var headings = find('.sect1 > h2[id]', doc)
+  if (!headings.length) {
+    if (menu) menu.parentNode.removeChild(menu)
+    return
+  }
+  var lastActiveFragment
   var links = {}
 
-  var list = document.createElement('ol')
-  headings.forEach(function (heading) {
-    var listItem = document.createElement('li')
-    var link = document.createElement('a')
+  var list = headings.reduce(function (accum, heading) {
+    var link = toArray(heading.childNodes).reduce(function (target, child) {
+      if (child.nodeName !== 'A') target.appendChild(child.cloneNode(true))
+      return target
+    }, document.createElement('a'))
     links[link.href = '#' + heading.id] = link
-    link.innerHTML = heading.innerHTML
+    var listItem = document.createElement('li')
     listItem.appendChild(link)
-    list.appendChild(listItem)
-  })
-  var menu = document.createElement('div')
-  menu.className = 'toc-menu'
+    accum.appendChild(listItem)
+    return accum
+  }, document.createElement('ol'))
+
+  var hasSidebar
+  if (menu) {
+    hasSidebar = true
+  } else {
+    menu = document.createElement('div')
+    menu.className = 'toc-menu'
+    hasSidebar = false
+  }
+
   var title = document.createElement('h3')
-  title.innerHTML = 'On This Page'
+  title.textContent = 'On This Page'
   menu.appendChild(title)
   menu.appendChild(list)
-  document.querySelector('aside.toc').appendChild(menu)
+
+  if (hasSidebar) window.addEventListener('scroll', onScroll)
 
   var startOfContent = doc.querySelector('h1 + *')
   if (startOfContent) {
-    var tocEmbedded = document.createElement('aside')
-    tocEmbedded.className = 'toc embedded'
-    tocEmbedded.appendChild(menu.cloneNode(true))
-    doc.insertBefore(tocEmbedded, startOfContent)
+    var embeddedToc = document.createElement('aside')
+    embeddedToc.className = 'toc embedded'
+    embeddedToc.appendChild(hasSidebar ? menu.cloneNode(true) : menu)
+    doc.insertBefore(embeddedToc, startOfContent)
   }
 
-  var lastActiveFragment
-  window.addEventListener('scroll', function () {
+  function onScroll () {
     var targetPosition = menu.getBoundingClientRect().top
     var activeFragment
     headings.some(function (heading) {
@@ -54,9 +70,13 @@
       links[lastActiveFragment].classList.remove('is-active')
       lastActiveFragment = undefined
     }
-  })
+  }
 
   function find (selector, from) {
-    return [].slice.call((from || document).querySelectorAll(selector))
+    return toArray((from || document).querySelectorAll(selector))
+  }
+
+  function toArray (collection) {
+    return [].slice.call(collection)
   }
 })()
