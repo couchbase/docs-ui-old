@@ -9,7 +9,6 @@
 .doc h5,
 .doc h6,
 .doc p,
-.doc th.tableblock,
 /* FIXME td.content might get overzealous */
 .doc td.content {
   hyphens: auto; /* NOTE: forces long words to break if necessary */
@@ -140,7 +139,14 @@
   border-top-width: 1px;
 }
 
+.doc table.tableblock,
+.doc th.tableblock,
+.doc td.tableblock {
+  border: 0 solid var(--color-border-table);
+}
+
 .doc table.tableblock {
+  border-width: 1px;
   border-collapse: collapse;
   /* font-size: 0.85em; */
   margin: 2rem 0;
@@ -156,21 +162,33 @@
 .doc table.tableblock > caption {
   text-align: left;
   font-weight: var(--weight-bold);
+  font-size: 1.125rem;
+  letter-spacing: -0.025em;
+}
+
+.doc table.tableblock > tbody {
+  font-weight: var(--weight-light);
+}
+
+.doc table.tableblock > tbody > tr:nth-of-type(odd) {
+  background-color: var(--color-shade);
+}
+
+.doc th.tableblock {
+  font-weight: var(--weight-medium);
+  letter-spacing: -0.025em;
+}
+
+.doc thead .tableblock {
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  border-width: 0 0 1px;
 }
 
 .doc th.tableblock,
 .doc td.tableblock {
-  padding: 0.5rem;
-}
-
-.doc th.tableblock {
-  border-bottom: 2.5px solid #ddd;
-  font-weight: var(--weight-medium);
-}
-
-.doc td.tableblock {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  padding: 0.75rem 1.25rem;
+  border-width: 0 1px;
 }
 
 p.tableblock + p.tableblock {

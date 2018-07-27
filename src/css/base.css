@@ -25,6 +25,8 @@
   --color-link: var(--color-brand-light-blue);
   --color-code: var(--color-brand-pink);
   --color-border: var(--color-brand-silver);
+  /* --color-border-table: #666; */
+  --color-border-table: #dadada;
   --color-shade: #f3f3f3;
   --color-navbar-bg: var(--color-brand-black);
   --color-navbar-text: var(--color-brand-white);

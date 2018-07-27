@@ -143,6 +143,9 @@ The *Disk Queues* statistics section displays the information for data being pla
 
 | DCP senders
 | Number of replication senders for this bucket.
+
+| DCP receivers
+| Number of replication receivers for this bucket.
 |===
 
 [#view_stats]
