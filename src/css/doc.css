@@ -31,7 +31,7 @@
   margin-bottom: calc(1.25rem - 1rem);
 }
 
-.doc > h1 {
+.doc h1.page {
   margin-top: 0;
 }
 
@@ -69,21 +69,21 @@
   text-align: center;
 }
 
-.doc h1 > a.anchor::before,
-.doc h2 > a.anchor::before,
-.doc h3 > a.anchor::before,
-.doc h4 > a.anchor::before,
-.doc h5 > a.anchor::before,
-.doc h6 > a.anchor::before {
+.doc h1 a.anchor::before,
+.doc h2 a.anchor::before,
+.doc h3 a.anchor::before,
+.doc h4 a.anchor::before,
+.doc h5 a.anchor::before,
+.doc h6 a.anchor::before {
   content: "\00a7";
 }
 
-.doc h1:hover > a.anchor,
-.doc h2:hover > a.anchor,
-.doc h3:hover > a.anchor,
-.doc h4:hover > a.anchor,
-.doc h5:hover > a.anchor,
-.doc h6:hover > a.anchor {
+.doc h1:hover a.anchor,
+.doc h2:hover a.anchor,
+.doc h3:hover a.anchor,
+.doc h4:hover a.anchor,
+.doc h5:hover a.anchor,
+.doc h6:hover a.anchor {
   visibility: visible;
 }
 
@@ -575,7 +575,7 @@ p.tableblock + p.tableblock {
   margin-right: -1.25rem;
 }
 
-.doc-tiles .doc > h1 {
+.doc-tiles .doc h1.page {
   flex-basis: 100%;
 }
 
