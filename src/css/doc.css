@@ -95,18 +95,12 @@
   text-decoration: underline;
 }
 
-.doc code,
 .doc pre {
-  font-size: 0.875rem;
+  margin: 0;
 }
 
 .doc code {
   color: var(--color-code);
-  word-spacing: -0.125em;
-}
-
-.doc pre {
-  margin: 0;
 }
 
 .doc pre code {
@@ -147,7 +141,6 @@
 .doc table.tableblock {
   border-width: 1px;
   border-collapse: collapse;
-  /* font-size: 0.85em; */
   margin: 1.5rem 0 2rem;
   /* enable table-layout: fixed if you want the table width to be enforced strictly */
   /* alternative is to wrap table in div and set overflow-x: auto on the wrapper */
