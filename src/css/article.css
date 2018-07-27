@@ -170,7 +170,7 @@
   font-weight: var(--weight-light);
 }
 
-.doc table.tableblock > tbody > tr:nth-of-type(odd) {
+.doc table.tableblock > tbody > tr:nth-of-type(even) {
   background-color: var(--color-shade);
 }
 
