@@ -149,7 +149,7 @@
   border-width: 1px;
   border-collapse: collapse;
   /* font-size: 0.85em; */
-  margin: 2rem 0;
+  margin: 1.5rem 0 2rem;
   /* enable table-layout: fixed if you want the table width to be enforced strictly */
   /* alternative is to wrap table in div and set overflow-x: auto on the wrapper */
   /* table-layout: fixed; */
@@ -164,6 +164,8 @@
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
   letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
 }
 
 .doc table.tableblock > tbody {
