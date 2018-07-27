@@ -1,24 +1,25 @@
 :root {
+  /* NOTE tint colors are 15% transparent */
   /* primary */
   --color-brand-black: #000;
   --color-brand-red: #ea2328;
-  --color-brand-red-tint: rgba(234, 35, 40, 0.15);
+  --color-brand-red-tint: #fcdedf;
   --color-brand-white: #fff;
   /* secondary */
   --color-brand-light-blue: #00ace0;
-  --color-brand-light-blue-tint: rgba(0, 172, 224, 0.15);
+  --color-brand-light-blue-tint: #d9f3fb;
   --color-brand-pink: #eb4971;
   --color-brand-green: #00b9be;
   --color-brand-purple: #b36cdb;
-  --color-brand-purple-tint: rgba(179, 108, 219, 0.15);
+  --color-brand-purple-tint: #f4e9fa;
   /* tertiary */
   --color-brand-gray: #666;
   /* --color-brand-silver: #ccc; */
   --color-brand-silver: #c1c1c1;
   --color-brand-blue: #0074e0;
-  --color-brand-blue-tint: rgba(0, 116, 224, 0.15);
+  --color-brand-blue-tint: #d9eafb;
   --color-brand-orange: #fc9c0c;
-  --color-brand-orange-tint: rgba(252, 156, 12, 0.15);
+  --color-brand-orange-tint: #fff0da;
   --color-muted: var(--color-brand-gray);
   --color-text: #333;
   --color-link: var(--color-brand-light-blue);
