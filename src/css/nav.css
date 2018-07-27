@@ -1,5 +1,5 @@
 .nav-menu {
-  background-color: #f3f3f3;
+  background-color: var(--color-shade);
   position: fixed;
   width: inherit;
   overflow-y: scroll;
