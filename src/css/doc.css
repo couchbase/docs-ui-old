@@ -179,16 +179,16 @@
   letter-spacing: -0.025em;
 }
 
-.doc thead .tableblock {
-  font-size: 1.0625rem;
-  line-height: 1.2;
-  border-width: 0 0 1px;
-}
-
 .doc th.tableblock,
 .doc td.tableblock {
   padding: 0.75rem 1.25rem;
   border-width: 0 1px;
+}
+
+.doc thead th.tableblock {
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  border-width: 1px;
 }
 
 p.tableblock + p.tableblock {
