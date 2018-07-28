@@ -3,13 +3,13 @@
 
   var doc = document.querySelector('article.doc')
   if (!doc) return
-  var menu = document.querySelector('aside.toc.sidebar .toc-menu')
+  var sidebar = document.querySelector('aside.toc.sidebar')
+  var menu
   var headings = find('.sect1 > h2[id]', doc)
   if (!headings.length) {
-    if (menu) menu.parentNode.removeChild(menu)
+    if (sidebar) sidebar.parentNode.removeChild(sidebar)
     return
   }
-  var hasSidebar
   var lastActiveFragment
   var links = {}
 
@@ -25,7 +25,7 @@
     return accum
   }, document.createElement('ol'))
 
-  if (!(hasSidebar = !!menu)) {
+  if (!(menu = sidebar && sidebar.querySelector('.toc-menu'))) {
     menu = document.createElement('div')
     menu.className = 'toc-menu'
   }
@@ -35,18 +35,18 @@
   menu.appendChild(title)
   menu.appendChild(list)
 
-  if (hasSidebar) window.addEventListener('scroll', onScroll)
+  if (sidebar) window.addEventListener('scroll', onScroll)
 
   var startOfContent = doc.querySelector('h1.page + *')
   if (startOfContent) {
     var embeddedToc = document.createElement('aside')
     embeddedToc.className = 'toc embedded'
-    embeddedToc.appendChild(hasSidebar ? menu.cloneNode(true) : menu)
+    embeddedToc.appendChild(menu.cloneNode(true))
     doc.insertBefore(embeddedToc, startOfContent)
   }
 
   function onScroll () {
-    //var targetPosition = doc.parentNode.getBoundingClientRect().top + window.pageYOffset
+    // NOTE equivalent to: doc.parentNode.getBoundingClientRect().top + window.pageYOffset
     var targetPosition = doc.parentNode.offsetTop
     var activeFragment
     headings.some(function (heading) {

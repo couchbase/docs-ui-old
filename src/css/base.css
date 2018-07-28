@@ -120,6 +120,10 @@ code {
   word-spacing: -0.125em;
 }
 
+html code {
+  hyphens: none;
+}
+
 b,
 strong {
   font-weight: var(--weight-medium);

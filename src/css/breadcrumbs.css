@@ -7,11 +7,15 @@
 }
 
 .crumbs ul {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.crumbs li {
+  max-width: 100%;
 }
 
 .crumbs li::after {

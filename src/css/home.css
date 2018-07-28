@@ -14,8 +14,8 @@
 .home h1,
 .home h2,
 .home h3 {
-  margin: 0;
   line-height: 1.2;
+  margin: 0;
 }
 
 .home h1.page {
@@ -143,7 +143,8 @@
 
 .blade .ulist {
   font-weight: var(--weight-bold);
-  margin: 1.5rem 0 1rem;
+  margin: 1.5rem 0 0.5rem;
+  overflow-wrap: normal; /* NOTE not sure why this is required, but without it, list items get spaced apart */
 }
 
 .blade a {
@@ -163,6 +164,7 @@
 
 .tiles > h2 {
   font-size: 2rem;
+  hyphens: auto;
   padding-bottom: 3.125rem;
   text-align: center;
 }
@@ -187,12 +189,12 @@
 .tile {
   flex: 1;
   margin-bottom: 0.75rem;
+  min-width: 0;
 }
 
 .home .tile {
-  flex-basis: 50%;
-  max-width: 50%;
-  overflow-wrap: break-word;
+  flex-basis: auto;
+  width: 50%;
 }
 
 .tile .title {

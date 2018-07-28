@@ -98,14 +98,10 @@ The *Server Resources* statistics section displays the resource information on t
 [source,java]
 ----
 // Query (fluent API)
-Observable<AsyncN1qlQueryResult> theAirline = bucket
-    .async()
-    .query(N1qlQuery.simple(
-        select("name")
-            .from("travel-sample")
-            .as("Airline")
-            .where(x("id")
-            .eq(5209))));
+Observable<AsyncN1qlQueryResult> theAirline = bucket.async()
+    .query(
+        N1qlQuery.simple(select("name").from("travel_sample").as("Airline").where(x("id").eq(5209)))
+    );
 return thisAirline;
 ----
 
@@ -279,6 +275,6 @@ Issues resolved in this release:
 
 http://packages.couchbase.com/clients/kafka/3.2.3/kafka-connect-couchbase-3.2.3.zip[kafka-connect-couchbase-3.2.3.zip]
 
-== spec.volumeClaimTemplates.metadata
+== `spec.volumeClaimTemplates.metadata`
 
 This section demonstrates what happens when the section title does not have any natural wrap opportunities.

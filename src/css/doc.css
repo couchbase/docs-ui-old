@@ -1,18 +1,7 @@
+/* NOTE in Chrome, hyphens: auto is only supported on macOS and Android */
 .doc p {
   margin: 0;
-}
-
-.doc h1,
-.doc h2,
-.doc h3,
-.doc h4,
-.doc h5,
-.doc h6,
-.doc p,
-/* FIXME td.content might get overzealous */
-.doc td.content {
-  hyphens: auto; /* NOTE: forces long words to break if necessary */
-  word-break: break-word; /* NOTE: Chrome only supports hyphens on macOS and Android */
+  hyphens: auto;
 }
 
 .doc h1,
@@ -24,6 +13,7 @@
   font-weight: var(--weight-normal);
   line-height: 1.2;
   margin: 1.0625rem 0 calc(0.625rem - 1rem) 0;
+  hyphens: auto;
 }
 
 .doc h1 {
@@ -172,14 +162,15 @@
 
 .doc th.tableblock,
 .doc td.tableblock {
-  padding: 0.75rem 1.25rem;
   border-width: 0 1px;
+  /* padding: 0.75rem 1.25rem; */
+  padding: 0.75rem 1rem;
 }
 
 .doc thead th.tableblock {
+  border-width: 1px;
   font-size: 1.0625rem;
   line-height: 1.2;
-  border-width: 1px;
 }
 
 p.tableblock + p.tableblock {
@@ -221,8 +212,9 @@ p.tableblock + p.tableblock {
 }
 
 .doc .admonitionblock > table > tbody {
-  flex: 1;
   display: block;
+  flex: 1;
+  min-width: 0;
 }
 
 .doc .admonitionblock > table > tbody > tr {
@@ -236,9 +228,11 @@ p.tableblock + p.tableblock {
 .doc .admonitionblock td.content {
   display: block;
   flex: 1;
-  padding: 0.75rem 1rem;
   font-size: 0.9375rem;
+  hyphens: auto;
   line-height: 1.6;
+  min-width: 0;
+  padding: 0.75rem 1rem;
 }
 
 .doc .admonitionblock td.content > .title {
@@ -448,10 +442,11 @@ p.tableblock + p.tableblock {
   color: #f8f8f2;
   padding: 0.625rem;
   white-space: pre-wrap;
-  /* NOTE without word-break=break-word, listingblock causes article to overflow bounds */
-  /* NOTE word-break=break-word only works in Chrome, but emulates the behavior of pre-wrap in Firefox */
-  /* NOTE can use width: calc(100vw - var(--width-nav) - var(--width-toc) - var(--width-container-gutter)); on main */
-  word-break: break-word;
+  /* NOTE enable these styles if side-to-side scrolling is preferred */
+  /*
+  overflow-wrap: normal;
+  overflow-x: auto;
+  */
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
@@ -603,14 +598,15 @@ p.tableblock + p.tableblock {
   margin-top: 0.5em;
 }
 
-.doc-tiles .toc {
-  display: none !important;
-}
-
-.doc .swagger-ui .opblock-summary-path {
-  word-break: break-word;
+.doc-tiles aside.toc {
+  display: none;
 }
 
 .doc .swagger-ui .wrapper {
   padding: 0;
+  max-width: none;
+}
+
+.doc .swagger-ui .opblock {
+  overflow-x: auto; /* NOTE only seems to be required for Chrome */
 }

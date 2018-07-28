@@ -1,24 +1,28 @@
+/* NOTE min-width of flex: 1 container = content-width to prevent wrapping by default; min-width: 0 lets content wrap */
 div.body {
   display: flex;
   margin-top: var(--height-to-body);
+  overflow-wrap: break-word;
 }
 
 main {
   flex: 1;
+  min-width: 0;
 }
 
 nav.nav {
+  /* NOTE reserve no space in layout by default */
+  flex: 0 0 0%;
+  order: -1;
   visibility: hidden;
-  flex: 0;
   /* NOTE width must be set in order for fixed child to inherit */
   width: var(--width-nav);
-  order: -1;
 }
 
 aside.toc.sidebar {
   display: none;
-  flex: 0;
-  /* NOTE width must be set to activate overflow-wrap: break-word (not required for word-break: break-word) */
+  flex: none;
+  /* NOTE lock flex width to width of container */
   width: var(--width-toc);
 }
 
@@ -30,7 +34,8 @@ aside.toc.sidebar {
   nav.nav {
     visibility: visible;
     /* NOTE reserve space for nav in flex layout */
-    flex-basis: var(--width-nav);
+    /* NOTE lock flex width to width of container */
+    flex-basis: auto;
   }
 }
 
