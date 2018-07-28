@@ -9,6 +9,7 @@
     if (menu) menu.parentNode.removeChild(menu)
     return
   }
+  var hasSidebar
   var lastActiveFragment
   var links = {}
 
@@ -24,13 +25,9 @@
     return accum
   }, document.createElement('ol'))
 
-  var hasSidebar
-  if (menu) {
-    hasSidebar = true
-  } else {
+  if (!(hasSidebar = menu ? true : false)) {
     menu = document.createElement('div')
     menu.className = 'toc-menu'
-    hasSidebar = false
   }
 
   var title = document.createElement('h3')
@@ -40,7 +37,7 @@
 
   if (hasSidebar) window.addEventListener('scroll', onScroll)
 
-  var startOfContent = doc.querySelector('h1 + *')
+  var startOfContent = doc.querySelector('h1.page + *')
   if (startOfContent) {
     var embeddedToc = document.createElement('aside')
     embeddedToc.className = 'toc embedded'
@@ -49,7 +46,8 @@
   }
 
   function onScroll () {
-    var targetPosition = menu.getBoundingClientRect().top
+    //var targetPosition = doc.parentNode.getBoundingClientRect().top + window.pageYOffset
+    var targetPosition = doc.parentNode.offsetTop
     var activeFragment
     headings.some(function (heading) {
       if (heading.getBoundingClientRect().top < targetPosition) {
