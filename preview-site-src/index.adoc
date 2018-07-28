@@ -63,7 +63,7 @@ If you installed the CLI and the default site generator globally, you can upgrad
 ====
 
 [#summary_stats]
-== Bucket Monitoring — Summary Statistics
+== Bucket Monitoring -- Summary Statistics
 
 The summary section is designed to provide a quick overview of the cluster activity.
 
@@ -110,7 +110,7 @@ return thisAirline;
 ----
 
 [#vbucket_stats]
-== Monitoring vBucket Resources
+== Monitoring `vBucket` Resources
 
 [cols="1,3"]
 |===

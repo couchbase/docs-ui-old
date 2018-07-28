@@ -112,12 +112,11 @@ code,
 kbd,
 pre {
   font-family: "Roboto Mono", monospace;
-  font-size: 0.875rem;
 }
 
 code {
   color: var(--color-brand-black);
-  line-height: 1;
+  font-size: 0.9375em;
   word-spacing: -0.125em;
 }
 

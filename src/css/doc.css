@@ -95,10 +95,6 @@
   text-decoration: underline;
 }
 
-.doc pre {
-  margin: 0;
-}
-
 .doc code {
   color: var(--color-code);
 }
@@ -106,6 +102,7 @@
 .doc pre code {
   display: block;
   color: inherit;
+  font-size: inherit;
   word-spacing: inherit;
 }
 
@@ -439,16 +436,22 @@ p.tableblock + p.tableblock {
   margin-top: 0;
 }
 
+.doc pre {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 0;
+}
+
 .doc pre:not(.highlight),
 .doc pre.highlight code {
   background-color: #151514;
   color: #f8f8f2;
+  padding: 0.625rem;
   white-space: pre-wrap;
   /* NOTE without word-break=break-word, listingblock causes article to overflow bounds */
   /* NOTE word-break=break-word only works in Chrome, but emulates the behavior of pre-wrap in Firefox */
   /* NOTE can use width: calc(100vw - var(--width-nav) - var(--width-toc) - var(--width-container-gutter)); on main */
   word-break: break-word;
-  padding: 0.625rem;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */

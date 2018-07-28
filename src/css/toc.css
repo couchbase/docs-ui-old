@@ -1,6 +1,5 @@
 .toc {
   font-size: 0.875rem;
-  line-height: 1;
 }
 
 .toc.sidebar {
@@ -30,7 +29,7 @@
   font-size: inherit;
   font-weight: var(--weight-medium);
   margin: 0;
-  line-height: inherit;
+  line-height: 1;
 }
 
 .toc .toc-menu ol {
@@ -65,4 +64,8 @@
 .toc a.is-active:focus,
 .toc a.is-active:hover {
   color: inherit;
+}
+
+.toc code {
+  line-height: 1.125;
 }
