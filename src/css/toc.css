@@ -2,11 +2,6 @@
   font-size: 0.875rem;
 }
 
-.toc.sidebar {
-  /* NOTE similar to word-break: break-word in Chrome and word-wrap: break-word in Firefox */
-  overflow-wrap: break-word;
-}
-
 .toc-menu {
   border: 0 solid var(--color-brand-red);
   border-width: 0 0 0 0.25rem;
@@ -17,11 +12,9 @@
 .toc.sidebar .toc-menu {
   position: sticky;
   top: var(--height-to-body);
-  width: inherit;
 }
 
 .toc.embedded .toc-menu {
-  /* margin-top: 1.5rem; */
   margin-top: 1rem;
 }
 

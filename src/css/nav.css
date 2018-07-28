@@ -3,7 +3,6 @@
   position: fixed;
   width: inherit;
   overflow-y: scroll;
-  overflow-wrap: break-word;
   font-size: 0.875rem;
   line-height: 1.35;
 }
@@ -110,7 +109,6 @@ html.is-clipped--nav {
 
 .nav.is-active {
   visibility: visible;
-  flex-basis: 0;
 }
 
 .nav.is-active .nav-menu {

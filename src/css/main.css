@@ -12,6 +12,7 @@ main {
 
 .article-header .crumbs {
   flex: 1;
+  min-width: 0;
 }
 
 @media screen and (min-width: 769px) {
