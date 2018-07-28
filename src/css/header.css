@@ -293,10 +293,11 @@ a.navbar-item.has-dropdown::after,
   color: inherit;
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
-  padding: 0 1.75rem;
   height: 3.25rem;
-  display: inline-flex;
+  width: 9.75rem;
+  display: flex;
   align-items: center;
+  justify-content: center;
   letter-spacing: -0.025em;
   transition: background-color 0.3s;
 }
