@@ -25,7 +25,7 @@
     return accum
   }, document.createElement('ol'))
 
-  if (!(hasSidebar = menu ? true : false)) {
+  if (!(hasSidebar = !!menu)) {
     menu = document.createElement('div')
     menu.className = 'toc-menu'
   }
