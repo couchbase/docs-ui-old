@@ -29,6 +29,7 @@
 
 .nav-menu a.nav-link {
   color: var(--color-text);
+  display: block;
   text-decoration: none;
 }
 
