@@ -61,6 +61,9 @@
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
   color: var(--color-brand-red);
+  background: -webkit-linear-gradient(-45deg, var(--color-brand-purple), var(--color-brand-red) 75%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: var(--weight-normal);
   position: absolute;
   text-decoration: none;
