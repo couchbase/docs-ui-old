@@ -10,36 +10,48 @@
 .doc h4,
 .doc h5,
 .doc h6 {
-  font-weight: var(--weight-normal);
-  line-height: 1.2;
-  margin: 1.0625rem 0 calc(0.625rem - 1rem) 0;
+  font-weight: var(--weight-medium);
   hyphens: auto;
+  letter-spacing: -0.025rem;
+  line-height: 1.2;
+  margin: 1.5rem 0 -0.25rem;
 }
 
 .doc h1 {
-  font-size: 2.25rem;
-  margin-bottom: calc(1.25rem - 1rem);
+  font-size: 2.375rem;
+  font-weight: var(--weight-light);
+  letter-spacing: 0;
 }
 
 .doc h1.page {
-  margin-top: 0;
-}
-
-#preamble + .sect1,
-.doc .sect1 + .sect1 {
-  margin-top: 1.5625rem;
+  margin: 0;
 }
 
 .doc h2 {
-  font-size: 2.1875rem;
+  font-size: 1.875rem;
+  margin: 2.25rem 0 2.5rem;
+  max-width: fit-content; /* NOTE used to restrict width of key line */
+}
+
+.doc h2::after {
+  content: "";
+  display: block;
+  max-width: 5.75rem;
+  height: 0;
+  outline: 0.5px solid currentColor;
+  margin-top: 1.0625rem;
 }
 
 .doc h3 {
-  font-size: 1.5625rem;
+  font-size: 1.5rem;
 }
 
 .doc h4 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
+}
+
+.doc h5 {
+  font-size: 1rem;
 }
 
 .doc h1 > a.anchor,
@@ -49,7 +61,7 @@
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
   color: var(--color-brand-red);
-  font-weight: var(--weight-light);
+  font-weight: var(--weight-normal);
   position: absolute;
   text-decoration: none;
   width: 2ex;
@@ -140,8 +152,8 @@
 
 .doc table.tableblock > caption {
   text-align: left;
-  font-weight: var(--weight-bold);
   font-size: 1.125rem;
+  font-weight: var(--weight-bold);
   letter-spacing: -0.025em;
   line-height: 1.2;
   margin-bottom: 0.25rem;
@@ -237,6 +249,7 @@ p.tableblock + p.tableblock {
 
 .doc .admonitionblock td.content > .title {
   display: inline;
+  font-style: italic;
 }
 
 .doc .admonitionblock td.content::before {
@@ -311,7 +324,6 @@ p.tableblock + p.tableblock {
 }
 
 .doc .imageblock .title {
-  color: #191919;
   font-style: italic;
   margin-top: 0.5rem;
 }
@@ -392,15 +404,16 @@ p.tableblock + p.tableblock {
   padding: 0;
 }
 
-.doc .admonitionblock .title,
+/* TODO group with tableblock caption? */
 .doc .exampleblock .title,
 .doc .literalblock .title,
 .doc .listingblock .title,
 .doc .openblock .title {
-  color: #191919;
-  font-style: italic;
-  letter-spacing: -0.005em;
-  padding-bottom: 0.075rem;
+  font-size: 1.125rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
 }
 
 .doc .exampleblock > .content {
@@ -413,6 +426,7 @@ p.tableblock + p.tableblock {
   margin-top: 0;
 }
 
+/*
 .doc .sidebarblock {
   background-color: #eee;
   padding: 0.75rem 1.5rem;
@@ -429,6 +443,7 @@ p.tableblock + p.tableblock {
 .doc .sidebarblock > .content > :not(.title):first-child {
   margin-top: 0;
 }
+*/
 
 .doc pre {
   font-size: 0.875rem;
