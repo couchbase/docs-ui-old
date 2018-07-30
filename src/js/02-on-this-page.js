@@ -61,7 +61,9 @@
         if (lastActiveFragment) {
           links[lastActiveFragment].classList.remove('is-active')
         }
-        links[activeFragment].classList.add('is-active')
+        var activeLink = links[activeFragment]
+        activeLink.classList.add('is-active')
+        if (menu.scrollHeight > menu.offsetHeight) activeLink.scrollIntoView(false)
         lastActiveFragment = activeFragment
       }
     } else if (lastActiveFragment) {

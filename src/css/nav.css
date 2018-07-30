@@ -26,6 +26,14 @@
   }
 }
 
+.nav-menu::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+}
+
 .nav-menu a.nav-link {
   color: var(--color-text);
   display: block;
@@ -92,15 +100,6 @@
 
 .nav-menu .nav-item.is-active > .nav-line > .nav-toggle::before {
   content: "-";
-}
-
-.nav-menu::-webkit-scrollbar {
-  width: 0.25rem;
-  height: 0.25rem;
-}
-
-.nav-menu::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
 }
 
 /* mobile menu */
