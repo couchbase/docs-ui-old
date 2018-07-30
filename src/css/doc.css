@@ -445,6 +445,7 @@ p.tableblock + p.tableblock {
   /* NOTE enable these styles if side-to-side scrolling is preferred */
   /*
   overflow-wrap: normal;
+  word-wrap: normal;
   overflow-x: auto;
   */
 }

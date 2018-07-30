@@ -144,7 +144,8 @@
 .blade .ulist {
   font-weight: var(--weight-bold);
   margin: 1.5rem 0 0.5rem;
-  overflow-wrap: normal; /* NOTE not sure why this is required, but without it, list items get spaced apart */
+  /* overflow-wrap: normal; */
+  word-wrap: normal; /* NOTE not sure why this is required, but without it, list items get spaced apart */
 }
 
 .blade a {

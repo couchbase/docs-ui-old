@@ -2,7 +2,8 @@
 div.body {
   display: flex;
   margin-top: var(--height-to-body);
-  overflow-wrap: break-word;
+  /* overflow-wrap: break-word; */
+  word-wrap: break-word; /* IE only supports word-wrap, which is an alias of overflow-wrap */
 }
 
 main {
