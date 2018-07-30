@@ -14,6 +14,7 @@
   top: var(--height-to-body);
   max-height: var(--height-nav);
   overflow-y: auto;
+  -ms-overflow-style: none;
 }
 
 .toc.embedded .toc-menu {
