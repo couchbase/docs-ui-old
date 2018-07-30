@@ -12,10 +12,16 @@
 .toc.sidebar .toc-menu {
   position: sticky;
   top: var(--height-to-body);
+  max-height: var(--height-nav);
+  overflow-y: auto;
 }
 
 .toc.embedded .toc-menu {
   margin-top: 1rem;
+}
+
+.toc-menu::-webkit-scrollbar {
+  width: 0;
 }
 
 .toc .toc-menu h3 {
