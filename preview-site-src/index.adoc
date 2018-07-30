@@ -71,6 +71,7 @@ image::stats-summary.png[]
 
 The following statistics are available:
 
+.Summary statistics
 [cols="1,3"]
 |===
 | Statistic | Description
@@ -95,6 +96,7 @@ With the stream-based views, data returned when `stale` is set to `ok` is closer
 
 The *Server Resources* statistics section displays the resource information on this server including swap usage, free RAM, CPU utilization percentage,and FTS RAM used.
 
+.A source block that is forced to wrap
 [source,java]
 ----
 // Query (fluent API)
