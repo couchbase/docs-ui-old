@@ -496,8 +496,16 @@ p.tableblock + p.tableblock {
   margin-top: 1.5rem;
 }
 
-.doc .dlist dd > .openblock {
-  margin-top: -1rem;
+.doc .dlist dt + dt {
+  margin-top: 0;
+}
+
+.doc .dlist dt + dd {
+  margin-top: 0.125rem;
+}
+
+.doc .dlist dd > .openblock > .content > * {
+  margin-top: 0;
 }
 
 .doc .conum[data-value] {

@@ -11,9 +11,13 @@ The [.ui]*Buckets* selection list lets you select which of the buckets configure
 The statistics shown are aggregated over the whole cluster for the selected bucket.
 
 Interval Selection::
-The [.ui]*Interval* selection at the top of the main graph changes interval display for all graphs displayed on the page.
+Periodic Selection::
 +
+--
+The [.ui]*Interval* selection at the top of the main graph changes interval display for all graphs displayed on the page.
+
 As the selected interval increases, the amount of statistical data displayed will depend on how long your cluster has been running.
+--
 
 == Individual Bucket Monitoring
 
