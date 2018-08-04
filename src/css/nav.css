@@ -61,8 +61,11 @@
 }
 
 .nav-menu .nav-item .nav-list {
+  /*
   margin-top: -0.0625rem;
   margin-bottom: 0.625rem;
+  */
+  margin-bottom: 0.75rem;
 }
 
 .nav-menu .nav-item:not(.is-active) > .nav-list {
