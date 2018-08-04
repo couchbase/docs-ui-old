@@ -34,7 +34,7 @@
   padding-left: 0.25em;
 }
 
-.blade ul,
+.card ul,
 .tile ul {
   line-height: 1.25;
   list-style: none;
@@ -42,12 +42,12 @@
   padding: 0;
 }
 
-.blade li,
+.card li,
 .tile li {
   padding: 0.25em 0;
 }
 
-.blade a,
+.card a,
 .tile a {
   text-decoration: none;
   position: relative;
@@ -59,7 +59,7 @@
   text-align: center;
 }
 
-.blade a::before,
+.card a::before,
 .tile a::before {
   content: "";
   position: absolute;
@@ -73,8 +73,8 @@
   transition-duration: 0.3s;
 }
 
-.blade a:focus::before,
-.blade a:hover::before,
+.card a:focus::before,
+.card a:hover::before,
 .tile a:focus::before,
 .tile a:hover::before {
   transform: scale3d(1, 0.9999, 0.9999);
@@ -86,46 +86,46 @@
   display: none;
 }
 
-.blades > .sectionbody {
+.cards > .sectionbody {
   display: flex;
   flex-direction: column;
 }
 
-.blade {
+.card {
   flex: 1;
   display: flex;
   flex-direction: column;
   padding: 1.25rem;
 }
 
-.blade + .blade {
+.card + .card {
   margin-top: 0.75rem;
 }
 
-.home .blade {
+.home .card {
   color: #fff;
 }
 
-.home .blade:nth-of-type(1) {
+.home .card:nth-of-type(1) {
   background-color: var(--color-brand-pink);
 }
 
-.home .blade:nth-of-type(2) {
+.home .card:nth-of-type(2) {
   background-color: var(--color-brand-green);
 }
 
-.home .blade:nth-of-type(3) {
+.home .card:nth-of-type(3) {
   background-color: var(--color-brand-light-blue);
 }
 
-.blade h3 {
+.card h3 {
   font-size: 1.5rem;
   line-height: 2rem;
   padding: 0 0 1rem;
   position: relative;
 }
 
-.blade h3::after {
+.card h3::after {
   content: "";
   display: block;
   position: absolute;
@@ -135,24 +135,24 @@
   background-color: currentColor;
 }
 
-.blade .paragraph {
+.card .paragraph {
   font-weight: var(--weight-light);
   margin-top: 1rem;
   flex: 1 0 auto; /* NOTE must specify flex-basis for IE 11 */
 }
 
-.blade .ulist {
+.card .ulist {
   font-weight: var(--weight-bold);
   margin: 1.5rem 0 0.5rem;
   /* overflow-wrap: normal; */
   word-wrap: normal; /* NOTE not sure why this is required, but without it, list items get spaced apart */
 }
 
-.blade a {
+.card a {
   color: inherit;
 }
 
-.blade a::after {
+.card a::after {
   content: "\00a0>";
   width: 0;
   display: inline-block;
@@ -214,19 +214,19 @@
     margin-right: 0.5rem;
   }
 
-  .blades > .sectionbody {
+  .cards > .sectionbody {
     flex-direction: row;
   }
 
-  .blade h3 {
+  .card h3 {
     width: 66.66%;
   }
 
-  .blade h3::after {
+  .card h3::after {
     width: 37.5%; /* NOTE equates to 25% of container */
   }
 
-  .blade + .blade {
+  .card + .card {
     margin-top: 0;
     margin-left: 0.75rem;
   }
