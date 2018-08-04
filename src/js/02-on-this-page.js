@@ -5,7 +5,7 @@
   if (!doc) return
   var sidebar = document.querySelector('aside.toc.sidebar')
   var menu
-  var headings = find('.sect1 > h2[id]', doc)
+  var headings = find('h1.sect0, .sect1 > h2[id]', doc)
   if (!headings.length) {
     if (sidebar) sidebar.parentNode.removeChild(sidebar)
     return
