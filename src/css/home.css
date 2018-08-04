@@ -200,6 +200,11 @@
 
 .tile .title {
   font-weight: var(--weight-bold);
+  margin-bottom: 0.25rem;
+}
+
+.tile .title a {
+  color: inherit;
 }
 
 @media screen and (min-width: 769px) {
