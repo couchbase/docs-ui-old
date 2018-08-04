@@ -34,9 +34,14 @@
   background-color: var(--color-border);
 }
 
+.nav-menu .nav-line,
+.nav-menu .nav-link,
+.nav-menu .nav-text {
+  display: block;
+}
+
 .nav-menu a.nav-link {
   color: var(--color-text);
-  display: block;
   text-decoration: none;
 }
 
