@@ -240,18 +240,10 @@ p.tableblock + p.tableblock {
   vertical-align: middle;
 }
 
-.doc .admonitionblock > table {
-  display: flex;
-}
-
-.doc .admonitionblock > table > tbody {
-  display: block;
-  flex: 1;
-  min-width: 0;
-}
-
+.doc .admonitionblock > table,
+.doc .admonitionblock > table > tbody,
 .doc .admonitionblock > table > tbody > tr {
-  display: flex;
+  display: block;
 }
 
 .doc .admonitionblock .icon {
@@ -260,11 +252,9 @@ p.tableblock + p.tableblock {
 
 .doc .admonitionblock td.content {
   display: block;
-  flex: 1;
   font-size: 0.9375rem;
   hyphens: auto;
   line-height: 1.6;
-  min-width: 0;
   padding: 0.75rem 1rem;
 }
 
@@ -325,14 +315,6 @@ p.tableblock + p.tableblock {
 .doc .admonitionblock td.content > :first-child {
   margin-top: 0;
 }
-
-/*
-.doc .admonitionblock > table {
-  border-collapse: collapse;
-  table-layout: fixed;
-  width: 100%;
-}
-*/
 
 .doc .imageblock {
   display: flex;
