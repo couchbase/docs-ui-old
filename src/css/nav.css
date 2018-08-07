@@ -72,7 +72,7 @@
   display: none;
 }
 
-.nav-menu .nav-item[data-depth="0"] {
+.nav-menu .nav-item {
   margin-left: 0.75em;
 }
 
@@ -82,7 +82,6 @@
 
 .nav-menu .nav-item .nav-item {
   margin-top: 0.5em;
-  margin-left: 0.75em;
 }
 
 .nav-item[data-depth="0"] > .nav-line {
@@ -95,8 +94,8 @@
 }
 
 .nav-menu .nav-toggle {
-  border: 0;
   background: none;
+  border: 0;
   padding: 0;
   position: absolute;
   margin-left: -1.25em;

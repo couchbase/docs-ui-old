@@ -197,7 +197,6 @@
 .doc th.tableblock,
 .doc td.tableblock {
   border-width: 0 1px;
-  /* padding: 0.75rem 1.25rem; */
   padding: 0.75rem 1rem;
 }
 
