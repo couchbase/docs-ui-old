@@ -134,7 +134,10 @@ Number of new items created in vBuckets within the specified state.
 NOTE: The new items per second is not valid for the Pending state.
 
 | ejections per sec.
-| Number of items ejected per second within the vBuckets of the specified state.
+a|
+* Non-zero
+
+Number of items ejected per second within the vBuckets of the specified state.
 |===
 
 [#disk_stats]

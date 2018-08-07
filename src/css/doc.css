@@ -211,8 +211,7 @@ p.tableblock + p.tableblock {
 }
 
 /* NOTE in Asciidoctor 1.5.7, this div will have a class */
-.doc th.tableblock > div > .paragraph:first-child,
-.doc td.tableblock > div > .paragraph:first-child {
+.doc td.tableblock > div > :first-child {
   margin-top: 0;
 }
 
