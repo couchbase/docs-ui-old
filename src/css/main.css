@@ -17,11 +17,13 @@ main {
 
 @media screen and (min-width: 769px) {
   main.article {
-    padding: 0 var(--width-main-gutter) 4rem;
+    padding-right: var(--width-main-gutter);
+    padding-left: var(--width-main-gutter);
   }
 
   main.home {
-    padding: 0 var(--width-container-gutter) 4rem;
+    padding-right: var(--width-container-gutter);
+    padding-left: var(--width-container-gutter);
   }
 
   .article-header {
