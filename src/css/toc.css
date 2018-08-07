@@ -10,7 +10,9 @@
 }
 
 .toc.sidebar .toc-menu {
-  position: sticky;
+  position: fixed; /* for IE */
+  width: inherit; /* for position: fixed */
+  position: sticky; /* stylelint-disable-line declaration-block-no-duplicate-properties */
   top: var(--height-to-body);
   max-height: var(--height-nav);
   overflow-y: auto;
