@@ -7,7 +7,8 @@
 {{#if env.ALGOLIA_API_KEY}}
 <!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js -->
 <script src="{{uiRootPath}}/js/vendor/docsearch.min.js"></script>
-<script>docsearch({
+<script>
+docsearch({
   {{#if env.ALGOLIA_APP_ID}}
   appId: '{{env.ALGOLIA_APP_ID}}',
   {{/if}}
@@ -15,7 +16,8 @@
   indexName: '{{env.ALGOLIA_INDEX_NAME}}',
   inputSelector: '#search-query',
   debug: false,
-})</script>
+})
+</script>
 {{/if}}
 {{#if (eq env.FEEDBACK_BUTTON 'true')}}
 <script async src="https://issues.couchbase.com/s/df1d14c9d77c1ad1c4ef2db3d8d7da3f-T/-6ikjte/73013/c4d560fe7f608200148fbd40cb0f35ae/2.0.23/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&amp;collectorId=de2e9313"></script>
