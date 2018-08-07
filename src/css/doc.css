@@ -145,12 +145,11 @@
   border-width: 1px;
   border-collapse: collapse;
   margin: 1.5rem 0 2rem;
-  /* enable table-layout: fixed if you want the table width to be enforced strictly */
-  /* alternative is to wrap table in div and set overflow-x: auto on the wrapper */
-  /* table-layout: fixed; */
 }
 
-.doc table.spread {
+/* TODO drop .spread after upgrading to Asciidoctor 1.5.7 */
+.doc table.spread,
+.doc table.stretch {
   width: 100%;
 }
 
@@ -166,6 +165,25 @@
 .doc table.tableblock > tbody {
   font-weight: var(--weight-light);
 }
+
+/* NOTE prevent wide tables from exceeding bounds */
+/* TODO could also target table.tableblock[style^="width:"] */
+/* TODO drop .spread after upgrading to Asciidoctor 1.5.7 */
+.doc table.spread > tbody > tr > *,
+.doc table.stretch > tbody > tr > * {
+  /* NOTE setting max-width reactivates overflow-wrap behavior on the table cell */
+  max-width: 0;
+}
+
+/* NOTE alternate way to prevent wide tables from exceeding bounds, but can overly compress header cells */
+/* table-layout: fixed strictly enforces table and column widths */
+/* another alternative is to wrap table in div and set overflow-x: auto on wrapper */
+/*
+.doc table.spread,
+.doc table.stretch {
+  table-layout: fixed;
+}
+*/
 
 .doc table.tableblock > tbody > tr:nth-of-type(even) {
   background-color: var(--color-shade);
