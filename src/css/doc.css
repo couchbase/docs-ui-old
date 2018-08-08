@@ -596,16 +596,17 @@ p.tableblock + p.tableblock {
 .doc-tiles .doc {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -1.25rem;
+  margin-right: -2.5rem;
 }
 
 .doc-tiles .doc h1.page {
   flex-basis: 100%;
+  padding-right: 2.5rem;
 }
 
 .doc-tiles .doc .sect1 {
   flex-basis: 50%;
-  padding-right: 1.25rem;
+  padding-right: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
