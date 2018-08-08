@@ -606,22 +606,16 @@ p.tableblock + p.tableblock {
 .doc-tiles .doc .sect1 {
   flex-basis: 50%;
   padding-right: 1.25rem;
-  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 .doc-tiles .doc .sect1 > h2 {
-  font-size: 1.25rem;
-  font-weight: var(--weight-medium);
-  /* padding-right: 33.33%; */
+  font-size: 1.5rem;
+  font-weight: var(--weight-bold);
 }
 
 .doc-tiles .doc .sect1 > h2::after {
-  content: "";
-  display: block;
-  background-color: var(--color-border);
-  height: 1px;
-  width: 25%;
-  margin-top: 0.5em;
+  margin-top: 1.25rem;
 }
 
 .doc-tiles aside.toc {
