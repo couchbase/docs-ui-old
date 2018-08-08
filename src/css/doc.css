@@ -428,25 +428,6 @@ p.tableblock + p.tableblock {
   margin-top: 0;
 }
 
-/*
-.doc .sidebarblock {
-  background-color: #eee;
-  padding: 0.75rem 1.5rem;
-}
-
-.doc .sidebarblock > .content > .title {
-  color: #191919;
-  font-size: 1.25rem;
-  font-weight: var(--weight-bold);
-  line-height: 1.2;
-  text-align: center;
-}
-
-.doc .sidebarblock > .content > :not(.title):first-child {
-  margin-top: 0;
-}
-*/
-
 .doc pre {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -504,6 +485,33 @@ p.tableblock + p.tableblock {
 }
 
 .doc .dlist dd > .openblock > .content > * {
+  margin-top: 0;
+}
+
+.doc .sidebarblock > .content {
+  background-color: var(--color-brand-black);
+  color: #fff;
+  font-weight: var(--weight-light);
+  padding: 3rem;
+}
+
+.doc .sidebarblock > .content > .title {
+  font-size: 1.5rem;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  margin-bottom: 2.5rem;
+}
+
+.doc .sidebarblock > .content > .title::after {
+  content: "";
+  display: block;
+  max-width: 5.75rem;
+  height: 0;
+  outline: 1px solid var(--color-brand-orange);
+  margin-top: 1.25rem;
+}
+
+.doc .sidebarblock > .content > :not(.title):first-child {
   margin-top: 0;
 }
 
