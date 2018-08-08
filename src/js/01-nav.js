@@ -11,15 +11,13 @@
 
   find('.nav-toggle', navMenu.element).forEach(function (toggleBtn) {
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
-    toggleBtn.addEventListener('click', function () {
-      navItem.classList.toggle('is-active')
-    })
+    toggleBtn.addEventListener('click', toggleActive.bind(navItem))
     var navItemSpan = findNextElement(toggleBtn)
     if (navItemSpan.classList.contains('nav-text')) {
       navItemSpan.style.cursor = 'pointer'
-      navItemSpan.addEventListener('click', function () {
-        navItem.classList.toggle('is-active')
-      })
+      // NOTE prevent text from being selected by double click
+      navItemSpan.addEventListener('mousedown', function (e) { if (e.detail > 1) e.preventDefault() })
+      navItemSpan.addEventListener('click', toggleActive.bind(navItem))
     }
   })
 
@@ -74,6 +72,11 @@
   function fitNavMenu (preferredHeight, availableHeight, encroachingElement) {
     var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
     navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, (preferredHeight - reclaimedHeight)) + 'px' : ''
+  }
+
+  function toggleActive (e) {
+    this.classList.toggle('is-active')
+    concealEvent(e)
   }
 
   function expandNav (e) {
