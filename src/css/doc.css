@@ -113,7 +113,6 @@
 }
 
 .doc .paragraph,
-.doc .colist,
 .doc .dlist,
 .doc .olist,
 .doc .ulist,
@@ -516,19 +515,17 @@ p.tableblock + p.tableblock {
 }
 
 .doc .conum[data-value] {
-  /* border: 1px solid #989898; */
-  border: 1px solid #404040;
+  border: 1px solid currentColor;
   border-radius: 100%;
-  display: inline-block;
+  display: inline-flex;
   font-family: "Roboto", sans-serif;
   font-size: 0.75rem;
   font-style: normal;
-  width: 1.25em;
-  height: 1.25em;
-  line-height: 1.2;
-  text-align: center;
-  letter-spacing: -0.25ex;
-  text-indent: -0.25ex;
+  width: 1rem;
+  height: 1rem;
+  justify-content: center;
+  align-items: center;
+  vertical-align: text-bottom;
 }
 
 .doc .conum[data-value]::after {
@@ -539,13 +536,24 @@ p.tableblock + p.tableblock {
   display: none;
 }
 
-.doc .colist {
-  font-size: 0.95rem;
+.doc pre .conum[data-value] {
+  background-color: #f8f8f2;
+  border-color: #f8f8f2;
+  color: #151514;
 }
 
-.doc .colist > table tr > td:first-of-type {
-  padding: 0 0.75em;
-  line-height: 1;
+.doc .colist {
+  margin-top: 0.5rem;
+}
+
+.doc .colist td:first-of-type {
+  line-height: 1.4;
+  padding: 0 0.5rem;
+  vertical-align: top;
+}
+
+.doc .colist td:last-of-type {
+  padding: 0;
 }
 
 .doc b.button {

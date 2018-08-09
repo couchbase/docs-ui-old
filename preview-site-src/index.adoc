@@ -115,16 +115,17 @@ With the stream-based views, data returned when `stale` is set to `ok` is closer
 
 The *Server Resources* statistics section displays the resource information on this server including swap usage, free RAM, CPU utilization percentage,and FTS RAM used.
 
-.A source block that is forced to wrap
+.A query using the fluent API (lines are forced to wrap)
 [source,java]
 ----
-// Query (fluent API)
-Observable<AsyncN1qlQueryResult> theAirline = bucket.async()
+Observable<AsyncN1qlQueryResult> theAirline = bucket.async() // <1>
     .query(
         N1qlQuery.simple(select("name").from("travel_sample").as("Airline").where(x("id").eq(5209)))
     );
-return thisAirline;
+return thisAirline; // <2>
 ----
+<1> Sets up an async query.
+<2> Returns the result of the query.
 
 [#vbucket_stats]
 == Monitoring `vBucket` Resources
