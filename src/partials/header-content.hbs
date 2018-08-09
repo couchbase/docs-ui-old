@@ -22,7 +22,11 @@
                   <li><a href="{{siteRootPath}}/server/5.5/fts/full-text-intro.html">Full Text Search</a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/analytics/introduction.html">Analytics <small>(Developer Preview)</small></a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/eventing/eventing-overview.html">Eventing</a></li>
+                  {{#if (eq env.STAGE 'staging')}}
+                  <li><a href="{{siteRootPath}}/operator/1.0/overview.html">Autonomous Operator</a></li>
+                  {{else}}
                   <li><a href="{{siteRootPath}}/operator/0.8/overview.html">Autonomous Operator</a></li>
+                  {{/if}}
                 </ul>
                 <ul>
                   <li class="heading">Mobile</li>
