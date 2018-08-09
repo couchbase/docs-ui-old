@@ -62,6 +62,7 @@
 
 .toc a.is-active {
   font-weight: var(--weight-medium);
+  letter-spacing: -0.0065em;
 }
 
 .toc a.is-active:focus,
