@@ -3,7 +3,7 @@
 :experimental:
 :hide-uri-scheme:
 // Variables:
-:current-release: v96
+:current-release: v97
 // Project URIs:
 :uri-project: https://github.com/couchbase/docs-ui
 :uri-preview: https://cb-docs-ui.netlify.com
