@@ -7,9 +7,9 @@
     {{/if}}
     {{/with}}
     {{#each page.breadcrumbs}}
-    {{#if (and ./url (eq ./urlType 'internal'))~}}
+    {{#if (and ./url (eq ./urlType 'internal'))}}
     <li class="crumb"><a href="{{{relativize @root.page.url ./url}}}">{{{./content}}}</a></li>
-    {{~/if}}
+    {{/if}}
     {{/each}}
   </ul>
   {{/if}}
