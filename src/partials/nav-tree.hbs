@@ -1,7 +1,9 @@
 {{#if navigation.length}}
 <ul class="nav-list">
   {{#each navigation}}
-  <li class="nav-item{{#if (eq @root.page.url ./url)}} is-current-page{{/if}}{{#if (not ../level)}} is-active{{/if}}" data-depth="{{or ../level 0}}">
+  <li class="nav-item{{#if (eq ../crumbAtLevel this)}}
+      {{~#if (eq this (last @root.page.breadcrumbs))}} is-current-page{{~else}} is-current-path{{/if}} is-active
+      {{~else if (eq ../level 0)}} is-active{{/if}}" data-depth="{{../level}}">
     {{#if ./content}}
     <span class="nav-line">
     {{#if ./items.length}}
@@ -9,14 +11,14 @@
     {{/if}}
     {{#if ./url}}
     <a class="nav-link" href="
-      {{~#if (eq ./urlType 'internal')}}{{{relativize @root.page.url ./url}}}
-      {{~else}}{{{./url}}}{{~/if}}">{{{./content}}}</a>
+        {{~#if (eq ./urlType 'internal')}}{{{relativize @root.page.url ./url}}}
+        {{~else}}{{{./url}}}{{~/if}}">{{{./content}}}</a>
     {{else}}
     <span class="nav-text">{{{./content}}}</span>
     {{/if}}
     </span>
     {{/if}}
-{{> nav-tree navigation=./items level=(increment ../level)}}
+{{> nav-tree navigation=./items level=(increment ../level) crumbAtLevel=(lookup @root.page.breadcrumbs (increment ../level))}}
   </li>
   {{/each}}
 </ul>

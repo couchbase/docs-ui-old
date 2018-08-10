@@ -15,7 +15,7 @@ site:
     latestVersion: *latest_version_abc
   - &component
     name: server
-    title: Couchbase Server
+    title: &component_title Couchbase Server
     url: /server/5.5/index.html
     versions:
     - &latest_version_server
@@ -24,6 +24,7 @@ site:
     - &component_version
       url: '#'
       version: '5.1'
+      title: *component_title
     - url: '#'
       version: '5.0'
     - url: '#'
@@ -50,16 +51,6 @@ page:
   module: ROOT
   home: false
   editUrl: https://github.com/opendevise/couchbase-docs-ui/blob/new-ui/preview-site-src/index.adoc
-  breadcrumbs:
-  - content: Couchbase Server
-    url: *page_url
-    urlType: internal
-  - content: Monitoring
-    url: *page_url
-    urlType: internal
-  - content: *page_title
-    url: *page_url
-    urlType: internal
   versions:
   - version: '5.5'
     url: '#'
@@ -95,11 +86,13 @@ page:
     - content: Users and Security
       url: '#'
       urlType: fragment
-  - content: Managing Clusters
+  - &crumb_0
+    content: Managing Clusters
     items:
-    - content: Monitoring
-      url: '#'
-      urlType: fragment
+    - &crumb_1
+      content: Monitoring
+      url: *page_url
+      urlType: internal
       items:
       - content: Monitor Using the REST API
         url: '#'
@@ -107,7 +100,8 @@ page:
       - content: Monitor Using the cbstats Utility
         url: '#'
         urlType: fragment
-      - content: *page_title
+      - &crumb_2
+        content: *page_title
         url: *page_url
         urlType: internal
       - content: Monitoring XDCR Timestamp-based Conflict Resolution
@@ -135,7 +129,7 @@ page:
       - content: Core File
         url: '#'
         urlType: fragment
-  - content: Installing & Upgrading
+  - content: Installing &amp; Upgrading
     items:
     - content: Couchbase Server Installation Home
       url: '#'
@@ -151,7 +145,7 @@ page:
         - content: Swap Space and Kernel Swappiness
           url: '#'
           urlType: fragment
-      - content: Running Couchbase Server in Containers & Orchestration
+      - content: Running Couchbase Server in Containers &amp; Orchestration
         url: '#'
         urlType: fragment
   - content: Understanding Couchbase
@@ -171,3 +165,7 @@ page:
     - content: content.that.does.not.want.to.wrap.on.its.own
       url: '#'
       urlType: fragment
+  breadcrumbs:
+  - *crumb_0
+  - *crumb_1
+  - *crumb_2

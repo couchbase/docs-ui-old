@@ -5,9 +5,7 @@
   var navMenu = {}
   if (!(navMenu.element = nav && nav.querySelector('.nav-menu'))) return
   var navControl
-
   var currentPageItem = navMenu.element.querySelector('.is-current-page')
-  if (currentPageItem) expandCurrentPath(currentPageItem)
 
   // NOTE prevent text from being selected by double click
   navMenu.element.addEventListener('mousedown', function (e) { if (e.detail > 1) e.preventDefault() })
@@ -26,20 +24,7 @@
   window.addEventListener('load', fitNavMenuInit)
   window.addEventListener('resize', fitNavMenuInit)
 
-  if ((navControl = document.querySelector('main .nav-control'))) {
-    navControl.addEventListener('click', expandNav)
-  }
-
-  function expandCurrentPath (navItem) {
-    navItem.classList.add('is-active')
-    var ancestorClasses
-    var ancestor = navItem
-    while ((ancestor = ancestor.parentNode) !== navMenu.element) {
-      if ((ancestorClasses = ancestor.classList).contains('nav-item')) {
-        ancestorClasses.add('is-active', 'is-current-path')
-      }
-    }
-  }
+  if ((navControl = document.querySelector('main .nav-control'))) navControl.addEventListener('click', revealNav)
 
   function scrollItemToMiddle (el, parentEl) {
     var adjustment = el.offsetTop + el.offsetHeight + 5 - (parentEl.offsetHeight / 2.0)
@@ -80,24 +65,22 @@
     concealEvent(e)
   }
 
-  function expandNav (e) {
-    if (nav.classList.contains('is-active')) return closeNav(e)
+  function revealNav (e) {
+    if (nav.classList.contains('is-active')) return hideNav(e)
     document.documentElement.classList.add('is-clipped--nav')
     nav.classList.add('is-active')
     nav.addEventListener('click', concealEvent)
-    window.addEventListener('click', closeNav)
-    // NOTE don't let event get picked up by window click listener
-    concealEvent(e)
+    window.addEventListener('click', hideNav)
+    concealEvent(e) // NOTE don't let event get picked up by window click listener
   }
 
-  function closeNav (e) {
+  function hideNav (e) {
     if (e.which === 3 || e.button === 2) return
     document.documentElement.classList.remove('is-clipped--nav')
     nav.classList.remove('is-active')
     nav.removeEventListener('click', concealEvent)
-    window.removeEventListener('click', closeNav)
-    // NOTE don't let event get picked up by window click listener
-    concealEvent(e)
+    window.removeEventListener('click', hideNav)
+    concealEvent(e) // NOTE don't let event get picked up by window click listener
   }
 
   function find (selector, from) {
@@ -114,8 +97,7 @@
     }
   }
 
-  function findNextElement (from) {
-    var el
+  function findNextElement (from, el) {
     if ((el = from.nextElementSibling)) return el
     el = from
     while ((el = el.nextSibling) && el.nodeType !== 1);
