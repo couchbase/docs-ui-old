@@ -3,11 +3,14 @@
 
   var nav = document.querySelector('nav.nav')
   var navMenu = {}
-  if (!(navMenu.element = nav ? nav.querySelector('.nav-menu') : undefined)) return
+  if (!(navMenu.element = nav && nav.querySelector('.nav-menu'))) return
   var navControl
 
   var currentPageItem = navMenu.element.querySelector('.is-current-page')
   if (currentPageItem) expandCurrentPath(currentPageItem)
+
+  // NOTE prevent text from being selected by double click
+  navMenu.element.addEventListener('mousedown', function (e) { if (e.detail > 1) e.preventDefault() })
 
   find('.nav-toggle', navMenu.element).forEach(function (toggleBtn) {
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
@@ -15,8 +18,6 @@
     var navItemSpan = findNextElement(toggleBtn)
     if (navItemSpan.classList.contains('nav-text')) {
       navItemSpan.style.cursor = 'pointer'
-      // NOTE prevent text from being selected by double click
-      navItemSpan.addEventListener('mousedown', function (e) { if (e.detail > 1) e.preventDefault() })
       navItemSpan.addEventListener('click', toggleActive.bind(navItem))
     }
   })
