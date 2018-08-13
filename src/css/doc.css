@@ -346,7 +346,7 @@ p.tableblock + p.tableblock {
 }
 
 .quoteblock.abstract blockquote::before {
-  content: "Abstract: ";
+  content: "Summary: ";
   color: var(--color-muted);
   font-weight: var(--weight-medium);
 }
