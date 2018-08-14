@@ -18,7 +18,7 @@
     {{/if}}
     </span>
     {{/if}}
-{{> nav-tree navigation=./items level=(increment ../level) crumbAtLevel=(lookup @root.page.breadcrumbs (increment ../level))}}
+{{> nav-tree navigation=./items level=(add ../level 1) crumbLevel=(add ../crumbLevel (and ./content 1)) crumbAtLevel=(lookup @root.page.breadcrumbs (add ../crumbLevel (and ./content 1)))}}
   </li>
   {{/each}}
 </ul>
