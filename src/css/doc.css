@@ -18,14 +18,15 @@
 }
 
 .doc h1 {
-  font-size: 2.375rem;
+  font-size: 2.125rem;
   font-weight: var(--weight-light);
   letter-spacing: 0;
   margin: 2.5rem 0 0;
 }
 
 .doc h1.page {
-  margin: 0;
+  font-size: 2.375rem;
+  margin-top: 0;
 }
 
 .doc h2 {
