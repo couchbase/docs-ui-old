@@ -45,6 +45,13 @@ main {
   align-items: center;
 }
 
+.article-header ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 .article-header .crumbs {
   flex: 1;
   min-width: 0;

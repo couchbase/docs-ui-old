@@ -1,5 +1,7 @@
 = Monitoring Statistics
 :doctype: book
+:page-edition: enterprise
+:page-status: beta
 
 [abstract]
 From the *Data Bucket* menu, information and statistics about buckets and nodes is displayed for the entire Couchbase Server cluster.

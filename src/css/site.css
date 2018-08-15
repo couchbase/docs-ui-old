@@ -5,8 +5,9 @@
 @import "nav.css";
 @import "toc.css";
 @import "main.css";
-@import "toolbar.css";
 @import "breadcrumbs.css";
+@import "labels.css";
+@import "toolbar.css";
 @import "doc.css";
 @import "home.css";
 @import "header.css";

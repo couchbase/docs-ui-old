@@ -1,0 +1,12 @@
+{{#if (or page.attributes.edition page.attributes.status)}}
+<div class="labels">
+  <ul>
+    {{#if page.attributes.edition}}
+    <li class="edition">{{page.attributes.edition}}</li>
+    {{/if}}
+    {{#if page.attributes.status}}
+    <li class="status">{{page.attributes.status}}</li>
+    {{/if}}
+  </ul>
+</div>
+{{/if}}
