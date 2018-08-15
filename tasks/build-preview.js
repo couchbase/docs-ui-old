@@ -40,10 +40,11 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
           uiModel.page = { layout: '404' }
         } else {
           const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
-          const pageAttributes = {}
-          const pageRole = doc.getAttribute('page-role')
-          if (pageRole) pageAttributes.role = pageRole
-          uiModel.page.attributes = pageAttributes
+          uiModel.page.attributes = Object.entries(doc.getAttributes())
+            .filter(([name, val]) => name.startsWith('page-'))
+            .reduce((accum, [name, val]) => {
+              accum[name.substr(5)] = val; return accum
+            }, {})
           uiModel.page.layout = doc.getAttribute('page-layout', 'default')
           uiModel.page.title = doc.getDocumentTitle()
           uiModel.page.contents = doc.convert()
