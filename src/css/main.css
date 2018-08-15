@@ -27,7 +27,7 @@ main {
   margin-left: auto;
   padding: 0.875rem 1.5rem;
   text-decoration: none;
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   white-space: nowrap;
 }
 

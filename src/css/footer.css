@@ -21,8 +21,7 @@
   height: 1px;
   background-color: var(--color-footer-text);
   transform: scale3d(0, 0.9999, 0.9999);
-  transition-property: transform;
-  transition-duration: 0.3s;
+  transition: transform 0.3s;
 }
 
 .footer a.icon::after,
@@ -34,7 +33,6 @@
 .footer a:hover::after {
   transform: scale3d(1, 0.9999, 0.9999);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.3s;
 }
 
 .footer-links {
@@ -87,7 +85,7 @@
   font-size: 1.125rem;
   letter-spacing: -0.025em;
   position: relative;
-  transition: all 0.3s;
+  transition: background-color 0.3s, color 0.3s;
   float: left;
 }
 
