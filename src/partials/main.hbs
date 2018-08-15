@@ -1,4 +1,10 @@
 <main class="article" data-ceiling="topbar">
+  {{#if (ne page.componentVersion page.component.latestVersion)}}
+  <div class="article-banner">
+    <p>A newer version of this documentation is available.</p>
+    <a class="btn" href="{{relativize page.url page.versions.0.url}}">View Latest</a>
+  </div>
+  {{/if}}
   <div class="article-header">
 {{> nav-control}}
 {{> breadcrumbs}}

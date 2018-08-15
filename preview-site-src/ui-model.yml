@@ -21,6 +21,7 @@ site:
     - &latest_version_server
       url: /server/5.5/index.html
       version: '5.5'
+      title: *component_title
     - &component_version
       url: '#'
       version: '5.1'
@@ -44,10 +45,10 @@ site:
     latestVersion: *latest_version_123
 page:
   title: &page_title Monitoring Statistics
-  url: &page_url /server/5.5/index.html
+  url: &page_url /server/5.1/index.html
   component: *component
   componentVersion: *component_version
-  version: '5.5'
+  version: '5.1'
   module: ROOT
   home: false
   editUrl: https://github.com/opendevise/couchbase-docs-ui/blob/new-ui/preview-site-src/index.adoc
