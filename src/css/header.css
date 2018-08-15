@@ -6,7 +6,6 @@
   right: 0;
   left: 0;
   z-index: var(--z-index-navbar);
-  box-shadow: 0 0.5px 0 #fff; /* NOTE adds visual separator from footer */
   line-height: 1;
 }
 

@@ -2,6 +2,41 @@ main {
   padding-bottom: 4rem;
 }
 
+.article-banner {
+  align-items: center;
+  background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%);
+  color: #fff;
+  display: flex;
+  line-height: 1.2;
+  margin: calc(-1 * var(--height-spacer)) calc(-1 * var(--width-container-gutter)) var(--height-spacer);
+  padding: 1rem 1.25rem;
+}
+
+.article-banner p {
+  font-size: 1.125rem;
+  margin: 0 1rem 0 0;
+}
+
+.article-banner a.btn {
+  color: #fff;
+  border: 1px solid #fff;
+  display: block;
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.025em;
+  line-height: 1;
+  margin-left: auto;
+  padding: 0.875rem 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.article-banner a.btn:focus,
+.article-banner a.btn:hover {
+  background-color: #fff;
+  color: var(--color-brand-light-blue);
+}
+
 .article-header {
   display: flex;
   font-size: 0.875rem;
@@ -24,6 +59,10 @@ main {
   main.home {
     padding-right: var(--width-container-gutter);
     padding-left: var(--width-container-gutter);
+  }
+
+  .article-banner {
+    margin: 0 calc(-1 * var(--width-main-gutter)) 1rem;
   }
 
   .article-header {
