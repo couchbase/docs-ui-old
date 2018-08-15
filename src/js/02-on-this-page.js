@@ -43,7 +43,7 @@
     })
   }
 
-  var startOfContent = doc.querySelector('h1.page + *')
+  var startOfContent = doc.querySelector('h1.page ~ :not(.labels)')
   if (startOfContent) {
     var embeddedToc = document.createElement('aside')
     embeddedToc.className = 'toc embedded'

@@ -1,0 +1,12 @@
+{{#if (or page.attributes.edition page.attributes.status)}}
+<div class="labels">
+  <ul>
+    {{#if page.attributes.edition}}
+    <li class="edition"><a href="https://www.couchbase.com/products/editions">{{page.attributes.edition}}</a></li>
+    {{/if}}
+    {{#if page.attributes.status}}
+    <li class="status"><span>{{page.attributes.status}}</span></li>
+    {{/if}}
+  </ul>
+</div>
+{{/if}}
