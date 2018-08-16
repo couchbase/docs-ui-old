@@ -480,6 +480,10 @@ p.tableblock + p.tableblock {
   margin-top: 0;
 }
 
+.doc .dlist dd {
+  margin-left: 1.5rem;
+}
+
 .doc .dlist dt + dd {
   margin-top: 0.125rem;
 }
