@@ -63,6 +63,10 @@ I wouldn't try that if I were you.
 Don't forget this step!
 ====
 
+.Enterprise Edition Only
+[IMPORTANT]
+This feature is only available in the Enterprise Edition.
+
 .Key Points to Remember
 [TIP]
 ====

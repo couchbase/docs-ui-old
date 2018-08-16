@@ -262,6 +262,11 @@ p.tableblock + p.tableblock {
   font-style: italic;
 }
 
+.doc .admonitionblock td.content>.title::after {
+  content: "";
+  display: block;
+}
+
 .doc .admonitionblock td.content::before {
   font-weight: var(--weight-medium);
 }
