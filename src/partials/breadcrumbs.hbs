@@ -2,9 +2,9 @@
   {{#if page.breadcrumbs}}
   <ul>
     {{#with page.componentVersion}}
-    {{#if (and ./title (not (or ./root (eq @root.page.breadcrumbs.0.content ./title))))}}
+    {{#unless (and (eq ./title @root.page.breadcrumbs.0.content) @root.page.breadcrumbs.0.url)}}
     <li class="crumb"><a href="{{{relativize @root.page.url ./url}}}">{{{./title}}}</a></li>
-    {{/if}}
+    {{/unless}}
     {{/with}}
     {{#each page.breadcrumbs}}
     {{#if (and ./url (eq ./urlType 'internal'))}}
