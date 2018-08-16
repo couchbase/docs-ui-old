@@ -34,7 +34,7 @@ main {
 .article-banner a.btn:focus,
 .article-banner a.btn:hover {
   background-color: #fff;
-  color: var(--color-brand-light-blue);
+  color: var(--color-brand-purple);
 }
 
 .article-header {
