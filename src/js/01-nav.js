@@ -8,7 +8,9 @@
   var currentPageItem = navMenu.element.querySelector('.is-current-page')
 
   // NOTE prevent text from being selected by double click
-  navMenu.element.addEventListener('mousedown', function (e) { if (e.detail > 1) e.preventDefault() })
+  navMenu.element.addEventListener('mousedown', function (e) {
+    if (e.detail > 1) e.preventDefault()
+  })
 
   find('.nav-toggle', navMenu.element).forEach(function (toggleBtn) {
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
@@ -27,7 +29,7 @@
   if ((navControl = document.querySelector('main .nav-control'))) navControl.addEventListener('click', revealNav)
 
   function scrollItemToMiddle (el, parentEl) {
-    var adjustment = el.offsetTop + el.offsetHeight + 5 - (parentEl.offsetHeight / 2.0)
+    var adjustment = el.offsetTop + el.offsetHeight + 5 - parentEl.offsetHeight / 2.0
     if (adjustment > 0) parentEl.scrollTop = adjustment
   }
 
@@ -57,7 +59,7 @@
 
   function fitNavMenu (preferredHeight, availableHeight, encroachingElement) {
     var reclaimedHeight = availableHeight - encroachingElement.getBoundingClientRect().top
-    navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, (preferredHeight - reclaimedHeight)) + 'px' : ''
+    navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
   }
 
   function toggleActive (e) {

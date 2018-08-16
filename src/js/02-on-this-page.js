@@ -18,7 +18,7 @@
       if (child.nodeName !== 'A') target.appendChild(child.cloneNode(true))
       return target
     }, document.createElement('a'))
-    links[link.href = '#' + heading.id] = link
+    links[(link.href = '#' + heading.id)] = link
     var listItem = document.createElement('li')
     listItem.appendChild(link)
     accum.appendChild(listItem)

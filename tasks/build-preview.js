@@ -10,9 +10,9 @@ const requireFromString = require('require-from-string')
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
 const ASCIIDOC_ATTRIBUTES = {
-  'experimental': '',
-  'icons': 'font',
-  'sectanchors': '',
+  experimental: '',
+  icons: 'font',
+  sectanchors: '',
   'source-highlighter': 'highlight.js',
 }
 
@@ -43,7 +43,8 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
           uiModel.page.attributes = Object.entries(doc.getAttributes())
             .filter(([name, val]) => name.startsWith('page-'))
             .reduce((accum, [name, val]) => {
-              accum[name.substr(5)] = val; return accum
+              accum[name.substr(5)] = val
+              return accum
             }, {})
           uiModel.page.layout = doc.getAttribute('page-layout', 'default')
           uiModel.page.title = doc.getDocumentTitle()
