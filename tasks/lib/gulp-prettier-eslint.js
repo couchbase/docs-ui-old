@@ -28,7 +28,7 @@ module.exports = () => {
     if (file.isStream()) return next(new PluginError('gulp-prettier-eslint', 'Streaming not supported'))
 
     const input = file.contents.toString()
-    const output = prettierEslint({ text: input })
+    const output = prettierEslint({ text: input, prettierOptions: { parser: 'babylon' } })
 
     if (input === output) {
       report.unchanged += 1
