@@ -1,0 +1,22 @@
+.doc .swagger-ui .wrapper.information-container {
+  display: none;
+}
+
+.doc .swagger-ui .wrapper {
+  padding: 0;
+  max-width: none;
+}
+
+.doc .swagger-ui .scheme-container {
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.doc .swagger-ui .scheme-container .schemes > label {
+  margin: 0;
+}
+
+.doc .swagger-ui .opblock {
+  overflow-x: auto; /* NOTE only seems to be required for Chrome */
+}
