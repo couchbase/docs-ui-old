@@ -20,3 +20,13 @@
 .doc .swagger-ui .opblock {
   overflow-x: auto; /* NOTE only seems to be required for Chrome */
 }
+
+.doc .docs-ui a {
+  border: 0;
+}
+
+.doc .docs-ui p,
+.doc .docs-ui ul,
+.doc .docs-ui pre {
+  margin-top: 1rem; /* NOTE quick hack to space out content in config UI */
+}

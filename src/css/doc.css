@@ -441,6 +441,7 @@ p.tableblock + p.tableblock {
 .doc pre.highlight code {
   background-color: #151514;
   color: #f8f8f2;
+  font-weight: var(--weight-normal); /* needed to override third-party styles */
   padding: 0.625rem;
   white-space: pre-wrap;
   /* NOTE enable these styles if side-to-side scrolling is preferred */
