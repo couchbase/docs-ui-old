@@ -16,13 +16,13 @@
     window.scrollTo(0, computePosition(this, 0) - ceiling.getBoundingClientRect().bottom - 20)
   }
 
-  function jumpFromUrl (e) {
+  function jumpToAnchorFromUrl (e) {
     var hash, target, jump
     if ((hash = window.location.hash) && (target = document.getElementById(hash.slice(1)))) {
       (jump = jumpToAnchor.bind(target))()
       setTimeout(jump, 0)
     }
-    if (e) window.removeEventListener(e.type, jumpFromUrl)
+    if (e) window.removeEventListener(e.type, jumpToAnchorFromUrl)
   }
 
   function interceptJumps (container) {
@@ -34,11 +34,11 @@
     })
   }
 
-  window.addEventListener('load', jumpFromUrl)
-  interceptJumps(document)
+  window.addEventListener('load', jumpToAnchorFromUrl)
+  interceptJumps(main.parentNode)
 
   window.addEventListener('fragment-jumper:update', function (e) {
     interceptJumps(e.container)
-    if (e.load) jumpFromUrl()
+    if (e.load) jumpToAnchorFromUrl()
   })
 })()
