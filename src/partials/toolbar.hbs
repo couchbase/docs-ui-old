@@ -1,9 +1,9 @@
-{{#if (eq page.component.name 'server')}}
+{{#if page.editUrl}}
+{{#if (includes page.editUrl '/docs-server/')}}
 <div class="tools" role="navigation">
   <ul>
-    {{#if page.editUrl}}
     <li class="tool edit"><a href="{{page.editUrl}}" title="Edit this Page">Edit</a></li>
-    {{/if}}
   </ul>
 </div>
+{{/if}}
 {{/if}}
