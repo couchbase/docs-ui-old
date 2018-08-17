@@ -5,11 +5,7 @@
   var ceiling = document.getElementById(main.dataset.ceiling)
 
   function computePosition (el, sum) {
-    if (main.contains(el)) {
-      return computePosition(el.offsetParent, el.offsetTop + sum)
-    } else {
-      return sum
-    }
+    return main.contains(el) ? computePosition(el.offsetParent, el.offsetTop + sum) : sum
   }
 
   function jumpToAnchor (e) {
@@ -20,19 +16,29 @@
     window.scrollTo(0, computePosition(this, 0) - ceiling.getBoundingClientRect().bottom - 20)
   }
 
-  window.addEventListener('load', function jumpOnLoad (e) {
-    var hash, target
+  function jumpFromUrl (e) {
+    var hash, target, jump
     if ((hash = window.location.hash) && (target = document.getElementById(hash.slice(1)))) {
-      jumpToAnchor.bind(target)()
-      setTimeout(jumpToAnchor.bind(target), 0)
+      (jump = jumpToAnchor.bind(target))()
+      setTimeout(jump, 0)
     }
-    window.removeEventListener('load', jumpOnLoad)
-  })
+    if (e) window.removeEventListener(e.type, jumpFromUrl)
+  }
 
-  Array.prototype.slice.call(document.querySelectorAll('a[href^="#"]')).forEach(function (el) {
-    var hash, target
-    if ((hash = el.hash.slice(1)) && (target = document.getElementById(hash))) {
-      el.addEventListener('click', jumpToAnchor.bind(target))
-    }
+  function interceptJumps (container) {
+    Array.prototype.slice.call(container.querySelectorAll('a[href^="#"]')).forEach(function (el) {
+      var hash, target
+      if ((hash = el.hash.slice(1)) && (target = document.getElementById(hash))) {
+        el.addEventListener('click', jumpToAnchor.bind(target))
+      }
+    })
+  }
+
+  window.addEventListener('load', jumpFromUrl)
+  interceptJumps(document)
+
+  window.addEventListener('fragment-jumper:update', function (e) {
+    interceptJumps(e.container)
+    if (e.load) jumpFromUrl()
   })
 })()
