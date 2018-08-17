@@ -129,6 +129,21 @@
   margin-top: 1rem;
 }
 
+.doc .paragraph .title,
+.doc .olist .title,
+.doc .ulist .title,
+.doc .exampleblock .title,
+.doc .listingblock .title,
+.doc .literalblock .title,
+.doc .openblock .title,
+.doc caption {
+  font-size: 1.125rem;
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
 .doc hr {
   margin: 1rem 0;
   border: 0 solid var(--color-border);
@@ -153,13 +168,8 @@
   width: 100%;
 }
 
-.doc table.tableblock > caption {
+.doc caption {
   text-align: left;
-  font-size: 1.125rem;
-  font-weight: var(--weight-bold);
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-  margin-bottom: 0.25rem;
 }
 
 .doc table.tableblock > tbody {
@@ -262,7 +272,7 @@ p.tableblock + p.tableblock {
   font-style: italic;
 }
 
-.doc .admonitionblock td.content>.title::after {
+.doc .admonitionblock td.content > .title::after {
   content: "";
   display: block;
 }
@@ -409,18 +419,6 @@ p.tableblock + p.tableblock {
 .doc .olist .listingblock,
 .doc .admonitionblock .listingblock {
   padding: 0;
-}
-
-/* TODO group with tableblock caption? */
-.doc .exampleblock .title,
-.doc .literalblock .title,
-.doc .listingblock .title,
-.doc .openblock .title {
-  font-size: 1.125rem;
-  font-weight: var(--weight-bold);
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-  margin-bottom: 0.25rem;
 }
 
 .doc .exampleblock > .content {
