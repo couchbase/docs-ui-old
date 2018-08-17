@@ -23,7 +23,7 @@
     listItem.appendChild(link)
     accum.appendChild(listItem)
     return accum
-  }, document.createElement('ol'))
+  }, document.createElement('ul'))
 
   if (!(menu = sidebar && sidebar.querySelector('.toc-menu'))) {
     menu = document.createElement('div')

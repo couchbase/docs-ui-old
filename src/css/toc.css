@@ -34,7 +34,7 @@
   line-height: 1;
 }
 
-.toc .toc-menu ol {
+.toc .toc-menu ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -42,7 +42,7 @@
 }
 
 .toc .toc-menu h3,
-.toc .toc-menu ol {
+.toc .toc-menu ul {
   margin-left: 0.75rem;
 }
 
