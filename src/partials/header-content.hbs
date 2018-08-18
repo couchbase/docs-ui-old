@@ -22,15 +22,15 @@
                   <li><a href="{{siteRootPath}}/server/5.5/fts/full-text-intro.html">Full Text Search</a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/analytics/introduction.html">Analytics <small>(Developer Preview)</small></a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/eventing/eventing-overview.html">Eventing</a></li>
-                  {{#if (eq env.STAGE 'staging')}}
-                  <li><a href="{{siteRootPath}}/operator/1.0/overview.html">Autonomous Operator</a></li>
-                  {{else}}
-                  <li><a href="{{siteRootPath}}/operator/0.8/overview.html">Autonomous Operator</a></li>
-                  {{/if}}
+                  <li><a href="{{siteRootPath}}/operator/{{#if (eq env.STAGE 'production')}}0.8{{else}}1.0{{/if}}/overview.html">Autonomous Operator</a></li>
                 </ul>
                 <ul>
                   <li class="heading">Mobile</li>
+                  {{#if (eq env.STAGE 'production')}}
                   <li><a href="https://developer.couchbase.com/documentation/mobile/current/couchbase-lite/index.html">Lite</a></li>
+                  {{else}}
+                  <li><a href="{{siteRootPath}}/couchbase-lite/2.1/index.html">Lite</a></li>
+                  {{/if}}
                   <li><a href="https://developer.couchbase.com/documentation/mobile/current/guides/sync-gateway/index.html">Sync Gateway</a></li>
                 </ul>
                 <ul class="two-cols">
