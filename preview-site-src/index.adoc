@@ -7,9 +7,9 @@ The information is aggregated from all the server nodes within the configured cl
 
 From the menu:Couchbase Web Console[Buckets] menu, click the menu:Statistics[] link for each bucket.
 
-Bucket Selection::
+[[bucket-selection]]Bucket Selection::
 The [.ui]*Buckets* selection list lets you select which of the buckets configured on your cluster is to be used as the basis for the graph display.
-The statistics shown are aggregated over the whole cluster for the selected bucket.
+The statistics shown are aggregated over the whole cluster for the <<bucket-selection,selected bucket>>.
 
 Interval Selection::
 Periodic Selection::

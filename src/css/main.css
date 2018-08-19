@@ -2,6 +2,37 @@ main {
   padding-bottom: 4rem;
 }
 
+/* IMPORTANT for this to work, the element cannot be display: flex and cannot have padding top or border top */
+main [id]::before {
+  content: "";
+  display: inherit;
+  height: var(--height-to-body);
+  margin-top: calc(-1 * var(--height-to-body));
+  visibility: hidden;
+  width: 0;
+}
+
+main a[id]::before,
+main code[id]::before,
+main em[id]::before,
+main span[id]::before,
+main strong[id]::before {
+  display: inline-block;
+  position: relative;
+  top: -0.75em;
+}
+
+@supports (-moz-appearance: none) {
+  main a[id],
+  main code[id],
+  main em[id],
+  main span[id],
+  main strong[id] {
+    border-top: var(--height-to-body) solid transparent;
+    pointer-events: none; /* NOTE don't allow border to cover preceding lines */
+  }
+}
+
 .article-banner {
   align-items: center;
   background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%);

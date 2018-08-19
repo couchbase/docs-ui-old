@@ -23,6 +23,24 @@
   word-break: break-word;
 }
 
+.doc .swagger-ui .opblock-tag-section {
+  display: block;
+}
+
+.doc .swagger-ui .models .model-container {
+  background: none !important;
+}
+
+.doc .swagger-ui .models .model-box {
+  background-color: rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: background-color 0.5s;
+}
+
+.doc .swagger-ui .models .model-box:hover {
+  background-color: rgba(0, 0, 0, 0.07);
+}
+
 .doc .docs-ui a {
   border: 0;
 }

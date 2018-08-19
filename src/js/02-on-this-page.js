@@ -52,8 +52,10 @@
   }
 
   function onScroll () {
-    // NOTE equivalent to: doc.parentNode.getBoundingClientRect().top + window.pageYOffset
-    var targetPosition = doc.parentNode.offsetTop
+    // NOTE doc.parentNode.offsetTop ~= doc.parentNode.getBoundingClientRect().top + window.pageYOffset
+    //var targetPosition = doc.parentNode.offsetTop
+    // NOTE no need to compensate wheen using spacer above [id] elements
+    var targetPosition = 0
     var activeFragment
     headings.some(function (heading) {
       if (Math.floor(heading.getBoundingClientRect().top) <= targetPosition) {
