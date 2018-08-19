@@ -492,7 +492,7 @@ p.tableblock + p.tableblock {
   margin-top: 0.125rem;
 }
 
-.doc .dlist dd > .openblock > .content > * {
+.doc .dlist dd > .openblock > .content > :first-child {
   margin-top: 0;
 }
 
