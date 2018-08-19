@@ -18,8 +18,9 @@
   margin: 0;
 }
 
-.doc .swagger-ui .opblock {
-  overflow-x: auto; /* NOTE only seems to be required for Chrome */
+/* NOTE Chrome is misbehaving; time to get forceful */
+.doc .swagger-ui .opblock-summary {
+  word-break: break-word;
 }
 
 .doc .docs-ui a {
