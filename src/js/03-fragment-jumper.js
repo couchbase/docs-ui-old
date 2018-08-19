@@ -16,29 +16,41 @@
     window.scrollTo(0, computePosition(this, 0) - ceiling.getBoundingClientRect().bottom - 20)
   }
 
-  function jumpToAnchorFromUrl (e) {
-    var hash, target, jump
-    if ((hash = window.location.hash) && (target = document.getElementById(hash.slice(1)))) {
+  function jumpToAnchorFromUrl (hash) {
+    var target, jump
+    if (!hash || hash === true) hash = window.location.hash
+    if (hash && (target = document.getElementById(hash.slice(1)))) {
       (jump = jumpToAnchor.bind(target))()
       setTimeout(jump, 0)
     }
-    if (e) window.removeEventListener(e.type, jumpToAnchorFromUrl)
   }
 
-  function interceptJumps (container) {
-    Array.prototype.slice.call(container.querySelectorAll('a[href^="#"]')).forEach(function (el) {
-      var hash, target
-      if ((hash = el.hash.slice(1)) && (target = document.getElementById(hash))) {
+  function interceptJumps (scope) {
+    Array.prototype.slice.call((scope || document).querySelectorAll('a[href^="#"]')).forEach(function (el) {
+      if (el.dataset.intercepted) return
+      el.dataset.intercepted = true
+      var id, target
+      if ((id = el.hash.slice(1)) && (target = document.getElementById(id))) {
         el.addEventListener('click', jumpToAnchor.bind(target))
       }
     })
   }
 
-  window.addEventListener('load', jumpToAnchorFromUrl)
+  window.addEventListener('load', function jumpOnLoad () {
+    jumpToAnchorFromUrl()
+    window.removeEventListener('load', jumpOnLoad)
+  })
   interceptJumps(main.parentNode)
 
-  window.addEventListener('fragment-jumper:update', function (e) {
-    interceptJumps(e.container)
-    if (e.load) jumpToAnchorFromUrl()
+  document.addEventListener('fragment-jumper:init', function (e) {
+    var detail = e.detail
+    interceptJumps(detail.scope)
+    if (detail.jump) {
+      if (detail.jumpDelay == null) {
+        jumpToAnchorFromUrl(detail.jump)
+      } else {
+        setTimeout(function () { jumpToAnchorFromUrl(detail.jump) }, detail.jumpDelay)
+      }
+    }
   })
 })()
