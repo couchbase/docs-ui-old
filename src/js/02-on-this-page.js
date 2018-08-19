@@ -35,7 +35,13 @@
   menu.appendChild(title)
   menu.appendChild(list)
 
-  if (sidebar) window.addEventListener('scroll', onScroll)
+  if (sidebar) {
+    window.addEventListener('load', function initOnScroll () {
+      onScroll()
+      window.addEventListener('scroll', onScroll)
+      window.removeEventListener('load', initOnScroll)
+    })
+  }
 
   var startOfContent = doc.querySelector('h1.page + *')
   if (startOfContent) {
