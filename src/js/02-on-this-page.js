@@ -56,7 +56,7 @@
     var targetPosition = doc.parentNode.offsetTop
     var activeFragment
     headings.some(function (heading) {
-      if (heading.getBoundingClientRect().top < targetPosition) {
+      if (Math.floor(heading.getBoundingClientRect().top) <= targetPosition) {
         activeFragment = '#' + heading.id
       } else {
         return true
