@@ -1,0 +1,23 @@
+.labels ul {
+  margin-right: 0.25rem;
+}
+
+.labels li {
+  align-items: center;
+  display: flex;
+  font-size: 0.75rem;
+  font-weight: var(--weight-bold);
+  height: 1.75em;
+  padding: 0.1em 1em 0;
+  text-transform: uppercase;
+}
+
+.labels li.edition {
+  background-color: var(--color-brand-light-blue);
+  color: #fff;
+}
+
+.labels li.status {
+  background-color: var(--color-brand-orange);
+  color: #fff;
+}
