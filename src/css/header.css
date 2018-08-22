@@ -291,8 +291,8 @@ a.navbar-item.has-dropdown::after,
   font-weight: var(--weight-bold);
   font-size: 1.125rem;
   height: 3.25rem;
-  width: 9.75rem; /* 1.875rem padding on sides */
-  display: flex;
+  width: 9.75rem; /* equal to 1.875rem padding on sides */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   letter-spacing: -0.025em;
