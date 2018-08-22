@@ -33,6 +33,11 @@ main strong[id]::before {
   }
 }
 
+main blockquote,
+main p {
+  hyphens: auto; /* NOTE in Chrome, hyphens: auto is only supported on macOS and Android */
+}
+
 .article-banner {
   align-items: center;
   background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%);
@@ -46,6 +51,7 @@ main strong[id]::before {
 .article-banner p {
   font-size: 1.125rem;
   margin: 0 1rem 0 0;
+  hyphens: auto;
 }
 
 .article-banner a.btn {

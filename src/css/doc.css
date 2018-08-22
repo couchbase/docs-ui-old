@@ -1,7 +1,5 @@
-/* NOTE in Chrome, hyphens: auto is only supported on macOS and Android */
 .doc p {
   margin: 0;
-  hyphens: auto;
 }
 
 .doc h1,
