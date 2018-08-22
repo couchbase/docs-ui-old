@@ -18,9 +18,17 @@
   margin: 0;
 }
 
-/* NOTE Chrome is misbehaving; time to get forceful */
-.doc .swagger-ui .opblock-summary {
-  word-break: break-word;
+.doc .swagger-ui .opblock .opblock-summary-method {
+  word-wrap: normal;
+}
+
+/* NOTE long paths are unwieldy; time to get forceful */
+.doc .swagger-ui .opblock .opblock-summary-path {
+  word-break: break-all;
+}
+
+.doc .swagger-ui .opblock-body select {
+  min-width: auto;
 }
 
 .doc .swagger-ui .opblock-tag-section {
