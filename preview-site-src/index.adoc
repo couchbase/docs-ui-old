@@ -30,6 +30,43 @@ The summary section provides a quick overview of the cluster activity.
 <<server_stats,Server Resources>>::
 This section provides information on the server resources across the cluster.
 
+Installation will vary based on your operation system.
+
+++++
+<div class="tabset is-loading">
+<div class="ulist tabs">
+<ul>
+<li>
+<p><a id="tabset1_ubuntu"></a>Ubuntu</p>
+</li>
+<li>
+<p><a id="tabset1_red-hat"></a>Red Hat</p>
+</li>
+<li>
+<p><a id="tabset1_debian"></a>Debian</p>
+</li>
+</ul>
+</div>
+<div class="content">
+<div class="tab-pane is-active" aria-labelledby="tabset1_ubuntu">
+<div class="paragraph">
+<p>Content for Ubuntu tab.</p>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_red-hat">
+<div class="paragraph">
+<p>Content for Red Hat tab.</p>
+</div>
+</div>
+<div class="tab-pane" aria-labelledby="tabset1_debian">
+<div class="paragraph">
+<p>Content for Debian tab.</p>
+</div>
+</div>
+</div>
+</div>
+++++
+
 == Admonition Blocks
 
 Let's take a brief pause to look at some admonition blocks.
