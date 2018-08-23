@@ -1,5 +1,5 @@
 <main class="article" data-ceiling="topbar">
-  {{#if (ne page.componentVersion page.component.latestVersion)}}
+  {{#if (and (ne page.componentVersion page.component.latestVersion) (or (ne page.component.name 'server') (ne page.version '5.5')))}}
   <div class="article-banner">
     <p>A newer version of this documentation is available.</p>
     <a class="btn" href="{{relativize page.url page.versions.0.url}}">View Latest</a>
