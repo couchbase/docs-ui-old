@@ -112,7 +112,6 @@
 }
 
 .doc .paragraph,
-.doc .dlist,
 .doc .olist,
 .doc .ulist,
 .doc .admonitionblock,
@@ -473,13 +472,20 @@ p.tableblock + p.tableblock {
   display: block;
 }
 
-.doc .dlist dt {
-  font-weight: var(--weight-medium);
-  margin-top: 1.5rem;
+.doc .dlist {
+  margin: 1.5rem 0;
 }
 
-.doc .dlist dt + dt {
-  margin-top: 0;
+.doc .dlist dl {
+  margin: 0;
+}
+
+.doc .dlist dt {
+  font-weight: var(--weight-medium);
+}
+
+.doc .dlist dd + dt {
+  margin-top: 1.5rem;
 }
 
 .doc .dlist dd {
