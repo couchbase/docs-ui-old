@@ -18,6 +18,9 @@ site:
     title: &component_title Couchbase Server
     url: /server/5.5/index.html
     versions:
+    - url: /server/6.0/index.html
+      version: '6.0'
+      title: *component_title
     - &latest_version_server
       url: /server/5.5/index.html
       version: '5.5'
@@ -53,6 +56,8 @@ page:
   home: false
   editUrl: https://github.com/opendevise/couchbase-docs-ui/blob/new-ui/preview-site-src/index.adoc
   versions:
+  - version: '6.0'
+    url: '#'
   - version: '5.5'
     url: '#'
   - version: '5.1'
