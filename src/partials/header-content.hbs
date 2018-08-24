@@ -22,7 +22,7 @@
                   <li><a href="{{siteRootPath}}/server/5.5/fts/full-text-intro.html">Full Text Search</a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/analytics/introduction.html">Analytics <small>(Developer Preview)</small></a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/eventing/eventing-overview.html">Eventing</a></li>
-                  <li><a href="{{siteRootPath}}/operator/{{#if (eq env.STAGE 'production')}}0.8{{else}}1.0{{/if}}/overview.html">Autonomous Operator</a></li>
+                  <li><a href="{{siteRootPath}}/operator/{{ifelse (eq env.STAGE 'production') '0.8' '1.0'}}/overview.html">Autonomous Operator</a></li>
                 </ul>
                 <ul>
                   <li class="heading">Mobile</li>
@@ -59,13 +59,13 @@
           {{#if (and page.component (ne page.component.name 'home'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{#if (and (eq page.component.name 'server') (eq page.version '6.0'))}} Beta{{/if}}</span></a>
+            <a class="navbar-link component" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
                   {{#each page.versions}}
                   {{#unless (eq ./version @root.page.version)}}
-                  <li><a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{{@root.page.component.title}}} {{./version}}{{#if (and (eq @root.page.component.name 'server') (eq ./version '6.0'))}} Beta{{/if}}</a></li>
+                  <li><a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{{@root.page.component.title}}} {{./version}}{{ifelse (and (eq @root.page.component.name 'server') (eq ./version '6.0')) ' Beta' ''}}</a></li>
                   {{/unless}}
                   {{/each}}
                 </ul>
@@ -80,7 +80,7 @@
             </div>
           </div>
           {{else}}
-          <a class="navbar-item component" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{#if (and (eq page.component.name 'server') (eq page.version '6.0'))}} Beta{{/if}}</span></a>
+          <a class="navbar-item component" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
           {{/if}}
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
