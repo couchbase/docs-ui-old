@@ -59,20 +59,20 @@
           {{#if (and page.component (ne page.component.name 'home'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
+            <a class="navbar-link component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
                   {{#each page.versions}}
                   {{#unless (eq ./version @root.page.version)}}
-                  <li><a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{{@root.page.component.title}}} {{./version}}{{ifelse (and (eq @root.page.component.name 'server') (eq ./version '6.0')) ' Beta' ''}}</a></li>
+                  <li><a class="navbar-item" href="{{{relativize @root.page.url ./url}}}">{{{@root.page.component.title}}} {{./version}}{{ifelse (and (eq @root.page.component.name 'server') (eq ./version '6.0')) ' Beta' ''}}</a></li>
                   {{/unless}}
                   {{/each}}
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
                 <ul class="related">
                   {{#each (related-sdk-pages page.component.name page.url 'c-sdk/2.8,dotnet-sdk/2.5,go-sdk/1.2,java-sdk/2.5,nodejs-sdk/2.4,php-sdk/2.4,python-sdk/2.2')}}
-                  <li><a class="navbar-item" href="{{relativize @root.page.url ./url}}">{{./title}}</a></li>
+                  <li><a class="navbar-item" href="{{{relativize @root.page.url ./url}}}">{{./title}}</a></li>
                   {{/each}}
                 </ul>
                 {{/if}}
@@ -80,7 +80,7 @@
             </div>
           </div>
           {{else}}
-          <a class="navbar-item component" href="{{relativize page.url page.component.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
+          <a class="navbar-item component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
           {{/if}}
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
