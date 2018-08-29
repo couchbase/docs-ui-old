@@ -3,49 +3,53 @@ site:
   url: /home.html
   title: Couchbase Developer
   components:
-  - name: abc
-    title: Project ABC
-    url: '#'
-    versions:
-    - &latest_version_abc
+    abc:
+      name: abc
+      title: Project ABC
       url: '#'
-      version: '1.1'
-    - url: '#'
-      version: '1.0'
-    latestVersion: *latest_version_abc
-  - &component
-    name: server
-    title: &component_title Couchbase Server
-    url: /server/5.5/index.html
-    versions:
-    - url: /server/6.0/index.html
-      version: '6.0'
-      title: *component_title
-    - &latest_version_server
+      versions:
+      - &latest_abc
+        url: '#'
+        version: '1.1'
+      - url: '#'
+        version: '1.0'
+      latest: *latest_abc
+    server: &component
+      name: server
+      title: &component_title Couchbase Server
       url: /server/5.5/index.html
-      version: '5.5'
-      title: *component_title
-    - &component_version
-      url: '#'
-      version: '5.1'
-      title: *component_title
-    - url: '#'
-      version: '5.0'
-    - url: '#'
-      version: '4.6'
-    latestVersion: *latest_version_server
-  - name: 123
-    title: Project 123
-    url: '#'
-    versions:
-    - &latest_version_123
-      url: '#'
-      version: '2.2'
-    - url: '#'
-      version: '2.1'
-    - url: '#'
-      version: '2.0'
-    latestVersion: *latest_version_123
+      versions:
+      - url: /server/6.0/index.html
+        version: '6.0'
+        displayVersion: '6.0 Beta'
+        title: *component_title
+      - &latest_server
+        url: /server/5.5/index.html
+        version: '5.5'
+        displayVersion: '5.5'
+        title: *component_title
+      - &component_version
+        url: '#'
+        version: '5.1'
+        displayVersion: '5.1'
+        title: *component_title
+      - url: '#'
+        version: '5.0'
+        displayVersion: '5.1'
+        title: *component_title
+      - url: '#'
+        version: '4.6'
+        displayVersion: '4.6'
+        title: *component_title
+      latest: *latest_server
+    kafka-connector:
+      name: kafka-connector
+      latest:
+        version: '3.4'
+    operator:
+      name: operator
+      latest:
+        version: '1.0'
 page:
   title: &page_title Monitoring Statistics
   url: &page_url /server/5.1/index.html
@@ -57,14 +61,19 @@ page:
   editUrl: https://github.com/opendevise/couchbase-docs-ui/blob/new-ui/preview-site-src/index.adoc
   versions:
   - version: '6.0'
+    displayVersion: '6.0 Beta'
     url: '#'
   - version: '5.5'
+    displayVersion: '5.5'
     url: '#'
   - version: '5.1'
+    displayVersion: '5.1'
     url: '#'
   - version: '5.0'
+    displayVersion: '5.0'
     url: '#'
   - version: '4.6'
+    displayVersion: '4.6'
     missing: true
     url: '#'
   navigation:

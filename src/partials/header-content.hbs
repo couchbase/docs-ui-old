@@ -59,13 +59,13 @@
           {{#if (and page.component (ne page.component.name 'home'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
+            <a class="navbar-link component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
                   {{#each page.versions}}
                   {{#unless (eq ./version @root.page.version)}}
-                  <li><a class="navbar-item" href="{{{relativize @root.page.url ./url}}}">{{{@root.page.component.title}}} {{./version}}{{ifelse (and (eq @root.page.component.name 'server') (eq ./version '6.0')) ' Beta' ''}}</a></li>
+                  <li><a class="navbar-item" href="{{{relativize @root.page.url ./url}}}">{{{@root.page.component.title}}} {{./displayVersion}}</a></li>
                   {{/unless}}
                   {{/each}}
                 </ul>
@@ -80,7 +80,7 @@
             </div>
           </div>
           {{else}}
-          <a class="navbar-item component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.version}}{{ifelse (and (eq page.component.name 'server') (eq page.version '6.0')) ' Beta' ''}}</span></a>
+          <a class="navbar-item component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
           {{/if}}
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
