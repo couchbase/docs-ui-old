@@ -12,6 +12,10 @@ main [id]::before {
   width: 0;
 }
 
+main table[id]::before {
+  display: block;
+}
+
 main a[id]::before,
 main code[id]::before,
 main em[id]::before,

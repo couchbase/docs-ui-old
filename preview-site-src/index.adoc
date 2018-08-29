@@ -24,10 +24,10 @@ As the selected interval increases, the amount of statistical data displayed wil
 
 Bucket monitoring within the Couchbase Web Console has been updated to show additional detailed information.
 
-<<summary_stats,Summary>>::
+<<summary-stats,Summary>>::
 The summary section provides a quick overview of the cluster activity.
 
-<<server_stats,Server Resources>>::
+<<server-stats,Server Resources>>::
 This section provides information on the server resources across the cluster.
 
 Installation will vary based on your operation system.
@@ -122,7 +122,7 @@ Now back to monitoring.
 
 Let's get on with it.
 
-[#summary_stats]
+[#summary-stats]
 == Bucket Monitoring -- Summary Statistics
 
 The summary section is designed to provide a quick overview of the cluster activity.
@@ -141,7 +141,6 @@ The following statistics are available:
 
 | cache miss ratio
 | Ratio of reads per second to this bucket which required a read from disk rather than RAM.
-
 |===
 
 The `stale=false` view query argument has been enhanced.
@@ -151,7 +150,7 @@ When an application sends a query that has the `stale` parameter set to false, t
 TIP: For better scalability and throughput, we recommend that you set the value of the `stale` parameter to `ok`.
 With the stream-based views, data returned when `stale` is set to `ok` is closer to the key-value data, even though it might not include all of it.
 
-[#server_stats]
+[#server-stats]
 == Monitoring Server Resources
 
 The *Server Resources* statistics section displays the resource information on this server including swap usage, free RAM, CPU utilization percentage,and FTS RAM used.
@@ -168,7 +167,7 @@ return thisAirline; // <2>
 <1> Sets up an async query.
 <2> Returns the result of the query.
 
-[#vbucket_stats]
+[#vbucket-stats]
 == Monitoring `vBucket` Resources
 
 [cols="1,3"]
@@ -188,15 +187,15 @@ a|
 Number of items ejected per second within the vBuckets of the specified state.
 |===
 
-[#disk_stats]
+[#disk-stats]
 == Monitoring Disk Queues
 
 The *Disk Queues* statistics section displays the information for data being placed into the disk queue.
 
-[#dcp_stats]
+[#dcp-stats]
 == Monitoring DCP Queues
 
-[#dcp_queues,cols="1,3"]
+[#dcp-queues,cols="1,3"]
 |===
 | Statistic | Description
 
@@ -210,12 +209,12 @@ The *Disk Queues* statistics section displays the information for data being pla
 | Number of replication receivers for this bucket.
 |===
 
-[#view_stats]
+[#view-stats]
 == Monitoring View Statistics
 
 The *View Stats* show information about individual design documents within the selected bucket.
 
-[#index_stats]
+[#index-stats]
 == Monitoring Index Statistics
 
 The INDEX STATS section provides statistics about the GSI Indexes.
@@ -223,7 +222,7 @@ Statistics are provided per each individual index.
 
 Select `United States of America` from the menu.
 
-[#memcached_stats]
+[#memcached-stats]
 == Memcached Buckets
 
 For Memcached buckets, Web Console displays a separate group of statistics:
