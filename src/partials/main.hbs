@@ -1,8 +1,12 @@
 <main class="article" data-ceiling="topbar">
-  {{#if (and (ne page.componentVersion page.component.latestVersion) (or (ne page.component.name 'server') (ne page.version '5.5')))}}
+  {{#if (ne page.componentVersion page.component.latest)}}
   <div class="article-banner">
+    {{#if page.componentVersion.prerelease}}
+    <p>You are viewing the documentation for a prerelease version.</p>
+    {{else}}
     <p>A newer version of this documentation is available.</p>
-    <a class="btn" href="{{{relativize page.url page.versions.0.url}}}">View Latest</a>
+    {{/if}}
+    <a class="btn" href="{{{relativize page.url (latest-page-url page.component.latest.version page.versions)}}}">View Latest</a>
   </div>
   {{/if}}
   <div class="article-header">
