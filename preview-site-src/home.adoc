@@ -11,7 +11,7 @@ We look forward to hearing from you!
 Looking for the old documentation site?
 You can find it over at the https://developer.couchbase.com[Developer Portal].
 
-[.cards.personas.conceal-title]
+[.cards.cards-4.personas.conceal-title]
 == {empty}
 
 [.card]

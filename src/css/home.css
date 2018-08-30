@@ -226,6 +226,10 @@
   }
 
   .card {
+    flex-basis: 0;
+  }
+
+  .cards-4 .card {
     flex-basis: calc(50% - 0.75rem);
   }
 
@@ -248,7 +252,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .card {
+  .cards-4 .card {
     flex-basis: 0;
   }
 }
