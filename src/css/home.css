@@ -89,17 +89,17 @@
 .cards > .sectionbody {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  margin: -0.75rem 0 0 -0.75rem;
 }
 
 .card {
-  flex: 1;
   display: flex;
+  flex: 1 0 auto;
   flex-direction: column;
+  margin: 0.75rem 0 0 0.75rem;
+  min-width: 0;
   padding: 1.25rem;
-}
-
-.card + .card {
-  margin-top: 0.75rem;
 }
 
 .home .card {
@@ -118,6 +118,10 @@
   background-color: var(--color-brand-light-blue);
 }
 
+.home .card:nth-of-type(4) {
+  background-color: var(--color-brand-orange);
+}
+
 .card h3 {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -129,10 +133,13 @@
   content: "";
   display: block;
   position: absolute;
-  width: 25%;
-  height: 2px;
+  max-width: 5.75rem;
+  height: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background-color: currentColor;
+  border: 1px solid currentColor;
+  width: 25%;
 }
 
 .card .paragraph {
@@ -218,17 +225,8 @@
     flex-direction: row;
   }
 
-  .card h3 {
-    width: 66.66%;
-  }
-
-  .card h3::after {
-    width: 37.5%; /* NOTE equates to 25% of container */
-  }
-
-  .card + .card {
-    margin-top: 0;
-    margin-left: 0.75rem;
+  .card {
+    flex-basis: calc(50% - 0.75rem);
   }
 
   .home .tiles {
@@ -246,5 +244,11 @@
   .tile {
     margin-bottom: 0;
     padding: 0 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    flex-basis: 0;
   }
 }
