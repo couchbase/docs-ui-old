@@ -3,17 +3,6 @@ site:
   url: /home.html
   title: Couchbase Developer
   components:
-    abc:
-      name: abc
-      title: Project ABC
-      url: '#'
-      versions:
-      - &latest_abc
-        url: '#'
-        version: '1.1'
-      - url: '#'
-        version: '1.0'
-      latest: *latest_abc
     server: &component
       name: server
       title: &component_title Couchbase Server
@@ -42,14 +31,18 @@ site:
         displayVersion: '4.6'
         title: *component_title
       latest: *latest_server
+    elasticsearch-connector:
+      url: /elasticsearch-connector/3.0/index.html
     kafka-connector:
-      name: kafka-connector
-      latest:
-        version: '3.4'
+      url: /kafka-connector/3.4/index.html
+    spark-connector:
+      url: /spark-connector/2.2/index.html
     operator:
-      name: operator
-      latest:
-        version: '1.0'
+      url: /operator/1.0/overview.html
+    couchbase-lite:
+      url: /couchbase-lite/2.1/index.html
+    sync-gateway:
+      url: /sync-gateway/2.1/index.html
 page:
   title: &page_title Monitoring Statistics
   url: &page_url /server/5.1/index.html
