@@ -1,7 +1,7 @@
 antoraVersion: '1.0.1'
 site:
   url: /home.html
-  title: Couchbase Developer
+  title: Couchbase Docs
   components:
     server: &component
       name: server
