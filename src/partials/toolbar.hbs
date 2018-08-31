@@ -1,9 +1,9 @@
 {{#if page.editUrl}}
-{{#if (includes page.editUrl '/docs-server/')}}
+{{#unless (includes page.origin.url '@')}}
 <div class="tools" role="navigation">
   <ul>
     <li class="tool edit"><a href="{{page.editUrl}}" title="Edit this Page">Edit</a></li>
   </ul>
 </div>
-{{/if}}
+{{/unless}}
 {{/if}}
