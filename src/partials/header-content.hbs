@@ -54,7 +54,7 @@
           {{#if (and page.component (ne page.component.name 'home'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
+            <a class="navbar-link component" href="{{{relativize page.url page.componentVersion.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
@@ -75,7 +75,7 @@
             </div>
           </div>
           {{else}}
-          <a class="navbar-item component" href="{{{relativize page.url page.component.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
+          <a class="navbar-item component" href="{{{relativize page.url page.componentVersion.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
           {{/if}}
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
