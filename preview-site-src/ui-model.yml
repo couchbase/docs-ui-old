@@ -51,7 +51,7 @@ page:
   version: '5.1'
   module: ROOT
   home: false
-  editUrl: https://github.com/opendevise/couchbase-docs-ui/blob/new-ui/preview-site-src/index.adoc
+  editUrl: https://github.com/couchbase/docs-ui/blob/master/preview-site-src/index.adoc
   versions:
   - version: '6.0'
     displayVersion: '6.0 Beta'
