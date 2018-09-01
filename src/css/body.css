@@ -14,7 +14,6 @@ main {
 nav.nav {
   /* NOTE reserve no space in layout by default */
   flex: 0 0 0%;
-  order: -1;
   visibility: hidden;
   /* NOTE width must be set in order for fixed child to inherit */
   width: var(--width-nav);
@@ -22,6 +21,7 @@ nav.nav {
 
 aside.toc.sidebar {
   display: none;
+  order: 1;
   flex: none;
   /* NOTE lock flex width to width of container */
   width: var(--width-toc);
