@@ -6,14 +6,14 @@ site:
     server: &component
       name: server
       title: &component_title Couchbase Server
-      url: /server/5.5/index.html
+      url: &component_url /server/5.5/index.html
       versions:
       - url: /server/6.0/index.html
         version: '6.0'
         displayVersion: '6.0 Beta'
         title: *component_title
       - &latest_server
-        url: /server/5.5/index.html
+        url: *component_url
         version: '5.5'
         displayVersion: '5.5'
         title: *component_title
