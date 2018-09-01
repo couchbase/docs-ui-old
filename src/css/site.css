@@ -5,8 +5,8 @@
 @import "nav.css";
 @import "toc.css";
 @import "main.css";
-@import "toolbar.css";
 @import "breadcrumbs.css";
+@import "toolbar.css";
 @import "doc.css";
 @import "swagger-ui.css";
 @import "home.css";
