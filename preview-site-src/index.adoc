@@ -228,21 +228,21 @@ Select `United States of America` from the menu.
 For Memcached buckets, Web Console displays a separate group of statistics:
 
 * Situation 1
-.. Client 1 queries view with `stale=false`
-.. Client 1 waits until server updates the index
-.. Client 2 queries view with `stale=false` while re-indexing from Client 1 still in progress
-.. Client 2 will wait until existing index process triggered by Client 1 completes.
+ .. Client 1 queries view with `stale=false`
+ .. Client 1 waits until server updates the index
+ .. Client 2 queries view with `stale=false` while re-indexing from Client 1 still in progress
+ .. Client 2 will wait until existing index process triggered by Client 1 completes.
 Client 2 gets updated index.
 * Situation 2
-.. Client 1 queries view with `stale=false`
-.. Client 1 waits until server updates the index
-.. Client 2 queries view with `stale=ok` while re-indexing from Client 1 in progress
-.. Client 2 will get the existing index
+ .. Client 1 queries view with `stale=false`
+ .. Client 1 waits until server updates the index
+ .. Client 2 queries view with `stale=ok` while re-indexing from Client 1 in progress
+ .. Client 2 will get the existing index
 * Situation 3
-.. Client 1 queries view with `stale=false`
-.. Client 1 waits until server updates the index
-.. Client 2 queries view with `stale=update_after`
-.. If re-indexing from Client 1 not done, Client 2 gets the existing index.
+ .. Client 1 queries view with `stale=false`
+ .. Client 1 waits until server updates the index
+ .. Client 2 queries view with `stale=update_after`
+ .. If re-indexing from Client 1 not done, Client 2 gets the existing index.
 If re-indexing from Client 1 is done, Client 2 gets this updated index and triggers re-indexing.
 
 Index updates may be stacked if multiple clients request the view be updated before the information is returned (`stale=false`).
@@ -261,17 +261,17 @@ For `stale=update_after` queries, there is no stacking, since all updates occur 
 All views within Couchbase operate as follows:
 
 * Views are updated as the document data is updated in memory.
-** Documents that are stored with an expiry are not automatically removed until the background expiry process removes them from the database.
+ ** Documents that are stored with an expiry are not automatically removed until the background expiry process removes them from the database.
 This means that expired documents may still exist within the index.
-*** Views are scoped within a design document, with each design document part of a single bucket.
-**** View names must be specified using one or more UTF-8 characters.
+  *** Views are scoped within a design document, with each design document part of a single bucket.
+   **** View names must be specified using one or more UTF-8 characters.
 You cannot have a blank view name.
-***** Document IDs that are not UTF-8 encodable are automatically filtered and not included in any view.
+    ***** Document IDs that are not UTF-8 encodable are automatically filtered and not included in any view.
 The filtered documents are logged so that they can be identified.
-***** If you have a long view request, use POST instead of GET.
-** Views can only access documents defined within their corresponding bucket.
+    ***** If you have a long view request, use POST instead of GET.
+ ** Views can only access documents defined within their corresponding bucket.
 You cannot access or aggregate data from multiple buckets within a given view.
-*** Views are created as part of a design document, and each design document exists within the corresponding named bucket.
+  *** Views are created as part of a design document, and each design document exists within the corresponding named bucket.
 
 === Automated index updates
 
