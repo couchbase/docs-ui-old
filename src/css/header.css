@@ -250,10 +250,6 @@ a.navbar-item.has-dropdown::after,
   width: 1rem;
 }
 
-.algolia-autocomplete .ds-dropdown-menu {
-  margin-top: 0.75rem !important;
-}
-
 .navbar-start:not(.reveal-search-input) input.query {
   display: none;
 }
