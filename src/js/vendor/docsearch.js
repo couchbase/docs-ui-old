@@ -1,10 +1,9 @@
 ;(function () {
   var docsearch = require('docsearch.js/dist/cdn/docsearch.js')
   var config = document.getElementById('search-script').dataset
-  var link = document.createElement('link')
-  link.rel = 'stylesheet'
-  link.href = config.stylesheet
-  document.head.appendChild(link)
+  var style = document.createElement('style')
+  style.innerText = '@import "' + config.stylesheet + '"'
+  document.body.appendChild(style)
   docsearch({
     appId: config.appId,
     apiKey: config.apiKey,
