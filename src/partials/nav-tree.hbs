@@ -1,4 +1,4 @@
-{{#if navigation.length}}
+{{#if navigation}}
 <ul class="nav-list">
   {{#each navigation}}
   <li class="nav-item{{#if (eq ../crumbAtLevel this)}}
@@ -6,7 +6,7 @@
       {{~else if (eq ../level 0)}} is-active{{/if}}" data-depth="{{../level}}">
     {{#if ./content}}
     <span class="nav-line">
-    {{#if ./items.length}}
+    {{#if ./items}}
     <button class="nav-toggle"></button>
     {{/if}}
     {{#if ./url}}

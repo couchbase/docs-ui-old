@@ -1,5 +1,4 @@
 <nav class="crumbs" aria-label="breadcrumbs">
-  {{#if page.breadcrumbs}}
   <ul>
     {{#with page.componentVersion}}
     {{#unless (and (eq ./title @root.page.breadcrumbs.0.content) @root.page.breadcrumbs.0.url)}}
@@ -12,5 +11,4 @@
     {{/if}}
     {{/each}}
   </ul>
-  {{/if}}
 </nav>
