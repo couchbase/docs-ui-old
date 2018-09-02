@@ -46,7 +46,7 @@ button {
 }
 
 button::-moz-focus-inner {
-  border: none;
+  border: 0;
 }
 
 code,

@@ -1,7 +1,7 @@
 #atlwdg-trigger.atlwdg-trigger {
   display: none;
   background: linear-gradient(to right, var(--color-brand-pink) 0%, var(--color-brand-orange) 100%);
-  border: none;
+  border: 0;
   border-radius: 3px 3px 0 0;
   box-shadow: -2px -4px 30px rgba(0, 0, 0, 0.25);
   color: #fff !important;
