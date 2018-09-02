@@ -23,11 +23,9 @@
 }
 
 .doc .labels li > * {
-  align-items: center;
   color: #fff;
-  display: inline-flex;
-  padding: 0.075rem 1em 0;
-  height: 1.25rem;
+  display: inline-block;
+  padding: 0.375em 1em 0.3em;
   text-transform: uppercase;
 }
 
