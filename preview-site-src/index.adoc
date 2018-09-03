@@ -2,6 +2,7 @@
 :doctype: book
 :page-edition: enterprise
 :page-status: beta
+//:page-status: pass:[&ge; 5.5]
 
 [abstract]
 From the *Data Bucket* menu, information and statistics about buckets and nodes is displayed for the entire Couchbase Server cluster.
