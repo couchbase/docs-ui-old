@@ -5,7 +5,7 @@
     var style = document.createElement('style')
     style.innerText = '@import "' + config.stylesheet + '"'
     document.head.appendChild(style)
-    var docsearchInstance = docsearch({
+    var ds = docsearch({
       appId: config.appId,
       apiKey: config.apiKey,
       indexName: config.indexName,
@@ -15,8 +15,8 @@
     })
     document.querySelector('button.search').addEventListener('click', function (e) {
       if (document.querySelector('.navbar-start').classList.toggle('reveal-search-input')) {
-        docsearchInstance.autocomplete.autocomplete.setVal('')
-        docsearchInstance.input.focus()
+        ds.autocomplete.autocomplete.setVal('')
+        ds.input.focus()
       }
     })
   }, 1000)
