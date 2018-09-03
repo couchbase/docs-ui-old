@@ -1,5 +1,5 @@
 = Tiles
-:page-role: tiles
+:page-role: tiles -toc
 
 == First Tile
 

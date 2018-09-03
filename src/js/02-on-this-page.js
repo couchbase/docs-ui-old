@@ -1,17 +1,18 @@
 ;(function () {
   'use strict'
 
-  var doc = document.querySelector('article.doc')
-  if (!doc) return
   var sidebar = document.querySelector('aside.toc.sidebar')
-  var menu
-  var headings = find('h1.sect0, .sect1 > h2[id]', doc)
-  if (!headings.length) {
-    if (sidebar) sidebar.parentNode.removeChild(sidebar)
+  if (!sidebar) return
+  var doc
+  var headings
+  if (document.querySelector('.body.-toc') ||
+      !(headings = find('h1[id].sect0, .sect1 > h2[id]', (doc = document.querySelector('article.doc')))).length) {
+    sidebar.parentNode.removeChild(sidebar)
     return
   }
   var lastActiveFragment
   var links = {}
+  var menu
 
   var list = headings.reduce(function (accum, heading) {
     var link = toArray(heading.childNodes).reduce(function (target, child) {

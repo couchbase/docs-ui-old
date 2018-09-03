@@ -648,10 +648,6 @@ p.tableblock + p.tableblock {
   margin-top: 1.25rem;
 }
 
-.doc-tiles aside.toc {
-  display: none;
-}
-
 .doc .tabs ul {
   display: flex;
   flex-wrap: wrap;
