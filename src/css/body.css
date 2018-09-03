@@ -23,6 +23,8 @@ nav.nav {
 aside.toc.sidebar {
   display: none;
   flex: none;
+  margin-left: calc(-1 * var(--width-toc));
+  order: 2;
   /* NOTE lock flex width to width of container */
   width: var(--width-toc);
 }
@@ -34,9 +36,11 @@ aside.toc.sidebar {
 
   nav.nav {
     visibility: visible;
-    /* NOTE reserve space for nav in flex layout */
-    /* NOTE lock flex width to width of container */
-    flex-basis: auto;
+  }
+
+  main.article {
+    /* NOTE leave room for nav */
+    margin-left: var(--width-nav);
   }
 }
 
@@ -47,5 +51,10 @@ aside.toc.sidebar {
 
   aside.toc.sidebar {
     display: block;
+  }
+
+  aside.toc.sidebar + main.article {
+    /* NOTE leave room for sidebar */
+    margin-right: var(--width-toc);
   }
 }
