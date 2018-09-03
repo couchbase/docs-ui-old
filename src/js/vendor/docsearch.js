@@ -1,4 +1,6 @@
 ;(function () {
+  'use strict'
+
   var docsearch = require('docsearch.js/dist/cdn/docsearch.js')
   var config = document.getElementById('search-script').dataset
   var link = document.createElement('link')
