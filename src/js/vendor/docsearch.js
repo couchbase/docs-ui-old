@@ -5,13 +5,19 @@
     var style = document.createElement('style')
     style.innerText = '@import "' + config.stylesheet + '"'
     document.head.appendChild(style)
-    docsearch({
+    var docsearchInstance = docsearch({
       appId: config.appId,
       apiKey: config.apiKey,
       indexName: config.indexName,
       inputSelector: '#search-query',
       algoliaOptions: { hitsPerPage: 25 },
       debug: false,
+    })
+    document.querySelector('button.search').addEventListener('click', function (e) {
+      if (document.querySelector('.navbar-start').classList.toggle('reveal-search-input')) {
+        docsearchInstance.autocomplete.autocomplete.setVal('')
+        docsearchInstance.input.focus()
+      }
     })
   }, 1000)
 })()
