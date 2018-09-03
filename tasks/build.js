@@ -66,7 +66,9 @@ module.exports = (src, dest, preview) => {
       .pipe(buffer())
       .pipe(uglify()),
 
-    vfs.src('js/vendor/*.min.js', opts),
+    vfs
+      .src('js/vendor/feedback.js', opts)
+      .pipe(uglify()),
 
     vfs.src(['css/site.css', 'css/vendor/docsearch.css'], opts).pipe(postcss(postcssPlugins)),
 

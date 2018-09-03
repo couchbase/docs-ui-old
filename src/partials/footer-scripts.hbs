@@ -9,5 +9,5 @@
   data-api-key="{{env.ALGOLIA_API_KEY}}" data-index-name="{{env.ALGOLIA_INDEX_NAME}}" data-stylesheet="{{uiRootPath}}/css/vendor/docsearch.css?v=2.5.2"></script>
 {{/if}}
 {{#if (eq env.FEEDBACK_BUTTON 'true')}}
-<script async src="https://issues.couchbase.com/s/df1d14c9d77c1ad1c4ef2db3d8d7da3f-T/-6ikjte/73013/c4d560fe7f608200148fbd40cb0f35ae/2.0.23/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&amp;collectorId=de2e9313"></script>
+<script async id="feedback-script" src="{{uiRootPath}}/js/vendor/feedback.js?v=2.0.23" data-collector-id="de2e9313"></script>
 {{/if}}
