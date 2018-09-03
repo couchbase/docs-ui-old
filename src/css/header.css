@@ -255,11 +255,12 @@ a.navbar-item.has-dropdown::after,
 }
 
 .navbar-start button.search {
+  align-items: center;
   background: none;
   border: 0;
-  font-size: 1.125rem;
   display: flex;
-  align-items: center;
+  font-size: 1.125rem;
+  padding: 0 0.5rem;
 }
 
 .navbar-start button.search::before {
