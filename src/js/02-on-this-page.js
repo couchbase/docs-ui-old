@@ -36,10 +36,9 @@
   menu.appendChild(list)
 
   if (sidebar) {
-    window.addEventListener('load', function initOnScroll () {
+    window.addEventListener('load', function () {
       onScroll()
       window.addEventListener('scroll', onScroll)
-      window.removeEventListener('load', initOnScroll)
     })
   }
 

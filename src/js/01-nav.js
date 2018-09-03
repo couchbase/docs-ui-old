@@ -34,7 +34,6 @@
   }
 
   function fitNavMenuInit (e) {
-    var eventType = e.type
     window.removeEventListener('scroll', fitNavMenuOnScroll)
     navMenu.element.style.height = ''
     if ((navMenu.preferredHeight = navMenu.element.getBoundingClientRect().height) > 0) {
@@ -44,12 +43,9 @@
         fitNavMenu(navMenu.preferredHeight, (navMenu.viewHeight = window.innerHeight), navMenu.encroachingElement)
         window.addEventListener('scroll', fitNavMenuOnScroll)
       }
-      if (eventType !== 'resize') {
-        if (currentPageItem) scrollItemToMiddle(currentPageItem.querySelector('.nav-link'), navMenu.element)
-        if (eventType) window.removeEventListener(eventType, fitNavMenuInit)
+      if (currentPageItem && e.type !== 'resize') {
+        scrollItemToMiddle(currentPageItem.querySelector('.nav-link'), navMenu.element)
       }
-    } else if (eventType === 'load') {
-      window.removeEventListener(eventType, fitNavMenuInit)
     }
   }
 
