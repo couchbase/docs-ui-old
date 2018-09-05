@@ -1,14 +1,13 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
-    {{#with page.componentVersion}}
-    {{#unless (and (eq ./title @root.page.breadcrumbs.0.content) @root.page.breadcrumbs.0.url)}}
-    <li class="crumb"><a href="{{{relativize @root.page.url ./url}}}">{{{./title}}}</a></li>
+    {{! NOTE add entry for current component, but not if it's the home component or the title matches the first breadcrumb !}}
+    {{#unless (eq page.component.name 'home')}}
+    {{#unless (eq page.breadcrumbs.0.content page.componentVersion.title)}}
+    <li class="crumb"><a href="{{{relativize page.url page.componentVersion.url}}}">{{{page.componentVersion.title}}}</a></li>
     {{/unless}}
-    {{/with}}
+    {{/unless}}
     {{#each page.breadcrumbs}}
-    {{#if (eq ./urlType 'internal')}}
-    <li class="crumb"><a href="{{{relativize @root.page.url ./url}}}">{{{./content}}}</a></li>
-    {{/if}}
+    <li class="crumb">{{#if (eq ./urlType 'internal')}}<a href="{{{relativize @root.page.url ./url}}}">{{{./content}}}</a>{{else}}{{{./content}}}{{/if}}</li>
     {{/each}}
   </ul>
 </nav>
