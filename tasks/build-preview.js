@@ -118,7 +118,7 @@ function compileLayouts (src) {
 function copyImages (src, dest) {
   return new Promise((resolve, reject) => {
     vfs
-      .src('**/*.png', { base: src, cwd: src })
+      .src('**/*.{png,svg}', { base: src, cwd: src })
       .pipe(vfs.dest(dest))
       .on('error', reject)
       .on('end', resolve)
