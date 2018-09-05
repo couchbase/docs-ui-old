@@ -213,7 +213,7 @@
   line-height: 1.2;
 }
 
-p.tableblock + p.tableblock {
+.doc p.tableblock + p.tableblock {
   margin-top: 1rem;
 }
 
@@ -360,17 +360,17 @@ p.tableblock + p.tableblock {
   width: auto;
 }
 
-.quoteblock.abstract blockquote {
+.doc .abstract blockquote {
   font-size: 0.9375rem;
   margin: 1rem 0 1.5625rem 0;
   font-weight: var(--weight-light);
 }
 
-.quoteblock.abstract blockquote * {
+.doc .abstract blockquote * {
   font-weight: inherit;
 }
 
-.quoteblock.abstract blockquote::before {
+.doc .abstract blockquote::before {
   content: "Summary: ";
   color: var(--color-muted);
   font-weight: var(--weight-medium);
