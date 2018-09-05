@@ -43,9 +43,9 @@ This project is used to develop and distribute the UI for the {url-site}[Couchba
 The UI bundle this project produces is intended to be used with {url-antora}[Antora].
 The UI bundle contains the HTML templates (layouts, partials, and helpers), CSS, JavaScript, fonts, and (site-wide) images.
 As such, it provides both the visual theme and user interactions for the documentation site.
-The rest of the material for the site comes from the content repositories.
+The rest of the material for the documentation site comes from the content repositories.
 
-You can find a preview of this UI online at {url-preview}.
+You can view a preview of this UI online at {url-preview}.
 
 == Usage
 
@@ -62,7 +62,7 @@ Read on to learn how to develop the UI.
 
 == Development Quickstart
 
-This section offers a basic tutorial for learning how to set up the UI project, preview it locally, and bundle it for use with Antora.
+This section offers a basic tutorial to learn how to set up the UI project, preview it locally, and bundle it for use with Antora.
 
 === Prerequisites
 
@@ -128,7 +128,7 @@ You should install the Gulp CLI globally (which resolves to a location in your u
 
  $ npm install -g gulp-cli
 
-If you prefer installing global packages with Yarn, use this command instead:
+If you prefer to install global packages using Yarn, run this command instead:
 
  $ yarn global add gulp-cli
 
@@ -147,10 +147,10 @@ Clone the UI project using git:
    cd "`basename $_`"
 
 The example above clones the Couchbase docs UI project and then switches to the project folder on your filesystem.
-Stay in this project folder in order to initialize the project using Yarn.
+Stay in this project folder when executing all subsequent commands.
 
-Use Yarn to install the project's dependencies (inside the project).
-In your terminal, execute the following command (while inside the project folder):
+Use Yarn to install the project's dependencies inside the project.
+In your terminal, execute the following command:
 
  $ yarn install
 
@@ -160,8 +160,9 @@ This folder does not get included in the UI bundle and should _not_ be committed
 === Preview the UI
 
 The UI project is configured to preview offline.
-That's what the files in the [.path]_preview-site-src/_ folder are for.
-This folder contains pages in AsciiDoc that provide a representative sample of content from the site.
+The files in the [.path]_preview-site-src/_ folder provide the sample content that allow you to see the UI in action.
+In this folder, you'll primarily find pages written in AsciiDoc.
+These pages provide a representative sample and kitchen sink of content from the real site.
 
 To build the UI and preview it in a local web server, run the `preview` command:
 
@@ -187,22 +188,22 @@ You can share a preview of the UI online by submitting a pull request to GitHub.
 The repository is configured to create a deploy preview on Netlify for every pull request.
 Here's how that process works:
 
-. Fork the repository on GitHub (only has to be done once)
-. Create a local branch
-. Make changes to the UI
-. Commit your changes to that branch
-. Push that branch to your fork of the repository on GitHub
-. Submit a pull request from the branch you pushed to your fork
-. Wait for deploy/netlify check to say "`Deploy preview ready`" on the pull request page
-. Click on the "`Details`" link under "`Show all checks`" on the pull request page
-. View your changes in the deploy preview or share the URL with others
+. Fork the repository on GitHub (only has to be done once).
+. Create a local branch.
+. Make changes to the UI.
+. Commit your changes to that branch.
+. Push that branch to your fork (on GitHub).
+. Submit a pull request from the branch you pushed to your fork.
+. Wait for deploy/netlify check to say "`Deploy preview ready`" on the pull request page.
+. Click on the "`Details`" link under "`Show all checks`" on the pull request page.
+. View your changes in the deploy preview or share the URL with others.
 
 The deploy preview works because there is a webhook on the repository that pings \https://api.netlify.com/hooks/github for the following events: push, pull_request, delete_branch.
 Netlify then runs the command specified in netlify.toml, deploys the site, and allocates a temporary URL for it.
 
 === Package for Use with Antora
 
-If you need to package the UI in order to preview the UI on the real site in local development, run the following command:
+If you need to package the UI so you can use it to generate the documentation site locally, run the following command:
 
  $ gulp pack
 
@@ -233,7 +234,7 @@ This project currently has three layouts:
 If a page doesn't specify a layout, the [.path]_default.hbs_ layout is used.
 
 To specify a layout, the page file must declare the `page-layout` document attribute in the AsciiDoc header.
-The value of that attribute should match the stem of the layout file, which is the filename minus the file extension (e.g., `home`).
+The value of that attribute should match the stem of the layout file (the filename minus the file extension, e.g., `home`).
 
 For example, the home page declares the following document attribute in the AsciiDoc header:
 
@@ -243,8 +244,9 @@ For example, the home page declares the following document attribute in the Asci
 :page-layout: home
 ----
 
-Now Antora will use the [.path]_home.hbs_ layout for this page instead of [.path]_default.hbs_.
-While the [.path]_home.hbs_ layout still has access to the same UI model, using a dedicated layout affords a lot of control over what gets displayed on this page.
+In this case, Antora will select the [.path]_home.hbs_ layout for this page instead of [.path]_default.hbs_.
+Using a dedicated layout affords a lot of control over what gets displayed on this page.
+Every layout has access to the same UI model.
 
 The home page likely requires additional styles that are only relevant for that page.
 You can organize these styles inside a namespace by adding a dedicated class to the `<body>` tag.
@@ -273,19 +275,20 @@ To make these styles easier to find and manage, they should be organized in a de
 
 When you run the preview, you can see the home page by visiting the URL \http://localhost:5252/home.html.
 
-The [.path]_404.hbs_ layout is similar to other layouts, except it is automatically selected to create the 404 page and, with the exception of `page.layout` and `page.title`, it doesn't have access to the `page` variable in the UI model (as it's not relevant).
+The [.path]_404.hbs_ layout is similar to other layouts, except Antora automatically selects it create the 404 page.
+With the exception of `page.layout` and `page.title`, the 404 page doesn't have access to the `page` variable in the UI model (as it's not applicable).
 
 When you run the preview, you can see the 404 page by visiting the URL \http://localhost:5252/404.html.
 
 === Page Roles
 
-Creating a new layout is powerful, but it also incurs maintenance overhead.
+Creating a new layout is powerful, but incurs a lot of maintenance overhead.
 If you're only looking to tweak the visual appearance of the article region of the page, perhaps to support custom UI components, you can instead define a page role.
 
 A page role is a special role that can be assigned per page that's typically applied directly to the main article.
 It's a way to activate CSS that is scoped to a given page or group of pages.
 
-To use a page role, the page file first has to declare the `page-role` attribute in the AsciiDoc document header.
+To use a page role, the AsciiDoc file for the page must declare the `page-role` attribute in the AsciiDoc document header.
 For example, the Starter Kits page declares the `tiles` role:
 
 [source,asciidoc]
@@ -318,7 +321,7 @@ For example:
 These and other styles organize the sections of the page into tiles.
 When you run the preview, you can see the tiles role in action by visiting the URL \http://localhost:5252/tiles.html.
 
-You can create as many of these roles as you like simply by adding scoped CSS that are linked to role names.
+You can create as many of these roles as you like simply by adding CSS scoped to the name of a role.
 
 === Tabs
 
@@ -391,6 +394,9 @@ Fortunately, you don't have to do any of these steps yourself.
 These steps are fully automated by the `gulp release` task.
 In fact, you don't even have to run the `gulp release` task manually.
 When a commit is pushed to the master branch of the repository, it triggers the CI job named *release-docs-ui-bundle*, which executes the `gulp release` task using pre-configured credentials.
+
+IMPORTANT: A release will only be made if the project validates.
+To validate the project, run `gulp pack` before pushing your changes to GitHub.
 
 The release-docs-ui-bundle CI job is already configured, so there's nothing you need to do to make automated release work.
 All you have to do is commit your changes and push those commits to the master branch of the git repository.
