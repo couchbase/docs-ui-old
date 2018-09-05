@@ -348,6 +348,18 @@ p.tableblock + p.tableblock {
   max-width: 100%;
 }
 
+.doc span.image.icon {
+  line-height: 1;
+  vertical-align: -0.2em;
+  display: inline-flex;
+  padding: 0 0.25ex;
+}
+
+.doc span.image.icon img {
+  height: 1rem;
+  width: auto;
+}
+
 .quoteblock.abstract blockquote {
   font-size: 0.9375rem;
   margin: 1rem 0 1.5625rem 0;
