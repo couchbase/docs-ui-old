@@ -1,11 +1,11 @@
-= Couchbase Documentation Site UI
+= Couchbase Documentation UI
 // Variables:
 :current-release: v165
 // Settings:
 :!example-caption:
 :experimental:
 :hide-uri-scheme:
-:toc:
+:toc: macro
 ifndef::env-github[]
 :icons: font
 :toc-title: Contents
@@ -14,11 +14,13 @@ ifdef::env-github[]
 :important-caption: :exclamation:
 :note-caption: :paperclip:
 :!toc-title:
+:badges:
 endif::[]
 // Project URIs:
-:url-project: https://github.com/couchbase/docs-ui
+:project-repo-name: couchbase/docs-ui
+:url-project: https://github.com/{project-repo-name}
 :url-site: https://docs.couchbase.com
-:url-repo: git@github.com:couchbase/docs-ui.git
+:url-repo: git@github.com:{project-repo-name}.git
 :url-preview: https://cb-docs-ui.netlify.com
 // External URIs:
 :url-antora: https://antora.org
@@ -30,6 +32,12 @@ endif::[]
 :url-nvm-install: {url-nvm}#installation
 :url-yarn: https://yarnpkg.com
 :url-couchbase: https://couchbase.com
+
+ifdef::badges[]
+image:https://img.shields.io/github/tag/{project-repo-name}.svg[Latest Release]
+endif::[]
+
+toc::[]
 
 This project is used to develop and distribute the UI for the {url-site}[Couchbase documentation site].
 The UI bundle this project produces is intended to be used with {url-antora}[Antora].
