@@ -2,15 +2,18 @@
 // Variables:
 :current-release: v165
 // Settings:
-:toc:
-:toc-title: Contents
 :!example-caption:
 :experimental:
 :hide-uri-scheme:
-ifndef::env-github[:icons: font]
+:toc:
+ifndef::env-github[]
+:icons: font
+:toc-title: Contents
+endif::[]
 ifdef::env-github[]
 :important-caption: :exclamation:
 :note-caption: :paperclip:
+:!toc-title:
 endif::[]
 // Project URIs:
 :url-project: https://github.com/couchbase/docs-ui
