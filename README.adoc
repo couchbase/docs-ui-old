@@ -1,27 +1,42 @@
-= Couchbase Documentation Site UI Prototype
-// Settings:
-:experimental:
-:hide-uri-scheme:
+= Couchbase Documentation Site UI
 // Variables:
 :current-release: v165
+// Settings:
+:toc:
+:toc-title: Contents
+:!example-caption:
+:experimental:
+:hide-uri-scheme:
+ifndef::env-github[:icons: font]
+ifdef::env-github[]
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+endif::[]
 // Project URIs:
-:uri-project: https://github.com/couchbase/docs-ui
-:uri-preview: https://cb-docs-ui.netlify.com
+:url-project: https://github.com/couchbase/docs-ui
+:url-site: https://docs.couchbase.com
+:url-repo: git@github.com:couchbase/docs-ui.git
+:url-preview: https://cb-docs-ui.netlify.com
 // External URIs:
-:uri-antora: https://antora.org
-:uri-git: https://git-scm.com
-:uri-git-dl: {uri-git}/downloads
-:uri-gulp: http://gulpjs.com
-:uri-node: https://nodejs.org
-:uri-nvm: https://github.com/creationix/nvm
-:uri-nvm-install: {uri-nvm}#installation
-:uri-yarn: https://yarnpkg.com
-:uri-couchbase: https://couchbase.com
+:url-antora: https://antora.org
+:url-git: https://git-scm.com
+:url-git-dl: {url-git}/downloads
+:url-gulp: http://gulpjs.com
+:url-node: https://nodejs.org
+:url-nvm: https://github.com/creationix/nvm
+:url-nvm-install: {url-nvm}#installation
+:url-yarn: https://yarnpkg.com
+:url-couchbase: https://couchbase.com
 
-Currently in prototype, this project will be used to generate the UI for the next version of the Couchbase documentation site.
-You can find a preview of this UI online at {uri-preview}.
+This project is used to develop and distribute the UI for the {url-site}[Couchbase documentation site].
+The UI bundle this project produces is intended to be used with {url-antora}[Antora].
+The UI bundle contains the HTML templates (layouts, partials, and helpers), CSS, JavaScript, fonts, and (site-wide) images.
+As such, it provides both the visual theme and user interactions for the documentation site.
+The rest of the material for the site comes from the content repositories.
 
-== Use the UI
+You can find a preview of this UI online at {url-preview}.
+
+== Usage
 
 To use this UI with Antora, add the following configuration to your playbook file:
 
@@ -29,23 +44,23 @@ To use this UI with Antora, add the following configuration to your playbook fil
 ----
 ui:
   bundle:
-    url: {uri-project}/releases/download/{current-release}/ui-bundle.zip
+    url: {url-project}/releases/download/{current-release}/ui-bundle.zip
 ----
 
-Read on to learn how to build the UI from source.
+Read on to learn how to develop the UI.
 
 == Development Quickstart
 
-This section offers a basic tutorial for learning how to preview the UI and bundle it for use with Antora.
+This section offers a basic tutorial for learning how to set up the UI project, preview it locally, and bundle it for use with Antora.
 
 === Prerequisites
 
 To preview and bundle the UI, you need the following software on your computer:
 
-* {uri-git}[git] (command: `git`)
-* {uri-node}[Node 8] (command: `node`)
-* {uri-gulp}[Gulp CLI] (command: `gulp`)
-* {uri-yarn}[Yarn] (command: `yarn`)
+* {url-git}[git] (command: `git`)
+* {url-node}[Node 8] (command: `node`)
+* {url-gulp}[Gulp CLI] (command: `gulp`)
+* {url-yarn}[Yarn] (command: `yarn`)
 
 ==== git
 
@@ -53,19 +68,19 @@ First, make sure you have git installed.
 
  $ git --version
 
-If not, {uri-git-dl}[download and install] the git package for your system.
+If not, {url-git-dl}[download and install] the git package for your system.
 
 ==== Node 8
 
 Next, make sure that you have Node 8 installed.
 
- $ node --version
+ $ node -v
 
 If this command fails with an error, you don't have Node installed.
-If the command doesn't report a Node 8 version (e.g., v8.9.4), you don't have a suitable version of Node installed.
+If the command doesn't report a Node 8 version (e.g., v8.11.4), then you don't have a suitable version of Node installed.
 
-While you can install Node from the official packages, we strongly recommend that you use {uri-nvm}[nvm] (Node Version Manager) to install and manage Node.
-Follow the {uri-nvm-install}[nvm installation instructions] to set up nvm on your machine.
+While you can install Node from the official packages, we strongly recommend that you use {url-nvm}[nvm] (Node Version Manager) to install and manage Node.
+Follow the {url-nvm-install}[nvm installation instructions] to set up nvm on your machine.
 
 Once you've installed nvm, open a new terminal and install Node 8 using the following command:
 
@@ -79,51 +94,63 @@ To make Node 8 the default in new terminals, type:
 
  $ nvm alias default 8
 
-Now that you have Node 8 installed, you can proceed with installing the Gulp CLI and Yarn.
+Now that you have Node 8 installed, you can proceed with installing Yarn and the Gulp CLI.
+
+==== Yarn
+
+Next, you'll need Yarn, which is the preferred package manager for the Node ecosystem.
+
+You should install Yarn globally (which resolves to a location in your user directory if you're using nvm) using the following command:
+
+ $ npm install -g yarn
+
+Verify Yarn is installed and on your PATH by running:
+
+ $ yarn -v
 
 ==== Gulp CLI
 
-Next, you'll need the Gulp command-line interface (CLI).
+Finally, you'll need the Gulp command-line interface (CLI).
 This package provides the `gulp` command which executes the version of Gulp declared by the project.
 
 You should install the Gulp CLI globally (which resolves to a location in your user directory if you're using nvm) using the following command:
 
  $ npm install -g gulp-cli
 
-==== Yarn
+If you prefer installing global packages with Yarn, use this command instead:
 
-Finally, you'll need Yarn, which is the preferred package manager for the Node ecosystem.
+ $ yarn global add gulp-cli
 
-You should install Yarn globally (which resolves to a location in your user directory if you're using nvm) using the following command:
+Verify the Gulp CLI is installed and on your PATH by running:
 
- $ npm install -g yarn
+ $ gulp -v
 
-Now that you have the prerequisites installed, you can fetch and build the default UI project.
+Now that you have the prerequisites installed, you can fetch and build the UI project.
 
 === Clone and Initialize the UI Project
 
-Clone the default UI project using git:
+Clone the UI project using git:
 
 [subs=attributes+]
- $ git clone {uri-project} &&
+ $ git clone {url-project} &&
    cd "`basename $_`"
 
-The example above clones Antora's default UI project and then switches to the project folder on your filesystem.
+The example above clones the Couchbase docs UI project and then switches to the project folder on your filesystem.
 Stay in this project folder in order to initialize the project using Yarn.
 
-Use Yarn to install the project's dependencies.
+Use Yarn to install the project's dependencies (inside the project).
 In your terminal, execute the following command (while inside the project folder):
 
  $ yarn install
 
 This command installs the dependencies listed in [.path]_package.json_ into the [.path]_node_modules/_ folder inside the project.
-This folder does not get included in the UI bundle.
+This folder does not get included in the UI bundle and should _not_ be committed to the source control repository.
 
 === Preview the UI
 
 The UI project is configured to preview offline.
 That's what the files in the [.path]_preview-site-src/_ folder are for.
-This folder contains HTML file fragments that provide a representative sample of content from the site.
+This folder contains pages in AsciiDoc that provide a representative sample of content from the site.
 
 To build the UI and preview it in a local web server, run the `preview` command:
 
@@ -136,12 +163,31 @@ You'll see a URL listed in the output of this command:
 [18:24:29] Running server
 ....
 
-Navigate to the URL to preview the site locally.
+Navigate to this URL to preview the site locally.
 
 While this command is running, any changes you make to the source files will be instantly reflected in the browser.
 This works by monitoring the project for changes, running the `build` task if a change is detected, and sending the updates to the browser.
 
 Press kbd:[Ctrl+C] to stop the preview server and end the continuous build.
+
+==== Preview Online
+
+You can share a preview of the UI online by submitting a pull request to GitHub.
+The repository is configured to create a deploy preview on Netlify for every pull request.
+Here's how that process works:
+
+. Fork the repository on GitHub (only has to be done once)
+. Create a local branch
+. Make changes to the UI
+. Commit your changes to that branch
+. Push that branch to your fork of the repository on GitHub
+. Submit a pull request from the branch you pushed to your fork
+. Wait for deploy/netlify check to say "`Deploy preview ready`" on the pull request page
+. Click on the "`Details`" link under "`Show all checks`" on the pull request page
+. View your changes in the deploy preview or share the URL with others
+
+The deploy preview works because there is a webhook on the repository that pings \https://api.netlify.com/hooks/github for the following events: push, pull_request, delete_branch.
+Netlify then runs the command specified in netlify.toml, deploys the site, and allocates a temporary URL for it.
 
 === Package for Use with Antora
 
@@ -149,10 +195,334 @@ If you need to package the UI in order to preview the UI on the real site in loc
 
  $ gulp pack
 
-The UI bundle will be available at [.path]_build/ui-bundle.zip_.
-You can then point Antora at this bundle using the `--ui-bundle` command-line option.
+If any errors are reported by lint, you'll need to fix them.
+
+When the command completes successfully, the UI bundle will be available at [.path]_build/ui-bundle.zip_.
+You can point Antora at this bundle using the `--ui-bundle-url` command-line option (e.g., `--ui-bundle-url=../docs-ui/build/ui-bundle.zip`).
+
+== Control the Visual Appearance of Pages
+
+To control the visual appearance of pages, the UI bundle provides a CSS stylesheet (for changing the CSS style rules) and any number of layouts in the form of Handlebars templates (for changing the HTML).
+Although most styles are used on all pages, it's possible to configure styles to target certain pages either based on the layout or page role.
+This section will introduce these various options and explain how they work.
+
+=== UI Layouts
+
+The most drastic way to change the appearance of the page is to change the HTML.
+The HTML is controlled by layouts, which are Handlebars templates located in [.path]_src/layouts_.
+A layout typically includes partials, located in [.path]_src/partials_, which are reusable template fragments.
+Partials may, in turn, include other partials.
+
+This project currently has three layouts:
+
+* default.hbs
+* 404.hbs
+* home.hbs
+
+If a page doesn't specify a layout, the [.path]_default.hbs_ layout is used.
+
+To specify a layout, the page file must declare the `page-layout` document attribute in the AsciiDoc header.
+The value of that attribute should match the stem of the layout file, which is the filename minus the file extension (e.g., `home`).
+
+For example, the home page declares the following document attribute in the AsciiDoc header:
+
+[source,asciidoc]
+----
+= Welcome to the Couchbase Docs!
+:page-layout: home
+----
+
+Now Antora will use the [.path]_home.hbs_ layout for this page instead of [.path]_default.hbs_.
+While the [.path]_home.hbs_ layout still has access to the same UI model, using a dedicated layout affords a lot of control over what gets displayed on this page.
+
+The home page likely requires additional styles that are only relevant for that page.
+You can organize these styles inside a namespace by adding a dedicated class to the `<body>` tag.
+In fact, that's what the [.path]_home.hbs_ layout currently does.
+
+[source,html]
+----
+<body class="home">
+  ...
+</body>
+----
+
+You can now define styles that are scoped to that page as follows:
+
+[source,css]
+----
+.home h1,
+.home h2,
+.home h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+----
+
+To make these styles easier to find and manage, they should be organized in a dedicated file [.path]_src/css/home.css_ and included into the master [.path]_src/css/site.css_ file, which is how this project is currently configured.
+
+When you run the preview, you can see the home page by visiting the URL \http://localhost:5252/home.html.
+
+The [.path]_404.hbs_ layout is similar to other layouts, except it is automatically selected to create the 404 page and, with the exception of `page.layout` and `page.title`, it doesn't have access to the `page` variable in the UI model (as it's not relevant).
+
+When you run the preview, you can see the 404 page by visiting the URL \http://localhost:5252/404.html.
+
+=== Page Roles
+
+Creating a new layout is powerful, but it also incurs maintenance overhead.
+If you're only looking to tweak the visual appearance of the article region of the page, perhaps to support custom UI components, you can instead define a page role.
+
+A page role is a special role that can be assigned per page that's typically applied directly to the main article.
+It's a way to activate CSS that is scoped to a given page or group of pages.
+
+To use a page role, the page file first has to declare the `page-role` attribute in the AsciiDoc document header.
+For example, the Starter Kits page declares the `tiles` role:
+
+[source,asciidoc]
+----
+= Starter Kits
+:page-role: tiles
+----
+
+This role is inserted as a CSS class on the `.body` element for all pages that use the [.path]_default.hbs_ layout by the [.path]_src/css/body.hbs_ template:
+
+[source,html]
+----
+<div class="body container{{#if page.attributes.role}} doc-{{page.attributes.role}}{{/if}}">
+  ...
+</div>
+----
+
+This CSS class, in turn, activates CSS under the `.doc-tiles` namespace for pages that use it.
+For example:
+
+[source,css]
+----
+.doc-tiles .doc {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1.25rem;
+}
+----
+
+These and other styles organize the sections of the page into tiles.
+When you run the preview, you can see the tiles role in action by visiting the URL \http://localhost:5252/tiles.html.
+
+You can create as many of these roles as you like simply by adding scoped CSS that are linked to role names.
+
+=== Tabs
+
+The playbook for the Couchbase documentation includes a tabs block extension.
+The extension takes care of converting the AsciiDoc for the tabs to HTML.
+The UI provides the interaction (JavaScript) and styles (CSS) that power these tabs.
+
+You can find the JavaScript for the tabs in the file [.path]_src/js/05-tabset.js_.
+You can find the styles for the tabs in the file [.path]_src/css/doc.css_.
+The preview site provides an example of these tabs in the file [.path]_preview-site-src/index.adoc_.
+Note that authors should never enter the HTML for tabs directly, but it is entered this way in the preview site to make it easier to work with.
+
+=== Content Preview
+
+You can create an arbitrary number of pages for the preview site.
+To make a page, create a new AsciiDoc file inside the [.path]_preview-site-src_ folder.
+You can then access the page in the preview site using the URL pattern \http://localhost:5252/<stem>.html, where `<stem>` is the stem of the source file (the filename minus the file extension).
+
+These preview pages serve the purpose of testing the page layout and content styling.
+Each page may declare a layout, role, or both.
+
+The only caveat is that, at the moment, every page provides the same UI model (with a few exceptions).
+The model is defined in [.path]_preview-site-src/ui-model.yml_ file.
+The exceptions include the layout, role, title, contents, and, in the case of home.adoc, the component, which get updated dynamically by the build.
+
+For information about what goes in the UI model, refer the https://docs.antora.org/antora-ui-default/templates/[Handlebars templates page] in the Antora documentation.
+
+== Integrations
+
+=== Algolia Search
+
+This UI provides integration with Algolia search.
+The Algolia client is configured in the file [.path]_src/partials/footer-scripts.hbs_.
+You can test the search directly from the preview site by setting the following environment variables in your shell:
+
+* `ALGOLIA_APP_ID` - the application ID that hosts the search index (optional if you're using docsearch)
+* `ALGOLIA_API_KEY` - your API key for Algolia
+* `ALGOLIA_INDEX_NAME` - the name of the index
+
+You can point to any index that is publicly accessible.
+
+=== JIRA Feedback
+
+This UI provides integration with JIRA feedback.
+The JIRA feedback widget is configured in the file [.path]_src/partials/footer-scripts.hbs_.
+You can test the feedback widget directly from the preview site by setting the `FEEDBACK_BUTTON=true` environment variable in your shell.
+
+The configuration for the widget is currently hardcoded into the partial template.
+
+== Release the UI Bundle
+
+Once you're satisfied with the changes you've made to the UI and would like to make those changes available to Antora, you'll need to publish the UI as a bundle by making a release.
+This project provides a Gulp build task, appropriately named *release*, that fully automates the release.
+
+The release task tags the repository and publishes the bundle to the releases section of the repository on GitHub.
+The bundle can then be downloaded using a unique URL, accessible from the release page.
+You can see a list of all past releases on the {url-project}/releases[releases page].
+
+=== Release Task Workflow
+
+Releasing the UI bundle consists of the following tasks:
+
+. Pack the UI bundle.
+. Tag the git repository using the next version number in the sequence (e.g., v100 after v99)
+. Create a GitHub release from that git tag.
+. Attach the UI bundle to that release as an asset in zip format.
+. Update the README to reference the URL of the lastest bundle and commit that update to the repository.
+
+Fortunately, you don't have to do any of these steps yourself.
+These steps are fully automated by the `gulp release` task.
+In fact, you don't even have to run the `gulp release` task manually.
+When a commit is pushed to the master branch of the repository, it triggers the CI job named *release-docs-ui-bundle*, which executes the `gulp release` task using pre-configured credentials.
+
+The release-docs-ui-bundle CI job is already configured, so there's nothing you need to do to make automated release work.
+All you have to do is commit your changes and push those commits to the master branch of the git repository.
+A few seconds later, a new bundle will be available for use with Antora.
+Run `git pull` to retrieve the updated README that includes the new URL.
+
+TIP: If you want to commit a change to master without making a release, add the string `[skip release]` to the end of the commit message.
+
+The next two sections document how the CI job is set up an configured.
+
+=== Release Task Prerequisites
+
+In addition to the <<Prerequisites>> covered above, you'll need a personal access token for the automated GitHub account, cb-docs-robot, so it has permission to make changes to the repository on GitHub.
+The cb-docs-robot account will need at least write access to the {url-project} repository, though admin access is recommended.
+
+Start by creating a https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/[personal access token] for the cb-docs-robot user.
+The `release` task relies on this token to interact with the GitHub API to create the tag, create the release, and upload the asset.
+The token must have the public_repo scope.
+No other scopes are required (as long as the cb-docs-robot account has write access to the repository).
+Next, copy the token generated and store it as a _Secret text_ Jenkins credential as follows:
+
+[unstyled]
+* _Kind:_ Secret text
+* _Scope:_ System (Jenkins and nodes only)
+* _Secret:_ <enter-token-value>
+* _ID:_ docs-robot-api-key
+* _Description:_ GitHub API key for docs robot
+
+The token gets passed to the task as the `GITHUB_TOKEN` environment variable.
+In the CI job configuration, covered in the next section, you'll learn how this token gets transferred from the Jenkins credential to the `GITHUB_TOKEN` environment variable when the build executes.
+
+=== CI Job Configuration
+
+Jenkins is used to execute the CI job that publishes the UI bundle.
+The job is named *release-docs-ui-bundle* and can be found under the *Antora* folder in the Jenkins server managed by the Couchbase docs team.
+This section describes in detail how that job has been configured in case it must be recreated.
+
+The release is performed by the cb-docs-robot GitHub account, which interacts with GitHub entirely using the GitHub API.
+The release script authenticates with the GitHub API as the cb-docs-robot user using a personal access token retrieved from the `GITHUB_TOKEN` environment variable.
+
+Create a new CI job from the Freestyle project template.
+On the configuration screen, select or populate the following settings:
+
+.Configuration details for the Antora/release-docs-ui-bundle CI job
+====
+General::
+* _Project name:_ `release-docs-ui-bundle`
+* _Description:_ Packs, tags, and releases the UI bundle whenever a non-ignored commit is pushed to the master branch of this repository.
+* [x] GitHub project
+ ** _Project url:_ `pass:a[{url-project}]`
+Source Code Management::
+* [x] Git
+ ** _Repository URL:_ `pass:a[{url-project}]`
+ ** _Branches to build > Branch Specifier:_ `*/master`
+ ** Additional Behaviours
+  *** *Polling ignores commits with certain messages*
+   **** _Excluded Messages:_ `+(?s).*\[skip release\].*+`
+  *** *Advanced clone behaviours*
+   **** Shallow clone: [x]
+   **** Shallow clone depth: `1`
+   **** Do not fetch tags: [x]
+   **** Honor refspec on initial clone: [x]
+Build Triggers::
+* [x] GitHub hook trigger for GITScm polling
+Build Environment::
+* [x] Provide Node & npm bin/ folder to PATH
+ ** _NodeJS Installation:_ node8
+* [x] Use secret text(s) or file(s)
+Bindings::
+* *Secret text*
+ ** _Variable:_ `GITHUB_TOKEN`
+ ** _Credentials > (&bull;) Specific credentials:_ GitHub API key for docs robot
+Build::
+* *Execute shell*
+ ** _Command:_
++
+[source,bash]
+----
+rm -rf build public
+yarn && ./node_modules/.bin/gulp release
+----
+====
+
+The *Secret text* binds the value of the personal access token for the cb-docs-robot read from the specified Jenkins credential to the `GITHUB_TOKEN` environment varaible.
+This environment variable is used by the release task to authenticate against the GitHub API as the cb-docs-robot user.
+
+The heart of the build is the *Execute shell* section.
+Since Jenkins retains the workspace between runs, it's necessary to start by removing artifact left behind by previous builds.
+Next, the dependencies are installed or updated by the call to `yarn`.
+Thanks to the workspace cache, Yarn finds most of the dependencies in the workspace and thus the call to it is very fast.
+Finally, the job delegates to Gulp to perform the release steps described in <<Release Task Workflow>>.
+
+Once the CI job runs and a new UI bundle is available, you can update the URL of the UI bundle in the Antora playbook file.
+See <<Usage>> for details.
+
+=== Webhook / Trigger
+
+The build trigger requires coordination with the {url-project} repository on GitHub.
+Specifically, the GitHub repository must be configured to ping the Jenkins webhook whenever a commit comes in.
+
+Jenkins will attempt to set up this link for you when you create the job using the GitHub API key specified under menu:Jenkins[Manage Jenkins > Configure System > GitHub > GitHub Servers].
+In order for this to work, the cb-docs-robot account must temporarily have admin access to the {url-project} repository.
+If Jenkins fails to establish that link, you'll need to set it up manually, which is covered below.
+
+If you have admin access to the repository on GitHub, you can see the details of this webhook by navigating to {url-project}/settings/hooks.
+Here are the details of that webhook:
+
+====
+Payload URL:: JENKINS_URL/github-webhook/ <1>
+Content type:: application/json
+Secret:: _hidden_
+Which events would you like to trigger this webhook?::
+* [x] Just the `push` event
+
+{empty}<1> JENKINS_URL is a placeholder for the real URL of the Jenkins server.
+====
+
+You can also find a list of recent deliveries on that screen.
+
+==== Set Up the Webhook Manually
+
+If Jenkins doesn't have proper permissions to create the webhook on GitHub, you'll need to configure it manually.
+To set up this ping (i.e., webhook), navigate to the menu:Settings[Webhooks] page of the GitHub repository.
+Click btn:[Add webhook], enter the following URL in the Payload URL field, then click btn:[Add webhook].
+
+[subs=attributes+]
+ JENKINS_URL/git/notifyCommit?url={url-project}&branches=master
+
+(Replace JENKINS_URL with the URL of the Jenkins server).
+
+No secret is required (as this URL does not require authentication).
+
+Update the job configuration to use *Poll SCM* with an empty schedule instead of *GitHub hook trigger for GITScm polling*.
+That will allow this ping to work and prevent Jenkins from showing any warnings.
 
 == Copyright and License
 
-Copyright (C) {uri-couchbase}[Couchbase] 2018.
+=== Software
+
+The software in this repository (build scripts, JavaScript files, Handlebars templates, foundation CSS, utility icons, etc) is part of the {url-antora}[Antora project].
+As such, use of the software is granted under the terms of the https://www.mozilla.org/en-US/MPL/2.0/[Mozilla Public License Version 2.0] (MPL-2.0).
+
+=== Branding and Design
+
+Copyright (C) {url-couchbase}[Couchbase] 2018.
 All rights reserved.
