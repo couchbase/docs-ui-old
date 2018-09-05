@@ -288,8 +288,8 @@ If you're only looking to tweak the visual appearance of the article region of t
 A page role is a special role that can be assigned per page that's typically applied directly to the main article.
 It's a way to activate CSS that is scoped to a given page or group of pages.
 
-To use a page role, the AsciiDoc file for the page must declare the `page-role` attribute in the AsciiDoc document header.
-For example, the Starter Kits page declares the `tiles` role:
+To apply a page role, the AsciiDoc file for the page must declare the `page-role` attribute in the AsciiDoc document header.
+For example, the Starter Kits page declares the `tiles` role as follows:
 
 [source,asciidoc]
 ----
@@ -297,21 +297,21 @@ For example, the Starter Kits page declares the `tiles` role:
 :page-role: tiles
 ----
 
-This role is inserted as a CSS class on the `.body` element for all pages that use the [.path]_default.hbs_ layout by the [.path]_src/css/body.hbs_ template:
+The value of this attribute is added by the [.path]_src/css/body.hbs_ template to the class attribute of the `.body` element.
 
 [source,html]
 ----
-<div class="body container{{#if page.attributes.role}} doc-{{page.attributes.role}}{{/if}}">
+<div class="body container{{#if page.attributes.role}} {{page.attributes.role}}{{/if}}">
   ...
 </div>
 ----
 
-This CSS class, in turn, activates CSS under the `.doc-tiles` namespace for pages that use it.
+Therefore, setting the `page-role` attribute to `tiles` activates any CSS under the `.body.tiles` selector.
 For example:
 
 [source,css]
 ----
-.doc-tiles .doc {
+.body.tiles .doc {
   display: flex;
   flex-wrap: wrap;
   margin-right: -1.25rem;
