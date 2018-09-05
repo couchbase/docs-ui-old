@@ -24,6 +24,12 @@
   text-align: center;
 }
 
+.home #preamble {
+  margin: 2rem 0 3rem;
+  font-size: 1.125rem;
+  text-align: center;
+}
+
 .home .button::before {
   content: "[";
   padding-right: 0.25em;
@@ -34,33 +40,27 @@
   padding-left: 0.25em;
 }
 
-.card ul,
-.tile ul {
+.home .card ul,
+.home .tile ul {
   line-height: 1.25;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.card li,
-.tile li {
+.home .card li,
+.home .tile li {
   padding: 0.25em 0;
 }
 
-.card a,
-.tile a {
+.home .card a,
+.home .tile a {
   text-decoration: none;
   position: relative;
 }
 
-.home #preamble {
-  margin: 2rem 0 3rem;
-  font-size: 1.125rem;
-  text-align: center;
-}
-
-.card a::before,
-.tile a::before {
+.home .card a::before,
+.home .tile a::before {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -73,37 +73,34 @@
   transition-duration: 0.3s;
 }
 
-.card a:focus::before,
-.card a:hover::before,
-.tile a:focus::before,
-.tile a:hover::before {
+.home .card a:focus::before,
+.home .card a:hover::before,
+.home .tile a:focus::before,
+.home .tile a:hover::before {
   transform: scale3d(1, 0.9999, 0.9999);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 0.3s;
 }
 
-.conceal-title > h2 {
+.home .conceal-title > h2 {
   display: none;
 }
 
-.cards > .sectionbody {
+.home .cards > .sectionbody {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   margin: -0.75rem 0 0 -0.75rem;
 }
 
-.card {
+.home .card {
+  color: #fff;
   display: flex;
   flex: 1 0 auto;
   flex-direction: column;
   margin: 0.75rem 0 0 0.75rem;
   min-width: 0;
   padding: 1.25rem;
-}
-
-.home .card {
-  color: #fff;
 }
 
 .home .card:nth-of-type(1) {
@@ -122,14 +119,14 @@
   background-color: var(--color-brand-orange);
 }
 
-.card h3 {
+.home .card h3 {
   font-size: 1.5rem;
   line-height: 2rem;
   padding: 0 0 1rem;
   position: relative;
 }
 
-.card h3::after {
+.home .card h3::after {
   content: "";
   display: block;
   position: absolute;
@@ -142,24 +139,25 @@
   width: 25%;
 }
 
-.card .paragraph {
+.home .card .paragraph {
   font-weight: var(--weight-light);
   margin-top: 1rem;
   flex: 1 0 auto; /* NOTE must specify flex-basis for IE 11 */
 }
 
-.card .ulist {
+.home .card .ulist {
   font-weight: var(--weight-bold);
   margin: 1.5rem 0 0.5rem;
   /* overflow-wrap: normal; */
   word-wrap: normal; /* NOTE not sure why this is required, but without it, list items get spaced apart */
 }
 
-.card a {
+.home .card a,
+.home .tile .title a {
   color: inherit;
 }
 
-.card a::after {
+.home .card a::after {
   content: "\00a0>";
   width: 0;
   display: inline-block;
@@ -170,14 +168,14 @@
   margin-top: 2.5rem;
 }
 
-.tiles > h2 {
+.home .tiles > h2 {
   font-size: 2rem;
   hyphens: auto;
   padding-bottom: 3.125rem;
   text-align: center;
 }
 
-.tiles > h2::after {
+.home .tiles > h2::after {
   content: "";
   display: block;
   background-color: currentColor;
@@ -189,29 +187,22 @@
   top: 1.375rem;
 }
 
-.tiles > .sectionbody {
+.home .tiles > .sectionbody {
   display: flex;
   flex-wrap: wrap;
 }
 
-.tile {
+.home .tile {
   flex: 1;
   margin-bottom: 0.75rem;
   min-width: 0;
-}
-
-.home .tile {
   flex-basis: auto;
   width: 50%;
 }
 
-.tile .title {
+.home .tile .title {
   font-weight: var(--weight-bold);
   margin-bottom: 0.25rem;
-}
-
-.tile .title a {
-  color: inherit;
 }
 
 @media screen and (min-width: 769px) {
@@ -221,15 +212,15 @@
     margin-right: 0.5rem;
   }
 
-  .cards > .sectionbody {
+  .home .cards > .sectionbody {
     flex-direction: row;
   }
 
-  .card {
+  .home .card {
     flex-basis: 0;
   }
 
-  .cards-4 .card {
+  .home .cards-4 .card {
     flex-basis: calc(50% - 0.75rem);
   }
 
@@ -237,22 +228,19 @@
     padding: 0 10%;
   }
 
-  .tiles > .sectionbody {
+  .home .tiles > .sectionbody {
     margin: 0 -0.5rem;
   }
 
   .home .tile {
     flex-basis: 0;
-  }
-
-  .tile {
     margin-bottom: 0;
     padding: 0 0.5rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .cards-4 .card {
+  .home .cards-4 .card {
     flex-basis: 0;
   }
 }
