@@ -249,20 +249,33 @@
 
 .doc .admonitionblock > table,
 .doc .admonitionblock > table > tbody,
-.doc .admonitionblock > table > tbody > tr {
+.doc .admonitionblock > table > tbody > tr > td {
   display: block;
 }
 
-.doc .admonitionblock .icon {
-  display: none;
+.doc .admonitionblock > table > tbody > tr {
+  display: flex;
+}
+
+.doc .admonitionblock td.icon {
+  padding: 0.5rem 0.375rem 0 0.75rem;
+}
+
+.doc .admonitionblock td.icon i::before {
+  background: no-repeat 0/cover;
+  content: "";
+  display: block;
+  height: 1.875rem;
+  width: 1.875rem;
 }
 
 .doc .admonitionblock td.content {
-  display: block;
+  flex: 1;
   font-size: 0.9375rem;
   hyphens: auto;
   line-height: 1.6;
-  padding: 0.75rem 1rem;
+  min-width: 0;
+  padding: 0.75rem 1rem 0.75rem 0;
 }
 
 .doc .admonitionblock td.content > .title {
@@ -272,7 +285,7 @@
 
 .doc .admonitionblock td.content > .title::after {
   content: "";
-  display: block;
+  display: table;
 }
 
 .doc .admonitionblock td.content::before {
@@ -281,6 +294,10 @@
 
 .doc .admonitionblock.caution > table {
   background-color: var(--color-brand-orange-tint);
+}
+
+.doc .admonitionblock.caution td.icon i::before {
+  background-image: url(../img/caution.svg);
 }
 
 .doc .admonitionblock.caution td.content::before {
@@ -292,6 +309,10 @@
   background-color: var(--color-brand-blue-tint);
 }
 
+.doc .admonitionblock.important td.icon i::before {
+  background-image: url(../img/important.svg);
+}
+
 .doc .admonitionblock.important td.content::before {
   content: "Important: ";
   color: var(--color-brand-blue);
@@ -299,6 +320,10 @@
 
 .doc .admonitionblock.note > table {
   background-color: var(--color-brand-light-blue-tint);
+}
+
+.doc .admonitionblock.note td.icon i::before {
+  background-image: url(../img/note.svg);
 }
 
 .doc .admonitionblock.note td.content::before {
@@ -310,6 +335,10 @@
   background-color: var(--color-brand-purple-tint);
 }
 
+.doc .admonitionblock.tip td.icon i::before {
+  background-image: url(../img/tip.svg);
+}
+
 .doc .admonitionblock.tip td.content::before {
   content: "Tip: ";
   color: var(--color-brand-purple);
@@ -317,6 +346,10 @@
 
 .doc .admonitionblock.warning > table {
   background-color: var(--color-brand-red-tint);
+}
+
+.doc .admonitionblock.warning td.icon i::before {
+  background-image: url(../img/warning.svg);
 }
 
 .doc .admonitionblock.warning td.content::before {
