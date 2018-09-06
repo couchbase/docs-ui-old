@@ -48,7 +48,7 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
             }, {})
           uiModel.page.layout = doc.getAttribute('page-layout', 'default')
           uiModel.page.title = doc.getDocumentTitle()
-          uiModel.page.contents = doc.convert()
+          uiModel.page.contents = Buffer.from(doc.convert())
           if (file.stem === 'home') {
             uiModel.page.component = Object.assign({}, uiModel.page.component, { name: 'home' })
           }
