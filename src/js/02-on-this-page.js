@@ -5,8 +5,10 @@
   if (!sidebar) return
   var doc
   var headings
-  if (document.querySelector('.body.-toc') ||
-      !(headings = find('h1[id].sect0, .sect1 > h2[id]', (doc = document.querySelector('article.doc')))).length) {
+  if (
+    document.querySelector('.body.-toc') ||
+    !(headings = find('h1[id].sect0, .sect1 > h2[id]', (doc = document.querySelector('article.doc')))).length
+  ) {
     sidebar.parentNode.removeChild(sidebar)
     return
   }

@@ -33,7 +33,7 @@
     var tab = this.tab
     var pane = this.pane
     find('.tabs li, .tab-pane', this.tabset).forEach(function (it) {
-      (it === tab || it === pane) ? it.classList.add('is-active') : it.classList.remove('is-active')
+      it === tab || it === pane ? it.classList.add('is-active') : it.classList.remove('is-active')
     })
     e.preventDefault()
   }
@@ -43,6 +43,8 @@
   }
 
   function getPane (id, tabset) {
-    return find('.tab-pane', tabset).find(function (it) { return it.getAttribute('aria-labelledby') === id })
+    return find('.tab-pane', tabset).find(function (it) {
+      return it.getAttribute('aria-labelledby') === id
+    })
   }
 })()
