@@ -1,10 +1,7 @@
 'use strict'
 
-const vfs = require('vinyl-fs')
-const prettier = require('./lib/gulp-prettier-eslint')
+const run = require('./lib/run-command')
 
-module.exports = (files) =>
-  vfs
-    .src(files)
-    .pipe(prettier())
-    .pipe(vfs.dest((file) => file.base))
+module.exports = (files) => {
+  return run('prettier-eslint', ['--write', ...files])
+}
