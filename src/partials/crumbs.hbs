@@ -3,11 +3,11 @@
     {{!-- NOTE add entry for current component, but not the home component or if the title matches the first breadcrumb --}}
     {{#unless (eq page.component.name 'home')}}
     {{#unless (eq page.breadcrumbs.0.content page.componentVersion.title)}}
-    <li class="crumb"><a href="{{{relativize page.url page.componentVersion.url}}}">{{{page.componentVersion.title}}}</a></li>
+    <li class="crumb"><a href="{{{relativize page.componentVersion.url}}}">{{{page.componentVersion.title}}}</a></li>
     {{/unless}}
     {{/unless}}
     {{#each page.breadcrumbs}}
-    <li class="crumb">{{#if (eq ./urlType 'internal')}}<a href="{{{relativize @root.page.url ./url}}}">{{{./content}}}</a>{{else}}{{{./content}}}{{/if}}</li>
+    <li class="crumb">{{#if (eq ./urlType 'internal')}}<a href="{{{relativize ./url}}}">{{{./content}}}</a>{{else}}{{{./content}}}{{/if}}</li>
     {{/each}}
   </ul>
 </nav>

@@ -22,12 +22,12 @@
                   <li><a href="{{siteRootPath}}/server/5.5/fts/full-text-intro.html">Full Text Search</a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/analytics/introduction.html">Analytics <small>(Developer Preview)</small></a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/eventing/eventing-overview.html">Eventing</a></li>
-                  <li><a href="{{{relativize page.url site.components.operator.url}}}">Autonomous Operator</a></li>
+                  <li><a href="{{{relativize site.components.operator.url}}}">Autonomous Operator</a></li>
                 </ul>
                 <ul>
                   <li class="heading">Mobile</li>
-                  <li><a href="{{{relativize page.url site.components.couchbase-lite.url}}}">Lite</a></li>
-                  <li><a href="{{{relativize page.url site.components.sync-gateway.url}}}">Sync Gateway</a></li>
+                  <li><a href="{{{relativize site.components.couchbase-lite.url}}}">Lite</a></li>
+                  <li><a href="{{{relativize site.components.sync-gateway.url}}}">Sync Gateway</a></li>
                 </ul>
                 <ul class="two-cols">
                   <li class="heading"><a href="{{siteRootPath}}/server/5.5/sdk/overview.html">SDKs</a></li>
@@ -41,11 +41,11 @@
                 </ul>
                 <ul>
                   <li class="heading"><a href="{{siteRootPath}}/server/5.5/connectors/intro.html">Connectors</a></li>
-                  <li><a href="{{{relativize page.url site.components.elasticsearch-connector.url}}}">Elasticsearch</a></li>
+                  <li><a href="{{{relativize site.components.elasticsearch-connector.url}}}">Elasticsearch</a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/connectors/hadoop-1.2/hadoop.html">Hadoop</a></li>
-                  <li><a href="{{{relativize page.url site.components.kafka-connector.url}}}">Kafka</a></li>
-                  <li><a href="{{{relativize page.url site.components.spark-connector.url}}}">Spark</a></li>
-                  <li><a href="{{{relativize page.url site.components.talend-connector.url}}}">Talend</a></li>
+                  <li><a href="{{{relativize site.components.kafka-connector.url}}}">Kafka</a></li>
+                  <li><a href="{{{relativize site.components.spark-connector.url}}}">Spark</a></li>
+                  <li><a href="{{{relativize site.components.talend-connector.url}}}">Talend</a></li>
                   <li><a href="{{siteRootPath}}/server/5.5/connectors/odbc-jdbc-drivers.html">ODBC/JDBC</a></li>
                 </ul>
               </div>
@@ -54,20 +54,20 @@
           {{#if (and page.component (ne page.component.name 'home'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{{relativize page.url page.componentVersion.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
+            <a class="navbar-link component" href="{{{relativize page.componentVersion.url}}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
                   {{#each page.versions}}
                   {{#unless (eq ./version @root.page.version)}}
-                  <li><a class="navbar-item" href="{{{relativize @root.page.url ./url}}}">{{{@root.page.component.title}}} {{./displayVersion}}</a></li>
+                  <li><a class="navbar-item" href="{{{relativize ./url}}}">{{{@root.page.component.title}}} {{./displayVersion}}</a></li>
                   {{/unless}}
                   {{/each}}
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
                 <ul class="related">
                   {{#each (related-sdk-pages page.component.name page.url 'c-sdk/2.8,dotnet-sdk/2.6,go-sdk/1.4,java-sdk/2.6,nodejs-sdk/2.5,php-sdk/2.4,python-sdk/2.4')}}
-                  <li><a class="navbar-item" href="{{{relativize @root.page.url ./url}}}">{{./title}}</a></li>
+                  <li><a class="navbar-item" href="{{{relativize ./url}}}">{{./title}}</a></li>
                   {{/each}}
                 </ul>
                 {{/if}}
@@ -75,7 +75,7 @@
             </div>
           </div>
           {{else}}
-          <a class="navbar-item component" href="{{{relativize page.url page.componentVersion.url}}}"><span class="title">{{{page.component.title}}}</span>{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
+          <a class="navbar-item component" href="{{{relativize page.componentVersion.url}}}"><span class="title">{{{page.component.title}}}</span>{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
           {{/if}}
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
