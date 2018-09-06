@@ -279,7 +279,7 @@
   font-weight: var(--weight-medium);
 }
 
-.doc .admonitionblock.caution td.content {
+.doc .admonitionblock.caution > table {
   background-color: var(--color-brand-orange-tint);
 }
 
@@ -288,7 +288,7 @@
   color: var(--color-brand-orange);
 }
 
-.doc .admonitionblock.important td.content {
+.doc .admonitionblock.important > table {
   background-color: var(--color-brand-blue-tint);
 }
 
@@ -297,7 +297,7 @@
   color: var(--color-brand-blue);
 }
 
-.doc .admonitionblock.note td.content {
+.doc .admonitionblock.note > table {
   background-color: var(--color-brand-light-blue-tint);
 }
 
@@ -306,7 +306,7 @@
   color: var(--color-brand-light-blue);
 }
 
-.doc .admonitionblock.tip td.content {
+.doc .admonitionblock.tip > table {
   background-color: var(--color-brand-purple-tint);
 }
 
@@ -315,7 +315,7 @@
   color: var(--color-brand-purple);
 }
 
-.doc .admonitionblock.warning td.content {
+.doc .admonitionblock.warning > table {
   background-color: var(--color-brand-red-tint);
 }
 
@@ -331,7 +331,6 @@
 .doc .imageblock {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
 }
 
 .doc .imageblock img {

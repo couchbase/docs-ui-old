@@ -112,7 +112,7 @@ Don't forget this step!
 This feature is only available in the Enterprise Edition.
 
 .Key Points to Remember
-[TIP]
+[TIP#key-points]
 ====
 * Write
 * This
