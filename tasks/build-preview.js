@@ -37,7 +37,7 @@ module.exports = async (src, dest, siteSrc, siteDest, sink) => {
         uiModel.siteRootUrl = path.join(siteRootPath, 'index.html')
         uiModel.uiRootPath = path.join(siteRootPath, '_')
         if (file.stem === '404') {
-          uiModel.page = { layout: '404' }
+          uiModel.page = { layout: '404', title: 'Page Not Found' }
         } else {
           const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
           uiModel.page.attributes = Object.entries(doc.getAttributes())
