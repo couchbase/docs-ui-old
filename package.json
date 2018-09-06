@@ -1,7 +1,7 @@
 {
   "name": "couchbase-docs-ui",
-  "description": "The project that produces the UI for the Couchbase documentation site",
-  "homepage": "https://developer.couchbase.com",
+  "description": "Produces the UI bundle used by the Couchbase documentation site",
+  "homepage": "https://docs.couchbase.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/couchbase/docs-ui.git"
