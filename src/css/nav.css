@@ -76,6 +76,11 @@
   margin-left: 0.75em;
 }
 
+/* NOTE navigation list without a category */
+.nav-item[data-depth="0"] > .nav-list:first-child {
+  margin-left: -0.75em;
+}
+
 .nav-menu .nav-item[data-depth="0"] + .nav-item {
   margin-top: 1.25em;
 }
