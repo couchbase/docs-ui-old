@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-{{> head-redirect}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{> head-first}}
     <title>Couchbase Documentation</title>
     {{#if site.url}}
     <link rel="canonical" href="{{site.url}}">
     {{/if}}
-    {{#if page.description}}
-    <meta name="description" content="{{page.description}}">
-    {{/if}}
-    {{#if page.keywords}}
-    <meta name="keywords" content="{{page.keywords}}">
-    {{/if}}
-{{> head}}
+{{> head-last}}
   </head>
   <body class="home">
 {{> header}}
