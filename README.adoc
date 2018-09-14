@@ -454,7 +454,7 @@ Source Code Management::
  ** _Branches to build > Branch Specifier:_ `*/master`
  ** Additional Behaviours
   *** *Polling ignores commits with certain messages*
-   **** _Excluded Messages:_ `+(?s).*\[skip release\].*+`
+   **** _Excluded Messages:_ `+(?s)(?:Release v\d+|.*\[skip .+?\]).*+`
   *** *Advanced clone behaviours*
    **** Shallow clone: [x]
    **** Shallow clone depth: `1`
