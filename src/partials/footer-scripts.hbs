@@ -11,3 +11,72 @@
 {{#if (eq env.FEEDBACK_BUTTON 'true')}}
 <script async id="feedback-script" src="{{uiRootPath}}/js/vendor/feedback.js?v=1" data-collector-id="de2e9313"></script>
 {{/if}}
+{{#if page.editUrl}}
+{{#unless (includes page.origin.url '@')}}
+<style>
+.contributors {
+  display: flex;
+  align-items: center;
+  line-height: 1 !important;
+  margin: 3rem 0 -1rem 0;
+}
+.contributors h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+.contributors ul {
+  display: flex;
+  margin: 0 0 0 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+.contributors li {
+  margin-left: 0.5rem;
+}
+.contributors img {
+  border-radius: 0.25em;
+  vertical-align: -0.15em;
+}
+</style>
+<script src="https://unpkg.com/github-api/dist/GitHub.bundle.min.js"></script>
+<script>
+(function () {
+  var editUrl = '{{{page.editUrl}}}'
+  var m = editUrl.match(/^https:\/\/github\.com\/([^\/]+)\/([^\/]+)\/edit\/[^\/]+\/(.+)/)
+  var gh = new GitHub()
+  var repo = gh.getRepo(m[1], m[2])
+  repo.listCommits({ path: m[3] }).then(function (commits) {
+    Promise.all(commits.data.reduce((accum, commit) => {
+      if (!accum.includes(commit.author.login)) accum.push(commit.author.login)
+      return accum
+    }, []).map((login) => {
+      return gh.getUser(login).getProfile()
+    })).then((contributors) => {
+      var aside = document.createElement('aside')
+      aside.className = 'contributors'
+      var h3 = document.createElement('h3')
+      h3.appendChild(document.createTextNode(contributors.length + ' contributors'))
+      aside.appendChild(h3)
+      var ul = document.createElement('ul')
+      contributors.forEach((contributor) => {
+        var contributorData = contributor.data
+        var li = document.createElement('li')
+        var img = document.createElement('img')
+        img.src = contributorData.avatar_url
+        img.width = 16
+        li.appendChild(img)
+        li.appendChild(document.createTextNode(' ' + (contributorData.name || contributorData.login)))
+        ul.appendChild(li)
+      })
+      aside.appendChild(ul)
+      document.querySelector('main').appendChild(aside)
+      var scrollEvent = document.createEvent('UIEvents')
+      scrollEvent.initUIEvent('scroll', true, true, window, 1)
+      window.dispatchEvent(scrollEvent)
+    })
+  })
+})()
+</script>
+{{/unless}}
+{{/if}}
