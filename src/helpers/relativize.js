@@ -12,11 +12,9 @@ module.exports = (to, { data: { root } }) => {
     hash = to.substr(hashIdx)
     to = to.substr(0, hashIdx)
   }
-  if (to === from) {
-    return hash || (isDir(to) ? './' : path.basename(to))
-  } else {
-    return path.relative(path.dirname(from + '.'), to) + (isDir(to) ? '/' + hash : hash)
-  }
+  return to === from
+    ? hash || (isDir(to) ? './' : path.basename(to))
+    : (path.relative(path.dirname(from + '_'), to) || '.') + (isDir(to) ? '/' + hash : hash)
 }
 
 function isDir (str) {
