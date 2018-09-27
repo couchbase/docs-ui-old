@@ -51,6 +51,7 @@
     "typeface-roboto-condensed": "^0.0.54",
     "typeface-roboto-mono": "^0.0.54",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-fs": "^3.0.3"
+    "vinyl-fs": "^3.0.3",
+    "zepto": "^1.2.0"
   }
 }

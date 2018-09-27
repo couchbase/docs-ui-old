@@ -1,3 +1,12 @@
     <link rel="stylesheet" href="{{uiRootPath}}/css/site.css">
+    {{#if env.OPTANON_SCRIPT_URL}}
+    <script src="{{uiRootPath}}/js/vendor/zepto.js"></script>
+    <script src="{{{env.OPTANON_SCRIPT_URL}}}"></script>
+    <script>function OptanonWrapper(){}</script>
+    {{/if}}
+    {{#if site.keys.googleAnalytics}}
+    <script>(window.dataLayer=window.dataLayer||[]).push({'gtm.start':+new Date(),event:'gtm.js'})</script>
+    <script async src="https://www.googletagmanager.com/gtm.js?id={{site.keys.googleAnalytics}}"></script>
+    {{/if}}
 {{> head-meta}}
 {{> head-scripts}}
