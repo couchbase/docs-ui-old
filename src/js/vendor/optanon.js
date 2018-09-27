@@ -16,4 +16,5 @@
       }, el.height())
     },
   })
+  require('./optanon-impl.min.js')
 })()
