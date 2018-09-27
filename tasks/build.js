@@ -55,7 +55,7 @@ module.exports = (src, dest, preview) => {
       .pipe(concat('js/site.js')),
 
     vfs
-      .src('js/vendor/{docsearch,highlight,zepto}.js', Object.assign({ read: false }, opts))
+      .src('js/vendor/{docsearch,highlight}.js', Object.assign({ read: false }, opts))
       .pipe(
         // see https://gulpjs.org/recipes/browserify-multiple-destination.html
         map((file, next) => {
@@ -67,6 +67,8 @@ module.exports = (src, dest, preview) => {
       .pipe(uglify()),
 
     vfs.src('js/vendor/feedback.js', opts).pipe(uglify()),
+
+    vfs.src(require.resolve('jquery/dist/jquery.min.js'), opts).pipe(concat('js/vendor/jquery.js')),
 
     vfs.src(['css/site.css', 'css/vendor/docsearch.css'], opts).pipe(postcss(postcssPlugins)),
 
