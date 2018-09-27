@@ -55,7 +55,7 @@ module.exports = (src, dest, preview) => {
       .pipe(concat('js/site.js')),
 
     vfs
-      .src(['js/vendor/docsearch.js', 'js/vendor/highlight.js'], Object.assign({ read: false }, opts))
+      .src('js/vendor/{docsearch,highlight,zepto}.js', Object.assign({ read: false }, opts))
       .pipe(
         // see https://gulpjs.org/recipes/browserify-multiple-destination.html
         map((file, next) => {
