@@ -2,14 +2,14 @@
 {{#if (eq page.component.name 'home')}}
 <div class="tools" role="navigation">
   <ul>
-    <li class="tool edit"><a href="{{{home-edit-url page.editUrl 'https://github.com/couchbase/docs-site' page.origin.branch}}}" title="Edit Page">Edit</a></li>
+    <li class="tool edit"><a href="{{{home-edit-url page.editUrl 'https://github.com/couchbase/docs-site' page.origin.branch}}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
   </ul>
 </div>
 {{else}}
 {{#unless (includes page.origin.url '@')}}
 <div class="tools" role="navigation">
   <ul>
-    <li class="tool edit"><a href="{{{page.editUrl}}}" title="Edit Page">Edit</a></li>
+    <li class="tool edit"><a href="{{{page.editUrl}}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
   </ul>
 </div>
 {{/unless}}
