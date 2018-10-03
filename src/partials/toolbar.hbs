@@ -1,8 +1,8 @@
 {{#if page.editUrl}}
-{{#unless (includes page.origin.url '@')}}
+{{#unless (and (ne page.component.name 'home') (includes page.origin.url '@'))}}
 <div class="tools" role="navigation">
   <ul>
-    <li class="tool edit"><a href="{{page.editUrl}}" title="Edit this Page">Edit</a></li>
+    <li class="tool edit"><a href="{{page.editUrl}}" title="Edit Page">Edit</a></li>
   </ul>
 </div>
 {{/unless}}
