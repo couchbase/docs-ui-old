@@ -53,22 +53,28 @@ page:
   home: false
   editUrl: https://github.com/couchbase/docs-ui/edit/master/preview-site-src/index.adoc
   versions:
-  - version: '6.0'
-    displayVersion: '6.0 Beta'
-    url: '#'
-  - version: '5.5'
-    displayVersion: '5.5'
-    url: '#'
-  - version: '5.1'
-    displayVersion: '5.1'
-    url: '#'
-  - version: '5.0'
-    displayVersion: '5.0'
-    url: '#'
-  - version: '4.6'
-    displayVersion: '4.6'
-    missing: true
-    url: '#'
+    0:
+      version: '6.0'
+      displayVersion: '6.0 Beta'
+      url: '#'
+    1: &latest_page
+      version: '5.5'
+      displayVersion: '5.5'
+      url: '#'
+    2:
+      version: '5.1'
+      displayVersion: '5.1'
+      url: '#'
+    3:
+      version: '5.0'
+      displayVersion: '5.0'
+      url: '#'
+    4:
+      version: '4.6'
+      displayVersion: '4.6'
+      missing: true
+      url: '#'
+    latest: *latest_page
   navigation:
   - content: Introduction
     items:
