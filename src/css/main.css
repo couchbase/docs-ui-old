@@ -55,7 +55,6 @@ main p {
 .article-banner p {
   font-size: 1.125rem;
   margin: 0 1rem 0 0;
-  hyphens: auto;
 }
 
 .article-banner a.btn {
