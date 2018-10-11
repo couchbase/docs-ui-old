@@ -66,7 +66,7 @@
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
                 <ul class="related">
-                  {{#each (related-sdk-pages page.component.name page.url 'c-sdk/2.8,dotnet-sdk/2.6,go-sdk/1.4,java-sdk/2.6,nodejs-sdk/2.5,php-sdk/2.4,python-sdk/2.4')}}
+                  {{#each (related-sdk-pages page.component.name page.url 'c-sdk/2.10,dotnet-sdk/2.7,go-sdk/1.5,java-sdk/2.7,nodejs-sdk/2.6,php-sdk/2.6,python-sdk/2.5')}}
                   <li><a class="navbar-item" href="{{{relativize ./url}}}">{{./title}}</a></li>
                   {{/each}}
                 </ul>
