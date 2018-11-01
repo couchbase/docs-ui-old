@@ -1,6 +1,6 @@
 = Couchbase Documentation UI
 // Variables:
-:current-release: v189
+:current-release: v190
 // Settings:
 :!example-caption:
 :experimental:
