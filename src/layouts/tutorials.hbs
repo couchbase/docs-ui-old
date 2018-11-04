@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {{> head-first}}
+  <title>Couchbase Documentation</title>
+  {{#if site.url}}
+    <link rel="canonical" href="{{{site.url}}}">
+  {{/if}}
+  {{> head-last}}
+</head>
+<body class="home">
+{{> header}}
+<div style="height: 200px;background-color: #a8a8a8;margin-top: 78px;display: flex;align-items: center;">
+  <div class="container">
+    <h1>{{{page.title}}}</h1>
+  </div>
+</div>
+{{> body-tutorials}}
+{{> footer}}
+</body>
+</html>

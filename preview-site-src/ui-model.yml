@@ -31,6 +31,20 @@ site:
         displayVersion: '4.6'
         title: *component_title
       latest: *latest_server
+    tutorials:
+      tiles:
+        - role: Mobile
+          title: Mobile Travel Sample
+          description: An in-depth tutorial that demonstrates key end-to-end Couchbase Mobile 2.0 capabilities for iOS, Android and .NET (UWP and Xamarin) platforms. The Travel Sample app will allow users to search for and to make flight reservations Shared bucket access is enabled to allow web and mobile clients to perform the same operations on the bucket.
+          language:
+            - name: Swift
+              url: swift/design/data-modeling.adoc
+        - role: SDK
+          title: Travel Sample
+          description: The application allows users to find flights by entering airports and travel dates. For the airport entries, the app uses a N1QL query bound to an Angular typeahead directive to suggest airport names based on the first few letters entered.
+          language:
+            - name: Java
+              url: jj
     elasticsearch-connector:
       url: /elasticsearch-connector/3.0/index.html
     kafka-connector:
