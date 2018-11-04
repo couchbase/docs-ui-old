@@ -16,9 +16,9 @@ const ASCIIDOC_ATTRIBUTES = {
   'source-highlighter': 'highlight.js',
 }
 
-handlebars.registerHelper('json', function(context) {
-  return JSON.stringify(context);
-});
+handlebars.registerHelper('json', function (context) {
+  return JSON.stringify(context)
+})
 
 module.exports = async (src, dest, siteSrc, siteDest, sink) => {
   const [baseUiModel, layouts] = await Promise.all([

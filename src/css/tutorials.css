@@ -5,7 +5,7 @@
 
 .tutorials .tutorial {
   flex-basis: calc(33% - 30px);
-  background-color: #eeeeee;
+  background-color: #eee;
   margin: 15px;
 }
 
@@ -51,9 +51,6 @@
 
 .tutorial.languages li {
   display: inline-block;
-}
-
-.tutorial.languages li {
   background-color: white;
   margin: 5px;
   padding: 5px 10px;
