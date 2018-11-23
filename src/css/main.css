@@ -117,3 +117,7 @@ main p {
     align-items: flex-start;
   }
 }
+
+.height-100 {
+  height: 100%;
+}

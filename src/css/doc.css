@@ -671,6 +671,11 @@
   flex-wrap: wrap;
   margin-right: -2.5rem;
 }
+/* ^^^ override existing */
+.tutorials.body.tiles .doc {
+  justify-content: space-between;
+  margin-right: 0;
+}
 
 .body.tiles .doc > h1.page {
   flex-basis: 100%;
@@ -686,6 +691,89 @@
 .body.tiles .sect1 > h2 {
   font-size: 1.5rem;
   font-weight: var(--weight-bold);
+}
+
+/** CSS rules for tiles on the tutorial list page **/
+
+/* 1 column layout on small screens */
+@media screen and (max-width: 768px) {
+  .tutorials.body.tiles .sect1 {
+    flex-basis: 100%;
+  }
+}
+
+/* 3 column layout on large screens */
+@media screen and (min-width: 769px) {
+  .tutorials.body.tiles .sect1 {
+    flex-basis: 32%;
+  }
+}
+
+.tutorials.body.tiles .sectionbody {
+  height: calc(100% - 28px - 15px);
+}
+
+.tutorials.body.tiles .sect1 {
+  border: 1px solid lightgrey;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.tutorials.body.tiles .sect2 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* because `justify-self: flex-end` is being ignored in modern browsers */
+/* https://stackoverflow.com/a/49658476/1908348 */
+.tutorials.body.tiles .sect3:last-child {
+  margin-top: auto;
+}
+
+.tutorials.body.tiles .sect1 > h2 {
+  color: white;
+}
+
+.tutorials.body.tiles .sect1.developer > h2 {
+  background-color: #00b0dc;
+}
+
+.tutorials.body.tiles .sect1.architect > h2 {
+  background-color: #00bdbd;
+}
+
+.tutorials.body.tiles .sect1.devops > h2 {
+  background-color: #ff983a;
+}
+
+/* layout tutorial languages and components */
+.tutorials.body.tiles .sect3 {
+  display: flex;
+}
+
+.tutorials.body.tiles .sect3.metadata {
+  border-top: 1px solid lightgrey;
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+
+.tutorials.body.tiles .sect3 h4 {
+  font-size: 1.1rem;
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.tutorials.body.tiles .sect4 {
+  width: 50%;
+  text-align: center;
+}
+
+.tutorials.body.tiles .sect4 .ulist ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .body.tiles .sect1 > h2::after {

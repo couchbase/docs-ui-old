@@ -1,79 +1,12 @@
-.tutorials {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tutorials .tutorial {
-  flex-basis: calc(33% - 30px);
-  background-color: #eee;
-  margin: 15px;
-}
-
-.sect2.tutorial {
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.tutorial .info {
-  padding: 15px;
-}
-
-.tutorial h2 {
-  background-color: #ea2228;
+/* banner styling */
+.tutorials .banner {
+  background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%);
   color: white;
-  text-align: center;
+  height: 300px;
 }
 
-.sect2 > h3 {
-  flex-shrink: 1;
-  min-height: 44px;
-}
-
-.sect2 > .paragraph {
-  flex-shrink: 2;
-}
-
-.languages {
-  flex-shrink: 1;
-  justify-self: flex-end;
-}
-
-.sect2 .paragraph p {
-  height: 250px;
-}
-
-.tutorial.languages ul {
-  list-style: none;
-  text-align: right;
-}
-
-.tutorial.languages li {
-  display: inline-block;
-  background-color: white;
-  margin: 5px;
-  padding: 5px 10px;
-  color: black;
-}
-
-.tutorial.languages li a {
-  color: black;
-}
-
-.labels {
-  margin: 30px 12px 15px 12px;
-}
-
-.labels div {
-  border: 1px solid black;
-  display: inline;
-  font-size: 20px;
-  margin: 0 3px;
-  padding: 5px 10px;
-}
-
-.labels div.selected {
-  background-color: black;
-  color: white;
+/* vertically align title and sub-title */
+.tutorials .banner-content {
+  display: flex;
+  align-items: center;
 }
