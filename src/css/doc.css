@@ -673,8 +673,12 @@
 }
 /* ^^^ override existing */
 .tutorials.body.tiles .doc {
-  justify-content: space-between;
+  justify-content: flex-start;
   margin-right: 0;
+}
+
+.tutorials .container {
+  min-height: 100%;
 }
 
 .body.tiles .doc > h1.page {
@@ -705,24 +709,65 @@
 /* 3 column layout on large screens */
 @media screen and (min-width: 769px) {
   .tutorials.body.tiles .sect1 {
-    flex-basis: 32%;
+    flex-basis: calc(33% - 20px);
   }
 }
 
 .tutorials.body.tiles .sectionbody {
-  height: calc(100% - 28px - 15px);
+  height: calc(100% - 90px);
+  /* add padding immediately inside the card */
+  padding: 0 15px;
+}
+
+/* target the tutorial title */
+.tutorials.body.tiles .sectionbody > div.paragraph {
+  font-size: 1.3rem;
+}
+
+mark {
+  /* background: #f4f8fd; */
 }
 
 .tutorials.body.tiles .sect1 {
   border: 1px solid lightgrey;
-  padding: 15px;
   margin: 20px 0;
+  /* override property defined in .body.tiles .sect1 */
+  padding-right: 0;
+  margin-right: 20px;
 }
 
 .tutorials.body.tiles .sect2 {
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.tutorials.body.tiles .links + .sect3 {
+  margin-bottom: 20px;
+}
+
+/* fix the height. some titles span over 2 lines */
+.tutorials.body.tiles .title {
+  /* height: 62px; */
+}
+
+/* fix the height. tutorial summaries vary in length */
+.tutorials.body.tiles .sect2 .summary p {
+  /* height: 100px; */
+  /* overflow: hidden; */
+}
+
+/* use flexbox to lay out the additional links */
+.tutorials.body.tiles .links p {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* each link takes 1/3 of the card width */
+.tutorials.body.tiles .links p a {
+  flex-basis: 33%;
+  margin: 10px 0;
+  text-align: center;
 }
 
 /* because `justify-self: flex-end` is being ignored in modern browsers */
@@ -733,6 +778,8 @@
 
 .tutorials.body.tiles .sect1 > h2 {
   color: white;
+  min-width: 100%;
+  text-align: center;
 }
 
 .tutorials.body.tiles .sect1.developer > h2 {

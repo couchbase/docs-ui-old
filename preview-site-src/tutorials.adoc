@@ -5,9 +5,13 @@
 
 [.developer]
 == Developer
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample Mobile]
 
-=== Travel Sample Mobile
+=== {empty}
+[.summary]
 An in-depth tutorial that demonstrates key end-to-end Couchbase Mobile 2.0 capabilities for iOS, Android and .NET (UWP and Xamarin) platforms. The Travel Sample app will allow users to search for and to make flight reservations Shared bucket access is enabled to allow web and mobile clients to perform the same operations on the bucket.
+[.links]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[iOS]
 xref:tutorials:mobile-travel-sample:java/design/data-modeling.adoc[Java]
 xref:tutorials:mobile-travel-sample:csharp/design/data-modeling.adoc[C#]
@@ -29,10 +33,12 @@ xref:tutorials:mobile-travel-sample:csharp/design/data-modeling.adoc[C#]
 
 [.architect]
 == Architect
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Deploy Couchbase in Kubernetes]
 
-=== Deploy Couchbase in Kubernetes
+=== {empty}
+[.summary]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
-xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 
 ==== {empty}
 
@@ -47,10 +53,12 @@ xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 
 [.devops]
 == DevOps
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Couchbase CI/CD Best Practices]
 
-=== Couchbase CI/CD Best Practices
+=== {empty}
+[.summary]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
-xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 
 ==== {empty}
 
@@ -67,9 +75,13 @@ xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 
 [.developer]
 == Developer
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample]
 
-=== Travel Sample
+=== {empty}
+[.summary]
 The application allows users to find flights by entering airports and travel dates. For the airport entries, the app uses a N1QL query bound to an Angular typeahead directive to suggest airport names based on the first few letters entered.
+[.links]
 xref:nodejs-sdk::sample-application.adoc[Node.js]
 xref:java-sdk::sample-application.adoc[Java]
 xref:c-sdk::sample-application.adoc[C]
@@ -92,11 +104,14 @@ xref:python-sdk::sample-application.adoc[Python]
 
 [.developer]
 == Developer
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a Cordova Plugin]
 
-=== Hotel Lister: Building a Cordova Plugin
-
+=== {empty}
+[.summary]
 In this tutorial, you will learn how to use Couchbase Lite in a Cordova plugin for an Ionic project targeting iOS and Android.
 The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
+[.links]
 xref:tutorials:hotel-lister:ios.adoc[Swift]
 xref:tutorials:hotel-lister:android.adoc[Java]
 
@@ -115,11 +130,14 @@ xref:tutorials:hotel-lister:android.adoc[Java]
 
 [.developer]
 == Developer
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a React Native Module]
 
-=== Hotel Finder: Building a React Native Module
-
+=== {empty}
+[.summary]
 In this tutorial, you will learn how to use Couchbase Lite in a React Native project for iOS and Android.
 The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
+[.links]
 xref:tutorials:hotel-finder:ios.adoc[Swift]
 xref:tutorials:hotel-finder:android.adoc[Java]
 
@@ -138,13 +156,16 @@ xref:tutorials:hotel-finder:android.adoc[Java]
 
 [.developer]
 == Developer
+[.title]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[ToDo App]
 
-=== ToDo App
-
+=== {empty}
+[.summary]
 This simple ToDo List application is built with Couchbase Lite 2.0 for iOS, Android, UWP and Xamarin (iOS, Android) platforms.
 Users can authenticate, create lists with tasks.
 Each task can have an optional blob (image) attached to it.
 Lists can be shared with multiple users.
+[.links]
 xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 
 ==== {empty}
