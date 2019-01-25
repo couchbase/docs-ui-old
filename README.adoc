@@ -426,8 +426,8 @@ Next, copy the token generated and store it as a _Secret text_ Jenkins credentia
 * _ID:_ docs-robot-api-key
 * _Description:_ GitHub API key for docs robot
 
-The token gets passed to the task as the `GITHUB_TOKEN` environment variable.
-In the CI job configuration, covered in the next section, you'll learn how this token gets transferred from the Jenkins credential to the `GITHUB_TOKEN` environment variable when the build executes.
+The token gets passed to the task as the `GITHUB_API_TOKEN` environment variable.
+In the CI job configuration, covered in the next section, you'll learn how this token gets transferred from the Jenkins credential to the `GITHUB_API_TOKEN` environment variable when the build executes.
 
 === CI Job Configuration
 
@@ -436,9 +436,9 @@ The job is named *release-docs-ui-bundle* and can be found under the *Antora* fo
 This section describes in detail how that job has been configured in case it must be recreated.
 
 The release is performed by the cb-docs-robot GitHub account, which interacts with GitHub entirely using the GitHub API.
-The release script authenticates with the GitHub API as the cb-docs-robot user using a personal access token retrieved from the `GITHUB_TOKEN` environment variable.
+The release script authenticates with the GitHub API as the cb-docs-robot user using a personal access token retrieved from the `GITHUB_API_TOKEN` environment variable.
 
-Create a new CI job from the Freestyle project template.
+Create a new CI job from the Pipeline project template.
 On the configuration screen, select or populate the following settings:
 
 .Configuration details for the Antora/release-docs-ui-bundle CI job
@@ -448,43 +448,30 @@ General::
 * _Description:_ Packs, tags, and releases the UI bundle whenever a non-ignored commit is pushed to the master branch of this repository.
 * [x] GitHub project
  ** _Project url:_ `pass:a[{url-project}]`
-Source Code Management::
+Build Triggers::
+* [x] GitHub hook trigger for GITScm polling
+Pipeline Definition::
+* Pipeline script from SCM
+SCM::
 * [x] Git
  ** _Repository URL:_ `pass:a[{url-project}]`
  ** _Branches to build > Branch Specifier:_ `*/master`
  ** Additional Behaviours
+  *** *Advanced clone behaviours*
+   **** [ ] Fetch tags
+   **** [x] Honor refspec on initial clone
+   **** [x] Shallow clone
+   **** Shallow clone depth: `3`
   *** *Polling ignores commits with certain messages*
    **** _Excluded Messages:_ `+(?s)(?:Release v\d+|.*\[skip .+?\]).*+`
-  *** *Advanced clone behaviours*
-   **** Shallow clone: [x]
-   **** Shallow clone depth: `1`
-   **** Do not fetch tags: [x]
-   **** Honor refspec on initial clone: [x]
-Build Triggers::
-* [x] GitHub hook trigger for GITScm polling
-Build Environment::
-* [x] Provide Node & npm bin/ folder to PATH
- ** _NodeJS Installation:_ node8
-* [x] Use secret text(s) or file(s)
-Bindings::
-* *Secret text*
- ** _Variable:_ `GITHUB_TOKEN`
- ** _Credentials > (&bull;) Specific credentials:_ GitHub API key for docs robot
-Build::
-* *Execute shell*
- ** _Command:_
-+
-[source,bash]
-----
-rm -rf build public
-yarn && ./node_modules/.bin/gulp release
-----
+* _Script Path:_ `Jenkinsfile`
+* [x] Lightweight checkout
 ====
 
-The *Secret text* binds the value of the personal access token for the cb-docs-robot read from the specified Jenkins credential to the `GITHUB_TOKEN` environment varaible.
+In the Jenkinsfile, a credentials function is used to binds the value of the personal access token for the cb-docs-robot read from the specified Jenkins credential to the `GITHUB_API_TOKEN` environment varaible.
 This environment variable is used by the release task to authenticate against the GitHub API as the cb-docs-robot user.
 
-The heart of the build is the *Execute shell* section.
+The heart of the build are the `sh` commands defined in the Jenkinsfile.
 Since Jenkins retains the workspace between runs, it's necessary to start by removing artifact left behind by previous builds.
 Next, the dependencies are installed or updated by the call to `yarn`.
 Thanks to the workspace cache, Yarn finds most of the dependencies in the workspace and thus the call to it is very fast.
