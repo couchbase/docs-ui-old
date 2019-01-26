@@ -56,6 +56,7 @@ gulp.task('preview', ['build:preview'], () =>
 
 gulp.task('pack', ['build', 'lint'], () => pack(destDir, buildDir, bundleName))
 
-gulp.task('release', ['pack'], () => release(buildDir, bundleName, 'couchbase', 'docs-ui', process.env.GITHUB_API_TOKEN))
+gulp.task('release', ['pack'], () =>
+  release(buildDir, bundleName, 'couchbase', 'docs-ui', process.env.GITHUB_API_TOKEN))
 
 gulp.task('default', ['build'])
