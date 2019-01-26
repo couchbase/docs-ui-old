@@ -21,15 +21,13 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 // Script path: Jenkinsfile
 // [x] Lightweight checkout
 pipeline {
-  agent {
-    docker {
-      image 'node:8-slim'
-    }
-  }
+  agent any
   stages {
     stage('Install') {
       steps {
-        sh 'yarn --cache-folder=.cache/yarn --pure-lockfile'
+        nodejs('node8') {
+          sh 'yarn --cache-folder=.cache/yarn --pure-lockfile'
+        }
       }
     }
     stage('Release') {
@@ -38,7 +36,9 @@ pipeline {
           deleteDir()
         }
         withCredentials([githubApiTokenCredentials]) {
-          sh '$(npm bin)/gulp release'
+          nodejs('node8') {
+            sh '$(npm bin)/gulp release'
+          }
         }
       }
     }

@@ -1,6 +1,7 @@
 {
   "name": "couchbase-docs-ui",
   "description": "Produces the UI bundle used by the Couchbase documentation site",
+  "license": "MPL-2.0",
   "homepage": "https://docs.couchbase.com",
   "repository": {
     "type": "git",
