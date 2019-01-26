@@ -26,7 +26,7 @@ pipeline {
     stage('Install') {
       steps {
         nodejs('node8') {
-          sh 'yarn --cache-folder=.cache/yarn --pure-lockfile'
+          sh 'yarn --no-progress --cache-folder=.cache/yarn --pure-lockfile'
         }
       }
     }
