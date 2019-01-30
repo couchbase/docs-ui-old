@@ -23,6 +23,9 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 // [x] Discard old items: Days to keep old items: 60
 pipeline {
   agent any
+  options {
+    disableConcurrentBuilds()
+  }
   stages {
     stage('Configure') {
       steps {
