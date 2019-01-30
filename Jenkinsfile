@@ -6,23 +6,34 @@ def githubApiTokenCredentials = string(credentialsId: githubApiTokenCredentialsI
 
 // Jenkins job configuration
 // -------------------------
-// Category: Pipeline
+// Category: Multibranch Pipeline
 // Pipeline name: release-docs-ui-bundle
-// [x] Do not allow concurrent builds
-// GitHub Project: https://github.com/couchbase/docs-ui/
-// [x] GitHub hook trigger for GITScm polling
-// Pipeline Definition: Pipeline script from SCM
-// SCM: Git
+// Branch Sources: Single repository & branch
+// Name: master
+// Source Code Management: Git
 // Repository URL: https://github.com/couchbase/docs-ui
+// Credentials: - none -
 // Refspec: +refs/heads/master:refs/remotes/origin/master
 // Branch specifier: refs/heads/master
 // Advanced clone behaviors: [ ] Fetch tags, [x] Honor refspec on initial clone, [x] Shallow clone (depth: 3)
 // Polling ignores commits with certain messages: (?s)(?:Release v\d+|.*\[skip .+?\]).*
-// Script path: Jenkinsfile
-// [x] Lightweight checkout
+// Build Configuration:
+// Mode: by Jenkinsfile
+// Script Path: Jenkinsfile
+// [x] Discard old items: Days to keep old items: 60
 pipeline {
   agent any
   stages {
+    stage('Configure') {
+      steps {
+        script {
+          properties([
+            [$class: 'GithubProjectProperty', projectUrlStr: 'https://github.com/couchbase/docs-ui'],
+            pipelineTriggers([githubPush()]),
+          ])
+        }
+      }
+    }
     stage('Install') {
       steps {
         nodejs('node8') {
