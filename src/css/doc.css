@@ -671,15 +671,6 @@
   flex-wrap: wrap;
   margin-right: -2.5rem;
 }
-/* ^^^ override existing */
-.tutorials.body.tiles .doc {
-  justify-content: flex-start;
-  margin-right: 0;
-}
-
-.tutorials .container {
-  min-height: 100%;
-}
 
 .body.tiles .doc > h1.page {
   flex-basis: 100%;
@@ -698,6 +689,16 @@
 }
 
 /** CSS rules for tiles on the tutorial list page **/
+
+/* ^^^ override existing */
+.tutorials.body.tiles .doc {
+  justify-content: flex-start;
+  margin-right: 0;
+}
+
+.tutorials .container {
+  min-height: 100%;
+}
 
 /* 1 column layout on small screens */
 @media screen and (max-width: 768px) {
