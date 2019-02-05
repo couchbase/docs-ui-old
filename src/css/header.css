@@ -9,13 +9,6 @@
   line-height: 1;
 }
 
-.tutorials.navbar {
-  background-color: var(--color-navbar-bg);
-  height: var(--height-navbar);
-  position: unset;
-  z-index: unset;
-}
-
 .navbar .container {
   display: flex;
   align-items: center;
@@ -89,10 +82,6 @@
 .navbar-menu {
   display: none;
   flex-grow: 1;
-}
-/* ^^^ override existing */
-.tutorials > div > div.navbar-menu {
-  display: flex;
 }
 
 .navbar-start {
@@ -240,11 +229,6 @@ a.navbar-item.has-dropdown::after,
   border: 0;
 }
 
-.tutorials .navbar-start input.query {
-  font-size: 1.3rem;
-  padding: 0;
-}
-
 .navbar-start input.query::placeholder {
   color: inherit;
   padding-left: 0.125rem;
@@ -268,10 +252,6 @@ a.navbar-item.has-dropdown::after,
 
 .navbar-start:not(.reveal-search-input) input.query {
   display: none;
-}
-/* ^^^override default */
-.tutorials .navbar-start:not(.reveal-search-input) input.query {
-  display: unset;
 }
 
 .navbar-start button.search {
