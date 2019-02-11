@@ -5,6 +5,7 @@
 
 [.developer]
 == Developer
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample Mobile]
 
@@ -33,6 +34,7 @@ xref:tutorials:mobile-travel-sample:csharp/design/data-modeling.adoc[C#]
 
 [.architect]
 == Architect
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Deploy Couchbase in Kubernetes]
 
@@ -53,6 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.devops]
 == DevOps
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Couchbase CI/CD Best Practices]
 
@@ -75,6 +78,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 
 [.developer]
 == Developer
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample]
 
@@ -104,6 +108,7 @@ xref:python-sdk::sample-application.adoc[Python]
 
 [.developer]
 == Developer
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a Cordova Plugin]
 
@@ -130,6 +135,7 @@ xref:tutorials:hotel-lister:android.adoc[Java]
 
 [.developer]
 == Developer
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a React Native Module]
 
@@ -156,6 +162,7 @@ xref:tutorials:hotel-finder:android.adoc[Java]
 
 [.developer]
 == Developer
+
 [.title]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[ToDo App]
 
