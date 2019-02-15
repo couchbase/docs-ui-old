@@ -288,7 +288,7 @@ mark {
 
 .tutorials.body.tiles .sect1 {
   border: 1px solid lightgrey;
-  margin: 20px 0;
+  margin: 0 0 20px 0;
   /* override property defined in .body.tiles .sect1 */
   padding-right: 0;
   margin-right: 20px;
@@ -388,7 +388,21 @@ mark {
 .tutorials .banner {
   background: linear-gradient(to right, var(--color-brand-purple) 0%, var(--color-brand-light-blue) 100%);
   color: white;
-  height: 300px;
+  height: calc(440px - var(--height-navbar));
+}
+
+.tutorials .banner h1 {
+  font-size: 38px;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.tutorials .banner h2 {
+  font-weight: 300;
+  font-size: 28px;
+  margin: 0;
+  padding: 14px 0 17px 0;
 }
 
 .tutorials .banner-content {
@@ -396,9 +410,13 @@ mark {
   align-items: center;
 }
 
+.tutorials footer {
+  margin-top: 48px;
+}
+
 .searchbar {
   background-color: var(--color-navbar-bg);
-  height: var(--height-navbar);
+  height: 4.2rem;
   line-height: 1;
 }
 
