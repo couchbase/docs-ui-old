@@ -8,6 +8,7 @@ div.body {
 
 /* A selector that could possibly be re-used */
 .navbar-margin {
+  margin-bottom: 68px;
   margin-top: var(--height-navbar);
 }
 
