@@ -294,6 +294,10 @@ mark {
   margin-right: 20px;
 }
 
+.tutorials.body.tiles .sect1>h2 {
+  line-height: 2.2rem;
+}
+
 .tutorials.body.tiles .sect2 {
   height: 100%;
   display: flex;
