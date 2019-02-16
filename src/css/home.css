@@ -297,16 +297,14 @@ mark {
   margin-right: 20px;
 }
 
-.tutorials.body.tiles .sect1>h2 {
+.tutorials.body.tiles .sect1 > h2 {
+  color: white;
   line-height: 2.2rem;
+  min-width: 100%;
+  text-align: center;
 }
 
 .tutorials.body.tiles .sect2 {
-
-}
-
-.tutorials.body.tiles .sect2 {
-  /*height: 100%;*/
   display: flex;
   flex-direction: column;
 }
@@ -326,8 +324,7 @@ mark {
 
 /* fix the height. tutorial summaries vary in length */
 .tutorials.body.tiles .sect2 .summary p {
-   height: 100%;
-  /* overflow: hidden; */
+  height: 100%;
 }
 
 /* use flexbox to lay out the additional links */
@@ -347,12 +344,6 @@ mark {
 /* https://stackoverflow.com/a/49658476/1908348 */
 .tutorials.body.tiles .sect4:last-child {
   margin-top: auto;
-}
-
-.tutorials.body.tiles .sect1 > h2 {
-  color: white;
-  min-width: 100%;
-  text-align: center;
 }
 
 .tutorials.body.tiles .sect1.developer > h2 {
@@ -411,7 +402,7 @@ mark {
 }
 
 .tutorials.body.tiles .sect5 h6 {
-  font-size: 1.0rem;
+  font-size: 1rem;
   margin: 0;
 }
 
