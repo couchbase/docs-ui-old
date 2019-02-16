@@ -272,8 +272,11 @@
 }
 
 .tutorials.body.tiles .sectionbody {
-  height: calc(100% - 90px);
   /* add padding immediately inside the card */
+  display: flex;
+  height: calc(100% - 55px);
+  flex-direction: column;
+  justify-content: space-between;
   padding: 0 15px;
 }
 
@@ -299,9 +302,17 @@ mark {
 }
 
 .tutorials.body.tiles .sect2 {
-  height: 100%;
+
+}
+
+.tutorials.body.tiles .sect2 {
+  /*height: 100%;*/
   display: flex;
   flex-direction: column;
+}
+
+.tutorials.body.tiles .sect2.title {
+  height: 100%;
 }
 
 .tutorials.body.tiles .links + .sect3 {
@@ -315,7 +326,7 @@ mark {
 
 /* fix the height. tutorial summaries vary in length */
 .tutorials.body.tiles .sect2 .summary p {
-  /* height: 100px; */
+   height: 100%;
   /* overflow: hidden; */
 }
 
@@ -334,7 +345,7 @@ mark {
 
 /* because `justify-self: flex-end` is being ignored in modern browsers */
 /* https://stackoverflow.com/a/49658476/1908348 */
-.tutorials.body.tiles .sect3:last-child {
+.tutorials.body.tiles .sect4:last-child {
   margin-top: auto;
 }
 
@@ -359,13 +370,20 @@ mark {
 /* layout tutorial languages and components */
 .tutorials.body.tiles .sect3 {
   display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.tutorials.body.tiles .sect3.metadata {
+.tutorials.body.tiles .sect2.metadata {
+  align-content: flex-end;
   border-top: 1px solid lightgrey;
   display: flex;
-  align-content: flex-end;
   justify-content: flex-end;
+}
+
+.metadata h3 {
+  font-size: 1.2rem;
+  padding: 5px;
 }
 
 .tutorials.body.tiles .sect3 h4 {
@@ -375,13 +393,25 @@ mark {
 }
 
 .tutorials.body.tiles .sect4 {
-  width: 50%;
+  display: flex;
+  height: 153px;
+  padding: 10px;
   text-align: center;
 }
 
 .tutorials.body.tiles .sect4 .ulist ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.tutorials.body.tiles .sect5 {
+  margin: 5px 0;
+  width: 50%;
+}
+
+.tutorials.body.tiles .sect5 h6 {
+  font-size: 1.0rem;
   margin: 0;
 }
 

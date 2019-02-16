@@ -7,9 +7,10 @@
 == Developer
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample Mobile]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample Mobile]
 
-=== {empty}
+[.content]
+
 [.summary]
 An in-depth tutorial that demonstrates key end-to-end Couchbase Mobile 2.0 capabilities for iOS, Android and .NET (UWP and Xamarin) platforms. The Travel Sample app will allow users to search for and to make flight reservations Shared bucket access is enabled to allow web and mobile clients to perform the same operations on the bucket.
 [.links]
@@ -17,72 +18,72 @@ xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[iOS]
 xref:tutorials:mobile-travel-sample:java/design/data-modeling.adoc[Java]
 xref:tutorials:mobile-travel-sample:csharp/design/data-modeling.adoc[C#]
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 * Server 5.5
 * Lite 2.1
 * Sync Gateway 2.1
 
-===== Languages
+====== Languages
 * Swift
 * Java
 * C#
 
 [.metadata]
-==== Intermediate
+=== Intermediate
 
 [.architect]
 == Architect
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Deploy Couchbase in Kubernetes]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Deploy Couchbase in Kubernetes]
 
-=== {empty}
+==== {empty}
 [.summary]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 * Server 6.0
 
-===== Languages
+====== Languages
 * N/A
 
 [.metadata]
-==== Beginners
+=== Beginners
 
 [.devops]
 == DevOps
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Couchbase CI/CD Best Practices]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Couchbase CI/CD Best Practices]
 
-=== {empty}
+==== {empty}
 [.summary]
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 * Server 6.0
 
-===== Languages
+====== Languages
 * Node.js
 * Java
 * Python
 
 [.metadata]
-==== Intermediate
+=== Intermediate
 
 [.developer]
 == Developer
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample]
 
-=== {empty}
+==== {empty}
 [.summary]
 The application allows users to find flights by entering airports and travel dates. For the airport entries, the app uses a N1QL query bound to an Angular typeahead directive to suggest airport names based on the first few letters entered.
 [.links]
@@ -93,26 +94,26 @@ xref:dotnet-sdk::sample-application.adoc[.NET]
 xref:php-sdk::sample-application.adoc[PHP]
 xref:python-sdk::sample-application.adoc[Python]
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 
 * Server 6.0
 
-===== Languages
+====== Languages
 
 * N/A
 
 [.metadata]
-==== Beginners
+=== Beginners
 
 [.developer]
 == Developer
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a Cordova Plugin]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a Cordova Plugin]
 
-=== {empty}
+==== {empty}
 [.summary]
 In this tutorial, you will learn how to use Couchbase Lite in a Cordova plugin for an Ionic project targeting iOS and Android.
 The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
@@ -120,26 +121,26 @@ The user Interface is written in JavaScript while the business logic and data mo
 xref:tutorials:hotel-lister:ios.adoc[Swift]
 xref:tutorials:hotel-lister:android.adoc[Java]
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 
 * Server 6.0
 
-===== Languages
+====== Languages
 
 * N/A
 
 [.metadata]
-==== Beginners
+=== Beginners
 
 [.developer]
 == Developer
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a React Native Module]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a React Native Module]
 
-=== {empty}
+==== {empty}
 [.summary]
 In this tutorial, you will learn how to use Couchbase Lite in a React Native project for iOS and Android.
 The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
@@ -147,26 +148,26 @@ The user Interface is written in JavaScript while the business logic and data mo
 xref:tutorials:hotel-finder:ios.adoc[Swift]
 xref:tutorials:hotel-finder:android.adoc[Java]
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 
 * Server 6.0
 
-===== Languages
+====== Languages
 
 * N/A
 
 [.metadata]
-==== Beginners
+=== Beginners
 
 [.developer]
 == Developer
 
 [.title]
-xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[ToDo App]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[ToDo App]
 
-=== {empty}
+==== {empty}
 [.summary]
 This simple ToDo List application is built with Couchbase Lite 2.0 for iOS, Android, UWP and Xamarin (iOS, Android) platforms.
 Users can authenticate, create lists with tasks.
@@ -175,15 +176,15 @@ Lists can be shared with multiple users.
 [.links]
 xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 
-==== {empty}
+===== {empty}
 
-===== Components
+====== Components
 
 * Server 6.0
 
-===== Languages
+====== Languages
 
 * N/A
 
 [.metadata]
-==== Beginners
+=== Beginners
