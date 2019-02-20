@@ -372,9 +372,13 @@ mark {
   justify-content: flex-end;
 }
 
+.metadata {
+  padding: 10px;
+}
+
 .metadata h3 {
-  font-size: 1.2rem;
-  padding: 5px;
+  font-size: 1.0rem;
+  font-weight: normal;
 }
 
 .tutorials.body.tiles .sect3 h4 {
