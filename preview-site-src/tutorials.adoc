@@ -12,7 +12,7 @@
 [.content]
 
 [.summary]
-An in-depth tutorial that demonstrates key end-to-end Couchbase Mobile 2.0 capabilities for iOS, Android and .NET (UWP and Xamarin) platforms. The Travel Sample app will allow users to search for and to make flight reservations Shared bucket access is enabled to allow web and mobile clients to perform the same operations on the bucket.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
 [.links]
 xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[iOS]
 xref:tutorials:mobile-travel-sample:java/design/data-modeling.adoc[Java]
@@ -52,7 +52,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligu
 * N/A
 
 [.metadata]
-=== Beginners
+=== Beginner
 
 [.devops]
 == DevOps
@@ -105,7 +105,7 @@ xref:python-sdk::sample-application.adoc[Python]
 * N/A
 
 [.metadata]
-=== Beginners
+=== Advanced
 
 [.developer]
 == Developer
@@ -132,7 +132,7 @@ xref:tutorials:hotel-lister:android.adoc[Java]
 * N/A
 
 [.metadata]
-=== Beginners
+=== Intermediate
 
 [.developer]
 == Developer
@@ -159,7 +159,7 @@ xref:tutorials:hotel-finder:android.adoc[Java]
 * N/A
 
 [.metadata]
-=== Beginners
+=== Beginner
 
 [.developer]
 == Developer
@@ -187,4 +187,4 @@ xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
 * N/A
 
 [.metadata]
-=== Beginners
+=== Advanced
