@@ -6,6 +6,12 @@ div.body {
   word-wrap: break-word; /* IE only supports word-wrap, which is an alias of overflow-wrap */
 }
 
+/* A selector that could possibly be re-used */
+.navbar-margin {
+  margin-bottom: 68px;
+  margin-top: var(--height-navbar);
+}
+
 main {
   flex: 1;
   min-width: 0;

@@ -1,0 +1,190 @@
+= Couchbase Tutorials
+:page-layout: tutorials
+:page-role: tiles
+:!sectids:
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample Mobile]
+
+[.content]
+
+[.summary]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+[.links]
+xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[iOS]
+xref:tutorials:mobile-travel-sample:java/design/data-modeling.adoc[Java]
+xref:tutorials:mobile-travel-sample:csharp/design/data-modeling.adoc[C#]
+
+===== {empty}
+
+====== Components
+* Server 5.5
+* Lite 2.1
+* Sync Gateway 2.1
+
+====== Languages
+* Swift
+* Java
+* C#
+
+[.metadata]
+=== Intermediate
+
+[.architect]
+== Architect
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Deploy Couchbase in Kubernetes]
+
+==== {empty}
+[.summary]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+===== {empty}
+
+====== Components
+* Server 6.0
+
+====== Languages
+* N/A
+
+[.metadata]
+=== Beginner
+
+[.devops]
+== DevOps
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Couchbase CI/CD Best Practices]
+
+==== {empty}
+[.summary]
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan mi a ligula imperdiet, et cursus lectus bibendum. Etiam metus magna, dapibus vitae ipsum vel, sollicitudin interdum metus. Phasellus quis rutrum enim. Vivamus euismod sem nec posuere accumsan. Praesent elementum lectus vitae magna pellentesque, a facilisis risus pulvinar. Donec scelerisque porttitor aliquet.
+
+===== {empty}
+
+====== Components
+* Server 6.0
+
+====== Languages
+* Node.js
+* Java
+* Python
+
+[.metadata]
+=== Intermediate
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Travel Sample]
+
+==== {empty}
+[.summary]
+The application allows users to find flights by entering airports and travel dates. For the airport entries, the app uses a N1QL query bound to an Angular typeahead directive to suggest airport names based on the first few letters entered.
+[.links]
+xref:nodejs-sdk::sample-application.adoc[Node.js]
+xref:java-sdk::sample-application.adoc[Java]
+xref:c-sdk::sample-application.adoc[C]
+xref:dotnet-sdk::sample-application.adoc[.NET]
+xref:php-sdk::sample-application.adoc[PHP]
+xref:python-sdk::sample-application.adoc[Python]
+
+===== {empty}
+
+====== Components
+
+* Server 6.0
+
+====== Languages
+
+* N/A
+
+[.metadata]
+=== Advanced
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a Cordova Plugin]
+
+==== {empty}
+[.summary]
+In this tutorial, you will learn how to use Couchbase Lite in a Cordova plugin for an Ionic project targeting iOS and Android.
+The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
+[.links]
+xref:tutorials:hotel-lister:ios.adoc[Swift]
+xref:tutorials:hotel-lister:android.adoc[Java]
+
+===== {empty}
+
+====== Components
+
+* Server 6.0
+
+====== Languages
+
+* N/A
+
+[.metadata]
+=== Intermediate
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[Building a React Native Module]
+
+==== {empty}
+[.summary]
+In this tutorial, you will learn how to use Couchbase Lite in a React Native project for iOS and Android.
+The user Interface is written in JavaScript while the business logic and data model is written in native Swift/Java.
+[.links]
+xref:tutorials:hotel-finder:ios.adoc[Swift]
+xref:tutorials:hotel-finder:android.adoc[Java]
+
+===== {empty}
+
+====== Components
+
+* Server 6.0
+
+====== Languages
+
+* N/A
+
+[.metadata]
+=== Beginner
+
+[.developer]
+== Developer
+
+[.title]
+=== xref:tutorials:mobile-travel-sample:swift/design/data-modeling.adoc[ToDo App]
+
+==== {empty}
+[.summary]
+This simple ToDo List application is built with Couchbase Lite 2.0 for iOS, Android, UWP and Xamarin (iOS, Android) platforms.
+Users can authenticate, create lists with tasks.
+Each task can have an optional blob (image) attached to it.
+Lists can be shared with multiple users.
+[.links]
+xref:tutorials:todo-app:introduction.adoc[ToDo App (1.x)]
+
+===== {empty}
+
+====== Components
+
+* Server 6.0
+
+====== Languages
+
+* N/A
+
+[.metadata]
+=== Advanced
