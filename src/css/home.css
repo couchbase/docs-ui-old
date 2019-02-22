@@ -290,7 +290,7 @@ mark {
 }
 
 .tutorials.body.tiles .sect1 {
-  border: 1px solid lightgrey;
+  border: 1px solid var(--color-brand-silver);
   margin: 0 0 1.25rem 0;
   /* override property defined in .body.tiles .sect1 */
   padding-right: 0;
@@ -367,7 +367,7 @@ mark {
 
 .tutorials.body.tiles .sect2.metadata {
   align-content: flex-end;
-  border-top: 1px solid lightgrey;
+  border-top: 1px solid var(--color-brand-silver);
   display: flex;
   justify-content: flex-end;
 }
