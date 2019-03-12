@@ -9,7 +9,6 @@
 .doc h5,
 .doc h6 {
   font-weight: var(--weight-medium);
-  hyphens: auto;
   letter-spacing: -0.025rem;
   line-height: 1.2;
   margin: 1.5rem 0 -0.25rem;

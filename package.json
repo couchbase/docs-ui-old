@@ -1,6 +1,7 @@
 {
   "name": "couchbase-docs-ui",
   "description": "Produces the UI bundle used by the Couchbase documentation site",
+  "license": "MPL-2.0",
   "homepage": "https://docs.couchbase.com",
   "repository": {
     "type": "git",
@@ -34,8 +35,10 @@
     "gulp-vinyl-zip": "^2.1.0",
     "handlebars": "^4.0.11",
     "highlight.js": "9.12.0",
+    "jquery": "^3.3.1",
     "js-yaml": "^3.12.0",
     "map-stream": "^0.0.7",
+    "mark.js": "^8.11.1",
     "merge-stream": "^1.0.1",
     "npm-which": "^3.0.1",
     "postcss": "^7.0.2",
@@ -51,7 +54,6 @@
     "typeface-roboto-condensed": "^0.0.54",
     "typeface-roboto-mono": "^0.0.54",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-fs": "^3.0.3",
-    "jquery": "^3.3.1"
+    "vinyl-fs": "^3.0.3"
   }
 }
