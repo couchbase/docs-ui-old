@@ -8,6 +8,7 @@ const SDK_TITLES = {
   'nodejs-sdk': 'Node.js SDK',
   'php-sdk': 'PHP SDK',
   'python-sdk': 'Python SDK',
+  'scala-sdk': 'Scala SDK',
 }
 
 module.exports = (componentName, url, sdks) =>
