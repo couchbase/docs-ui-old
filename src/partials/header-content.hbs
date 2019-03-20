@@ -33,7 +33,7 @@
                   <li class="heading"><a href="{{siteRootPath}}/server/6.0/sdk/overview.html">SDKs</a></li>
                   <li><a href="{{siteRootPath}}/c-sdk/2.10/start-using-sdk.html">C</a></li>
                   <li><a href="{{siteRootPath}}/dotnet-sdk/2.7/start-using-sdk.html">.NET</a></li>
-                  <li><a href="{{siteRootPath}}/go-sdk/1.5/start-using-sdk.html">Go</a></li>
+                  <li><a href="{{siteRootPath}}/go-sdk/1.6/start-using-sdk.html">Go</a></li>
                   <li><a href="{{siteRootPath}}/java-sdk/2.7/start-using-sdk.html">Java</a></li>
                   <li><a href="{{siteRootPath}}/nodejs-sdk/2.6/start-using-sdk.html">Node.js</a></li>
                   <li><a href="{{siteRootPath}}/php-sdk/2.6/start-using-sdk.html">PHP</a></li>
@@ -67,7 +67,7 @@
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
                 <ul class="related">
-                  {{#each (related-sdk-pages page.component.name page.url 'c-sdk/2.10,dotnet-sdk/2.7,go-sdk/1.5,java-sdk/2.7,nodejs-sdk/2.6,php-sdk/2.6,python-sdk/2.5')}}
+                  {{#each (related-sdk-pages page.component.name page.url 'c-sdk/2.10,dotnet-sdk/2.7,go-sdk/1.6,java-sdk/2.7,nodejs-sdk/2.6,php-sdk/2.6,python-sdk/2.5')}}
                   <li><a class="navbar-item" href="{{{relativize ./url}}}">{{./title}}</a></li>
                   {{/each}}
                 </ul>
