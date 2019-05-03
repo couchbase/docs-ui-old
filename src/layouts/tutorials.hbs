@@ -4,7 +4,7 @@
 {{> head-first}}
     <title>Tutorials{{#if site.title}} | {{{site.title}}}{{/if}}</title>
     {{#if page.canonicalUrl}}
-    <link rel="canonical" href="{{page.canonicalUrl}}">
+    <link rel="canonical" href="{{ifelse (and (eq env.SUPPORTS_CURRENT_URL 'true') (ne page.version 'master')) (concat site.url (current-url page.url)) page.canonicalUrl}}">
     {{/if}}
 {{> head-last}}
   </head>
