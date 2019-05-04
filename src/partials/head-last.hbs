@@ -1,7 +1,7 @@
     <link rel="stylesheet" href="{{uiRootPath}}/css/site.css">
     {{#if env.OPTANON_SCRIPT_URL}}
     <script src="{{uiRootPath}}/js/vendor/jquery.js"></script>
-    <script src="{{{env.OPTANON_SCRIPT_URL}}}"></script>
+    <script src="{{env.OPTANON_SCRIPT_URL}}"></script>
     <script>function OptanonWrapper(){}</script>
     {{/if}}
     {{#if site.keys.googleAnalytics}}

@@ -4,7 +4,7 @@
 {{> head-first}}
     <title>{{{detag (or page.title 'Untitled')}}}{{#if site.title}} | {{{site.title}}}{{/if}}</title>
     {{#if page.canonicalUrl}}
-    <link rel="canonical" href="{{{page.canonicalUrl}}}">
+    <link rel="canonical" href="{{page.canonicalUrl}}">
     {{/if}}
 {{> head-last}}
   </head>
