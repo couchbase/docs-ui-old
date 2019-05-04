@@ -404,7 +404,7 @@ All you have to do is commit your changes and push those commits to the master b
 A few seconds later, a new bundle will be available for use with Antora.
 Run `git pull` to retrieve the updated README that includes the new URL.
 
-TIP: If you want to commit a change to master without making a release, add the string `[skip release]` to the end of the commit message.
+TIP: If you want to commit a change to master without making a release, add the string `[skip ci]` to the end of the commit message.
 
 The next two sections document how the CI job is set up an configured.
 
