@@ -30,7 +30,6 @@ endif::[]
 :url-node: https://nodejs.org
 :url-nvm: https://github.com/creationix/nvm
 :url-nvm-install: {url-nvm}#installation
-:url-yarn: https://yarnpkg.com
 :url-couchbase: https://couchbase.com
 
 ifdef::badges[]
@@ -71,7 +70,6 @@ To preview and bundle the UI, you need the following software on your computer:
 * {url-git}[git] (command: `git`)
 * {url-node}[Node 8] (command: `node`)
 * {url-gulp}[Gulp CLI] (command: `gulp`)
-* {url-yarn}[Yarn] (command: `yarn`)
 
 ==== git
 
@@ -105,24 +103,12 @@ To make Node 8 the default in new terminals, type:
 
  $ nvm alias default 8
 
-Now that you have Node 8 installed, you can proceed with installing Yarn and the Gulp CLI.
-
-==== Yarn
-
-Next, you'll need Yarn, which is the preferred package manager for the Node ecosystem.
-
-You should install Yarn globally (which resolves to a location in your user directory if you're using nvm) using the following command:
-
- $ npm install -g yarn
-
-Verify Yarn is installed and on your PATH by running:
-
- $ yarn -v
+Now that you have Node 8 installed, you can proceed with installing the Gulp CLI.
 
 ==== Gulp CLI
 
-Finally, you'll need the Gulp command-line interface (CLI).
-This package provides the `gulp` command which executes the version of Gulp declared by the project.
+You'll need the Gulp command-line interface (CLI) to run the build.
+This package provides the `gulp` command which, in turn, executes the version of Gulp declared by the project.
 
 You should install the Gulp CLI globally (which resolves to a location in your user directory if you're using nvm) using the following command:
 
@@ -149,10 +135,10 @@ Clone the UI project using git:
 The example above clones the Couchbase docs UI project and then switches to the project folder on your filesystem.
 Stay in this project folder when executing all subsequent commands.
 
-Use Yarn to install the project's dependencies inside the project.
+Use npm to install the project's dependencies inside the project.
 In your terminal, execute the following command:
 
- $ yarn install
+ $ npm install
 
 This command installs the dependencies listed in [.path]_package.json_ into the [.path]_node_modules/_ folder inside the project.
 This folder does not get included in the UI bundle and should _not_ be committed to the source control repository.
@@ -473,8 +459,8 @@ This environment variable is used by the release task to authenticate against th
 
 The heart of the build are the `sh` commands defined in the Jenkinsfile.
 Since Jenkins retains the workspace between runs, it's necessary to start by removing artifact left behind by previous builds.
-Next, the dependencies are installed or updated by the call to `yarn`.
-Thanks to the workspace cache, Yarn finds most of the dependencies in the workspace and thus the call to it is very fast.
+Next, the dependencies are installed or updated by the call to `npm install`.
+Thanks to the package cache, npm finds most of the dependencies locally and thus the call to it is very fast.
 Finally, the job delegates to Gulp to perform the release steps described in <<Release Task Workflow>>.
 
 Once the CI job runs and a new UI bundle is available, you can update the URL of the UI bundle in the Antora playbook file.

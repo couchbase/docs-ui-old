@@ -40,7 +40,7 @@ pipeline {
     stage('Install') {
       steps {
         nodejs('node10') {
-          sh 'yarn --no-progress --cache-folder=.cache/yarn --pure-lockfile'
+          sh 'npm install --quiet --no-progress --cache=.cache/npm --no-audit'
         }
       }
     }
