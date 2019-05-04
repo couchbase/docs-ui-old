@@ -1,14 +1,14 @@
 'use strict'
 
 const fs = require('fs')
-const octokit = require('@octokit/rest')()
+const Octokit = require('@octokit/rest')
 const path = require('path')
 const { promisify } = require('util')
 const readFile = promisify(fs.readFile)
 const stat = promisify(fs.stat)
 
 module.exports = async (dest, bundleName, owner, repo, token) => {
-  octokit.authenticate({ type: 'token', token })
+  const octokit = new Octokit({ auth: `token ${token}` })
   const {
     data: { tag_name: lastTagName },
   } = await octokit.repos.getLatestRelease({ owner, repo }).catch(() => ({ data: { tag_name: 'v0' } }))
@@ -23,7 +23,7 @@ module.exports = async (dest, bundleName, owner, repo, token) => {
   const readmeBlob = await octokit.gitdata
     .createBlob({ owner, repo, content: readmeContent, encoding: 'utf-8' })
     .then((result) => result.data.sha)
-  const commit = await octokit.gitdata.getReference({ owner, repo, ref }).then((result) => result.data.object.sha)
+  const commit = await octokit.gitdata.getRef({ owner, repo, ref }).then((result) => result.data.object.sha)
   const tree = await octokit.gitdata
     .getCommit({ owner, repo, commit_sha: commit })
     .then((result) => result.data.tree.sha)
@@ -38,7 +38,7 @@ module.exports = async (dest, bundleName, owner, repo, token) => {
   const newCommit = await octokit.gitdata
     .createCommit({ owner, repo, message, tree: newTree, parents: [commit] })
     .then((result) => result.data.sha)
-  await octokit.gitdata.updateReference({ owner, repo, ref, sha: newCommit })
+  await octokit.gitdata.updateRef({ owner, repo, ref, sha: newCommit })
   const uploadUrl = await octokit.repos
     .createRelease({
       owner,
@@ -48,11 +48,13 @@ module.exports = async (dest, bundleName, owner, repo, token) => {
       name: tagName,
     })
     .then((result) => result.data.upload_url)
-  await octokit.repos.uploadAsset({
+  await octokit.repos.uploadReleaseAsset({
     url: uploadUrl,
     file: fs.createReadStream(bundleFile),
     name: bundleFileBasename,
-    contentLength: (await stat(bundleFile)).size,
-    contentType: 'application/zip',
+    headers: {
+      'content-length': (await stat(bundleFile)).size,
+      'content-type': 'application/zip',
+    },
   })
 }
