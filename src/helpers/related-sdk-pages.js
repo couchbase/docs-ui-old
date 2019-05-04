@@ -1,23 +1,21 @@
 'use strict'
 
-const SDK_TITLES = {
-  'c-sdk': 'C SDK',
-  'dotnet-sdk': '.NET SDK',
-  'go-sdk': 'Go SDK',
-  'java-sdk': 'Java SDK',
-  'nodejs-sdk': 'Node.js SDK',
-  'php-sdk': 'PHP SDK',
-  'python-sdk': 'Python SDK',
-  'scala-sdk': 'Scala SDK',
-}
-
-module.exports = (componentName, url, sdks) =>
-  sdks
+module.exports = (langs, { data: { root } }) => {
+  const components = root.site.components
+  const thisComponentName = root.page.component.name
+  const pageUrl = root.page.url
+  return langs
     .split(',')
-    .filter((sdk) => !sdk.startsWith(componentName))
-    .map((sdk) => {
-      const [name, version] = sdk.split('/')
-      const urlSegments = url.split('/')
-      urlSegments.splice(1, 2, name, version)
-      return { url: urlSegments.join('/'), title: SDK_TITLES[name] }
+    .map((lang) => lang + '-sdk')
+    .filter((componentName) => componentName !== thisComponentName)
+    .map((componentName) => {
+      const component = components[componentName]
+      if (component) {
+        const urlSegments = pageUrl.split('/')
+        urlSegments.splice(1, 2, componentName, component.latest.version)
+        return { url: urlSegments.join('/'), title: component.title }
+      } else {
+        return { title: componentName }
+      }
     })
+}
