@@ -11,7 +11,7 @@
     "node": ">= 8.0.0"
   },
   "devDependencies": {
-    "@octokit/rest": "~15.18",
+    "@octokit/rest": "~16.25",
     "asciidoctor.js": "1.5.9",
     "autoprefixer": "~9.4",
     "browserify": "~16.2",
