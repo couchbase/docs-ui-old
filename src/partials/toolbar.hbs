@@ -6,7 +6,7 @@
   </ul>
 </div>
 {{else}}
-{{#unless (or page.origin.private (includes page.origin.url '@'))}}
+{{#unless (and (or page.origin.private (includes page.origin.url '@')) (ne page.origin.worktree true))}}
 <div class="tools" role="navigation">
   <ul>
     <li class="tool edit"><a href="{{page.editUrl}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
