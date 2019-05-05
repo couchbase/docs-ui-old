@@ -68,7 +68,7 @@ This section offers a basic tutorial to learn how to set up the UI project, prev
 To preview and bundle the UI, you need the following software on your computer:
 
 * {url-git}[git] (command: `git`)
-* {url-node}[Node 8] (command: `node`)
+* {url-node}[Node 10] (command: `node`)
 * {url-gulp}[Gulp CLI] (command: `gulp`)
 
 ==== git
@@ -79,31 +79,31 @@ First, make sure you have git installed.
 
 If not, {url-git-dl}[download and install] the git package for your system.
 
-==== Node 8
+==== Node 10
 
-Next, make sure that you have Node 8 installed.
+Next, make sure that you have Node 10 installed.
 
  $ node -v
 
 If this command fails with an error, you don't have Node installed.
-If the command doesn't report a Node 8 version (e.g., v8.11.4), then you don't have a suitable version of Node installed.
+If the command doesn't report a Node 10 version (e.g., v10.15.3), then you don't have a suitable version of Node installed.
 
 While you can install Node from the official packages, we strongly recommend that you use {url-nvm}[nvm] (Node Version Manager) to install and manage Node.
 Follow the {url-nvm-install}[nvm installation instructions] to set up nvm on your machine.
 
-Once you've installed nvm, open a new terminal and install Node 8 using the following command:
+Once you've installed nvm, open a new terminal and install Node 10 using the following command:
 
- $ nvm install 8
+ $ nvm install 10
 
 You can switch to this version of Node at any time using the following command:
 
- $ nvm use 8
+ $ nvm use 10
 
-To make Node 8 the default in new terminals, type:
+To make Node 10 the default in new terminals, type:
 
- $ nvm alias default 8
+ $ nvm alias default 10
 
-Now that you have Node 8 installed, you can proceed with installing the Gulp CLI.
+Now that you have Node 10 installed, you can proceed with installing the Gulp CLI.
 
 ==== Gulp CLI
 
@@ -515,5 +515,5 @@ As such, use of the software is granted under the terms of the https://www.mozil
 
 === Branding and Design
 
-Copyright (C) {url-couchbase}[Couchbase] 2018.
+Copyright (C) {url-couchbase}[Couchbase] 2018-2019.
 All rights reserved.
