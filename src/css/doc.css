@@ -481,7 +481,6 @@
 .doc pre:not(.highlight),
 .doc pre.highlight code {
   background-color: #f8f8f2;
-  /*color: #151514;*/
   font-weight: var(--weight-normal); /* needed to override third-party styles */
   padding: 0.625rem;
   white-space: pre-wrap;
