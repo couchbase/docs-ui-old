@@ -89,6 +89,11 @@
           {{/if}}
           {{/if}}
           {{/if}}
+          {{#if (and page.component (or (eq page.component.name 'tutorials') (eq page.component.name 'userprofile-couchbase-mobile')))}}
+          <div class="navbar-item">
+            <a class="navbar-link component" href="/tutorials/index.html"><span class="title">Tutorials</span></a>
+          </div>
+          {{/if}}
         </div>
         <div class="navbar-end">
           <div class="navbar-item">
