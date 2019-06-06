@@ -36,7 +36,7 @@
     "handlebars": "~4.0",
     "highlight.js": "9.13.1",
     "jquery": "~3.4",
-    "js-yaml": "~3.12",
+    "js-yaml": "~3.13",
     "map-stream": "0.0.7",
     "mark.js": "~8.11",
     "merge-stream": "~1.0",
