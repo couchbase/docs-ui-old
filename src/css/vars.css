@@ -40,7 +40,7 @@
   --height-nav: calc(var(--height-min-body) - var(--height-spacer));
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
-  --width-container: 80rem;
+  --width-container: 90rem;
   --width-container-gutter: 1.25rem;
   --width-nav: 16rem;
   --width-toc: 12rem;
