@@ -81,18 +81,18 @@
           <a class="navbar-item component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span>{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
           {{/if}}
           {{/if}}
-          {{#if env.ALGOLIA_API_KEY}}
-          <form class="navbar-item search">
-            <input type="text" placeholder="Search Couchbase Docs" class="query" id="search-query">
-            <button type="button" class="search"><span>Search</span></button>
-          </form>
-          {{/if}}
           {{/if}}
           {{/if}}
           {{#if (and page.component (or (eq page.component.name 'tutorials') (eq page.component.name 'userprofile-couchbase-mobile')))}}
           <div class="navbar-item">
             <a class="navbar-link component" href="/tutorials/index.html"><span class="title">Tutorials</span></a>
           </div>
+          {{/if}}
+          {{#if env.ALGOLIA_API_KEY}}
+            <form class="navbar-item search">
+              <input type="text" placeholder="Search Couchbase Docs" class="query" id="search-query">
+              <button type="button" class="search"><span>Search</span></button>
+            </form>
           {{/if}}
         </div>
         <div class="navbar-end">
