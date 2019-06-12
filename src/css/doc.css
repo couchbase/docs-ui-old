@@ -500,7 +500,7 @@
 
 .doc .listingblock code[data-lang]::before {
   content: attr(data-lang);
-  color: #f8f8f2;
+  color: black;
   display: none;
   font-size: 0.75em;
   font-weight: var(--weight-light);
