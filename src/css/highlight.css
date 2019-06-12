@@ -11,7 +11,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-selector-tag,
 .hljs-subst {
   color: #333;
-  font-weight: bold;
+  font-weight: var(--weight-medium);
 }
 
 .hljs-number,
@@ -31,7 +31,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-section,
 .hljs-selector-id {
   color: #900;
-  font-weight: bold;
+  font-weight: var(--weight-medium);
 }
 
 .hljs-subst {
@@ -41,7 +41,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 .hljs-type,
 .hljs-class .hljs-title {
   color: #458;
-  font-weight: bold;
+  font-weight: var(--weight-medium);
 }
 
 .hljs-tag,
@@ -68,7 +68,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 
 .hljs-meta {
   color: #999;
-  font-weight: bold;
+  font-weight: var(--weight-medium);
 }
 
 .hljs-deletion {
@@ -84,5 +84,5 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 }
 
 .hljs-strong {
-  font-weight: bold;
+  font-weight: var(--weight-medium);
 }
