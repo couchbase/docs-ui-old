@@ -463,7 +463,6 @@
 }
 
 .doc .exampleblock > .content {
-  background-color: var(--color-shade);
   box-shadow: inset 0 0 1px #bec0c1;
   padding: 2rem 2.25rem;
 }
