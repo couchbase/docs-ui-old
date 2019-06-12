@@ -100,7 +100,8 @@
 }
 
 .doc code {
-  color: var(--color-code);
+  color: var(--color-text);
+  font-weight: var(--weight-medium);
 }
 
 .doc pre code {
