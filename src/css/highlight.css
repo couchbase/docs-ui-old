@@ -5,7 +5,11 @@ Steps to change the highlight.js theme:
 2. Find CSS file for the theme to use https://github.com/highlightjs/highlight.js/tree/master/src/styles
 3. Copy the theme's CSS rules here (exclude rules for the `.hljs` selector otherwise it will conflict with other site styles)
 4. Replace the `bold` keywoard with `var(--weight-medium)` (because the monospace font we're using has multiple weights and we don't want to use the really strong one).
-5. In doc.css, update the `background-color` and `color` rules in the `.doc pre:not(.highlight), .doc pre.highlight code` selector
+
+Other CSS rules for styling code blocks:
+
+- In doc.css, the `.doc pre:not(.highlight), .doc pre.highlight code` selector sets the code block `color` and `background-color`
+- In docs.css, the `.doc .listingblock code[data-lang]::before` selector sets the language label `color`
 */
 /*
 github.com style (c) Vasily Polovnyov <vast@whiteants.net>
