@@ -463,7 +463,7 @@
 }
 
 .doc .exampleblock > .content {
-  box-shadow: inset 0 0 1px #bec0c1;
+  border: 1px solid #c1c1c1;
   padding: 2rem 2.25rem;
 }
 
