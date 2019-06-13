@@ -493,6 +493,11 @@
   */
 }
 
+.doc .exampleblock pre:not(.highlight),
+.doc .exampleblock pre.highlight code {
+  background-color: white;
+}
+
 /* NOTE assume pre.highlight contains code[data-lang] */
 .doc pre.highlight {
   position: relative;
