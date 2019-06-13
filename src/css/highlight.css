@@ -11,85 +11,57 @@ Other CSS rules for styling code blocks:
 - In doc.css, the `.doc pre:not(.highlight), .doc pre.highlight code` selector sets the code block `color` and `background-color`
 - In docs.css, the `.doc .listingblock code[data-lang]::before` selector sets the language label `color`
 */
-/*
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-*/
+/* Base16 Atelier Forest Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/forest) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
+
+/* Atelier-Forest Comment */
 .hljs-comment,
 .hljs-quote {
-  color: #998;
-  font-style: italic;
+  color: #766e6b;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: var(--weight-medium);
-}
-
-.hljs-number,
-.hljs-literal,
+/* Atelier-Forest Red */
 .hljs-variable,
 .hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: var(--weight-medium);
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: var(--weight-medium);
-}
-
+.hljs-attribute,
 .hljs-tag,
 .hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
 .hljs-regexp,
-.hljs-link {
-  color: #009926;
+.hljs-link,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #f22c40;
 }
 
+/* Atelier-Forest Orange */
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: #df5320;
+}
+
+/* Atelier-Forest Green */
+.hljs-string,
 .hljs-symbol,
 .hljs-bullet {
-  color: #990073;
+  color: #7b9726;
 }
 
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
+/* Atelier-Forest Blue */
+.hljs-title,
+.hljs-section {
+  color: #407ee7;
 }
 
-.hljs-meta {
-  color: #999;
-  font-weight: var(--weight-medium);
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
+/* Atelier-Forest Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #6666ea;
 }
 
 .hljs-emphasis {
