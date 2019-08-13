@@ -29,7 +29,7 @@
   if ((navControl = document.querySelector('main .nav-control'))) navControl.addEventListener('click', revealNav)
 
   function scrollItemToMiddle (el, parentEl) {
-    var adjustment = el.offsetTop + el.offsetHeight + 5 - parentEl.offsetHeight / 2.0
+    var adjustment = (el.getBoundingClientRect().height - parentEl.getBoundingClientRect().height) * 0.5 + el.offsetTop
     if (adjustment > 0) parentEl.scrollTop = adjustment
   }
 
