@@ -146,7 +146,7 @@ This folder does not get included in the UI bundle and should _not_ be committed
 === Preview the UI
 
 The UI project is configured to preview offline.
-The files in the [.path]_preview-site-src/_ folder provide the sample content that allow you to see the UI in action.
+The files in the [.path]_preview-src/_ folder provide the sample content that allow you to see the UI in action.
 In this folder, you'll primarily find pages written in AsciiDoc.
 These pages provide a representative sample and kitchen sink of content from the real site.
 
@@ -157,8 +157,10 @@ To build the UI and preview it in a local web server, run the `preview` command:
 You'll see a URL listed in the output of this command:
 
 ....
-[18:24:29] Server started http://localhost:5252
-[18:24:29] Running server
+[17:32:55] Starting 'preview:serve'...
+[17:32:55] Starting server...
+[17:32:55] Server started http://localhost:5252 and http://192.168.1.3:5252
+[17:32:55] Running server
 ....
 
 Navigate to this URL to preview the site locally.
@@ -191,7 +193,7 @@ Netlify then runs the command specified in netlify.toml, deploys the site, and a
 
 If you need to package the UI so you can use it to generate the documentation site locally, run the following command:
 
- $ gulp pack
+ $ gulp bundle
 
 If any errors are reported by lint, you'll need to fix them.
 
@@ -318,20 +320,20 @@ The UI provides the interaction (JavaScript) and styles (CSS) that power these t
 
 You can find the JavaScript for the tabs in the file [.path]_src/js/05-tabset.js_.
 You can find the styles for the tabs in the file [.path]_src/css/doc.css_.
-The preview site provides an example of these tabs in the file [.path]_preview-site-src/index.adoc_.
+The preview site provides an example of these tabs in the file [.path]_preview-src/index.adoc_.
 Note that authors should never enter the HTML for tabs directly, but it is entered this way in the preview site to make it easier to work with.
 
 === Content Preview
 
 You can create an arbitrary number of pages for the preview site.
-To make a page, create a new AsciiDoc file inside the [.path]_preview-site-src_ folder.
+To make a page, create a new AsciiDoc file inside the [.path]_preview-src_ folder.
 You can then access the page in the preview site using the URL pattern \http://localhost:5252/<stem>.html, where `<stem>` is the stem of the source file (the filename minus the file extension).
 
 These preview pages serve the purpose of testing the page layout and content styling.
 Each page may declare a layout, role, or both.
 
 The only caveat is that, at the moment, every page provides the same UI model (with a few exceptions).
-The model is defined in [.path]_preview-site-src/ui-model.yml_ file.
+The model is defined in [.path]_preview-src/ui-model.yml_ file.
 The exceptions include the layout, role, title, contents, and, in the case of home.adoc, the component, which get updated dynamically by the build.
 
 For information about what goes in the UI model, refer the https://docs.antora.org/antora-ui-default/templates/[Handlebars templates page] in the Antora documentation.
