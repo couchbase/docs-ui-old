@@ -168,9 +168,17 @@
   margin-top: 2.5rem;
 }
 
-.home .tiles > h2 {
+/* .home .tiles > h2 {
   font-size: 2rem;
   hyphens: auto;
+  padding-bottom: 3.125rem;
+  text-align: center;
+} */
+.home .tiles > h2 {
+  font-size: 2rem;
+  hyphens:none;
+  -webkit-hyphens:none;
+  -ms-hyphens:none;
   padding-bottom: 3.125rem;
   text-align: center;
 }
