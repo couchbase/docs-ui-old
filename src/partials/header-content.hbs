@@ -1,0 +1,106 @@
+<header class="header">
+  <nav class="navbar" id="topbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://www.couchbase.com"><img src="{{uiRootPath}}/img/logo.svg" alt="Couchbase"></a>
+        <button class="navbar-burger" data-target="topbar-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div id="topbar-menu" class="navbar-menu">
+        <div class="navbar-start">
+          <div class="navbar-item has-dropdown">
+            <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Docs</a>
+            <div class="navbar-dropdown explore">
+              <div class="title">Couchbase Documentation Overview</div>
+              <div class="cols">
+                <ul>
+                  <li class="heading"><a href="{{relativize site.components.server.url}}">Server</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/n1ql/n1ql-language-reference/index.html">N1QL</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/fts/full-text-intro.html">Full Text Search</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/analytics/introduction.html">Analytics</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/eventing/eventing-overview.html">Eventing</a></li>
+                  <li><a href="{{relativize site.components.operator.url}}">Autonomous Operator</a></li>
+                </ul>
+                <ul>
+                  <li class="heading">Mobile</li>
+                  <li><a href="{{relativize site.components.couchbase-lite.url}}">Lite</a></li>
+                  <li><a href="{{relativize site.components.sync-gateway.url}}">Sync Gateway</a></li>
+                </ul>
+                <ul class="two-cols">
+                  <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/sdk/overview.html">SDKs</a></li>
+                  <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
+                  <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
+                  <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
+                  <li><a href="{{relativize site.components.java-sdk.url}}">Java</a></li>
+                  <li><a href="{{relativize site.components.nodejs-sdk.url}}">Node.js</a></li>
+                  <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
+                  <li><a href="{{relativize site.components.python-sdk.url}}">Python</a></li>
+                  <li><a href="{{relativize site.components.scala-sdk.url}}">Scala</a></li>
+                </ul>
+                <ul>
+                  <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/intro.html">Connectors</a></li>
+                  <li><a href="{{relativize site.components.elasticsearch-connector.url}}">Elasticsearch</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/hadoop-1.2/hadoop.html">Hadoop</a></li>
+                  <li><a href="{{relativize site.components.kafka-connector.url}}">Kafka</a></li>
+                  <li><a href="{{relativize site.components.spark-connector.url}}">Spark</a></li>
+                  <li><a href="{{relativize site.components.talend-connector.url}}">Talend</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/odbc-jdbc-drivers.html">ODBC/JDBC</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {{#if (and page.component (ne page.component.name 'home'))}}
+          {{#if (and page.component (ne page.component.name 'tutorials'))}}
+          {{#if (and page.component (ne page.component.name 'userprofile-couchbase-mobile'))}}
+          {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
+          <div class="navbar-item has-dropdown">
+            <a class="navbar-link component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
+            <div class="navbar-dropdown versions">
+              <div class="cols">
+                <ul>
+                  {{#each page.versions}}
+                  {{#unless (eq ./version @root.page.version)}}
+                  <li><a class="navbar-item" href="{{relativize ./url}}">{{{@root.page.component.title}}} {{./displayVersion}}</a></li>
+                  {{/unless}}
+                  {{/each}}
+                </ul>
+                {{#if (ends-with page.component.name '-sdk')}}
+                <ul class="related">
+                  {{#each (related-sdk-pages 'c,dotnet,go,java,nodejs,php,python,scala')}}
+                  <li><a class="navbar-item" href="{{relativize ./url}}">{{{./title}}}</a></li>
+                  {{/each}}
+                </ul>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+          {{else}}
+          <a class="navbar-item component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span>{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
+          {{/if}}
+          {{/if}}
+          {{/if}}
+          {{/if}}
+          {{#if (and page.component (or (eq page.component.name 'tutorials') (eq page.component.name 'userprofile-couchbase-mobile')))}}
+          <div class="navbar-item">
+            <a class="navbar-link component" href="/tutorials/index.html"><span class="title">Tutorials</span></a>
+          </div>
+          {{/if}}
+          {{#if env.ALGOLIA_API_KEY}}
+            <form class="navbar-item search">
+              <input type="text" placeholder="Search Couchbase Docs" class="query" id="search-query">
+              <button type="button" class="search"><span>Search</span></button>
+            </form>
+          {{/if}}
+        </div>
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <a class="btn red-btn" href="https://www.couchbase.com/downloads">Downloads</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
