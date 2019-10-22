@@ -12,8 +12,10 @@
       <div id="topbar-menu" class="navbar-menu">
         <div class="navbar-start">
           <div class="navbar-item has-dropdown">
+            <div class="accordion">
             <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Docs</a>
-            <div class="navbar-dropdown explore">
+             <a class="navbar-link rex" ><span class="down-arrow"></span></a>
+            <div class="navbar-dropdown explore tab">
               <div class="title">Couchbase Documentation Overview</div>
               <div class="cols">
                 <ul>
@@ -49,6 +51,7 @@
                   <li><a href="{{relativize site.components.talend-connector.url}}">Talend</a></li>
                   <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/odbc-jdbc-drivers.html">ODBC/JDBC</a></li>
                 </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -57,8 +60,11 @@
           {{#if (and page.component (ne page.component.name 'userprofile-couchbase-mobile'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown">
+           <div class="accordion">
             <a class="navbar-link component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
-            <div class="navbar-dropdown versions">
+            <a class="navbar-link rex" ><span class="down-arrow"></span></a>
+
+            <div class="navbar-dropdown tab versions">
               <div class="cols">
                 <ul>
                   {{#each page.versions}}
@@ -74,6 +80,7 @@
                   {{/each}}
                 </ul>
                 {{/if}}
+                </div>
               </div>
             </div>
           </div>

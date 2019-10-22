@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
 {{> head-first}}
     <title>Couchbase Documentation</title>
     {{#if site.url}}
@@ -12,5 +15,21 @@
 {{> header}}
 {{> body-home}}
 {{> footer}}
+ <script>
+     $(".accordion > .navbar-link.rex").click(function () {
+  $('.active').not(this).removeClass('active').next().hide(300);
+              
+  $(this).toggleClass('active');
+                if (false == $(this).next().is(':visible')) {
+                  $('.accordion > .navbar-dropdown.explore.tab').slideUp(300);
+                }
+                $(this).next().slideToggle(300);
+              });
+              
+              var animationIsOff = $.fx.off;
+              $.fx.off = true;
+              $('.accordion > .navbar-link.rex:eq(0)').click()
+              $.fx.off = animationIsOff;
+  </script>
   </body>
 </html>
