@@ -2,6 +2,7 @@
 :doctype: book
 :page-edition: enterprise
 :page-status: beta
+:enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
 //:page-status: pass:[&ge; 5.5]
 
 [abstract]
@@ -84,10 +85,12 @@ Installation will vary based on your operation system.
 
 == Admonition Blocks
 
+[.edition]##{enterprise}##[.status]##Developer Preview##
 Let's take a brief pause to look at some admonition blocks.
 
-.What the admonition?
 ****
+[.edition]#{enterprise}#
+
 An admonition is a way to nudge the user to pay attention to information that is not to be missed.
 It might be a gentle suggestion in the form of a note or tip or something more serious like a warning.
 ****
@@ -161,7 +164,7 @@ The following statistics are available:
 The `stale=false` view query argument has been enhanced.
 When an application sends a query that has the `stale` parameter set to false, the application receives all recent changes to the documents, including changes that haven't yet been persisted to disk.
 
-[caption="Best practice"]
+[title="Best practice"]
 TIP: For better scalability and throughput, we recommend that you set the value of the `stale` parameter to `ok`.
 With the stream-based views, data returned when `stale` is set to `ok` is closer to the key-value data, even though it might not include all of it.
 
