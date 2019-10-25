@@ -88,9 +88,8 @@ Installation will vary based on your operation system.
 [.edition]##{enterprise}##[.status]##Developer Preview##
 Let's take a brief pause to look at some admonition blocks.
 
+.What the admonition?
 ****
-[.edition]#{enterprise}#
-
 An admonition is a way to nudge the user to pay attention to information that is not to be missed.
 It might be a gentle suggestion in the form of a note or tip or something more serious like a warning.
 ****
@@ -134,7 +133,12 @@ If you installed the CLI and the default site generator globally, you can upgrad
  $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
-Now back to monitoring.
+****
+[.edition]#{enterprise}#
+
+You can also add a sidebar without a title.
+This one shows how you can use the inline label markup in a paragraph by itself to add an edition label in any location.
+****
 
 = More Monitoring
 
