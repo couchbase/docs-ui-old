@@ -85,7 +85,6 @@ Installation will vary based on your operation system.
 
 == Admonition Blocks
 
-[.edition]##{enterprise}##[.status]##Developer Preview##
 Let's take a brief pause to look at some admonition blocks.
 
 .What the admonition?
@@ -133,16 +132,17 @@ If you installed the CLI and the default site generator globally, you can upgrad
  $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
+= More Monitoring
+
+[.edition]##{enterprise}##[.status]##Developer Preview##
+You can now use the `edition` and `status` roles on a span of text to create inline edition and status labels at any point.
+
 ****
 [.edition]#{enterprise}#
 
 You can also add a sidebar without a title.
 This one shows how you can use the inline label markup in a paragraph by itself to add an edition label in any location.
 ****
-
-= More Monitoring
-
-Let's get on with it.
 
 [#summary-stats]
 == Bucket Monitoring -- Summary Statistics
