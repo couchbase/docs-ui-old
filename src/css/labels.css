@@ -1,30 +1,24 @@
-.doc .labels ul,
-.doc span.edition,
-.doc span.status {
+.doc .labels ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0.125rem 0 0;
 }
 
-.doc .labels li,
-.doc span.edition,
-.doc span.status {
+.doc .labels li {
   display: block;
-  font-size: 0.75rem;
+  font-size: var(--labels-font-size);
   font-weight: var(--weight-bold);
-  line-height: 1;
+  line-height: var(--labels-line-height);
   position: relative;
 }
 
 .doc span.edition,
 .doc span.status {
-  display: inline-block
-}
-
-.doc span.edition,
-.doc span.status {
   max-width: fit-content;
+  font-size: var(--labels-font-size);
+  font-weight: var(--weight-bold);
+  line-height: var(--labels-line-height);
 }
 
 .doc .labels li:first-child::before {
@@ -37,7 +31,7 @@
 }
 
 .doc .labels li > *,
-.doc span.edition > *,
+.doc span.edition,
 .doc span.status {
   color: #fff;
   display: inline-block;
@@ -49,6 +43,11 @@
 .doc span.edition a,
 .doc span.status a {
   text-decoration: none;
+}
+
+.doc span.edition *,
+.doc span.status * {
+  color: inherit;
 }
 
 .doc .labels li.edition,
