@@ -1,16 +1,30 @@
-.doc .labels ul {
+.doc .labels ul,
+.doc span.edition,
+.doc span.status {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0.125rem 0 0;
 }
 
-.doc .labels li {
+.doc .labels li,
+.doc span.edition,
+.doc span.status {
   display: block;
   font-size: 0.75rem;
   font-weight: var(--weight-bold);
   line-height: 1;
   position: relative;
+}
+
+.doc span.edition,
+.doc span.status {
+  display: inline-block
+}
+
+.doc span.edition,
+.doc span.status {
+  max-width: fit-content;
 }
 
 .doc .labels li:first-child::before {
@@ -22,18 +36,23 @@
   top: -1rem;
 }
 
-.doc .labels li > * {
+.doc .labels li > *,
+.doc span.edition > *,
+.doc span.status {
   color: #fff;
   display: inline-block;
   padding: 0.375em 1em 0.3em;
   text-transform: uppercase;
 }
 
-.doc .labels li a {
+.doc .labels li a,
+.doc span.edition a,
+.doc span.status a {
   text-decoration: none;
 }
 
-.doc .labels li.edition {
+.doc .labels li.edition,
+.doc span.edition {
   background-color: var(--color-brand-light-blue);
 }
 
@@ -41,7 +60,8 @@
   border-bottom-color: var(--color-brand-light-blue);
 }
 
-.doc .labels li.status {
+.doc .labels li.status,
+.doc span.status {
   background-color: var(--color-brand-orange);
 }
 
