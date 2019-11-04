@@ -1,11 +1,13 @@
-.doc .labels ul {
+.doc .labels ul,
+.doc .labels p {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0.125rem 0 0;
 }
 
-.doc .labels li {
+.doc .labels li,
+.doc .labels span {
   display: block;
   font-size: var(--labels-font-size);
   font-weight: var(--weight-bold);
@@ -21,7 +23,8 @@
   line-height: var(--labels-line-height);
 }
 
-.doc .labels li:first-child::before {
+.doc .labels li:first-child::before,
+.doc .labels span:first-child::before {
   content: "";
   display: block;
   position: absolute;
@@ -55,7 +58,8 @@
   background-color: var(--color-brand-light-blue);
 }
 
-.doc .labels li.edition::before {
+.doc .labels li.edition::before,
+.doc .labels span.edition::before {
   border-bottom-color: var(--color-brand-light-blue);
 }
 
@@ -64,6 +68,7 @@
   background-color: var(--color-brand-orange);
 }
 
-.doc .labels li.status:first-child::before {
+.doc .labels li.status:first-child::before,
+.doc .labels span.status:first-child::before {
   border-bottom-color: var(--color-brand-orange);
 }
