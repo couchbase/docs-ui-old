@@ -2,7 +2,11 @@
 :doctype: book
 :page-edition: enterprise
 :page-status: beta
-:enterprise: https://www.couchbase.com/products/editions[ENTERPRISE EDITION]
+// The following should be global document attributes
+:url-edition: https://www.couchbase.com/products/editions
+:enterprise: {url-edition}[ENTERPRISE EDITION]
+:community: {url-edition}[COMMUNITY EDITION]
+:developer-preview: Developer Preview
 //:page-status: pass:[&ge; 5.5]
 
 [abstract]
@@ -132,17 +136,67 @@ If you installed the CLI and the default site generator globally, you can upgrad
  $ npm i -g @antora/cli @antora/site-generator-default
 ====
 
-= More Monitoring
+= Edition and Status Labels
 
-[.edition]##{enterprise}##[.status]##Developer Preview##
-You can now use the `edition` and `status` roles on a span of text to create inline edition and status labels at any point.
+You can use spans to add the `edition` and `status` labels to a section, subsection, or paragraph within a document.
+
+Status labels should only be used to mark that a section is beta or developer preview.
+You could also use it to mark new features, but _only within the version in which the feature was introduced_ -- no-one using version 6.5 needs to know that a feature was introduced in version 4.1.
+
+== Labels for a Section
+
+[.labels]
+[.edition]##{enterprise}##[.status]##{developer-preview}##
+
+To create an edition label, use a span with the role `edition`.
+To create a status label, use a span with the role `status`.
+
+To add edition and status labels at the start of a section or block, place the required spans in a single paragraph on its own.
+To add the "speech bubble tail" above the labels, the spans should be placed in a paragraph with the role `labels`.
+
+Global document attributes are available to insert the content for an edition or status label.
+The global document attribute `&lbrace;enterprise&rbrace;` inserts the content for an enterprise edition label.
+The global document attribute `&lbrace;community&rbrace;` inserts the content for a community edition label.
+
+If you need to place edition and status labels together, do not insert a space between them.
+In this case, you must use the "inline" span markup, i.e. delimit the spans with double hash marks `&num;&num;...&num;&num;`.
+
+== Labels for a Group of Paragraphs within a Section
+
+Here is another section.
+Note that this section does not have any edition or status labels at the start.
 
 ****
 [.edition]#{enterprise}#
 
-You can also add a sidebar without a title.
-This one shows how you can use the inline label markup in a paragraph by itself to add an edition label in any location.
+You can use a sidebar without a title.
+This sidebar shows how you can use the inline label markup in a paragraph on its own to add an edition label or a status label to a collection of blocks which does not form a complete section.
+
+(You should avoid mixing up a section-level labels and block-level labels within one section; it would get too confusing.)
+
+NOTE: Sidebars can contain admonitions.
+
+. Here is a list within the sidebar.
+
+. The edition label at the start of this sidebar clearly applies to the whole content of this sidebar.
 ****
+
+Outside the sidebar again.
+The user can clearly see that the edition label within the sidebar does _not_ apply to this paragraph.
+
+== Labels for an Individual Item
+
+Here is another section.
+This section does not have any edition or status labels at the start.
+
+* This is the first item in a list.
+
+* [.edition]#{community}# This is the second item in a list.
+This item is only applicable to community edition.
+
+* This is the third item in the list.
+
+* This is the last item in the list.
 
 [#summary-stats]
 == Bucket Monitoring -- Summary Statistics
