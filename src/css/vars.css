@@ -38,6 +38,8 @@
   --height-to-body: calc(var(--height-navbar) + var(--height-spacer));
   --height-min-body: calc(100vh - var(--height-to-body));
   --height-nav: calc(var(--height-min-body) - var(--height-spacer));
+  --labels-font-size: 0.75rem;
+  --labels-line-height: 1;
   /* --width-main-gutter: 1.5rem; */
   --width-main-gutter: 2.5rem;
   --width-container: 90rem;
