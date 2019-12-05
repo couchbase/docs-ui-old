@@ -1,0 +1,50 @@
+.is-this-helpful-box {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 25px;
+  border-top: 1px solid #ccc; 
+  padding-top: 25px;
+}
+.is-this-helpful-box .btn-row{
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin:15px 0;
+
+}
+.is-this-helpful-box .btn-row .yes-btn{
+  margin-right:15px ;
+}
+
+.is-this-helpful-box .input-control{
+  width: 100%;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc; 
+  resize: vertical;
+}
+.dialog-box{
+  display: none;
+}
+
+.dialog-box .form-group .btn{
+  margin-top: 15px;
+  background-color: var(--color-brand-red);
+  color: var(--color-brand-white);
+  font-size: 16px;
+  line-height: 22px;
+  border:2px solid var(--color-brand-red);
+  display: inline-block;
+  border-radius: 5px;
+  font-weight: 500;
+  padding: 8px 15px;
+
+}
+.is-this-helpful-box h4{
+font-size: inherit;
+    font-weight: 500;
+    margin: 0 0 10px;
+    line-height: 1;
+
+  }

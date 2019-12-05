@@ -9,7 +9,17 @@
   margin-bottom: 1.5rem;
 }
 
-.toc.sidebar .toc-menu {
+/* .toc.sidebar .toc-menu {
+  position: fixed; 
+  width: inherit; 
+  position: sticky; 
+  top: var(--height-to-body);
+  max-height: var(--height-nav);
+  overflow-y: auto;
+  -ms-overflow-style: none;
+} */
+
+.sidebar-box {
   position: fixed; /* for IE */
   width: inherit; /* for position: fixed */
   position: sticky; /* stylelint-disable-line declaration-block-no-duplicate-properties */
@@ -18,7 +28,6 @@
   overflow-y: auto;
   -ms-overflow-style: none;
 }
-
 .toc.embedded .toc-menu {
   margin-top: 1rem;
 }
