@@ -11,4 +11,10 @@
   helpNoBtn.addEventListener('click', function (e) {
     dialogBox.style.display = 'block'
   })
+  
+  var skipBtn = document.getElementById('skipBtn')
+  skipBtn.addEventListener('click', function (e) {
+    dialogBox.style.display = 'none'
+  })
+  
 })()

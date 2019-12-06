@@ -48,3 +48,7 @@ font-size: inherit;
     line-height: 1;
 
   }
+
+  .action-btn-row .skip-btn{
+    display: inline-block;
+  }
