@@ -4,6 +4,47 @@
       <img src="{{uiRootPath}}/img/logo.png" alt="Couchbase" />
     </a>
     {{! <ul class="nav navbar-nav mr-auto"></ul> }}
+    <button class="navbar-burger" data-target="topbar-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+  {{! End primary header }}
+  {{! Start secondary header }}
+  <nav id="topbar-menu" class="navbar navbar-new-bottom">
+    <div class="navbar-collapse collapse" id="navbar2">
+      <ul class="navbar-nav w-100 justify-content-start">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{relativize site.components.server.url}}">
+            Server
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{relativize site.components.server.url}}">
+            Mobile
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{relativize site.components.server.url}}">
+            Cloud
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{relativize site.components.server.url}}">
+            Integration
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{relativize site.components.server.url}}">
+            Get Started
+            <span class="arrow">
+              ->
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
     <div class="primary-action">
       <form class="navbar-item search">
         <input type="text" placeholder="Search Docs" class="query" id="search-query" />
@@ -19,47 +60,6 @@
       <a class="btn btn-primary try-btn" href="https://www.couchbase.com/downloads">
         Try Free
       </a>
-      <button class="navbar-burger" data-target="topbar-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
-  {{! End primary header }}
-  {{! Start secondary header }}
-  <nav id="topbar-menu" class="navbar navbar-expand-md pt-0 pb-0 navbar-new-bottom">
-    <div class="navbar-collapse collapse" id="navbar2">
-      <ul class="navbar-nav w-100 justify-content-start">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{relativize site.components.server.url}}">
-            Server
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            Mobile
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            Cloud
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            Integration
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            Get Started
-            <span class="arrow">
-              ->
-            </span>
-          </a>
-        </li>
-      </ul>
     </div>
   </nav>
 </header>
