@@ -7,10 +7,8 @@
     <div class="primary-action">
       <form class="navbar-item search">
         <input type="text" placeholder="Search Docs" class="query" id="search-query" />
-        <button type="button" class="search">
-          <span>
-            Search
-          </span>
+        <button type="button" class="search-btn">
+          <i class="fas fa-search"></i>
         </button>
       </form>
       <div class="parent-site">
@@ -21,14 +19,16 @@
       <a class="btn btn-primary try-btn" href="https://www.couchbase.com/downloads">
         Try Free
       </a>
+      <button class="navbar-burger" data-target="topbar-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbar2">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   </nav>
   {{! End primary header }}
   {{! Start secondary header }}
-  <nav class="navbar navbar-expand-md pt-0 pb-0 navbar-new-bottom">
+  <nav id="topbar-menu" class="navbar navbar-expand-md pt-0 pb-0 navbar-new-bottom">
     <div class="navbar-collapse collapse" id="navbar2">
       <ul class="navbar-nav w-100 justify-content-start">
         <li class="nav-item active">

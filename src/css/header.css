@@ -23,7 +23,7 @@
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.75rem 1.875rem;
+  padding: 0.75rem var(--width-container-gutter);
 }
 .navbar-toggler {
   padding: 0.25rem 0.75rem;
@@ -54,14 +54,14 @@
 .navbar-new-bottom .nav-item {
   margin: 0 15px;
 }
-.nav-item:first-child {
+.navbar-new-bottom .nav-item:first-child {
   margin-left: 0;
 }
 .navbar-nav .nav-link {
   color: var(--color-brand-white);
   text-transform: uppercase;
   opacity: 0.8;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 23px;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -74,6 +74,10 @@
 .nav-link:hover {
   text-decoration: none;
 }
+.primary-action {
+  display: flex;
+  align-items: center;
+}
 .primary-action > * {
   display: inline-block;
 }
@@ -81,8 +85,8 @@
   font-weight: var(--weight-bold);
 }
 .parent-site {
-  margin: 0 20px;
-  padding: 0 25px;
+  margin: 0 10px;
+  padding: 0 10px;
   border-right: 1px solid var(--color-brand-gray5);
   border-left: 1px solid var(--color-brand-gray5);
 }
@@ -96,4 +100,80 @@
   border-bottom: 1px solid var(--color-brand-gray5);
   color: var(--color-brand-gray4);
   font-size: 1rem;
+  padding-right: 20px;
+}
+.search {
+  position: relative;
+}
+.search-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  font-size: 1rem;
+  border: none;
+  background: none;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.navbar-burger {
+  width: 30px;
+  height: 19px;
+  background: none;
+  border: 0;
+  position: relative;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.navbar-burger span {
+  display: block;
+  width: inherit;
+  height: 4px;
+  background: var(--color-brand-blue);
+  margin-bottom: 3px;
+  transition: all 0.3s ease-in-out;
+  transform: translate3d(0, 0, 0);
+}
+
+.navbar-burger.is-active span {
+  position: absolute;
+}
+
+.navbar-burger.is-active span:nth-child(1) {
+  top: 8px;
+  transform: rotate(135deg);
+}
+
+.navbar-burger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-burger.is-active span:nth-child(3) {
+  top: 8px;
+  transform: rotate(-135deg);
+}
+
+@media screen and (min-width: 768px) {
+  .search .query {
+    width: 235px;
+  }
+  .navbar-burger {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search .query {
+    width: 283px;
+  }
+  .parent-site {
+    margin: 0 20px;
+    padding: 0 25px;
+  }
+  .navbar {
+    padding: 0.75rem 1.875rem;
+  }
 }
