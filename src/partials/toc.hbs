@@ -4,25 +4,37 @@
         <div class="is-this-helpful-box">
           <h4> Is this page helpful ?</h4>
             <div class="btn-row">
-              <a href="#" class="yes-btn helpfull-btn" id="yesBtn" >
+              <a href="#" class="like-btn helpfull-btn" id="yesBtn" data-page-rating="like" >
                      <i class="far fa-thumbs-up"></i>
                  Yes
+
                  </a>
-              <a href="#" class="no-btn helpfull-btn" id="noBtn" > <i class="far fa-thumbs-down"></i> No</a>
+              <a href="#" class="dislike-btn helpfull-btn" id="noBtn"  data-page-rating="dislike"> <i class="far fa-thumbs-down"></i> No</a>
             </div>
             <div class="dialog-box" id="dialogBox">
               <form>
-                  <div class="form-group">
-                    <textarea class="input-control" rows="8" placeholder="Any Additonal Feedback?"></textarea>
-                    <div class="action-btn-row">
-                      <a href="#" class="skip-btn" id="skipBtn">Skip</a>
-                       <button class="submit-btn btn red-btn"> Submit  </button>
+                  <div class="form-group " id="additionalFeedbackBox"> 
+                    <textarea class="input-control feed-back-msg" rows="8" placeholder="Any Additonal Feedback?"></textarea>
+                    
+                    <div class="action-btn-row ">
+                      <a href="#" class="skip-btn" id="skipBtnMsg">Skip</a>
+                       <button class="submit-btn btn blue-btn disabled" > Submit  </button>
                        <a href="#" class="info-btn"><i class="fas fa-info-circle"></i></a>
                     </div>
-
+               
 
                   </div>
+
+                  <div class="leave-addtional-box" id="leaveAddtinalBox">
+                    <div class="text-msg"> <p>Leave Additional Feedback?</p> </div>
+                         <div class="action-btn-row leave-feedback-btn-row">
+                            <a href="#" class="skip-btn" id="skipLeaveBtn">Skip</a>
+                            <button class="yes-btn btn blue-btn"> Yes  </button>
+                            
+                      </div>
+                  </div>
               </form>
+
             </div>
       </div>
    </div>
