@@ -1,6 +1,6 @@
 ;(function () {
   'use strict'
-  
+
   var dialogBox = document.getElementById('dialogBox')
   var helpYesBtn = document.getElementById('yesBtn')
   var helpNoBtn = document.getElementById('noBtn')
@@ -21,8 +21,6 @@
     helpNoBtn.classList.remove('active')
     console.log(yesBtnData, 16)
   })
-
- 
   helpNoBtn.addEventListener('click', function (e) {
     dialogBox.style.display = 'block'
     this.classList.add('active')
@@ -41,10 +39,15 @@
   })
 
   feedBackMsg.addEventListener('keyup', function (e) {
-    submitBtn.classList.remove('disabled')
+    var textareaValue = this.value
+
+    if (textareaValue != '') {
+      submitBtn.classList.remove('disabled')
+    } else {
+      submitBtn.classList.add('disabled')
+    }
   })
   leaveYesBtn.addEventListener('click', function (e) {
     leaveAddtinalBox.style.display = 'none'
   })
-  
 })()
