@@ -8,7 +8,7 @@ const createTask = require('./gulp.d/lib/create-task')
 const exportTasks = require('./gulp.d/lib/export-tasks')
 
 const bundleName = 'ui'
-const buildDir = process.env.CONTEXT === 'deploy-preview' ? 'public/dist' : 'build'
+const buildDir = ['deploy-preview', 'branch-deploy'].includes(process.env.CONTEXT) ? 'public/dist' : 'build'
 const previewSrcDir = 'preview-src'
 const previewDestDir = 'public'
 const srcDir = 'src'
