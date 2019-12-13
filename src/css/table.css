@@ -1,0 +1,110 @@
+/* =============================================================================
+   Responsive Table CSS
+   ========================================================================== */
+   table.tableblock *{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+   table.tableblock {
+    display: block; 
+    width: 100%;
+    margin: 1em 0;
+    border-spacing: 0;
+  }
+  
+  table.tableblock thead, table.tableblock tbody, table.tableblock thead tr, table.tableblock th {
+    display: block;
+  }
+  
+  table.tableblock thead {
+    float: left;
+  }
+  
+  table.tableblock tbody {
+    width: auto;
+    position: relative;
+    overflow-x: auto;
+  }
+  
+  table.tableblock td, table.tableblock th {
+    padding: 17px 0;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    color: var(--color-brand-gray1);
+  }
+  
+  table.tableblock th {
+    text-align: left;
+    border-bottom: 2px solid var(--color-brand-blue);
+    font-size: 1rem;
+    line-height: 1.25rem;
+    font-weight: var(--weight-bold);
+  }
+  
+  table.tableblock tbody tr {
+    display: table-cell;
+  }
+/* .tableblock tbody tr :hover{
+    background: var(--color-brand-gray7);
+  } */
+  
+  table.tableblock > tbody td {
+    display: block;
+    border-bottom: 1px solid var(--color-brand-gray6);
+  }
+  table.tableblock  tbody td p{
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    color: var(--color-brand-gray1);
+    font-weight: var(--weight-medium);
+  }
+
+table.tableblock .content .paragraph,
+table.tableblock .content .ulist { margin-top: 0;}
+  
+  /* table.tableblock tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.07);
+  }
+   */
+
+   .doc .admonitionblock td.icon{ border-bottom: none;}
+  @media screen and (min-width: 48em) {
+  
+    table.tableblock {
+      display: table;
+    }
+    
+    table.tableblock thead {
+      display: table-header-group;
+      float: none;
+    }
+    
+    table.tableblock tbody {
+      display: table-row-group;
+    }
+    
+    table.tableblock thead tr, table.tableblock tbody tr {
+      display: table-row;
+    }
+    
+    table.tableblock th, table.tableblock tbody td {
+      display: table-cell;
+      
+    }
+    
+    table.tableblock td, table.tableblock th {
+      width: auto;
+    }
+    
+  }
+
+  @media screen and (max-width: 48em) {
+    table.tableblock td{
+      min-width: 14.5rem;
+
+    word-break: break-word;
+    }
+
+  }

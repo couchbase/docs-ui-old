@@ -148,7 +148,7 @@
   border-top-width: 1px;
 }
 
-.doc table.tableblock,
+/* .doc table.tableblock,
 .doc th.tableblock,
 .doc td.tableblock {
   border: 0 solid var(--color-border-table);
@@ -158,7 +158,7 @@
   border-width: 1px;
   border-collapse: collapse;
   margin: 1.5rem 0 2rem;
-}
+} */
 
 /* TODO drop .spread after upgrading to Asciidoctor 1.5.7 */
 .doc table.spread,
@@ -170,9 +170,9 @@
   text-align: left;
 }
 
-.doc table.tableblock > tbody {
+/* .doc table.tableblock > tbody {
   font-weight: var(--weight-light);
-}
+} */
 
 /* NOTE prevent wide tables from exceeding bounds */
 /* TODO could also target table.tableblock[style^="width:"] */
@@ -192,7 +192,7 @@
   table-layout: fixed;
 }
 */
-
+/* 
 .doc table.tableblock > tbody > tr:nth-of-type(even) {
   background-color: var(--color-shade);
 }
@@ -216,12 +216,12 @@
 
 .doc p.tableblock + p.tableblock {
   margin-top: 1rem;
-}
+} */
 
 /* NOTE in Asciidoctor 1.5.7, this div will have a class */
-.doc td.tableblock > div > :first-child {
+/* .doc td.tableblock > div > :first-child {
   margin-top: 0;
-}
+} */
 
 .doc .halign-left {
   text-align: left;
