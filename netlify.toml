@@ -9,6 +9,9 @@ ALGOLIA_API_KEY = "d3eff3e8bcc0860b8ceae87360a47d54"
 ALGOLIA_INDEX_NAME = "prod_docs_couchbase"
 OPTANON_SCRIPT_URL = "https://cdn.cookielaw.org/consent/288c1333-faac-4514-a8bf-a30b3db0ee32.js"
 
+[context.branch-deploy]
+command = "node_modules/.bin/gulp preview:build && node_modules/.bin/gulp --series build bundle:pack"
+
 [context.deploy-preview]
 command = "node_modules/.bin/gulp preview:build && node_modules/.bin/gulp --series build bundle:pack"
 
