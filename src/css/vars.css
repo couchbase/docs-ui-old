@@ -67,4 +67,7 @@
   --z-index-navbar: 3;
   --z-index-footer: 2;
   --z-index-nav: 1;
+
+  /* Color brand tabsets */
+  --color-active-tabset: #57a1ff;
 }
