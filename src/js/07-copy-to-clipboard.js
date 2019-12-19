@@ -10,7 +10,7 @@
       navigator.clipboard.writeText(codeBlock.innerText).then(
         function () {
           /* Chrome doesn't seem to blur automatically,
-            leaving the button in a focused state. */
+              leaving the button in a focused state. */
           button.blur()
 
           button.dataset.title = 'Copied!'
