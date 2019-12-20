@@ -259,6 +259,8 @@
 
 .doc .admonitionblock > table > tbody > tr {
   display: flex;
+  border: 1px solid var(--color-brand-gray6);
+  border-radius: 4px;
 }
 
 .doc .admonitionblock td.icon {
@@ -274,15 +276,15 @@
 }
 
 .doc .admonitionblock td.content {
-  border-bottom: 1px solid var(--color-brand-silver);
+  /* border-bottom: 1px solid var(--color-brand-silver);
   border-right: 1px solid var(--color-brand-silver);
-  border-top: 1px solid var(--color-brand-silver);
+  border-top: 1px solid var(--color-brand-silver); */
   flex: 1;
   font-size: 0.9375rem;
   hyphens: auto;
   line-height: 1.6;
   min-width: 0;
-  padding: 0.75rem;
+  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 }
 
 .doc .admonitionblock td.content > .title {
@@ -296,7 +298,7 @@
 }
 
 .doc .admonitionblock td.content::before {
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-bold);
 }
 
 .doc .admonitionblock.caution > table {
@@ -309,11 +311,11 @@
 
 .doc .admonitionblock.caution td.content::before {
   content: "Caution: ";
-  color: var(--color-brand-orange);
+  color: var(--color-brand-gray1);
 }
 
-.doc .admonitionblock.caution td.content {
-  border-left: 6px solid var(--color-brand-orange);
+.doc .admonitionblock.caution tr {
+  border-left: 4px solid var(--color-brand-caution);
 }
 
 .doc .admonitionblock.important > table {
@@ -326,11 +328,11 @@
 
 .doc .admonitionblock.important td.content::before {
   content: "Important: ";
-  color: var(--color-brand-blue);
+  color: var(--color-brand-gray1);
 }
 
-.doc .admonitionblock.important td.content {
-  border-left: 6px solid var(--color-brand-blue);
+.doc .admonitionblock.important tr {
+  border-left: 4px solid var(--color-brand-important);
 }
 
 .doc .admonitionblock.note > table {
@@ -343,11 +345,11 @@
 
 .doc .admonitionblock.note td.content::before {
   content: "Note: ";
-  color: var(--color-brand-light-blue);
+  color: var(--color-brand-gray1);
 }
 
-.doc .admonitionblock.note td.content {
-  border-left: 6px solid var(--color-brand-light-blue);
+.doc .admonitionblock.note tr {
+  border-left: 4px solid var(--color-brand-note);
 }
 
 .doc .admonitionblock.tip > table {
@@ -360,11 +362,11 @@
 
 .doc .admonitionblock.tip td.content::before {
   content: "Tip: ";
-  color: var(--color-brand-purple);
+  color: var(--color-brand-gray1);
 }
 
-.doc .admonitionblock.tip td.content {
-  border-left: 6px solid var(--color-brand-purple);
+.doc .admonitionblock.tip tr {
+  border-left: 4px solid var(--color-brand-tip);
 }
 
 .doc .admonitionblock.warning > table {
@@ -377,11 +379,11 @@
 
 .doc .admonitionblock.warning td.content::before {
   content: "Warning: ";
-  color: var(--color-brand-red);
+  color: var(--color-brand-gray1);
 }
 
-.doc .admonitionblock.warning td.content {
-  border-left: 6px solid var(--color-brand-red);
+.doc .admonitionblock.warning tr {
+  border-left: 4px solid var(--color-brand-warning);
 }
 
 .doc .admonitionblock td.content > :first-child {

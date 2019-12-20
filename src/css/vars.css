@@ -14,6 +14,11 @@
   --color-brand-green: #00b9be;
   --color-brand-purple: #b36cdb;
   --color-brand-purple-tint: #f4e9fa;
+  --color-brand-tip: #00d770;
+  --color-brand-note: #4e90e6;
+  --color-brand-important: #9e70b1;
+  --color-brand-warning: #ed2226;
+  --color-brand-caution: #f57f17;
   /* tertiary */
   --color-brand-gray1: #292b36;
   --color-brand-gray2: #3d4151;
