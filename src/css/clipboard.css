@@ -12,7 +12,8 @@
 .doc .listingblock:hover .copy-code-button {
   display: block;
 }
-.copy-code-button:hover:after {
+
+.copy-code-button:hover::after {
   content: attr(data-title);
   color: var("--color-brand-gray4");
   font-size: 0.7em;
@@ -34,7 +35,7 @@
   border-radius: 3px;
 }
 
-.copy-code-button:hover:before {
+.copy-code-button:hover::before {
   width: 0;
   height: 0;
   border-left: 5px solid transparent;
