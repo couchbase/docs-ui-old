@@ -1,110 +1,161 @@
 /* =============================================================================
    Responsive Table CSS
    ========================================================================== */
-   table.tableblock *{
-    font-family: 'Source Sans Pro', sans-serif;
-  }
 
-   table.tableblock {
-    display: block; 
-    width: 100%;
-    margin: 1em 0;
-    border-spacing: 0;
-  }
-  
-  table.tableblock thead, table.tableblock tbody, table.tableblock thead tr, table.tableblock th {
-    display: block;
-  }
-  
-  table.tableblock thead {
-    float: left;
-  }
-  
-  table.tableblock tbody {
-    width: auto;
-    position: relative;
-    overflow-x: auto;
-  }
-  
-  table.tableblock td, table.tableblock th {
-    padding: 17px 0;
-    line-height: 1.5em;
-    box-sizing: border-box;
-    overflow-x: hidden;
-    overflow-y: auto;
-    color: var(--color-brand-gray1);
-  }
-  
-  table.tableblock th {
-    text-align: left;
-    border-bottom: 2px solid var(--color-brand-blue);
-    font-size: 1rem;
-    line-height: 1.25rem;
-    font-weight: var(--weight-bold);
-  }
-  
-  table.tableblock tbody tr {
-    display: table-cell;
-  }
+table.tableblock * {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+table.tableblock {
+  display: block;
+  width: 100%;
+  margin: 1em 0;
+  border-spacing: 0;
+}
+
+table.tableblock thead,
+table.tableblock tbody,
+table.tableblock thead tr,
+table.tableblock th {
+  display: block;
+}
+
+table.tableblock thead {
+  float: left;
+}
+
+table.tableblock tbody {
+  width: auto;
+  position: relative;
+  overflow-x: auto;
+}
+
+table.tableblock td,
+table.tableblock th {
+  line-height: 1.5em;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  color: var(--color-brand-gray1);
+}
+
+table.tableblock th {
+  padding: 15px 12px 8px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-brand-blue);
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: var(--weight-bold);
+}
+
+table.tableblock tbody tr {
+  display: table-cell;
+}
+
 /* .tableblock tbody tr :hover{
     background: var(--color-brand-gray7);
   } */
-  
-  table.tableblock > tbody td {
-    display: block;
-    border-bottom: 1px solid var(--color-brand-gray6);
-  }
-  table.tableblock  tbody td p{
-    font-size: 0.875rem;
-    line-height: 1.125rem;
-    color: var(--color-brand-gray1);
-    font-weight: var(--weight-medium);
-  }
+
+table.tableblock > tbody td {
+  display: block;
+  border-bottom: 1px solid var(--color-brand-gray6);
+  padding: 15px 12px 15px;
+}
+
+table.tableblock tbody td p {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  color: var(--color-brand-gray1);
+  font-weight: var(--weight-medium);
+}
 
 table.tableblock .content .paragraph,
-table.tableblock .content .ulist { margin-top: 0;}
-  
-  /* table.tableblock tr:nth-child(odd) {
-    background: rgba(0, 0, 0, 0.07);
+table.tableblock .content .ulist {
+  margin-top: 0;
+}
+
+/* table.tableblock tr:nth-child(odd) {
+    background: rgba(0, 0, 0, 0.07);g29
+
   }
    */
 
-   .doc .admonitionblock td.icon{ border-bottom: none;}
-  @media screen and (min-width: 48em) {
-  
-    table.tableblock {
-      display: table;
-    }
-    
-    table.tableblock thead {
-      display: table-header-group;
-      float: none;
-    }
-    
-    table.tableblock tbody {
-      display: table-row-group;
-    }
-    
-    table.tableblock thead tr, table.tableblock tbody tr {
-      display: table-row;
-    }
-    
-    table.tableblock th, table.tableblock tbody td {
-      display: table-cell;
-      
-    }
-    
-    table.tableblock td, table.tableblock th {
-      width: auto;
-    }
-    
+/* table.tableblock tbody tr:hover {
+    background: var(--color-brand-gray7);
+} */
+
+table.tableblock .title {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0 0;
+  margin-bottom: 10px;
+}
+
+/* Responsive css  */
+
+.doc .admonitionblock td.icon {
+  border-bottom: none;
+}
+
+@media screen and (min-width: 768px) {
+  table.tableblock {
+    display: table;
+    position: relative;
   }
 
-  @media screen and (max-width: 48em) {
-    table.tableblock td{
-      min-width: 14.5rem;
+  table.tableblock .title {
+    position: absolute;
+    left: 0;
+    top: -35px;
+  }
 
+  div.paragraph + table.tableblock {
+    margin-top: 40px;
+  }
+
+  table.tableblock thead {
+    display: table-header-group;
+    float: none;
+  }
+
+  table.tableblock tbody {
+    display: table-row-group;
+  }
+
+  table.tableblock thead tr,
+  table.tableblock tbody tr {
+    display: table-row;
+  }
+
+  table.tableblock th,
+  table.tableblock tbody td {
+    display: table-cell;
+  }
+
+  table.tableblock td,
+  table.tableblock th {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  table.tableblock td {
+    min-width: 14.5rem;
     word-break: break-word;
-    }
-
+    border-right: 1px solid var(--color-brand-gray6);
   }
+
+  .admonitionblock table tbody {
+    overflow-x: visible;
+  }
+
+  .doc .admonitionblock > table > tbody > tr {
+    display: inline-block;
+    width: 100%;
+  }
+
+  table.tableblock thead {
+    box-shadow: 2px 2px 4px 1px var(--color-brand-gray7);
+    max-width: 120px;
+  }
+}
