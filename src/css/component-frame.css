@@ -8,6 +8,7 @@
 
 .frame-body {
   margin-left: 10px;
+  position: relative;
 }
 
 .frame-body .title {
@@ -17,9 +18,38 @@
   color: var(--color-brand-gray1);
 }
 
+.frame-body .frame-link {
+  position: relative;
+}
+
+.frame-body .frame-link::after {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 8px solid var(--color-brand-gray4);
+  top: 0;
+  position: absolute;
+  content: '';
+  cursor: pointer;
+  right: -15px;
+  bottom: 0;
+  margin: auto;
+}
+
+.frame-body .frame-link-dropdowns:hover .frame-dropdown {
+  display: block;
+}
+
 .frame-dropdown {
   position: absolute;
   display: none;
+  background: var(--color-brand-white);
+  padding: 5px 15px;
+  left: -15px;
+  top: 50px;
+  border-radius: 4px;
+  z-index: 1;
 }
 
 .frame-dropdown .frame-dropdown-list {
