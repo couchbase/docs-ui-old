@@ -24,11 +24,13 @@
 .is-this-helpful-box .btn-row .helpfull-btn {
   font-size: 0.875rem;
   line-height: 1.125rem;
+  color: var(--color-brand-gray4);
 }
 
 .is-this-helpful-box .btn-row .helpfull-btn:hover,
 .is-this-helpful-box .btn-row .helpfull-btn.active {
   color: var(--color-brand-blue);
+  text-decoration: none;
 }
 
 .is-this-helpful-box .btn-row .like-btn {
