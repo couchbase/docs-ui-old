@@ -23,7 +23,7 @@
   margin-top: 1rem;
 }
 
-.toc-menu::-webkit-scrollbar {
+.sidebar-box::-webkit-scrollbar {
   width: 0;
 }
 

@@ -11,6 +11,9 @@
   var feedBackMsg = document.querySelector('.feed-back-msg')
   var submitBtn = document.querySelector('.submit-btn')
   var leaveYesBtn = document.querySelector('.yes-btn')
+  var feedbackInfoBtn = document.querySelector('.info-btn')
+  var feedbackModal = document.querySelector('.feedback-modal')
+  var closeModalPopup = document.querySelector('.close-popup')
   // for config
   var yesBtnData = helpYesBtn.dataset
   var noBtnData = helpNoBtn.dataset
@@ -48,5 +51,12 @@
   })
   leaveYesBtn.addEventListener('click', function (e) {
     leaveAddtinalBox.style.display = 'none'
+  })
+  feedbackInfoBtn.addEventListener('click', function (e) {
+    feedbackModal.classList.add('show')
+  })
+
+  closeModalPopup.addEventListener('click', function (e) {
+    feedbackModal.classList.remove('show')
   })
 })()

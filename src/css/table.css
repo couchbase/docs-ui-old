@@ -101,7 +101,7 @@ table.tableblock .title {
   table.tableblock {
     display: table;
     position: relative;
-    margin-top:2.5rem;
+    margin-top: 2.5rem;
   }
 
   table.tableblock .title {
