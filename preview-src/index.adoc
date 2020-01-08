@@ -98,8 +98,9 @@ It might be a gentle suggestion in the form of a note or tip or something more s
 ****
 
 [TIP]
+====
 This oughta do it!
-
+====
 [NOTE]
 ====
 Oh, you've been down _this_ road before.
