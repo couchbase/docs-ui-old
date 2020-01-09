@@ -8,9 +8,9 @@
   window.onload = function () {
     shapeTable()
   }
-  window.addEventListener('resize', function () {
-    shapeTable()
-  })
+  // window.addEventListener('resize', function () {
+  //   shapeTable()
+  // })
 
   function shapeTable () {
     if (window.innerWidth < smallBreak) {
