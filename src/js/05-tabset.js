@@ -56,11 +56,11 @@ find('.doc .tabset').forEach(function (tabset) {
 })
 
 function activateTab (e) {
+  e.preventDefault()
   var tab = this.tab
   var pane = this.pane
   var dropdownMenu = document.querySelector('.tabs ul')
   var dropdownBtnIcon = document.querySelector('.dropdown-btn-down .fas')
-  e.preventDefault()
 
   find('.tabs li, .tab-pane', this.tabset).forEach(function (it) {
     it === tab || it === pane ? it.classList.add('is-active') : it.classList.remove('is-active')
@@ -77,6 +77,11 @@ function activateTab (e) {
 function find (selector, from) {
   return Array.prototype.slice.call((from || document).querySelectorAll(selector))
 }
+setTimeout(function () {
+  document.querySelector(' #activeTabItem').addEventListener('click', function (e) {
+    e.preventDefault()
+  })
+}, 3000)
 
 function getPane (id, tabset) {
   return find('.tab-pane', tabset).find(function (it) {

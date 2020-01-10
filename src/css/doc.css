@@ -768,7 +768,7 @@
 
   .active-tab-item-row {
     display: inline-block;
-    width: auto;
+    max-width:60%;
   }
 
   .active-tab-item-row a {
@@ -779,10 +779,10 @@
     cursor: pointer;
     display: flex;
     font-weight: var(--weight-bold);
-    height: 2.5rem;
+    min-height: 2.5rem;
     line-height: 1;
     margin-right: 0.25rem;
-    padding: 0 1.5rem;
+    padding: 0 1.5rem 5px;
     position: relative;
     text-decoration: none;
   }
@@ -832,6 +832,8 @@
     top: 100%;
     width: 120px;
     display: none;
+    overflow-y: auto;
+    background-color: var(--color-brand-white);
   }
 
   .doc .tabs ul p {
@@ -840,6 +842,9 @@
   
   .doc .tabset:not(.is-loading) .tabs li:not(.is-active) {
     background: var( --color-brand-white);
+    min-height: 2.5rem;
+    height: auto;
+    padding: .75rem;
   }
   
   .doc .tabs li.is-active {
