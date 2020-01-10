@@ -2,10 +2,10 @@
 <ul class="nav-list">
   {{#each navigation}}
   <li class="nav-item{{#if (eq ../crumbAtLevel this)}}
-      {{~#if (eq this (last @root.page.breadcrumbs))}} is-current-page{{~else}} is-current-path{{/if}} is-active
-      {{~else if (eq ../level 0)}} is-active{{/if}}" data-depth="{{../level}}">
+      {{~#if (eq this (last @root.page.breadcrumbs))}} is-current-page{{~else}} is-current-path{{/if}}{{!-- is-active --}}
+      {{~else if (eq ../level 0)}}{{!--is-active --}}{{/if}}" data-depth="{{../level}}">
     {{#if ./content}}
-    <span class="nav-line">
+    <span class="nav-line"  data-depth="{{../level}}">
     {{#if ./items}}
     <button class="nav-toggle"></button>
     {{/if}}

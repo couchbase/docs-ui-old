@@ -1,9 +1,9 @@
 .nav-menu {
-  background-color: var(--color-shade);
+  background-color: var(--color-brand-gray7);
   position: fixed;
   width: inherit;
   overflow-y: scroll;
-  font-size: 0.875rem;
+  font-size: 1rem;
   line-height: 1.35;
 }
 
@@ -34,10 +34,18 @@
   background-color: var(--color-border);
 }
 
-.nav-menu .nav-line,
 .nav-menu .nav-link,
 .nav-menu .nav-text {
   display: block;
+}
+
+.nav-menu .nav-line {
+  display: flex;
+  word-break: break-all;
+}
+
+.nav-menu .nav-text {
+  margin-left: 0.75rem;
 }
 
 .nav-menu a.nav-link {
@@ -57,7 +65,8 @@
 }
 
 .nav-menu > .nav-list {
-  margin: 1rem 1.875rem;
+  /* margin: 1rem 1.875rem; */
+  margin: 1.5rem 0;
 }
 
 .nav-menu .nav-item .nav-list {
@@ -66,31 +75,51 @@
   margin-bottom: 0.625rem;
   */
   margin-bottom: 0.75rem;
+  margin-left: 3.6875rem;
+  border-left: 1px solid var(--color-brand-gray5);
 }
 
 .nav-menu .nav-item:not(.is-active) > .nav-list {
   display: none;
 }
 
-.nav-menu .nav-item {
+/* .nav-menu .nav-item {
   margin-left: 0.75em;
-}
+} */
 
 /* NOTE navigation list without a category */
 .nav-item[data-depth="0"] > .nav-list:first-child {
   margin-left: -0.75em;
 }
 
-.nav-menu .nav-item[data-depth="0"] + .nav-item {
+/* .nav-menu .nav-item[data-depth="0"] + .nav-item {
   margin-top: 1.25em;
-}
+} */
 
-.nav-menu .nav-item .nav-item {
+/* .nav-menu .nav-item .nav-item {
   margin-top: 0.5em;
-}
+} */
 
 .nav-item[data-depth="0"] > .nav-line {
   text-transform: uppercase;
+}
+
+.nav-line[data-depth="0"] {
+  padding: 0.625rem 1.875rem;
+  color: var(--brand-color-gray2);
+}
+
+.nav-line[data-depth="1"] {
+  padding: 0.625rem 1.125rem;
+}
+
+.nav-item.is-active .nav-line[data-depth="0"] {
+  background: rgba(var(--color-gray-rgb), 0.06);
+}
+
+.nav-item.is-active .nav-line[data-depth="0"] .nav-text {
+  color: var(--color-brand-blue);
+  font-weight: var(--weight-semibold);
 }
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
@@ -102,9 +131,9 @@
   background: none;
   border: 0;
   padding: 0;
-  position: absolute;
-  margin-left: -1.25em;
-  width: 1.25em;
+  /* position: absolute; */
+  /* margin-left: -1.25em; */
+  width: 1rem;
   color: var(--color-border);
   transform: scale(1.25);
 }

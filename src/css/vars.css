@@ -6,7 +6,7 @@
   --color-brand-red-tint: #fcdedf;
   --color-brand-white: #fff;
   /* secondary */
-  --color-brand-blue: #57a0ff;
+  --color-brand-blue: #4287d6;
   --color-blue-rgb: 87, 160, 255;
   --color-brand-light-blue: #00ace0;
   --color-brand-light-blue-tint: #d9f3fb;
@@ -20,6 +20,7 @@
   --color-brand-warning: #ed2226;
   --color-brand-caution: #f57f17;
   /* tertiary */
+  --color-gray-rgb: 115, 118, 138;
   --color-brand-gray1: #292b36;
   --color-brand-gray2: #3d4151;
   --color-brand-gray3: #52566c;

@@ -1,4 +1,4 @@
-;(function () {
+; (function () {
   'use strict'
 
   var nav = document.querySelector('nav.nav')
@@ -14,11 +14,14 @@
 
   find('.nav-toggle', navMenu.element).forEach(function (toggleBtn) {
     var navItem = findAncestorWithClass('nav-item', toggleBtn, navMenu.element)
-    toggleBtn.addEventListener('click', toggleActive.bind(navItem))
+    // toggleBtn.addEventListener('click', toggleActive.bind(navItem))
+    toggleBtn.addEventListener('click', addActive.bind(navItem))
+
     var navItemSpan = findNextElement(toggleBtn)
     if (navItemSpan.classList.contains('nav-text')) {
       navItemSpan.style.cursor = 'pointer'
-      navItemSpan.addEventListener('click', toggleActive.bind(navItem))
+      // navItemSpan.addEventListener('click', toggleActive.bind(navItem))
+      navItemSpan.addEventListener('click', addActive.bind(navItem))
     }
   })
 
@@ -58,8 +61,24 @@
     navMenu.element.style.height = reclaimedHeight > 0 ? Math.max(0, preferredHeight - reclaimedHeight) + 'px' : ''
   }
 
-  function toggleActive (e) {
-    this.classList.toggle('is-active')
+  // function toggleActive (e) {
+  //   this.classList.toggle('is-active')
+  // }
+
+  function addActive (e) {
+    console.log(this.classList, 12344)
+    // nav.querySelectorAll('.nav-item').classList.remove('is-active')
+    removeClasses(e)
+    this.classList.add('is-active')
+    concealEvent(e)
+  }
+
+  var navItems = document.querySelectorAll('.nav .nav-item')
+
+  function removeClasses (e) {
+    for (var i = 0; i < navItems.length; i++) {
+      navItems[i].classList.remove('is-active')
+    }
     concealEvent(e)
   }
 
