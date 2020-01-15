@@ -1,0 +1,46 @@
+.jumbotron {
+  text-align: center;
+  border-radius: 4px;
+  background: var(--color-shade);
+  padding: 3rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.jumbotron-form {
+  margin: .75rem 0 0em;
+}
+
+.jumbotron-form input{
+  padding: .375rem .75rem;
+  height: 35px;
+  width: 250px;
+}
+
+.jumbotron .btn-lg {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.jumbotron .btn-lg:hover {
+  text-decoration: none;
+}
+
+.archive table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.documentsTable_Wrapper{
+  border:1px solid var(--color-shade)
+}
+
+.archive th,
+.archive td {
+  padding: 0.5rem;
+  vertical-align: bottom;
+  border-bottom: 2px solid var(--color-shade);
+}
+.archive th{
+  background: var(--color-shade);
+}

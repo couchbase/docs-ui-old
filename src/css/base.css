@@ -16,7 +16,8 @@ body {
 
 body {
   color: var(--color-text);
-  font-family: "Gotham", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
+  /* font-family: "Gotham", sans-serif; */
   line-height: 1.5;
   margin: 0;
 }
@@ -74,8 +75,22 @@ small {
   font-size: 0.8em;
 }
 
-.container {
+.container,
+.container-fluid {
   margin: 0 auto;
   max-width: var(--width-container);
   padding: 0 var(--width-container-gutter);
+}
+/* .container-fluid {
+  max-width: var(--width-container-fluid);
+  padding: 0;
+  margin: 0 auto;
+} */
+
+@media screen and (min-width: 1024px) {
+  .container-fluid {
+    max-width: var(--width-container-fluid);
+    padding: 0;
+    margin: 0 auto;
+  }
 }

@@ -60,7 +60,12 @@
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
   color: var(--color-brand-red);
-  background-image: -webkit-linear-gradient(-45deg, var(--color-brand-purple), var(--color-brand-red) 75%);
+  background-image:
+    -webkit-linear-gradient(
+      -45deg,
+      var(--color-brand-purple),
+      var(--color-brand-red) 75%
+    );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: var(--weight-normal);
@@ -262,7 +267,7 @@
 }
 
 .doc .admonitionblock td.icon i::before {
-  background: no-repeat 0/cover;
+  background: no-repeat 0 / cover;
   content: "";
   display: block;
   height: 1.875rem;
@@ -487,9 +492,9 @@
 }
 
 .doc .exampleblock > .content {
-  background-color: var(--color-shade);
+  /* background-color: var(--color-shade); */
   box-shadow: inset 0 0 1px #bec0c1;
-  padding: 2rem 2.25rem;
+  /* padding: 1rem 1.25rem; */
 }
 
 .doc .exampleblock > .content > :first-child {
@@ -504,8 +509,8 @@
 
 .doc pre:not(.highlight),
 .doc pre.highlight code {
-  background-color: #151514;
-  color: #f8f8f2;
+  /* background-color: #151514; */
+  color: var(--color-brand-gray1);
   font-weight: var(--weight-normal); /* needed to override third-party styles */
   padding: 0.625rem;
   white-space: pre-wrap;
@@ -515,6 +520,9 @@
   word-wrap: normal;
   overflow-x: auto;
   */
+  background: rgba(87, 160, 255, 0.0555);
+  border: 1px solid #eaebf1;
+  border-radius: 3px;
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
@@ -524,7 +532,7 @@
 
 .doc .listingblock code[data-lang]::before {
   content: attr(data-lang);
-  color: #f8f8f2;
+  color: var("--color-brand-gray4") /*#f8f8f2*/;
   display: none;
   font-size: 0.75em;
   font-weight: var(--weight-light);
@@ -533,7 +541,7 @@
   text-transform: uppercase;
   position: absolute;
   top: 0.375rem;
-  right: 0.5rem;
+  right: 1.5rem;
 }
 
 .doc .listingblock:hover code[data-lang]::before {
@@ -724,15 +732,16 @@
 
 .doc .tabs li {
   align-items: center;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-brand-white);
+  border-top: 3px solid var(--color-brand-white);
   border-bottom: 0;
   cursor: pointer;
   display: flex;
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-semibold);
   height: 2.5rem;
   line-height: 1;
-  margin-right: 0.25rem;
-  padding: 0 1.5rem;
+  /* margin-right: 0.25rem; */
+  padding: 0 1rem;
   position: relative;
 }
 
@@ -742,8 +751,15 @@
 
 .doc .tabset.is-loading .tabs li:not(:first-child),
 .doc .tabset:not(.is-loading) .tabs li:not(.is-active) {
-  background-color: var(--color-text);
-  color: var(--color-brand-white);
+  background-color: var(--color-brand-white);
+  color: var(--color-brand-gray4);
+}
+
+.doc .tabs li.is-active {
+  color: var(--color-active-tabset);
+  border-radius: 3px 3px 0 0;
+  border-color: var(--color-brand-gray6);
+  border-top: 3px solid var(--color-active-tabset);
 }
 
 .doc .tabset.is-loading .tabs li:first-child::after,
@@ -758,9 +774,24 @@
   right: 0;
 }
 
+.doc .tabs li.is-active::before {
+  background-color: var(--color-active-tabset);
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  width: 40px;
+  z-index: 1;
+  margin: auto;
+}
+
 .doc .tabset > .content {
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-brand-gray6);
   padding: 1.25rem;
+  border-radius: 3px;
 }
 
 .doc .tabset.is-loading .tab-pane:not(:first-child),
