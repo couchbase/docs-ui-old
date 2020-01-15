@@ -1,0 +1,3 @@
+= Documentation Archive
+:page-layout: archive
+:!sectids:
