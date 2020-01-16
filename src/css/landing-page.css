@@ -1,0 +1,97 @@
+/* Landing Page CSS  */
+
+.doc.landing-page-doc h1{
+  color: var(--color-brand-gray1);
+  font-size: 2.5rem;
+  font-weight: var(--weight-semibold);
+}
+
+.doc.landing-page-doc p{
+  font-size: 1rem;
+  color: var(--color-brand-gray1);
+}
+
+.card-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.doc.landing-page-doc .sub-heading {
+  margin-bottom: 30px;
+}
+.card-row .column{
+  max-width: 48%;
+  flex-basis: 48%;
+  margin-bottom: 35px;
+}
+
+.doc.landing-page-doc h3{
+  font-size: 1.5rem;
+  line-height: 130%;
+  color: var( --color-brand-gray4);
+  margin: 0;
+
+}
+.doc.landing-page-doc figure{
+  margin-bottom: 0;
+}
+.doc.landing-page-doc .media-left{
+  margin-left: 30px;
+}
+ .doc.landing-page-doc img{
+  max-width: 100%;
+}
+ .doc.landing-page-doc ul {
+  padding: 0;
+  margin-top: 30px;
+}
+ .doc.landing-page-doc ul li{
+  list-style: none;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+ .doc.landing-page-doc ul li a{ 
+  text-decoration: none;
+  color: var( --color-brand-blue);
+}
+
+.doc.landing-page-doc .media-box{ 
+  text-align: center;
+  border:1px solid var(--color-brand-gray6);
+  border-radius: 5px;
+  padding: 20px;
+}
+.doc.landing-page-doc .media-box .media-heading{
+  margin-bottom: 15px;
+ }
+
+.doc.landing-page-doc h4{
+  font-size: 	1.125rem;
+  margin: 0;
+  color: var( --color-brand-gray4);
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .card-row .column{
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+  /* .card-row .column{
+    margin-bottom: 15px;
+  } */
+  .card-row{ 
+    margin-bottom: 15px;
+  }
+  .doc.landing-page-doc .media-left{
+    margin-left: 0px;
+  }
+  .doc.landing-page-doc figure{
+    text-align: center;
+  }
+
+}
