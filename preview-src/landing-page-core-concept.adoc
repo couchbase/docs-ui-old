@@ -1,0 +1,4 @@
+= Couchbase Tutorials
+:page-layout: landing-page-core-concept
+:page-role: tiles
+:!sectids:
