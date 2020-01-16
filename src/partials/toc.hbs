@@ -1,3 +1,59 @@
 <aside class="toc sidebar">
-  <div class="toc-menu"></div>
+  <div class="sidebar-box">
+      <div class="toc-menu"></div>
+        <div class="is-this-helpful-box">
+          <h4> Is this page helpful ?</h4>
+            <div class="btn-row">
+              <a href="#" class="like-btn helpfull-btn" id="yesBtn" data-page-rating="like" >
+                     <i class="far fa-thumbs-up"></i>
+                 Yes
+
+                 </a>
+              <a href="#" class="dislike-btn helpfull-btn" id="noBtn"  data-page-rating="dislike"> <i class="far fa-thumbs-down"></i> No</a>
+            </div>
+            <div class="dialog-box" id="dialogBox">
+              <form>
+                  <div class="form-group " id="additionalFeedbackBox"> 
+                    <textarea class="input-control feed-back-msg" rows="8" placeholder="Any Additonal Feedback?"></textarea>
+                    
+                    <div class="action-btn-row ">
+                      <a href="#" class="skip-btn" id="skipBtnMsg">Skip</a>
+                       <button class="submit-btn btn blue-btn disabled" > Submit  </button>
+                       <a href="#" class="info-btn"><i class="fas fa-info-circle"></i></a>
+                    </div>
+               
+
+                  </div>
+
+                  <div class="leave-addtional-box" id="leaveAddtinalBox">
+                    <div class="text-msg"> <p>Leave Additional Feedback?</p> </div>
+                         <div class="action-btn-row leave-feedback-btn-row">
+                            <a href="#" class="skip-btn" id="skipLeaveBtn">Skip</a>
+                            <button class="yes-btn btn blue-btn"> Yes  </button>
+                            
+                      </div>
+                  </div>
+              </form>
+
+            </div>
+      </div>
+   </div>
+
 </aside>
+
+<div class="feedback-modal modal-popup">
+  <div class="modal-popup-dialogue">
+    <div class="popup-header">
+      <a href="#" class="close-popup"><i class="fa fa-times"></i></a>
+    </div>
+    <div class="popup-content">
+      <p>
+        Please use the form below to provide your feedback. Because your feedback is valuable to us,
+         the information you submit in this form is recorded in our issue tracking system (JIRA), which is publicly available.
+        You can track the status of your feedback using the ticket number displayed in the dialog once you submit the form.
+      </p>
+    </div>
+  </div>
+</div>
+
+{{!-- <script src="https://kit.fontawesome.com/4a5569d39d.js" crossorigin="anonymous"></script> --}}

@@ -29,7 +29,8 @@
 .doc h2 {
   font-size: 1.875rem;
   margin: 2.25rem 0 2.5rem;
-  max-width: fit-content; /* NOTE used to restrict width of key line */
+  max-width: fit-content;
+  /* NOTE used to restrict width of key line */
 }
 
 .doc h2::after {
@@ -60,7 +61,11 @@
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
   color: var(--color-brand-red);
-  background-image: -webkit-linear-gradient(-45deg, var(--color-brand-purple), var(--color-brand-red) 75%);
+  background-image: -webkit-linear-gradient(
+    -45deg,
+    var(--color-brand-purple),
+    var(--color-brand-red) 75%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: var(--weight-normal);
@@ -134,12 +139,12 @@
 .doc .literalblock .title,
 .doc .openblock .title,
 .doc caption {
-  /* font-size: 1.125rem; */
-  font-size: 1.0625rem;
-  font-weight: var(--weight-bold);
+  font-size: 1rem;
+  font-weight: var(--weight-semibold);
   letter-spacing: -0.025em;
   line-height: 1.2;
   margin-bottom: 0.25rem;
+  color: var(--color-brand-gray3);
 }
 
 .doc hr {
@@ -148,7 +153,7 @@
   border-top-width: 1px;
 }
 
-.doc table.tableblock,
+/* .doc table.tableblock,
 .doc th.tableblock,
 .doc td.tableblock {
   border: 0 solid var(--color-border-table);
@@ -158,9 +163,10 @@
   border-width: 1px;
   border-collapse: collapse;
   margin: 1.5rem 0 2rem;
-}
+} */
 
 /* TODO drop .spread after upgrading to Asciidoctor 1.5.7 */
+
 .doc table.spread,
 .doc table.stretch {
   width: 100%;
@@ -170,57 +176,20 @@
   text-align: left;
 }
 
-.doc table.tableblock > tbody {
+/* .doc table.tableblock > tbody {
   font-weight: var(--weight-light);
-}
+} */
 
 /* NOTE prevent wide tables from exceeding bounds */
+
 /* TODO could also target table.tableblock[style^="width:"] */
+
 /* TODO drop .spread after upgrading to Asciidoctor 1.5.7 */
+
 .doc table.spread > tbody > tr > *,
 .doc table.stretch > tbody > tr > * {
   /* NOTE setting max-width reactivates overflow-wrap behavior on the table cell */
   max-width: 0;
-}
-
-/* NOTE alternate way to prevent wide tables from exceeding bounds, but can overly compress header cells */
-/* table-layout: fixed strictly enforces table and column widths */
-/* another alternative is to wrap table in div and set overflow-x: auto on wrapper */
-/*
-.doc table.spread,
-.doc table.stretch {
-  table-layout: fixed;
-}
-*/
-
-.doc table.tableblock > tbody > tr:nth-of-type(even) {
-  background-color: var(--color-shade);
-}
-
-.doc th.tableblock {
-  font-weight: var(--weight-medium);
-  letter-spacing: -0.025em;
-}
-
-.doc th.tableblock,
-.doc td.tableblock {
-  border-width: 0 1px;
-  padding: 0.75rem 1rem;
-}
-
-.doc thead th.tableblock {
-  border-width: 1px;
-  font-size: 1.0625rem;
-  line-height: 1.2;
-}
-
-.doc p.tableblock + p.tableblock {
-  margin-top: 1rem;
-}
-
-/* NOTE in Asciidoctor 1.5.7, this div will have a class */
-.doc td.tableblock > div > :first-child {
-  margin-top: 0;
 }
 
 .doc .halign-left {
@@ -262,7 +231,7 @@
 }
 
 .doc .admonitionblock td.icon i::before {
-  background: no-repeat 0/cover;
+  background: no-repeat 0 / cover;
   content: "";
   display: block;
   height: 1.875rem;
@@ -506,7 +475,8 @@
 .doc pre.highlight code {
   background-color: #151514;
   color: #f8f8f2;
-  font-weight: var(--weight-normal); /* needed to override third-party styles */
+  font-weight: var(--weight-normal);
+  /* needed to override third-party styles */
   padding: 0.625rem;
   white-space: pre-wrap;
   /* NOTE enable these styles if side-to-side scrolling is preferred */
@@ -518,6 +488,7 @@
 }
 
 /* NOTE assume pre.highlight contains code[data-lang] */
+
 .doc pre.highlight {
   position: relative;
 }
@@ -751,7 +722,8 @@
   background-color: var(--color-brand-white);
   content: "";
   display: block;
-  height: 3px; /* Chrome doesn't always paint the line accurately, so add a little extra */
+  height: 3px;
+  /* Chrome doesn't always paint the line accurately, so add a little extra */
   position: absolute;
   bottom: -1.5px;
   left: 0;
@@ -770,4 +742,128 @@
 
 .doc .tab-pane > :first-child {
   margin-top: 0;
+}
+/* Media css  */
+
+@media screen and (min-width: 840px) {
+  .active-tab-item-row,
+  .tabset .dropddown-btn{
+    display: none;
+  }
+  .doc .tabs ul.hide{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 840px) {
+  .tabset {
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .active-tab-item-row {
+    display: inline-block;
+    max-width:60%;
+  }
+
+  .active-tab-item-row a {
+    align-items: center;
+    color: var(--color-brand-gray1);
+    border: 1px solid var(--color-border);
+    border-bottom: 0;
+    cursor: pointer;
+    display: flex;
+    font-weight: var(--weight-bold);
+    min-height: 2.5rem;
+    line-height: 1;
+    margin-right: 0.25rem;
+    padding: 0 1.5rem 5px;
+    position: relative;
+    text-decoration: none;
+  }
+
+  .active-tab-item-row a::after,
+  .active-tab-item-row a::after {
+    background-color: var(--color-brand-white);
+    content: "";
+    display: block;
+    height: 3px;
+    /* Chrome doesn't always paint the line accurately, so add a little extra */
+    position: absolute;
+    bottom: -1.5px;
+    left: 0;
+    right: 0;
+  }
+  
+  .ulist.tabs {
+    margin: 0;
+    position: relative;
+  }
+
+  .doc .tabs .dropddown-btn{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+     color: #333;
+  }
+
+  .doc .tabs .dropddown-btn .fas{
+    font-size: 18px;
+    margin-left: 10px;
+  }
+
+  .doc .tabs .dropddown-btn:focus,
+  .doc .tabs .dropddown-btn:hover{
+    outline: none;
+    text-decoration: none;
+  }
+
+  .doc .tabs ul {
+    box-shadow: 0px 3px 10px -3px #ccc;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 120px;
+    display: none;
+    overflow-y: auto;
+    background-color: var(--color-brand-white);
+  }
+
+  .doc .tabs ul p {
+    color: var(--color-brand-gray1);
+  }
+  
+  .doc .tabset:not(.is-loading) .tabs li:not(.is-active) {
+    background: var( --color-brand-white);
+    min-height: 2.5rem;
+    height: auto;
+    padding: .75rem;
+  }
+  
+  .doc .tabs li.is-active {
+    display: none;
+  }
+  
+  .doc .tabs li {
+    width: 100%;
+    flex-wrap: wrap;
+    margin-right: 0;
+    border-top: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .doc .tabset > .content{
+    width: 100%;
+  }
+  
+  .doc .tabs ul.show{
+    display: block;
+  }
 }

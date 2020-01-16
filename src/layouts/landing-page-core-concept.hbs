@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+{{> head-first}}
+    <title>{{{detag (or page.title 'landing page')}}}{{#if site.title}} | {{{site.title}}}{{/if}}</title>
+{{> head-last}}
+  </head>
+  <body class="landing-page">
+{{> header}}
+{{> body-landing-core-concept}}
+{{> footer}}
+  </body>
+</html>
