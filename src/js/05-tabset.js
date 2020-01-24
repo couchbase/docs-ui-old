@@ -1,6 +1,6 @@
 ;(function () {
   'use strict'
-
+  console.log('this test')
   var hash = window.location.hash
   find('.doc .tabset').forEach(function (tabset) {
     var active
