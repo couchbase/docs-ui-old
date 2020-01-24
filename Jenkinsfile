@@ -26,6 +26,9 @@ pipeline {
   options {
     disableConcurrentBuilds()
   }
+  triggers {
+    githubPush()
+  }
   stages {
     stage('Configure') {
       steps {
