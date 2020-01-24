@@ -3,6 +3,11 @@
   align-items: center;
   flex-wrap: wrap;
   margin: 15px 0;
+  visibility: hidden;
+}
+
+.contributor-list-box.show {
+  visibility: visible;
 }
 
 .contributor-list-box span {
