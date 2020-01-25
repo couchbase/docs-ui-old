@@ -1,8 +1,5 @@
 <main class="article" data-ceiling="topbar">
-{{#if page.attributes.hide-view-latest}}
-  <!-- No `View Latest` banner -->
-{{else}}
-  {{#if (ne page.componentVersion page.component.latest)}}
+  {{#unless (or page.attributes.hide-view-latest (eq page.componentVersion page.component.latest))}}
   <div class="article-banner">
     {{#if page.componentVersion.prerelease}}
     <p>You are viewing the documentation for a prerelease version.</p>
@@ -11,8 +8,7 @@
     {{/if}}
     <a class="btn" href="{{ifelse (eq env.SUPPORTS_CURRENT_URL 'true') (relativize (current-url page.url)) (relativize page.latest.url)}}">View Latest</a>
   </div>
-  {{/if}}
-{{/if}}
+  {{/unless}}
   <div class="article-header">
 {{> nav-control}}
 {{> crumbs}}
