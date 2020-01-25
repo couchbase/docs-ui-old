@@ -5,7 +5,7 @@ const { posix: path } = require('path')
 module.exports = (to, { data: { root } }) => {
   if (!to) return '#'
   const from = root.page.url
-  if (!from || to.charAt() === '#') return to
+  if (!from || to.charAt() !== '/') return to
   let hash = ''
   const hashIdx = to.indexOf('#')
   if (~hashIdx) {
