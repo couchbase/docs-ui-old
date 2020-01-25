@@ -173,6 +173,16 @@ a.navbar-item.has-dropdown::after,
   grid-column: 1 / 3;
 }
 
+.navbar-dropdown li.current {
+  font-weight: var(--weight-medium);
+}
+
+.navbar-dropdown li.current a.navbar-item::before {
+  content: "\2023";
+  position: absolute;
+  left: -0.75em;
+}
+
 @media screen and (min-width: 1024px) {
   .navbar-start > a.navbar-item:hover,
   .navbar-start > .navbar-item:hover > .navbar-link {
