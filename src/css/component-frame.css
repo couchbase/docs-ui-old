@@ -1,7 +1,7 @@
 .component-frame {
   /* rgba(87, 160, 255, 1) */
-  background: rgba(var(--color-blue-rgb), 0.07);
-  padding: 12px 30px;
+  /* background: rgba(var(--color-blue-rgb), 0.07); */
+  padding: 12px 30px 12px 15px;
   display: flex;
   align-items: center;
 }
