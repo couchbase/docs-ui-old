@@ -88,14 +88,14 @@
   border-left: 1px solid var(--color-brand-gray5);
 }
 
-.nav-menu .nav-item.is-active.is-active-depth-2[data-depth='0'] > .nav-list {
+/* .nav-menu .nav-item.is-active.is-active-depth-2[data-depth='0'] > .nav-list {
   margin-left: 1.875rem;
   border-left: none;
-}
+} */
 
-.nav-menu .nav-item.is-active.is-active-depth-2[data-depth='0'] > .nav-line {
+/* .nav-menu .nav-item.is-active.is-active-depth-2[data-depth='0'] > .nav-line {
   display: none;
-}
+} */
 
 .nav-menu .nav-item:not(.is-active) > .nav-list {
   display: none;
