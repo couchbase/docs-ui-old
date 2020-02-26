@@ -4,7 +4,7 @@
   width: inherit;
   overflow-y: scroll;
   font-size: 1rem;
-  line-height: 1.35;
+  line-height: 24px;
 }
 
 @media screen and (max-width: 768px) {
@@ -58,7 +58,7 @@
 }
 
 .nav-menu a.nav-link {
-  color: var(--color-text);
+  color: var(--color-brand-gray3);
   text-decoration: none;
 }
 
@@ -190,8 +190,8 @@ html.is-clipped--nav {
 }
 
 .main-nav-parent {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 16px;
+  line-height: 20px;
   color: var(--color-brand-gray2);
   display: flex;
   margin: 10px 0;
@@ -237,6 +237,10 @@ html.is-clipped--nav {
   justify-content: flex-end;
   padding: 0.625rem 1rem;
   flex-direction: row-reverse;
+}
+
+.nav-line[data-depth="1"] .nav-link{
+  color: var(--color-brand-gray4);
 }
 
 .is-active[data-depth='0'] .is-active > .nav-line[data-depth="1"] {
