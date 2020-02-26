@@ -239,7 +239,7 @@ html.is-clipped--nav {
   flex-direction: row-reverse;
 }
 
-.nav-line[data-depth="1"] .nav-link{
+.nav-line[data-depth="1"] .nav-link {
   color: var(--color-brand-gray4);
 }
 
