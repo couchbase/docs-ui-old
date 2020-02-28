@@ -61,11 +61,7 @@
 .doc h5 > a.anchor,
 .doc h6 > a.anchor {
   color: var(--color-brand-red);
-  background-image: -webkit-linear-gradient(
-    -45deg,
-    var(--color-brand-purple),
-    var(--color-brand-red) 75%
-  );
+  background-image: -webkit-linear-gradient(-45deg, var(--color-brand-purple), var(--color-brand-red) 75%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: var(--weight-normal);
@@ -747,14 +743,14 @@
 
 @media screen and (min-width: 840px) {
   .active-tab-item-row,
-  .tabset .dropddown-btn{
+  .tabset .dropddown-btn {
     display: none;
   }
-  .doc .tabs ul.hide{
+
+  .doc .tabs ul.hide {
     display: none;
   }
 }
-
 
 @media screen and (max-width: 840px) {
   .tabset {
@@ -768,7 +764,7 @@
 
   .active-tab-item-row {
     display: inline-block;
-    max-width:60%;
+    max-width: 60%;
   }
 
   .active-tab-item-row a {
@@ -787,7 +783,6 @@
     text-decoration: none;
   }
 
-  .active-tab-item-row a::after,
   .active-tab-item-row a::after {
     background-color: var(--color-brand-white);
     content: "";
@@ -799,33 +794,33 @@
     left: 0;
     right: 0;
   }
-  
+
   .ulist.tabs {
     margin: 0;
     position: relative;
   }
 
-  .doc .tabs .dropddown-btn{
+  .doc .tabs .dropddown-btn {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
-     color: #333;
+    color: #333;
   }
 
-  .doc .tabs .dropddown-btn .fas{
+  .doc .tabs .dropddown-btn .fas {
     font-size: 18px;
     margin-left: 10px;
   }
 
   .doc .tabs .dropddown-btn:focus,
-  .doc .tabs .dropddown-btn:hover{
+  .doc .tabs .dropddown-btn:hover {
     outline: none;
     text-decoration: none;
   }
 
   .doc .tabs ul {
-    box-shadow: 0px 3px 10px -3px #ccc;
+    box-shadow: 0 3px 10px -3px #ccc;
     margin: 0;
     position: absolute;
     left: 0;
@@ -836,21 +831,17 @@
     background-color: var(--color-brand-white);
   }
 
-  .doc .tabs ul p {
-    color: var(--color-brand-gray1);
-  }
-  
+  .doc .tabs ul p { color: var(--color-brand-gray1); }
+
   .doc .tabset:not(.is-loading) .tabs li:not(.is-active) {
-    background: var( --color-brand-white);
+    background: var(--color-brand-white);
     min-height: 2.5rem;
     height: auto;
-    padding: .75rem;
+    padding: 0.75rem;
   }
-  
-  .doc .tabs li.is-active {
-    display: none;
-  }
-  
+
+  .doc .tabs li.is-active { display: none; }
+
   .doc .tabs li {
     width: 100%;
     flex-wrap: wrap;
@@ -858,12 +849,12 @@
     border-top: 0;
     border-bottom: 1px solid var(--color-border);
   }
-  
-  .doc .tabset > .content{
+
+  .doc .tabset > .content {
     width: 100%;
   }
-  
-  .doc .tabs ul.show{
+
+  .doc .tabs ul.show {
     display: block;
   }
 }

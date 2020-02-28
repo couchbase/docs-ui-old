@@ -130,8 +130,6 @@
   z-index: 1001;
 }
 
-
-
 .modal-popup .modal-popup-dialogue {
   padding: 10px 15px;
   /* height: auto; */
@@ -144,16 +142,11 @@
   box-shadow: 0 0 10px #333;
   transform: translate(0%, -100%);
   transition: all 0.3s;
-  
 }
 
-.modal-popup.show{ 
-  display: block;
-}
+.modal-popup.show { display: block; }
 
-.modal-popup.show .modal-popup-dialogue{ 
-  transform: translate(0%, 200px);
-}
+.modal-popup.show .modal-popup-dialogue { transform: translate(0%, 200px); }
 
 .modal-popup .popup-header {
   display: flex;
