@@ -3,7 +3,7 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: var(--z-index-nav-mobile);
 }
 
 .btn {
