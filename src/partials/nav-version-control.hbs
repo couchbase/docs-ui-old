@@ -32,7 +32,15 @@
                     </div>
                 </div>
             {{else}}
-            <a class="navbar-item component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span>{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
+              <div class="component-frame">
+                <div class="frame-icon">
+                  <img src="{{uiRootPath}}/img/server-icon.png" alt="">
+                </div>
+                <div class="frame-body">
+                  <h4 class="title"><span class="title">{{{page.component.title}}}</span></h4>
+                  <a class="navbar-item component" href="{{relativize page.componentVersion.url}}">{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">Version {{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
+                </div>
+              </div>
             {{/if}}
         {{/if}}
     {{/if}}
