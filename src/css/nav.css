@@ -232,7 +232,8 @@ html.is-clipped--nav {
   display: none;
 }
 
-.nav-line[data-depth="1"] {
+.nav-line[data-depth="1"],
+.nav-line[data-depth="2"] {
   display: flex;
   justify-content: flex-end;
   padding: 0.625rem 1rem;
@@ -256,7 +257,7 @@ html.is-clipped--nav {
   transform: rotate(90deg);
 } */
 
-.nav-menu .nav-item.is-active[data-depth='1'] > .nav-list {
+.nav-menu .nav-item.is-active[data-depth='1'] .nav-list {
   margin-left: 1.5rem;
 }
 

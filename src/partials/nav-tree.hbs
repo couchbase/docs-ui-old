@@ -1,8 +1,8 @@
 {{#if navigation}}
   {{#each navigation}}
     {{#if (eq ../crumbAtLevel this)}}
-      {{#if ( eq ../crumbLevel 0)}} 
-          <div class="main-nav-parent">
+      {{#if ( eq ../crumbLevel 0 or eq ../crumbLevel 1 or eq ../crumbLevel 2)}} 
+          <div class="main-nav-parent new">
             <span class="back-to-menu">Main Menu </span>
             {{!-- <span class="nav-text">{{{./content}}}</span> --}}
           </div>
