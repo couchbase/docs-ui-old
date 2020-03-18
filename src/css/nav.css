@@ -224,6 +224,7 @@ html.is-clipped--nav {
 }
 
 .in-toggle {
+  display: none;
   cursor: pointer;
   /* margin-right: 10px; */
 }
