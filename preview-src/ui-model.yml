@@ -77,6 +77,7 @@ page:
     latest: *latest_page
   navigation:
   - content: Introduction
+    icons: fas fa-database
     items:
     - content: Why Couchbase?
       url: '#'
@@ -85,6 +86,7 @@ page:
       url: '#'
       urlType: fragment
   - content: Getting Started
+    icons: fas fa-database
     items:
     - content: Start Here!
       url: '#'
@@ -93,6 +95,7 @@ page:
       url: '#'
       urlType: fragment
   - content: Developers
+    icons: fas fa-database
     items:
     - content: Hello World!
       url: '#'
@@ -102,6 +105,7 @@ page:
       urlType: fragment
   - &crumb_0
     content: Managing Clusters
+    icons: fas fa-database
     items:
     - &crumb_1
       content: Monitoring
@@ -144,6 +148,7 @@ page:
         url: '#'
         urlType: fragment
   - content: Installing &amp; Upgrading
+    icons: fas fa-database
     items:
     - content: Couchbase Server Installation Home
       url: '#'
@@ -163,6 +168,7 @@ page:
         url: '#'
         urlType: fragment
   - content: Understanding Couchbase
+    icons: fas fa-database
     items:
     - content: Overview
       url: '#'
