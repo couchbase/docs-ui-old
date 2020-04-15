@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap');
+
+.is-this-helpful-box * { font-family: 'Source Sans Pro', sans-serif; }
+
+.is-this-helpful-box {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 25px;
+  border-top: 1px solid #ccc;
+  padding-top: 25px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.is-this-helpful-box .btn-row {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  margin: 15px 0;
+}
+
+.is-this-helpful-box .btn-row .helpfull-btn {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.is-this-helpful-box .btn-row .helpfull-btn:hover,
+.is-this-helpful-box .btn-row .helpfull-btn.active {
+  color: var(--color-brand-blue);
+}
+
+.is-this-helpful-box .btn-row .like-btn { margin-right: 15px; }
+
+.is-this-helpful-box .input-control {
+  width: 100%;
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid var(--color-brand-gray5);
+  resize: vertical;
+  font-size: 1rem;
+  color: var(--color-brand-gray4);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.dialog-box { display: none; }
+
+.dialog-box .blue-btn {
+  background-color: var(--color-brand-blue);
+  color: var(--color-brand-white);
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  border: 2px solid var(--color-brand-blue);
+  display: inline-block;
+  border-radius: 5px;
+  font-weight: 500;
+  height: 30px;
+  width: 65px;
+  margin: 0 10px;
+}
+
+.dialog-box .disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.dialog-box .blue-btn.like-btn { opacity: 1; }
+
+.is-this-helpful-box h4 {
+  font-weight: var(--weight-semibold);
+  margin: 0 0 10px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  color: var(--color-brand-gray4);
+}
+
+.is-this-helpful-box .action-btn-row {
+  text-align: right;
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+.is-this-helpful-box .action-btn-row .skip-btn {
+  display: inline-block;
+  font-weight: var(--weight-semibold);
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  color: var(--color-brand-blue);
+}
+
+.is-this-helpful-box .action-btn-row .info-btn {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  color: var(--color-brand-gray4);
+  display: inline-block;
+}
+
+.is-this-helpful-box .text-msg p {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  color: var(--color-brand-gray3);
+}
+
+.is-this-helpful-box .leave-addtional-box { display: none; }

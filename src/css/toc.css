@@ -9,7 +9,7 @@
   margin-bottom: 1.5rem;
 }
 
-.toc.sidebar .toc-menu {
+.sidebar-box {
   position: fixed; /* for IE */
   width: inherit; /* for position: fixed */
   position: sticky; /* stylelint-disable-line declaration-block-no-duplicate-properties */
@@ -19,13 +19,9 @@
   -ms-overflow-style: none;
 }
 
-.toc.embedded .toc-menu {
-  margin-top: 1rem;
-}
+.toc.embedded .toc-menu { margin-top: 1rem; }
 
-.toc-menu::-webkit-scrollbar {
-  width: 0;
-}
+.toc-menu::-webkit-scrollbar { width: 0; }
 
 .toc .toc-menu h3 {
   font-size: inherit;
@@ -46,9 +42,7 @@
   margin-left: 0.75rem;
 }
 
-.toc .toc-menu li {
-  margin: 0.5rem 0 0;
-}
+.toc .toc-menu li { margin: 0.5rem 0 0; }
 
 .toc a {
   color: inherit;
@@ -56,9 +50,7 @@
   text-decoration: none;
 }
 
-.toc a:hover {
-  color: var(--color-link);
-}
+.toc a:hover { color: var(--color-link); }
 
 .toc a.is-active {
   font-weight: var(--weight-medium);
@@ -70,6 +62,4 @@
   color: inherit;
 }
 
-.toc code {
-  line-height: 1.125;
-}
+.toc code { line-height: 1.125; }
