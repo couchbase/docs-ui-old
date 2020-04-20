@@ -1,29 +1,96 @@
+<style>
+body.body div.navbar-margin {
+  margin-bottom: 40px;
+}
+body.body div.navbar-margin div.banner {
+  height: calc(220px - 4.875rem);
+}
+body.body div.navbar-margin div.banner h1 {
+  margin-top: 20px;
+  font-size: 1.9rem;
+  text-transform: none;
+}
+body.body div.navbar-margin div.banner h2 {
+  font-size: 1.5rem;
+  padding: 5px 0 10px 0;
+}
+div.home div.tutorials article.doc {
+  display: block;
+}
+div.home div.tutorials article.doc div.sect1 {
+  margin-top: 40px;
+  border: none;
+}
+div.home div.tutorials article.doc div.sect1 h2 {
+  padding-left: 0.9rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #e0e0e8;
+}
+div.home div.tutorials article.doc div.sect1 h2::after {
+  outline: none;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 {
+  justify-content: left;
+  height: auto;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 h6 {
+  display: none;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 {
+  width: auto;
+  text-align: left;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 .ulist {
+  margin-top: 0;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 ul,
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 ul li,
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 ul li p {
+  display: inline;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 ul li {
+  background-color: #d0f0d0;
+  margin: 0 3px 0 3px;
+  border-radius: 6px;
+  padding: 5px 3px 5px 5px;
+  font-size: 0.8rem;
+}
+div.home div.tutorials article.doc div.sect1 .sect4 .sect5 + .sect5 ul li {
+  background-color: #d0d0f0;
+}
+div.home div.tutorials article.doc div.sect1 .sect2 .links p {
+  display: block;
+  margin-left: 14px;
+}
+div.home div.tutorials article.doc div.sect1 .sect2 .links p a {
+  display: block;
+  text-align: left;
+}
+div.home div.tutorials article.doc div.sect1 .sect2.metadata {
+  display: block;
+  border: none;
+  padding: 0 0.625rem 0 0.625rem;
+}
+div.home div.tutorials article.doc div.sect1 .sect2.metadata h3 {
+  display: inline-block;
+  background-color: #f0f0d0;
+  margin: 0 3px 0 3px;
+  border-radius: 6px;
+  padding: 5px 3px 5px 5px;
+  font-size: 0.8rem;
+}
+</style>
+
 <div class="navbar-margin">
   <div class="banner">
     <div class="container banner-content">
       <div>
         <h1>Couchbase Tutorials</h1>
-        <h2>Go hands-on with the Couchbase Data Platform</h2>
+        <h2>Go hands-on with Couchbase</h2>
       </div>
     </div>
-  </div>
-  <div>
-    <nav class="searchbar">
-      <div class="container">
-        <div class="searchbar-menu">
-          <div class="searchbar-start">
-            <form class="searchbar-item search">
-              <input
-                      autofocus
-                      class="query"
-                      id="search-tutorials"
-                      placeholder="Find a tutorial"
-                      type="text">
-            </form>
-          </div>
-        </div>
-      </div>
-    </nav>
   </div>
 </div>
 
