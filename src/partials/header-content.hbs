@@ -32,22 +32,21 @@
     height: 2.5rem;
     z-index: var(--z-index-navbar-dropdown);
   }
-  body.home nav.navbar .navbar-dropdown li:hover {
+  body nav.navbar .navbar-dropdown li:hover {
     background-color: inherit;
   }
-  body.home nav.navbar .navbar-dropdown a::after {
+  body nav.navbar .navbar-dropdown a::after {
     transition: none;
   }
   </style>
   <script>
   document.addEventListener("click", function(e) {
-    if (e.target.className == "navbar-dropper") {
-      return;
-    }
-    // Else make the dropdown disappear.
+    // Hide any popped-up dropdown menus.
     var droppers = document.getElementsByClassName("navbar-dropper");
     for (var i = 0; i < droppers.length; i++) {
-      droppers[i].checked = false;
+      if (droppers[i] != e.target) {
+        droppers[i].checked = false;
+      }
     }
   });
   </script>
@@ -109,8 +108,9 @@
           {{#if (and page.component (ne page.component.name 'tutorials'))}}
           {{#if (and page.component (ne page.component.name 'userprofile-couchbase-mobile'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
-          <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
+          <div class="navbar-item has-dropdown-click">
+            <label for="menu-versions" class="navbar-dropper">{{{page.component.title}}}</label>
+            <input id="menu-versions" class="navbar-dropper" type="checkbox"/>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
