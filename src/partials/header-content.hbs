@@ -1,4 +1,56 @@
 <header class="header">
+  <style>
+  .navbar-item.has-dropdown-click label.navbar-dropper {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    position: relative;
+  }
+  .navbar-item.has-dropdown-click label.navbar-dropper::after {
+    content: "";
+    position: absolute;
+    background: url(../img/caret-down.svg) no-repeat 50% 50%;
+    width: 0.875rem;
+    height: 1rem;
+    margin-left: 0.25rem;
+  }
+  .navbar-item.has-dropdown-click input[type="checkbox"] {
+    display: none;
+  }
+  .navbar-item.has-dropdown-click input[type="checkbox"]:checked + .navbar-dropdown {
+    visibility: visible;
+    opacity: 1;
+  }
+  .navbar-item.has-dropdown-click input[type="checkbox"]:checked + .navbar-dropdown::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2.5rem;
+    right: 0;
+    left: 0;
+    height: 2.5rem;
+    z-index: var(--z-index-navbar-dropdown);
+  }
+  body.home nav.navbar .navbar-dropdown li:hover {
+    background-color: inherit;
+  }
+  body.home nav.navbar .navbar-dropdown a::after {
+    transition: none;
+  }
+  </style>
+  <script>
+  document.addEventListener("click", function(e) {
+    if (e.target.className == "navbar-dropper") {
+      return;
+    }
+    // Else make the dropdown disappear.
+    var droppers = document.getElementsByClassName("navbar-dropper");
+    for (var i = 0; i < droppers.length; i++) {
+      droppers[i].checked = false;
+    }
+  });
+  </script>
   <nav class="navbar" id="topbar">
     <div class="container">
       <div class="navbar-brand">
@@ -11,18 +63,21 @@
       </div>
       <div id="topbar-menu" class="navbar-menu">
         <div class="navbar-start">
-          <div class="navbar-item has-dropdown">
-            <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Docs</a>
+          <div class="navbar-item has-dropdown-click">
+            <label for="docs" class="navbar-dropper">Docs</label>
+            <input id="docs" class="navbar-dropper" type="checkbox"/>
             <div class="navbar-dropdown explore">
-              <div class="title">Couchbase Documentation Overview</div>
+              <div class="title">
+                <a href="{{or site.url (or siteRootUrl siteRootPath)}}">Couchbase Docs Home</a>
+              </div>
               <div class="cols">
                 <ul>
                   <li class="heading"><a href="{{relativize site.components.server.url}}">Server</a></li>
                   <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/n1ql/n1ql-language-reference/index.html">N1QL</a></li>
                   <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/fts/full-text-intro.html">Full Text Search</a></li>
-                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/analytics/introduction.html">Analytics</a></li>
                   <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/eventing/eventing-overview.html">Eventing</a></li>
-                  <li><a href="{{relativize site.components.operator.url}}">Autonomous Operator</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/analytics/introduction.html">Analytics</a></li>
+                  <li><a href="{{relativize site.components.operator.url}}">Kubernetes</a></li>
                 </ul>
                 <ul>
                   <li class="heading">Mobile</li>
@@ -31,21 +86,20 @@
                 </ul>
                 <ul class="two-cols">
                   <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/sdk/overview.html">SDKs</a></li>
-                  <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
-                  <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
-                  <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
                   <li><a href="{{relativize site.components.java-sdk.url}}">Java</a></li>
+                  <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
                   <li><a href="{{relativize site.components.nodejs-sdk.url}}">Node.js</a></li>
-                  <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
                   <li><a href="{{relativize site.components.python-sdk.url}}">Python</a></li>
+                  <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
+                  <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
+                  <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
                   <li><a href="{{relativize site.components.scala-sdk.url}}">Scala</a></li>
                 </ul>
                 <ul>
                   <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/intro.html">Connectors</a></li>
-                  <li><a href="{{relativize site.components.elasticsearch-connector.url}}">Elasticsearch</a></li>
-                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/hadoop-1.2/hadoop.html">Hadoop</a></li>
                   <li><a href="{{relativize site.components.kafka-connector.url}}">Kafka</a></li>
                   <li><a href="{{relativize site.components.spark-connector.url}}">Spark</a></li>
+                  <li><a href="{{relativize site.components.elasticsearch-connector.url}}">Elasticsearch</a></li>
                   <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/odbc-jdbc-drivers.html">ODBC/JDBC</a></li>
                 </ul>
               </div>
