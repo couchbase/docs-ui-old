@@ -94,6 +94,7 @@
 }
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
+  background-color: #e0e0e0;
   color: var(--color-text);
   font-weight: var(--weight-medium);
 }
