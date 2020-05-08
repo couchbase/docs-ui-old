@@ -11,26 +11,17 @@ const requireFromString = require('require-from-string')
 const vfs = require('vinyl-fs')
 const yaml = require('js-yaml')
 
-const ASCIIDOC_ATTRIBUTES = {
-  experimental: '',
-  icons: 'font',
-  sectanchors: '',
-  'source-highlighter': 'highlight.js',
-}
+const ASCIIDOC_ATTRIBUTES = { experimental: '', icons: 'font', sectanchors: '', 'source-highlighter': 'highlight.js' }
 
-module.exports = (src, previewSrc, previewDest, sink = () => map(), layouts = {}) => (done) =>
+module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
   Promise.all([
     loadSampleUiModel(previewSrc),
     toPromise(
-      merge(
-        compileLayouts(src, layouts),
-        registerHelpers(src),
-        registerPartials(src),
-        copyImages(previewSrc, previewDest)
-      )
+      merge(compileLayouts(src), registerPartials(src), registerHelpers(src), copyImages(previewSrc, previewDest))
     ),
   ])
-    .then(([baseUiModel]) =>
+    .then(([baseUiModel, { layouts }]) => [{ ...baseUiModel, env: process.env }, layouts])
+    .then(([baseUiModel, layouts]) =>
       vfs
         .src('**/*.adoc', { base: previewSrc, cwd: previewSrc })
         .pipe(
@@ -86,7 +77,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map(), layouts = {}
             }
             file.extname = '.html'
             try {
-              file.contents = Buffer.from(layouts[uiModel.page.layout](uiModel))
+              file.contents = Buffer.from(layouts.get(uiModel.page.layout)(uiModel))
               next(null, file)
             } catch (e) {
               next(transformHandlebarsError(e, uiModel.page.layout))
@@ -153,12 +144,20 @@ function registerHelpers (src) {
   )
 }
 
-function compileLayouts (src, layouts) {
+function compileLayouts (src) {
+  const layouts = new Map()
   return vfs.src('layouts/*.hbs', { base: src, cwd: src }).pipe(
-    map((file, enc, next) => {
-      layouts[file.stem] = handlebars.compile(file.contents.toString(), { preventIndent: true })
-      next()
-    })
+    map(
+      (file, enc, next) => {
+        const srcName = path.join(src, file.relative)
+        layouts.set(file.stem, handlebars.compile(file.contents.toString(), { preventIndent: true, srcName }))
+        next()
+      },
+      function (done) {
+        this.push({ layouts })
+        done()
+      }
+    )
   )
 }
 
@@ -188,7 +187,7 @@ function resolvePage (spec, context = {}) {
 }
 
 function resolvePageURL (spec, context = {}) {
-  if (spec) return '/' + spec.slice(0, spec.lastIndexOf('.')) + '.html'
+  if (spec) return '/' + (spec = spec.split(':').pop()).slice(0, spec.lastIndexOf('.')) + '.html'
 }
 
 function transformHandlebarsError ({ message, stack }, layout) {
@@ -200,5 +199,10 @@ function transformHandlebarsError ({ message, stack }, layout) {
 }
 
 function toPromise (stream) {
-  return new Promise((resolve, reject) => stream.on('error', reject).on('finish', resolve))
+  return new Promise((resolve, reject, data = {}) =>
+    stream
+      .on('error', reject)
+      .on('data', (chunk) => chunk.constructor === Object && Object.assign(data, chunk))
+      .on('finish', () => resolve(data))
+  )
 }
