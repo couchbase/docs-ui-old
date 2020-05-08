@@ -1,17 +1,7 @@
-{{#if page.editUrl}}
-{{#if (eq page.component.name 'home')}}
+{{#if (or (and page.fileUri (not env.CI)) (and page.editUrl (not page.origin.private)))}}
 <div class="tools" role="navigation">
   <ul>
-    <li class="tool edit"><a href="{{home-edit-url page.editUrl 'https://github.com/couchbase/docs-site' page.origin.branch}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
+    <li class="tool edit"><a href="{{#if (and page.fileUri (not env.CI))}}{{page.fileUri}}{{else}}{{page.editUrl}}{{/if}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
   </ul>
 </div>
-{{else}}
-{{#unless (and (or page.origin.private (includes page.origin.url '@')) (ne page.origin.worktree true))}}
-<div class="tools" role="navigation">
-  <ul>
-    <li class="tool edit"><a href="{{page.editUrl}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
-  </ul>
-</div>
-{{/unless}}
-{{/if}}
 {{/if}}
