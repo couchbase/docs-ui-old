@@ -1,9 +1,9 @@
-    {{#if page.description}}
-    <meta name="description" content="{{page.description}}">
-    {{/if}}
-    {{#if page.keywords}}
-    <meta name="keywords" content="{{page.keywords}}">
-    {{/if}}
+    {{#with page.description}}
+    <meta name="description" content="{{this}}">
+    {{/with}}
+    {{#with page.keywords}}
+    <meta name="keywords" content="{{this}}">
+    {{/with}}
     {{#if page.component}}
     <link rel="schema.dcterms" href="https://purl.org/dc/terms/">
     <meta name="dcterms.subject" content="{{page.component.name}}">

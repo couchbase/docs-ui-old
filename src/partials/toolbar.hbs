@@ -1,7 +1,7 @@
-{{#if (or (and page.fileUri (not env.CI)) (and page.editUrl (not page.origin.private)))}}
+{{#with (or (and (not env.CI) page.fileUri) (and (not page.origin.private) page.editUrl))}}
 <div class="tools" role="navigation">
   <ul>
-    <li class="tool edit"><a href="{{#if (and page.fileUri (not env.CI))}}{{page.fileUri}}{{else}}{{page.editUrl}}{{/if}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
+    <li class="tool edit"><a href="{{this}}" title="Edit Page" target="_blank" rel="noopener">Edit</a></li>
   </ul>
 </div>
-{{/if}}
+{{/with}}

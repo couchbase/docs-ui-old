@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
 {{> head-first}}
-    <title>{{{detag (or page.title 'Page Not Found')}}}{{#if site.title}} | {{{site.title}}}{{/if}}</title>
+    <title>{{{detag (or page.title 'Page Not Found')}}}{{#with site.title}} | {{this}}{{/with}}</title>
 {{> head-last}}
   </head>
   <body class="status-404">

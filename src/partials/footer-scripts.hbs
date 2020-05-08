@@ -1,7 +1,7 @@
 <script src="{{uiRootPath}}/js/site.js"></script>
-{{#if page.attributes.content-scripts}}
-{{{page.attributes.content-scripts}}}
-{{/if}}
+{{#with page.attributes.content-scripts}}
+{{{this}}}
+{{/with}}
 <script async src="{{uiRootPath}}/js/vendor/highlight.js"></script>
 {{#if env.ALGOLIA_API_KEY}}
 <script async id="search-script" src="{{uiRootPath}}/js/vendor/docsearch.js"

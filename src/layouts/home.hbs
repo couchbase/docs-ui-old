@@ -3,9 +3,9 @@
   <head>
 {{> head-first}}
     <title>Couchbase Documentation</title>
-    {{#if site.url}}
-    <link rel="canonical" href="{{site.url}}">
-    {{/if}}
+    {{#with site.url}}
+    <link rel="canonical" href="{{this}}">
+    {{/with}}
 {{> head-last}}
   </head>
   <body class="home">
