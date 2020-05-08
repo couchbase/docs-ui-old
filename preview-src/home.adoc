@@ -1,5 +1,6 @@
 = Welcome to the new Couchbase Docs!
 :page-layout: home
+:page-component-name: home
 :!sectids:
 
 The new documentation site, now in Beta, is a huge leap forward in our content strategy.
