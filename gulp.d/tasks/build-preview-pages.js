@@ -18,7 +18,7 @@ const ASCIIDOC_ATTRIBUTES = {
   'source-highlighter': 'highlight.js',
 }
 
-module.exports = (src, previewSrc, previewDest, sink = () => map(), layouts = {}) => () =>
+module.exports = (src, previewSrc, previewDest, sink = () => map(), layouts = {}) => (done) =>
   Promise.all([
     loadSampleUiModel(previewSrc),
     toPromise(
@@ -85,11 +85,16 @@ module.exports = (src, previewSrc, previewDest, sink = () => map(), layouts = {}
               pageModel.contents = Buffer.from(doc.convert())
             }
             file.extname = '.html'
-            file.contents = Buffer.from(layouts[uiModel.page.layout](uiModel))
-            next(null, file)
+            try {
+              file.contents = Buffer.from(layouts[uiModel.page.layout](uiModel))
+              next(null, file)
+            } catch (e) {
+              next(transformHandlebarsError(e, uiModel.page.layout))
+            }
           })
         )
         .pipe(vfs.dest(previewDest))
+        .on('error', (e) => done)
         .pipe(sink())
     )
 
@@ -184,6 +189,14 @@ function resolvePage (spec, context = {}) {
 
 function resolvePageURL (spec, context = {}) {
   if (spec) return '/' + spec.slice(0, spec.lastIndexOf('.')) + '.html'
+}
+
+function transformHandlebarsError ({ message, stack }, layout) {
+  const m = stack.match(/^ *at Object\.ret \[as (.+?)\]/m)
+  const templatePath = `src/${m ? 'partials/' + m[1] : 'layouts/' + layout}.hbs`
+  const err = new Error(`${message}${~message.indexOf('\n') ? '\n^ ' : ' '}in UI template ${templatePath}`)
+  err.stack = [err.toString()].concat(stack.substr(message.length + 8)).join('\n')
+  return err
 }
 
 function toPromise (stream) {
