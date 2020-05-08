@@ -1,4 +1,4 @@
-<div class="body container{{#if page.attributes.role}} {{page.attributes.role}}{{/if}}">
+<div class="body container{{#with (or page.role page.attributes.role)}} {{{this}}}{{/with}}">
 {{> nav}}
 {{> toc}}
 {{> main}}
