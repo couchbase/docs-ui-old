@@ -1,4 +1,4 @@
-antoraVersion: '3.2.1'
+antoraVersion: '2.3.1'
 site:
   url: /home.html
   title: Couchbase Docs
