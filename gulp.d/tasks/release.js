@@ -21,9 +21,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateMaster) => async (
   const readmeBlob = await octokit.gitdata
     .createBlob({ owner, repo, content: readmeContent, encoding: 'utf-8' })
     .then((result) => result.data.sha)
-  let tree = await octokit.gitdata
-    .getCommit({ owner, repo, commit_sha: commit })
-    .then((result) => result.data.tree.sha)
+  let tree = await octokit.gitdata.getCommit({ owner, repo, commit_sha: commit }).then((result) => result.data.tree.sha)
   tree = await octokit.gitdata
     .createTree({
       owner,

@@ -34,7 +34,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
             if (file.stem === '404') {
               uiModel.page = { layout: '404', title: 'Page Not Found' }
             } else {
-              const pageModel = uiModel.page = { ...uiModel.page }
+              const pageModel = (uiModel.page = { ...uiModel.page })
               const doc = asciidoctor.load(file.contents, { safe: 'safe', attributes: ASCIIDOC_ATTRIBUTES })
               const attributes = doc.getAttributes()
               pageModel.layout = doc.getAttribute('page-layout', 'default')
@@ -42,8 +42,10 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
               pageModel.url = '/' + file.relative.slice(0, -5) + '.html'
               if (file.stem === 'home') pageModel.home = true
               const componentName = doc.getAttribute('page-component-name', pageModel.src.component)
-              const versionString = doc.getAttribute('page-version',
-                (doc.hasAttribute('page-component-name') ? undefined : pageModel.src.version))
+              const versionString = doc.getAttribute(
+                'page-version',
+                doc.hasAttribute('page-component-name') ? undefined : pageModel.src.version
+              )
               let component
               let componentVersion
               if (componentName) {
