@@ -386,3 +386,50 @@ html.is-clipped--navbar {
     z-index: var(--z-index-navbar-dropdown-link);
   }
 }
+
+/* CSS for docs dropdown menu on click */
+
+.navbar-item.has-dropdown-click label.navbar-dropper {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+.navbar-item.has-dropdown-click label.navbar-dropper::after {
+  content: "";
+  position: absolute;
+  background: url("../img/caret-down.svg") no-repeat 50% 50%;
+  width: 0.875rem;
+  height: 1rem;
+  margin-left: 0.25rem;
+}
+
+.navbar-item.has-dropdown-click input[type="checkbox"] {
+  display: none;
+}
+
+.navbar-item.has-dropdown-click input[type="checkbox"]:checked + .navbar-dropdown {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar-item.has-dropdown-click input[type="checkbox"]:checked + .navbar-dropdown::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  left: 0;
+  height: 2.5rem;
+  z-index: var(--z-index-navbar-dropdown);
+}
+
+body nav.navbar .navbar-dropdown li:hover {
+  background-color: inherit;
+}
+
+body nav.navbar .navbar-dropdown a::after {
+  transition: none;
+}

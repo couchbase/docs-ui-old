@@ -1,4 +1,15 @@
 <header class="header">
+  <script>
+    document.addEventListener("click", function(e) {
+      // Hide any popped-up dropdown menus.
+      var droppers = document.getElementsByClassName("navbar-dropper");
+      for (var i = 0; i < droppers.length; i++) {
+        if (droppers[i] != e.target) {
+          droppers[i].checked = false;
+        }
+      }
+    });
+  </script>
   <nav class="navbar" id="topbar">
     <div class="container">
       <div class="navbar-brand">
@@ -11,28 +22,21 @@
       </div>
       <div id="topbar-menu" class="navbar-menu">
         <div class="navbar-start">
-          <div class="navbar-item has-dropdown">
-            <a class="navbar-link" href="{{or site.url (or siteRootUrl siteRootPath)}}">Docs</a>
+          <div class="navbar-item has-dropdown-click">
+            <label for="docs" class="navbar-dropper">Docs</label>
+            <input id="docs" class="navbar-dropper" type="checkbox"/>
             <div class="navbar-dropdown explore">
-              <div class="title">Couchbase Documentation Overview</div>
+              <div class="title">
+                <a href="{{or site.url (or siteRootUrl siteRootPath)}}">Couchbase Docs Home</a>
+              </div>
               <div class="cols">
                 <ul>
                   <li class="heading"><a href="{{relativize site.components.server.url}}">Server</a></li>
-                  {{#with (resolvePageURL 'server:n1ql:n1lq-language-reference/index.adoc')}}
-                  <li><a href="{{relativize this}}">N1QL</a></li>
-                  {{/with}}
-                  {{#with (resolvePageURL 'server:fts:full-text-intro.adoc')}}
-                  <li><a href="{{relativize this}}">Full Text Search</a></li>
-                  {{/with}}
-                  {{#with (resolvePageURL 'server:analytics:introduction.adoc')}}
-                  <li><a href="{{relativize this}}">Analytics</a></li>
-                  {{/with}}
-                  {{#with (resolvePageURL 'server:eventing:eventing-overview.adoc')}}
-                  <li><a href="{{relativize this}}">Eventing</a></li>
-                  {{/with}}
-                  {{#with site.components.operator}}
-                  <li><a href="{{relativize ./url}}">Autonomous Operator</a></li>
-                  {{/with}}
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/n1ql/n1ql-language-reference/index.html">N1QL</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/fts/full-text-intro.html">Full Text Search</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/eventing/eventing-overview.html">Eventing</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/analytics/introduction.html">Analytics</a></li>
+                  <li><a href="{{relativize site.components.operator.url}}">Kubernetes</a></li>
                 </ul>
                 <ul>
                   <li class="heading">Mobile</li>
@@ -40,22 +44,23 @@
                   <li><a href="{{relativize site.components.sync-gateway.url}}">Sync Gateway</a></li>
                 </ul>
                 <ul class="two-cols">
-                  <li class="heading"><a href="{{relativize (resolvePageURL 'server:sdk:overview.adoc')}}">SDKs</a></li>
-                  <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
-                  <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
-                  <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
+
+                  <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/sdk/overview.html">SDKs</a></li>
                   <li><a href="{{relativize site.components.java-sdk.url}}">Java</a></li>
+                  <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
                   <li><a href="{{relativize site.components.nodejs-sdk.url}}">Node.js</a></li>
-                  <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
                   <li><a href="{{relativize site.components.python-sdk.url}}">Python</a></li>
+                  <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
+                  <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
+                  <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
                   <li><a href="{{relativize site.components.scala-sdk.url}}">Scala</a></li>
                 </ul>
                 <ul>
-                  <li class="heading"><a href="{{relativize (resolvePageURL 'server:connectors:intro.adoc')}}">Connectors</a></li>
-                  <li><a href="{{relativize site.components.elasticsearch-connector.url}}">Elasticsearch</a></li>
+                  <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/intro.html">Connectors</a></li>
                   <li><a href="{{relativize site.components.kafka-connector.url}}">Kafka</a></li>
                   <li><a href="{{relativize site.components.spark-connector.url}}">Spark</a></li>
-                  <li><a href="{{relativize (resolvePageURL 'server:connectors:odbc-jdbc-drivers.adoc')}}">ODBC/JDBC</a></li>
+                  <li><a href="{{relativize site.components.elasticsearch-connector.url}}">Elasticsearch</a></li>
+                  <li><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/connectors/odbc-jdbc-drivers.html">ODBC/JDBC</a></li>
                 </ul>
               </div>
             </div>
@@ -64,8 +69,9 @@
           {{#if (and page.component (ne page.component.name 'tutorials'))}}
           {{#if (and page.component (ne page.component.name 'userprofile-couchbase-mobile'))}}
           {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
-          <div class="navbar-item has-dropdown">
-            <a class="navbar-link component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></a>
+          <div class="navbar-item has-dropdown-click">
+            <label for="menu-versions" class="navbar-dropper"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></label>
+            <input id="menu-versions" class="navbar-dropper" type="checkbox"/>
             <div class="navbar-dropdown versions">
               <div class="cols">
                 <ul>
