@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
 {{> head-first}}
-    <title>Tutorials{{#if site.title}} | {{{site.title}}}{{/if}}</title>
+    <title>Tutorials{{#with site.title}} | {{this}}{{/with}}</title>
     {{#if page.canonicalUrl}}
-    <link rel="canonical" href="{{ifelse (and (eq env.SUPPORTS_CURRENT_URL 'true') (ne page.version 'master')) (concat site.url (current-url page.url)) page.canonicalUrl}}">
+    <link rel="canonical" href="{{#if (and (eq env.SUPPORTS_CURRENT_URL 'true') (ne page.version 'master'))}}{{concat site.url (current-url page.url)}}{{else}}{{page.canonicalUrl}}{{/if}}">
     {{/if}}
 {{> head-last}}
   </head>

@@ -13,7 +13,7 @@
   <nav class="navbar" id="topbar">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://www.couchbase.com"><img src="{{uiRootPath}}/img/logo.svg" alt="Couchbase"></a>
+        <a class="navbar-item" href="https://www.couchbase.com"><img src="{{{uiRootPath}}}/img/logo.svg" alt="Couchbase"></a>
         <button class="navbar-burger" data-target="topbar-menu">
           <span></span>
           <span></span>
@@ -44,6 +44,7 @@
                   <li><a href="{{relativize site.components.sync-gateway.url}}">Sync Gateway</a></li>
                 </ul>
                 <ul class="two-cols">
+
                   <li class="heading"><a href="{{siteRootPath}}/server/{{site.components.server.latest.version}}/sdk/overview.html">SDKs</a></li>
                   <li><a href="{{relativize site.components.java-sdk.url}}">Java</a></li>
                   <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
@@ -96,7 +97,7 @@
           {{/if}}
           {{#if (and page.component (or (eq page.component.name 'tutorials') (eq page.component.name 'userprofile-couchbase-mobile')))}}
           <div class="navbar-item">
-            <a class="navbar-link component" href="/tutorials/index.html"><span class="title">Tutorials</span></a>
+            <a class="navbar-link component" href="{{relativize site.components.tutorials.url}}"><span class="title">Tutorials</span></a>
           </div>
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}

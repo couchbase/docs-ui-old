@@ -1,35 +1,124 @@
-antoraVersion: '1.1.1'
+antoraVersion: '2.3.1'
 site:
-  url: /home.html
   title: Couchbase Docs
+  url: &home_url /home.html
   components:
-    server: &component
-      name: server
-      title: &component_title Couchbase Server
-      url: &component_url /server/5.5/index.html
+    server:
       versions:
-      - url: /server/6.0/index.html
-        version: '6.0'
+      - version: '6.0'
         displayVersion: '6.0 Beta'
-        title: *component_title
+        url: /server/6.0/index.html
       - &latest_server
-        url: *component_url
         version: '5.5'
-        displayVersion: '5.5'
-        title: *component_title
-      - &component_version
+        title: Couchbase Server
+        url: /server/5.5/index.html
+      - version: '5.1'
+        url: /index.html
+        navigation:
+        - content: Introduction
+          items:
+          - content: Why Couchbase?
+            url: '#'
+            urlType: fragment
+          - content: What's New?
+            url: '#'
+            urlType: fragment
+        - content: Getting Started
+          items:
+          - content: Start Here!
+            url: '#'
+            urlType: fragment
+          - content: Do a Quick Install
+            url: '#'
+            urlType: fragment
+        - content: Developers
+          items:
+          - content: Hello World!
+            url: '#'
+            urlType: fragment
+          - content: Users and Security
+            url: '#'
+            urlType: fragment
+        - content: Managing Clusters
+          items:
+          - content: Monitoring
+            url: /server/5.1/monitoring.html
+            urlType: internal
+            items:
+            - content: Monitor Using the REST API
+              url: '#'
+              urlType: fragment
+            - content: Monitor Using the cbstats Utility
+              url: '#'
+              urlType: fragment
+            - content: Monitoring Statistics
+              url: /index.html
+              urlType: internal
+            - content: Monitoring XDCR Timestamp-based Conflict Resolution
+              url: '#'
+              urlType: fragment
+            - content: Monitoring Management
+              url: '#'
+              urlType: fragment
+            - content: Monitoring N1QL Queries
+              url: '#'
+              urlType: fragment
+          - content: Troubleshooting
+            url: '#'
+            urlType: fragment
+            items:
+            - content: General Tips
+              url: '#'
+              urlType: fragment
+            - content: Using Logs
+              url: '#'
+              urlType: fragment
+            - content: Common Errors
+              url: '#'
+              urlType: fragment
+            - content: Core File
+              url: '#'
+              urlType: fragment
+        - content: Installing &amp; Upgrading
+          items:
+          - content: Couchbase Server Installation Home
+            url: '#'
+            urlType: fragment
+            items:
+            - content: Software, Hardware, and Network Requirements
+              url: '#'
+              urlType: fragment
+              items:
+              - content: Supported Platforms
+                url: '#'
+                urlType: fragment
+              - content: Swap Space and Kernel Swappiness
+                url: '#'
+                urlType: fragment
+            - content: Running Couchbase Server in Containers &amp; Orchestration
+              url: '#'
+              urlType: fragment
+        - content: Understanding Couchbase
+          items:
+          - content: Overview
+            url: '#'
+            urlType: fragment
+          - content: Data
+            url: '#'
+            urlType: fragment
+          - content: Buckets, Memory, and Storage
+            url: '#'
+            urlType: fragment
+          - content: Services and Indexes
+            url: '#'
+            urlType: fragment
+          - content: content.that.does.not.want.to.wrap.on.its.own
+            url: '#'
+            urlType: fragment
+      - version: '5.0'
         url: '#'
-        version: '5.1'
-        displayVersion: '5.1'
-        title: *component_title
-      - url: '#'
-        version: '5.0'
-        displayVersion: '5.1'
-        title: *component_title
-      - url: '#'
-        version: '4.6'
-        displayVersion: '4.6'
-        title: *component_title
+      - version: '4.6'
+        url: '#'
       latest: *latest_server
     elasticsearch-connector:
       url: /elasticsearch-connector/3.0/index.html
@@ -43,143 +132,17 @@ site:
       url: /couchbase-lite/2.1/index.html
     sync-gateway:
       url: /sync-gateway/2.1/index.html
+    home:
+      latest: &home_latest
+        version: master
+        title: Home
+        url: *home_url
+      versions:
+      - *home_latest
 page:
-  title: &page_title Monitoring Statistics
-  url: &page_url /server/5.1/index.html
-  component: *component
-  componentVersion: *component_version
-  version: '5.1'
-  module: ROOT
-  home: false
-  editUrl: https://github.com/couchbase/docs-ui/edit/master/preview-site-src/index.adoc
-  versions:
-    0:
-      version: '6.0'
-      displayVersion: '6.0 Beta'
-      url: '#'
-    1: &latest_page
-      version: '5.5'
-      displayVersion: '5.5'
-      url: '#'
-    2:
-      version: '5.1'
-      displayVersion: '5.1'
-      url: '#'
-    3:
-      version: '5.0'
-      displayVersion: '5.0'
-      url: '#'
-    4:
-      version: '4.6'
-      displayVersion: '4.6'
-      missing: true
-      url: '#'
-    latest: *latest_page
-  navigation:
-  - content: Introduction
-    items:
-    - content: Why Couchbase?
-      url: '#'
-      urlType: fragment
-    - content: What's New?
-      url: '#'
-      urlType: fragment
-  - content: Getting Started
-    items:
-    - content: Start Here!
-      url: '#'
-      urlType: fragment
-    - content: Do a Quick Install
-      url: '#'
-      urlType: fragment
-  - content: Developers
-    items:
-    - content: Hello World!
-      url: '#'
-      urlType: fragment
-    - content: Users and Security
-      url: '#'
-      urlType: fragment
-  - &crumb_0
-    content: Managing Clusters
-    items:
-    - &crumb_1
-      content: Monitoring
-      url: *page_url
-      urlType: internal
-      items:
-      - content: Monitor Using the REST API
-        url: '#'
-        urlType: fragment
-      - content: Monitor Using the cbstats Utility
-        url: '#'
-        urlType: fragment
-      - &crumb_2
-        content: *page_title
-        url: *page_url
-        urlType: internal
-      - content: Monitoring XDCR Timestamp-based Conflict Resolution
-        url: '#'
-        urlType: fragment
-      - content: Monitoring Management
-        url: '#'
-        urlType: fragment
-      - content: Monitoring N1QL Queries
-        url: '#'
-        urlType: fragment
-    - content: Troubleshooting
-      url: '#'
-      urlType: fragment
-      items:
-      - content: General Tips
-        url: '#'
-        urlType: fragment
-      - content: Using Logs
-        url: '#'
-        urlType: fragment
-      - content: Common Errors
-        url: '#'
-        urlType: fragment
-      - content: Core File
-        url: '#'
-        urlType: fragment
-  - content: Installing &amp; Upgrading
-    items:
-    - content: Couchbase Server Installation Home
-      url: '#'
-      urlType: fragment
-      items:
-      - content: Software, Hardware, and Network Requirements
-        url: '#'
-        urlType: fragment
-        items:
-        - content: Supported Platforms
-          url: '#'
-          urlType: fragment
-        - content: Swap Space and Kernel Swappiness
-          url: '#'
-          urlType: fragment
-      - content: Running Couchbase Server in Containers &amp; Orchestration
-        url: '#'
-        urlType: fragment
-  - content: Understanding Couchbase
-    items:
-    - content: Overview
-      url: '#'
-      urlType: fragment
-    - content: Data
-      url: '#'
-      urlType: fragment
-    - content: Buckets, Memory, and Storage
-      url: '#'
-      urlType: fragment
-    - content: Services and Indexes
-      url: '#'
-      urlType: fragment
-    - content: content.that.does.not.want.to.wrap.on.its.own
-      url: '#'
-      urlType: fragment
-  breadcrumbs:
-  - *crumb_0
-  - *crumb_1
-  - *crumb_2
+  src:
+    component: server
+    version: '5.1'
+  origin:
+    url: https://github.com/couchbase/docs-ui
+    editUrlPattern: https://github.com/couchbase/docs-ui/edit/archive/preview-site-src/%s

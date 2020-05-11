@@ -2,8 +2,8 @@
   <ul>
     {{!-- NOTE add entry for current component, but not the home component or if the title matches the first breadcrumb --}}
     {{#unless (eq page.component.name 'home')}}
-    {{#unless (eq page.breadcrumbs.0.content page.componentVersion.title)}}
-    <li class="crumb"><a href="{{relativize page.componentVersion.url}}">{{{page.componentVersion.title}}}</a></li>
+    {{#unless (or (eq page.breadcrumbs.0.content page.component.title) (eq page.breadcrumbs.0.content page.componentVersion.title))}}
+    <li class="crumb"><a href="{{relativize page.componentVersion.url}}">{{{page.component.title}}}</a></li>
     {{/unless}}
     {{/unless}}
     {{#each page.breadcrumbs}}
