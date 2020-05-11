@@ -21,7 +21,7 @@
   height: 1px;
   background-color: var(--color-footer-text);
   transform: scale3d(0, 0.9999, 0.9999);
-  transition: transform 0.3s;
+  transition: transform 0.1s;
 }
 
 .footer a.icon::after,
@@ -203,7 +203,7 @@
   }
 
   .footer-links li {
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .footer-terms span {
@@ -219,7 +219,7 @@
 
 @media screen and (min-width: 1024px) {
   footer.footer {
-    padding: 3.75rem 0 3.125rem;
+    padding: 1rem 0 1rem;
   }
 
   .footer-links {
