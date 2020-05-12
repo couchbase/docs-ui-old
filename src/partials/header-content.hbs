@@ -32,7 +32,9 @@
                   <li><a href="{{relativize this}}">Analytics</a></li>
                   {{/with}}
                   {{#with site.components.operator}}
+                  {{#unless ./origin}}
                   <li><a href="{{relativize ./url}}">Kubernetes</a></li>
+                  {{/unless}}
                   {{/with}}
                 </ul>
                 <ul>
@@ -49,7 +51,13 @@
                   <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
                   <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
                   <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
+                  {{#with site.components.scala-sdk}}
+                  {{#unless ./origin}}
+                  <li><a href="{{relativize ./url}}">Scala</a></li>
+                  {{/unless}}
+                  {{else}}
                   <li><a href="{{relativize site.components.scala-sdk.url}}">Scala</a></li>
+                  {{/with}}
                 </ul>
                 <ul>
                   <li class="heading"><a href="{{relativize (resolvePageURL 'server:connectors:intro.adoc')}}">Connectors</a></li>
