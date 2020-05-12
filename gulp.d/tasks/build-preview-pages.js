@@ -63,15 +63,17 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
               pageModel.editUrl = pageModel.origin.editUrlPattern.replace('%s', file.relative)
               pageModel.navigation = componentVersion.navigation || []
               pageModel.breadcrumbs = findNavPath(pageModel.url, pageModel.navigation)
-              pageModel.versions = pageModel.component.versions.map(({ version, displayVersion, url }, idx, arr) => {
-                const pageVersion = { version, displayVersion: displayVersion || version, url }
-                if (version === component.latest.version) pageVersion.latest = true
-                if (idx === arr.length - 1) {
-                  delete pageVersion.url
-                  pageVersion.missing = true
-                }
-                return pageVersion
-              })
+              if (pageModel.component.versions.length > 1) {
+                pageModel.versions = pageModel.component.versions.map(({ version, displayVersion, url }, idx, arr) => {
+                  const pageVersion = { version, displayVersion: displayVersion || version, url }
+                  if (version === component.latest.version) pageVersion.latest = true
+                  if (idx === arr.length - 1) {
+                    delete pageVersion.url
+                    pageVersion.missing = true
+                  }
+                  return pageVersion
+                })
+              }
               pageModel.attributes = Object.entries({ ...attributes, ...componentVersion.asciidoc.attributes })
                 .filter(([name, val]) => name.startsWith('page-'))
                 .reduce((accum, [name, val]) => ({ ...accum, [name.substr(5)]: val }), {})
