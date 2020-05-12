@@ -1,6 +1,13 @@
 ;(function () {
   'use strict'
 
+  // closes open menus in navbar on loss of focus
+  window.addEventListener('click', function (e) {
+    find('input.navbar-dropper').forEach(function (input) {
+      if (input !== e.target) input.checked = false
+    })
+  })
+
   var nav = document.querySelector('nav.nav')
   var navMenu = {}
   if (!(navMenu.element = nav && nav.querySelector('.nav-menu'))) return
