@@ -128,13 +128,14 @@ a.navbar-item.has-dropdown::after,
   height: 1px;
   background-color: var(--color-navbar-text);
   transform: scale3d(0, 0.9999, 0.9999);
-  transition: transform 0.3s;
+  transition: transform 0.1s;
 }
 
 .navbar-dropdown a:focus::after,
 .navbar-dropdown a:hover::after {
   transform: scale3d(1, 0.9999, 0.9999);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.05s;
 }
 
 .navbar-dropdown.explore .title {
@@ -159,10 +160,6 @@ a.navbar-item.has-dropdown::after,
 
 .navbar-link .version {
   text-transform: none;
-}
-
-.navbar-dropdown li:hover {
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .navbar-dropdown li.heading {
@@ -424,12 +421,4 @@ html.is-clipped--navbar {
   left: 0;
   height: 2.5rem;
   z-index: var(--z-index-navbar-dropdown);
-}
-
-body nav.navbar .navbar-dropdown li:hover {
-  background-color: inherit;
-}
-
-body nav.navbar .navbar-dropdown a::after {
-  transition: none;
 }
