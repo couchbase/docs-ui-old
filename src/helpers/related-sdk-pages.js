@@ -1,9 +1,9 @@
 'use strict'
 
 module.exports = (langs, { data: { root } }) => {
-  const components = root.site.components
-  const thisComponentName = root.page.component.name
-  const pageUrl = root.page.url
+  const { contentCatalog, page, site } = root
+  const components = site.components
+  const thisComponentName = page.component.name
   return langs
     .split(',')
     .map((lang) => lang + '-sdk')
@@ -11,9 +11,9 @@ module.exports = (langs, { data: { root } }) => {
     .map((componentName) => {
       const component = components[componentName]
       if (component) {
-        const urlSegments = pageUrl.split('/')
-        urlSegments.splice(1, 2, componentName, component.latest.version)
-        return { url: urlSegments.join('/'), title: component.title }
+        const lookupContext = { component: componentName, version: component.latest.version, module: page.module }
+        const relatedPage = contentCatalog && contentCatalog.resolvePage(page.relativeSrcPath, lookupContext)
+        return { url: relatedPage ? relatedPage.pub.url : component.url, title: component.title }
       } else {
         return { title: componentName }
       }
