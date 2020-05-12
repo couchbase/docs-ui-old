@@ -69,8 +69,7 @@
   height: 1px;
   background-color: currentColor;
   transform: scale3d(0, 0.9999, 0.9999);
-  transition-property: transform;
-  transition-duration: 0.3s;
+  transition: transform 0.1s;
 }
 
 .home .card a:focus::before,
@@ -78,8 +77,8 @@
 .home .tile a:focus::before,
 .home .tile a:hover::before {
   transform: scale3d(1, 0.9999, 0.9999);
+  transition-duration: 0.05s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.3s;
 }
 
 .home .conceal-title > h2 {

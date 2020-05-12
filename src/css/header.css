@@ -144,8 +144,8 @@
 .navbar-dropdown a:focus::after,
 .navbar-dropdown a:hover::after {
   transform: scale3d(1, 0.9999, 0.9999);
+  transition-duration: 0.05s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition: transform 0.05s;
 }
 
 .navbar-dropdown.explore .title {
