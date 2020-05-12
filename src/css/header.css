@@ -100,15 +100,25 @@
   position: relative;
 }
 
-a.navbar-item.has-dropdown::after,
-.navbar-item.has-dropdown > .navbar-link::after {
+.navbar-item.has-dropdown-click label.navbar-dropper {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  text-transform: uppercase;
+  letter-spacing: -0.025em;
+  position: relative;
+}
+
+.navbar-item.has-dropdown-click label.navbar-dropper::after {
   content: "";
   position: absolute;
   background: url(../img/caret-down.svg) no-repeat 50% 50%;
   width: 0.875rem;
-  height: 0.625rem;
   height: 1rem;
   margin-left: 0.25rem;
+}
+
+.navbar-item.has-dropdown-click input.navbar-dropper {
+  display: none;
 }
 
 .navbar-dropdown {
@@ -362,13 +372,12 @@ html.is-clipped--navbar {
     display: flex;
   }
 
-  .navbar-item.has-dropdown:hover .navbar-dropdown {
+  .navbar-item.has-dropdown-click input.navbar-dropper:checked + .navbar-dropdown {
     visibility: visible;
     opacity: 1;
-    transition: opacity 0.3s 0.25s;
   }
 
-  .navbar-item.has-dropdown:hover .navbar-dropdown::before {
+  .navbar-item.has-dropdown-click input.navbar-dropper:checked + .navbar-dropdown::before {
     content: "";
     display: block;
     position: absolute;
@@ -378,47 +387,4 @@ html.is-clipped--navbar {
     height: 2.5rem;
     z-index: var(--z-index-navbar-dropdown);
   }
-
-  .navbar-item.has-dropdown:hover > .navbar-link {
-    z-index: var(--z-index-navbar-dropdown-link);
-  }
-}
-
-/* CSS for docs dropdown menu on click */
-
-.navbar-item.has-dropdown-click label.navbar-dropper {
-  display: block;
-  padding: 0.75rem 1.25rem;
-  text-transform: uppercase;
-  letter-spacing: -0.025em;
-  position: relative;
-}
-
-.navbar-item.has-dropdown-click label.navbar-dropper::after {
-  content: "";
-  position: absolute;
-  background: url("../img/caret-down.svg") no-repeat 50% 50%;
-  width: 0.875rem;
-  height: 1rem;
-  margin-left: 0.25rem;
-}
-
-.navbar-item.has-dropdown-click input[type="checkbox"] {
-  display: none;
-}
-
-.navbar-item.has-dropdown-click input[type="checkbox"]:checked + .navbar-dropdown {
-  visibility: visible;
-  opacity: 1;
-}
-
-.navbar-item.has-dropdown-click input[type="checkbox"]:checked + .navbar-dropdown::before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -2.5rem;
-  right: 0;
-  left: 0;
-  height: 2.5rem;
-  z-index: var(--z-index-navbar-dropdown);
 }
