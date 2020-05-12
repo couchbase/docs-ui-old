@@ -58,6 +58,7 @@ module.exports = (src, previewSrc, previewDest, sink = () => map()) => (done) =>
                 componentVersion = pageModel.componentVersion = component.latest
               }
               pageModel.module = 'ROOT'
+              pageModel.relativeSrcPath = file.relative
               pageModel.version = componentVersion.version
               pageModel.displayVersion = componentVersion.displayVersion
               pageModel.editUrl = pageModel.origin.editUrlPattern.replace('%s', file.relative)
