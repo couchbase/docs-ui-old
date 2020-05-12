@@ -61,10 +61,10 @@
               </div>
             </div>
           </div>
-          {{#if (and page.component (ne page.component.name 'home'))}}
-          {{#if (and page.component (ne page.component.name 'tutorials'))}}
-          {{#if (and page.component (ne page.component.name 'userprofile-couchbase-mobile'))}}
-          {{#if (or page.versions (ends-with page.component.name '-sdk'))}}
+          {{#if page.component}}
+          {{#if (or (eq page.component.name 'tutorials') (eq page.component.name 'userprofile-couchbase-mobile'))}}
+          <a class="navbar-item component" href="{{relativize site.components.tutorials.url}}"><span class="title">{{{site.components.tutorials.title}}}</span></a>
+          {{else if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown-click">
             <label for="menu-versions" class="navbar-dropper"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></label>
             <input id="menu-versions" class="navbar-dropper" type="checkbox">
@@ -73,6 +73,8 @@
                 <ul>
                   {{#each page.versions}}
                   <li{{#if (eq ./version @root.page.version)}} class="current"{{/if}}><a class="navbar-item" href="{{relativize ./url}}">{{{@root.page.component.title}}} {{./displayVersion}}</a></li>
+                  {{else}}
+                  <li class="current"><a class="navbar-item" href="{{relativize page.url}}">{{{page.component.title}}} {{page.displayVersion}}</a></li>
                   {{/each}}
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
@@ -85,16 +87,9 @@
               </div>
             </div>
           </div>
-          {{else}}
+          {{else if (ne page.component.name 'home')}}
           <a class="navbar-item component" href="{{relativize page.componentVersion.url}}"><span class="title">{{{page.component.title}}}</span>{{#unless (eq page.componentVersion.displayVersion 'master')}} <span class="version">{{page.componentVersion.displayVersion}}</span>{{/unless}}</a>
           {{/if}}
-          {{/if}}
-          {{/if}}
-          {{/if}}
-          {{#if (and page.component (or (eq page.component.name 'tutorials') (eq page.component.name 'userprofile-couchbase-mobile')))}}
-          <div class="navbar-item">
-            <a class="navbar-link component" href="{{relativize site.components.tutorials.url}}"><span class="title">Tutorials</span></a>
-          </div>
           {{/if}}
           {{#if env.ALGOLIA_API_KEY}}
             <form class="navbar-item search">
