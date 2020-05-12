@@ -94,7 +94,6 @@
 }
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
-  background-color: #e0e0e0;
   border-bottom: 1.5px solid var(--color-brand-orange);
   margin-bottom: -1.5px;
   color: var(--color-text);
