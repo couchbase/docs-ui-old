@@ -7,7 +7,7 @@ module.exports = (langs, { data: { root } }) => {
   return langs
     .split(',')
     .map((lang) => lang + '-sdk')
-    .filter((componentName) => componentName !== thisComponentName)
+    .filter((componentName) => !(componentName === thisComponentName || (components[componentName] || {}).origin))
     .map((componentName) => {
       const component = components[componentName]
       if (component) {
