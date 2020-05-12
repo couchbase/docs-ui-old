@@ -5,6 +5,16 @@
   overflow-y: scroll;
   font-size: 0.875rem;
   line-height: 1.35;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.nav-menu::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+.nav-menu::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
 }
 
 @media screen and (max-width: 768px) {
@@ -24,14 +34,6 @@
     height: var(--height-nav);
     z-index: var(--z-index-nav);
   }
-}
-
-.nav-menu::-webkit-scrollbar {
-  width: 0.25rem;
-}
-
-.nav-menu::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
 }
 
 .nav-menu .nav-line,
