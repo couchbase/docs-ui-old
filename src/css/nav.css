@@ -96,9 +96,7 @@
 }
 
 .nav-menu .nav-item.is-current-page > .nav-line > a.nav-link {
-  border-bottom: 1.5px solid var(--color-brand-orange);
-  margin-bottom: -1.5px;
-  padding-left: 0.5px;
+  background: linear-gradient(to right, var(--color-brand-orange) 0%, var(--color-brand-orange) 100%) no-repeat bottom / 100% 1.5px;
   color: var(--color-text);
   font-weight: var(--weight-medium);
 }
