@@ -74,7 +74,7 @@
           <a class="navbar-item component" href="{{relativize site.components.tutorials.url}}"><span class="title">{{{site.components.tutorials.title}}}</span></a>
           {{else if (or page.versions (ends-with page.component.name '-sdk'))}}
           <div class="navbar-item has-dropdown-click">
-            <label for="menu-versions" class="navbar-dropper"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></label>
+            <label for="menu-versions" class="component navbar-dropper"><span class="title">{{{page.component.title}}}</span> <span class="version">{{page.componentVersion.displayVersion}}</span></label>
             <input id="menu-versions" class="navbar-dropper" type="checkbox">
             <div class="navbar-dropdown versions">
               <div class="cols">
