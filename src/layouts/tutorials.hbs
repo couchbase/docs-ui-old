@@ -3,9 +3,9 @@
   <head>
 {{> head-first}}
     <title>Tutorials{{#with site.title}} | {{this}}{{/with}}</title>
-    {{#if page.canonicalUrl}}
-    <link rel="canonical" href="{{#if (and (eq env.SUPPORTS_CURRENT_URL 'true') (ne page.version 'master'))}}{{concat site.url (current-url page.url)}}{{else}}{{page.canonicalUrl}}{{/if}}">
-    {{/if}}
+    {{#with (canonical-url)}}
+    <link rel="canonical" href="{{this}}">
+    {{/with}}
 {{> head-last}}
   </head>
   <body class="tutorials body tiles">

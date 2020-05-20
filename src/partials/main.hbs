@@ -1,16 +1,12 @@
 <main class="article" data-ceiling="topbar">
-  {{#unless (or page.attributes.hide-view-latest (eq page.componentVersion (or page.component.preferred page.component.latest)))}}
+  {{#unless (or page.attributes.hide-view-latest (eq page.componentVersion page.component.latest))}}
   <div class="article-banner">
-    {{#if page.componentVersion.prerelease}}
+    {{#if (and page.componentVersion.prerelease (not page.latest.prerelease))}}
     <p>You are viewing the documentation for a prerelease version.</p>
     {{else}}
     <p>A newer version of this documentation is available.</p>
     {{/if}}
-    {{#with page.component.preferred}}
-    <a class="btn" href="{{relativize (or (resolvePageURL @root.page.relativeSrcPath version=./version) ./url)}}">View Latest</a>
-    {{else}}
-    <a class="btn" href="{{#if (eq env.SUPPORTS_CURRENT_URL 'true')}}{{relativize (current-url page.url)}}{{else}}{{relativize page.latest.url}}{{/if}}">View Latest</a>
-    {{/with}}
+    <a class="btn" href="{{relativize (latest-page-url)}}">View Latest</a>
   </div>
   {{/unless}}
   <div class="article-header">
