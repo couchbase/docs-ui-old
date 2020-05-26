@@ -13,7 +13,8 @@ module.exports = ({ data: { root } }) => {
       family: 'alias',
       relative: page.relativeSrcPath,
     })
-    if (latestAlias) url = latestAlias.rel.pub.url
+    if (!latestAlias) return
+    url = latestAlias.rel.pub.url
   }
   if (url.charAt() === '/') {
     return env.SUPPORTS_CURRENT_URL === 'true' ? url.replace(VERSIONED_ROOT_RELATIVE_URL_RX, '$1/current') : url

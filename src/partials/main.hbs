@@ -1,13 +1,19 @@
 <main class="article" data-ceiling="topbar">
-  {{#unless (or page.attributes.hide-view-latest (eq page.componentVersion page.component.latest))}}
+  {{#unless (or (ne page.attributes.hide-view-latest undefined) (eq page.componentVersion page.component.latest))}}
+  {{#with (latest-page-url)}}
   <div class="article-banner">
-    {{#if (and page.componentVersion.prerelease (not page.latest.prerelease))}}
+    {{#if (and @root.page.componentVersion.prerelease (not @root.page.latest.prerelease))}}
     <p>You are viewing the documentation for a prerelease version.</p>
     {{else}}
     <p>A newer version of this documentation is available.</p>
     {{/if}}
-    <a class="btn" href="{{relativize (latest-page-url)}}">View Latest</a>
+    <a class="btn" href="{{relativize this}}">View Latest</a>
   </div>
+  {{else if (and page.componentVersion.prerelease (not page.latest.prerelease))}}
+  <div class="article-banner">
+    <p>You are viewing the documentation for a prerelease version.</p>
+  </div>
+  {{/with}}
   {{/unless}}
   <div class="article-header">
 {{> nav-control}}
