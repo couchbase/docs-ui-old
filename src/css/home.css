@@ -11,6 +11,14 @@
   font-size: 0.9375rem;
 }
 
+.home .admonition.cta {
+  margin: 8px 10px 8px 10px;
+  background-color: var(--color-brand-light-blue);
+  padding: 8px 20px 8px 20px;
+  font-size: 1.1rem;
+  color: var(--color-brand-white);
+}
+
 .home h1,
 .home h2,
 .home h3 {
@@ -202,6 +210,15 @@
 .home .tile .title {
   font-weight: var(--weight-bold);
   margin-bottom: 0.25rem;
+}
+
+.home .archive-banner {
+  text-align: center;
+  background-color: #ccc;
+  background-image: url(../img/caution.svg);
+  padding: 8px 20px 8px 20px;
+  border: 1px solid #ccc;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 769px) {
@@ -482,4 +499,35 @@ mark {
   font-size: 1.3rem;
   font-weight: var(--weight-light);
   border: 0;
+}
+
+/** CSS rules for archive home page **/
+.archive .card {
+  color: #fff;
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: column;
+  margin: 0.75rem 0 0 0.75rem;
+  min-width: 0;
+  padding: 1.25rem;
+}
+
+.archive .card:nth-of-type(1) {
+  border-width: 2;
+  border-color: var(--color-brand-pink);
+}
+
+.archive .card:nth-of-type(2) {
+  border-width: 2;
+  border-color: var(--color-brand-green);
+}
+
+.archive .card:nth-of-type(3) {
+  border-width: 2;
+  border-color: var(--color-brand-light-blue);
+}
+
+.archive .card:nth-of-type(4) {
+  border-width: 2;
+  border-color: var(--color-brand-orange);
 }
