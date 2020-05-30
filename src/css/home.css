@@ -1,21 +1,23 @@
-.home p {
-  margin: 0;
-}
-
 .home .paragraph {
   margin-top: 1.25rem;
 }
 
 .home .paragraph.hint {
-  margin-top: 2rem;
   font-size: 0.9375rem;
+}
+
+.home .ulist li + li {
+  margin-top: 0;
 }
 
 .home h1,
 .home h2,
 .home h3 {
+  font-weight: var(--weight-bold);
   line-height: 1.2;
   margin: 0;
+  max-width: none;
+  letter-spacing: 0;
 }
 
 .home h1.page {
@@ -25,19 +27,9 @@
 }
 
 .home #preamble {
-  margin: 2rem 0 3rem;
+  margin: 1rem 0 3rem;
   font-size: 1.125rem;
   text-align: center;
-}
-
-.home .button::before {
-  content: "[";
-  padding-right: 0.25em;
-}
-
-.home .button::after {
-  content: "]";
-  padding-left: 0.25em;
 }
 
 .home .card ul,
@@ -184,6 +176,7 @@
   margin-bottom: -1px;
   position: relative;
   top: 1.375rem;
+  outline: none;
 }
 
 .home .tiles > .sectionbody {
@@ -193,6 +186,7 @@
 
 .home .tile {
   flex: 1;
+  margin-top: 0;
   margin-bottom: 0.75rem;
   min-width: 0;
   flex-basis: auto;
@@ -201,6 +195,9 @@
 
 .home .tile .title {
   font-weight: var(--weight-bold);
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: 0;
   margin-bottom: 0.25rem;
 }
 
