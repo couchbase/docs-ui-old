@@ -214,6 +214,16 @@
   line-height: 1.2;
 }
 
+.doc table.layout,
+.doc table.layout th.tableblock,
+.doc table.layout td.tableblock {
+  border: 0;
+}
+
+.doc table.layout > tbody > tr:nth-of-type(even) {
+  background-color: transparent;
+}
+
 .doc p.tableblock + p.tableblock {
   margin-top: 1rem;
 }
