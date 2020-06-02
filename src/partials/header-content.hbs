@@ -15,7 +15,11 @@
             <label for="docs" class="navbar-dropper">Docs</label>
             <input id="docs" class="navbar-dropper" type="checkbox">
             <div class="navbar-dropdown explore">
+              {{#with page.componentVersion.asciidoc.attributes.primary-site-url}}
+              <div class="title"><a href="{{this}}">Couchbase Docs Home</a> | <a href="{{#with (and @root.site.url @root.site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{@root.siteRootPath}}{{/with}}">Archive</a></div>
+              {{else}}
               <div class="title"><a href="{{#with (and site.url site.homeUrl)}}{{@root.site.url}}{{this}}{{else}}{{siteRootPath}}{{/with}}">Couchbase Docs Home</a></div>
+              {{/with}}
               <div class="cols">
                 <ul>
                   <li class="heading"><a href="{{relativize site.components.server.url}}">Server</a></li>
