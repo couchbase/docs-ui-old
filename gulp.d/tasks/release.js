@@ -1,7 +1,7 @@
 'use strict'
 
 const fs = require('fs-extra')
-const Octokit = require('@octokit/rest')
+const { Octokit } = require('@octokit/rest')
 const path = require('path')
 
 module.exports = (dest, bundleName, owner, repo, token, updateMaster) => async () => {
