@@ -1,0 +1,62 @@
+
+/* Panes and cards related vars */
+
+$--color-font-light: --color-brand-white;
+$--color-font-dark: --color-brand-gray;
+/*
+$--pane-colors: (
+    gray-card: var(--color-brand-silver),
+    red-card: var(--color-brand-red-tint),
+    orange-card: var(--color-brand-orange),
+    purple-card: var(--color-brand-purple-tint),
+    green-card: var(--color-brand-green),
+    pink-card: var(--color-brand-pink),
+    blue-card: var(--color-brand-light-blue),
+    white-card: var(--color-brand-white),
+    gray-frame: var(--color-brand-gray),
+    red-frame: var(--color-brand-red),
+    orange-frame: var(--color-brand-orange),
+    purple-frame: var(--color-brand-purple),
+    green-frame: var(--color-brand-green),
+    pink-frame: var(--color-brand-pink),
+    blue-frame: var(--color-brand-light-blue),
+    white-frame: var(--color-brand-white)
+);
+*/
+
+$--pane-colors: (
+    "pink": var(--color-brand-pink),
+    "green": var(--color-brand-green),
+    "blue": var(--color-brand-light-blue),
+    "orange": var(--color-brand-orange),
+    "purple": var(--color-brand-purple),
+    "red": var(--color-brand-red)
+);
+
+
+
+$--pane-radius: 0.5rem;
+$--card-radius: 0.5rem;
+$--pane-border-width: 0.125rem;
+$--halves: 47%;
+$--thirds: 32%;
+$--quarters: 23%;
+$--fifths: 15%;
+$--line-height-normal: 1.5rem;
+$--font-size-normal: 1rem;
+$--horizontal-gap: 1.75rem;
+$--vertical-gap: 0.75rem;
+
+$--std-margins: 0.5rem 0.75rem 1rem 0.75rem;
+$--std-flexbox-margin: 0.5rem;
+$--card-decor-margin: 0.25rem 0 1rem 0;
+$--card-decor-line: 0.15rem solid currentColor;
+
+$--mgn-panes-std: 0.75rem 0.75rem 0 0;
+$--mgn-panes-std-ulist: 0 0.5rem 0.75rem 0;
+$--pad-panes-std: 1rem 0.75rem 0.75rem 0.75rem;
+$--rad-panes-std: 0.5rem;
+$--bdr-panes-stdWidth: 0.125rem;
+$--bdr-panes-stdType: solid;
+$--bdr-panes-stdColor: --color-brand-silver;
+

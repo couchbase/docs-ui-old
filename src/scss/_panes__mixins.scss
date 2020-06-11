@@ -1,0 +1,91 @@
+// Global Mixins
+
+@mixin setColorCard($key, $override: "") {
+    border: $--bdr-panes-stdWidth $--bdr-panes-stdType  getColor(#{$key}/*-card*/);
+    background-color:  getColor(#{$key}/*-card*/) #{$override};
+    color: var($--color-font-light);
+    @include definePaneLinks
+};
+
+@mixin setColorFrame($key, $override: "") {
+    border: $--bdr-panes-stdWidth $--bdr-panes-stdType getColor(#{$key}/*-frame*/) #{$override};
+    background-color: transparent;
+};
+@mixin definePanesContainer($dir) {
+    @include resetMargins();
+    width: 100%;
+    display: flex;
+    flex-flow: #{$dir} wrap;
+    justify-content: space-between;
+    justify-items: flex-start;
+    align-items: stretch;
+    align-content: space-between;
+}
+
+@mixin definePaneLinks {
+    a {
+        text-decoration: none;
+        color: lightgray
+    }
+}
+
+@mixin defineChildElements( $type: card, $element: nth-of-type) {
+    $i: 0;
+    @each $col, $colvar in $--pane-colors {
+        $i: $i + 1;
+        &:#{$element}(4n + #{$i})  {
+            @if $type=="card" {
+                @include setColorCard( #{$col} )
+            } @else {
+                @include setColorFrame( #{$col} )
+            }
+        }
+    }
+}
+
+@mixin defineListBulleting() {
+  // Suppress bullet symbol on top list-level - to give impression of standard para
+  > ul { // child of
+    list-style: none;
+    padding-left: 0rem;
+    margin-left: 0rem;
+  }
+
+  // Add bullet symbol on subsequent list-levels - to give a bulleted list within a list frame or card
+  * ul { // anything other than the child of
+    list-style: square;
+    padding-left: 1rem;
+    margin-left: 0rem;
+  }
+}
+
+
+@mixin resetMargins {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin setColumns($cols) {
+    flex-basis: calc((100% - (#{$cols} * 1rem)) / #{$cols});
+}
+
+@mixin setPaneListMargin {
+    margin: $--mgn-panes-std-ulist
+}
+
+@function getColor($key) {
+  @if map-has-key($--pane-colors, $key) {
+    @return map-get($--pane-colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+};
+
+@function setFontColor($key) {
+  @if lightness($key)>70 {
+    @return var($--color-font-light);
+  } @else {
+    @return var($--color-font-dark);
+  }
+}
+
