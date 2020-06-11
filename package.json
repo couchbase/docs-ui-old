@@ -14,7 +14,7 @@
     "last 2 versions"
   ],
   "devDependencies": {
-    "@octokit/rest": "~16.28",
+    "@octokit/rest": "~18.0",
     "asciidoctor.js": "1.5.9",
     "autoprefixer": "~9.8",
     "browser-pack-flat": "~3.4",
