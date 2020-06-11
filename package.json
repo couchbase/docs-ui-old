@@ -41,7 +41,7 @@
     "gulp-vinyl-zip": "~2.2",
     "handlebars": "~4.7",
     "highlight.js": "~9.18",
-    "jquery": "~3.4",
+    "jquery": "~3.5",
     "js-yaml": "~3.14",
     "mark.js": "~8.11",
     "merge-stream": "~2.0",
