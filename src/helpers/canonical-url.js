@@ -6,7 +6,7 @@ module.exports = ({ data: { root } }) => {
   const { contentCatalog, env, page, site } = root
   const siteUrl = site.url
   if (!siteUrl || siteUrl.charAt() === '/') return
-  let { url, version, missing } = page.versions ? (page.latest || { url: page.url }) : page
+  let { url, version, missing } = page.versions ? page.latest || { url: page.url } : page
   const latestVersion = version
   if (missing) {
     const family = 'alias'
