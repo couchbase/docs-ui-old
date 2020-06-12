@@ -45,7 +45,7 @@ module.exports = (dest, bundleName, owner, repo, token, updateMaster) => async (
     .then((result) => result.data.upload_url)
   await octokit.repos.uploadReleaseAsset({
     url: uploadUrl,
-    file: fs.createReadStream(bundleFile),
+    data: fs.createReadStream(bundleFile),
     name: bundleFileBasename,
     headers: {
       'content-length': (await fs.stat(bundleFile)).size,
