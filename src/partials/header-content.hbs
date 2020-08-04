@@ -52,6 +52,7 @@
                   <li><a href="{{relativize site.components.dotnet-sdk.url}}">.NET</a></li>
                   <li><a href="{{relativize site.components.nodejs-sdk.url}}">Node.js</a></li>
                   <li><a href="{{relativize site.components.python-sdk.url}}">Python</a></li>
+                  <li><a href="{{relativize site.components.ruby-sdk.url}}">Ruby</a></li>
                   <li><a href="{{relativize site.components.php-sdk.url}}">PHP</a></li>
                   <li><a href="{{relativize site.components.go-sdk.url}}">Go</a></li>
                   <li><a href="{{relativize site.components.c-sdk.url}}">C</a></li>
@@ -91,7 +92,7 @@
                 </ul>
                 {{#if (ends-with page.component.name '-sdk')}}
                 <ul class="related">
-                  {{#each (related-sdk-pages 'c,dotnet,go,java,nodejs,php,python,scala')}}
+                  {{#each (related-sdk-pages 'c,dotnet,go,java,nodejs,php,python,ruby,scala')}}
                   <li><a class="navbar-item" href="{{relativize ./url}}">{{{./title}}}</a></li>
                   {{/each}}
                 </ul>
