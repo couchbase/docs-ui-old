@@ -1,0 +1,160 @@
+@import "../css/vars.css";
+@import "./panes__mixins";
+@import "./panes__variables";
+
+@function getColor($key) {
+  @if map-has-key($--pane-colors, $key) {
+    @return map-get($--pane-colors, $key);
+  }
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+};
+
+@function setFontColor($key) {
+  @if lightness($key)>70 {
+    @return var($--color-font-light);
+  } @else {
+    @return var($--color-font-dark);
+  }
+}
+
+%paneContainer {
+  @include resetMargins();
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  justify-items: flex-start;
+  align-items: stretch;
+  align-content: space-between;
+}
+
+%pane {
+  flex: 1 0 auto;
+  margin: $--mgn-panes-std;
+  padding: $--pad-panes-std;
+  border-radius: $--rad-panes-std
+}
+
+%list__pane {
+  @extend %pane;
+  @include setPaneListMargin;
+  @include setColumns(2);
+  list-style: square;
+  margin-top: 0 !important
+}
+
+.pane__cards {
+
+// Define Container Properties
+> .sectionbody {
+  @extend %paneContainer;
+
+  // Define Card Properties for Lists
+  > .ulist  {
+    @extend %list__pane;
+    @include setColumns(2);
+    @include defineChildElements("card","nth-of-type");
+    @include defineListBulleting();
+
+  }
+
+  // Define Card Properties for H3
+  > .sect2 {
+    @extend %pane;
+    @include setColumns(2);
+    @include defineChildElements("card","nth-child")
+    }
+  }
+}
+
+.pane__frames {
+
+// Define Container Properties for Lists
+  > .sectionbody {
+    @extend %paneContainer;
+
+    // Define Frame Properties for Lists
+    > .ulist  {
+      @extend %list__pane;
+      @include setColumns(2);
+      @include defineChildElements("frame","nth-of-type");
+      @include defineListBulleting();
+      }
+
+    // Define Frame Properties for H3
+    > .sect2 {
+      @extend %pane;
+      @include setColumns(2);
+      @include defineChildElements("frame","nth-child")
+    }
+  }
+}
+
+.pane__card{
+
+  > .sectionbody {
+    @extend %paneContainer;
+  }
+  @each $col, $colvar in $--pane-colors {
+    &--#{$col} {
+    @extend %pane;
+    @include setColumns(2);
+    @include setColorCard( #{$col}, !important );
+    }
+  }
+}
+
+.pane__frame{
+  > .sectionbody {
+    @extend %paneContainer;
+  }
+  @each $col, $colvar in $--pane-colors {
+    &--#{$col} {
+      @extend %pane;
+      @include setColumns(2);
+      @include setColorFrame( #{$col}, !important);
+    }
+  }
+}
+
+.cols-3 > .sectionbody > .ulist,
+.pane__cards.cols-3 .sect2,
+.pane__card.cols-3 .sect2,
+.pane__frames.cols-3 .sect2,
+.pane__frame.cols-3 .sect2  {
+  @include setColumns(3)
+}
+
+.cols-4 > .sectionbody > .ulist,
+.pane__cards.cols-4 .sect2,
+.pane__card.cols-4 .sect2,
+.pane__frames.cols-4 .sect2,
+.pane__frame.cols-4 .sect2 {
+  @include setColumns(4)
+}
+
+.banner {
+  @extend %pane;
+  @include setColorFrame(red);
+  flex-basis: 100%
+}
+
+.wide {
+  flex: 2 0 auto !important
+}
+
+.narrow {
+  flex: 0 0 auto !important
+}
+
+.no-color {
+  background-color: transparent !important;
+  border: transparent !important;
+}
+
+.no-title h2 {
+  max-height: none;
+  visibility: hidden;
+  padding-top: 0rem;
+  margin-top: 0rem;
+}

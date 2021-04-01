@@ -1,0 +1,343 @@
+= Couchbase Lite
+:page-status: beta
+:page-role: panes
+:sectanchors!:
+:sectids!:
+
+== Features
+
+* Colored cards or frames (borders) with an auto-sequence of colors based on Couchbases's secondary color scheme. Feature triggered by class prior to H2, with cards/frames generated at H3 level or optionaly from unordered list items (for simple layouts).
+* Default two-across
+* Option to specify 3-across or 4-across
+* Full-width banner option
+* Option to conceal the H2 heading if it is solely there to trigger the cards/frames ([.no-title])
+
+
+[.pane__cards]
+== By Default You Will Get a 2-across Display
+
+=== H3 Card 1
+Card 1 content
+
+=== H3 Card 2
+Card 2 content
+
+
+[.pane__cards.cols-3]
+== But there's an option to have 3-across ...
+This shows the cards 3-across, with the fourth (in this case) full-width.
+If there are more then they will wrap around in rows of three
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+[.pane__cards.cols-4]
+== And Even 4-across ...
+And yes of course you can also have four across. However, I think this is the practical limit for readable card content, so I stopped there.
+
+=== Auto four ignorable text
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+== Using panes frames in auto colors ...
+Frames are also an option they work in exactly the same way as panes.
+
+[.pane__frames.cols-3.no-title]
+== {empty}
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+[.pane__frames.cols-4]
+== Using pane frames in auto colors ...
+
+=== Auto four ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+=== Auto old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+
+== Using panes with manually selected colors ...
+If you wish, you can also set the colours of the cards manually this has to be done on a per card basis.
+
+[.pane__card.no-title.cols-3]
+== {empty}
+
+[.pane__card--blue]
+=== Any old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+[.pane__card--green]
+=== Any old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+[.pane__frame--orange]
+=== Any old ignorable text
+
+Release 2.7 adds support for Java (Desktop and Web Server) applications.
+Read more: xref:java-platform.adoc[Java]
+
+The release also contains bug fixes and enhancements.
+Find out more in the release notes:
+
+
+== There is a banner option
+
+[.banner.no-title]
+=== {empty}
+*SDK Reference API:*  Java | Java (Android) | .Net | Swift | xref:objc.adoc#release-notes[objective-C]
+
+[.pane__cards.cols-3]
+== Using Lists as Cards 3
+
+.Jim
+* Pariatur pariatur velit veniam culpa ex laboris magna proident do. I
+* In cillum qui laboris
+** nostrud laboris dolor ad esse occaecat
+** laboris elit minim sint non.
+* Officia laboris nisi ipsum
+* est deserunt do excepteur sint anim proident
+* culpa laborum culpa
+* Labore sint veniam cillum consectetur nulla
+* In ex amet nostrud veniam.
+
+.Joe
+* Aliqua veniam eiusmod sit occaecat magna cillum non tempor deserunt.
+** Elit nostrud magna consequat incididunt dolore nisi excepteur.
+** Pariatur ut consequat enim.
+
+.Fred
+* Qui eiusmod quis pariatur aliqua Lorem esse proident sint tempor officia.
+* Enim Lorem ipsum deserunt amet ipsum adipisicing occaecat
+** aute exercitation ut.
++
+Exercitation culpa consectetur minim ad magna eu eiusmod anim deserunt. Dolore ipsum est commodo minim. Ipsum sit aliqua ea pariatur deserunt Lorem fugiat ex sint. Quis sint laborum laborum est est ullamco irure esse ea aliqua nostrud qui.
+
+[.pane__cards.cols-4]
+== Test Card Lists Four
+
+.*Joey*
+* fred <<Test Lists>>
+** fred
+** fred <<Test Lists>>
+* fred
+* fred <<Test Lists>>
+* fred
+
+.*Ross*
+* fred <<Test Lists>>
+* fred
+* fred <<Test Lists>>
+* fred
+* fred <<Test Lists>>
+* fred
+
+.*Rachael*
+* fred <<Test Lists>>
++
+--
+** one
+** two
+** tres
+--
+
+.Phoebe
+* fred
+* fred <<Test Lists>>
+* fred
+* fred <<Test Lists>>
+* fred
+
+[.pane__frames]
+== Using Lists as Frames 2xCol
+
+.Frame 1
+* *Build a sample web app*
+
+** Set up my Couchbase Lite SDK
+** Build a sample console app
+** Pariatur pariatur velit veniam culpa ex laboris magna proident do.
+
+* In cillum qui laboris nostrud laboris dolor ad esse occaecat laboris elit minim sint non.
+* Officia laboris nisi ipsum est deserunt do excepteur sint anim proident culpa laborum culpa. Labore sint veniam cillum consectetur nulla.
+
+.Frame 2
+* Set up my Couchbase Lite SDK
+* Build a sample console app
+** Pariatur pariatur velit veniam culpa ex laboris magna proident do.
+*** Pariatur pariatur velit veniam culpa
+*** Ex laboris magna proident do.
+*** Pariatur pariatur velit veniam culpa
+*** Ex laboris magna proident do.
+** In cillum qui laboris nostrud laboris dolor ad esse occaecat laboris elit minim sint non.
+* Officia laboris nisi ipsum est deserunt do excepteur sint anim proident culpa laborum culpa.
+Labore sint veniam cillum consectetur nulla.
+* In ex amet nostrud veniam.
+
+[.pane__frames.cols-3]
+== list 3xcols
+
+.Hi One
+* fred <<Test Lists>>
+* list-item  in frame
+** list-item  in frame
+** list-item  in frame
+** list-item  in frame
+*  list-item  in frame
+
+.Hi Two
+* fred <<Test Lists>>
+* list-item  in frame
+** list-item  in frame
+** list-item  in frame
+** list-item  in frame
+*  list-item  in frame
+
+[.pane__frame--purple]
+.Hi Three
+* fred
+* list-item  in frame
+** list-item  in frame
+** list-item  in frame
+** list-item  in frame
++
+list-item  in frame
+
+[.pane__frames.cols-4]
+== list 4xcols
+
+.Another Frame
+* fred <<Test Lists>>
+* fred
+* fred
+* fred
+
+
+.And another
+* fred
+* list-item  in frame
+** list-item  in frame
+
+.Yes Another
+* list-item  in frame
+* list-item  in frame
+* list-item  in frame
+
+.Last One
+* fred
+* fred <<Test Lists>>
+* fred
+* fred
+
+[.pane__frames]
+== list Unequal Frames
+
+[.pane__frame--orange]
+.Long Frame
+* fred <<Test Lists>>
+* Veniam Lorem consequat est ipsum magna nulla qui veniam minim. Ipsum adipisicing enim nisi ex non exercitation laboris qui. Velit sunt ipsum commodo duis labore consectetur. Ex dolor sunt velit adipisicing.
+
+** fred
+** fred
+
+[.narrow]
+.Short Frame
+* fred
+* list-item  in frame
+** list-item  in frame
+
